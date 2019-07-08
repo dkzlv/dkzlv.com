@@ -11,6 +11,7 @@
   nav {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     margin: 30px 0px;
   }
@@ -23,6 +24,16 @@
     font-family: "Merriweather", serif;
     font-size: 15px;
     margin-bottom: 1em;
+  }
+
+  @media (max-width: 450px) {
+    .newletterText {
+      display: none;
+    }
+
+    nav {
+      margin: 15px 0;
+    }
   }
 
   .twitterIcon {
@@ -44,9 +55,9 @@
         <Logo />
       </a>
     </div>
-    <div>
+    <div class="newletterText">
       <p>
-        Hey! Get on board
+        Hey! Get onboard
         <span class="twitterLink">
           <Link href="https://twitter.com/d_kzlv/">
             <span class="twitterIcon">

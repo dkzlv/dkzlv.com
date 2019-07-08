@@ -19,10 +19,10 @@
     height: 100%;
 
     margin: 0 auto;
-    width: 60%;
+    width: 50%;
   }
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (max-width: 900px) {
     :global(#app) {
       width: 95%;
     }

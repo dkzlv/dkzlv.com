@@ -15,7 +15,7 @@
   .emailInput {
     height: 100%;
     width: 220px;
-    background-color: #ffefef;
+    background-color: #eff4ff;
     border: 2px #bcbcbc solid;
   }
 

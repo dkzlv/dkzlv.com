@@ -33,7 +33,7 @@
     line-height: 42px;
     margin-bottom: 10px;
 
-    color: #ce8080;
+    color: #8088ce;
   }
 
   .meta {
