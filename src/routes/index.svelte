@@ -17,7 +17,7 @@
 </script>
 
 <style>
-  li {
+  div {
     margin-bottom: 37px;
   }
 
@@ -49,7 +49,7 @@
   .subtitle {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
-    line-height: 21px;
+    line-height: 25px;
 
     color: #363636;
   }
@@ -59,14 +59,12 @@
   <title>Dan Kozlov on tech and stuff</title>
 </svelte:head>
 
-<ul>
-  {#each posts as post}
-    <li>
-      <a rel="prefetch" href={post.slug}>
-        <h2>{post.title}</h2>
-        <p class="meta">{formatDate(post.date)} • {post.readTime} minutes</p>
-        <p class="subtitle">{post.subtitle}</p>
-      </a>
-    </li>
-  {/each}
-</ul>
+{#each posts as post}
+  <div>
+    <a rel="prefetch" href={post.slug}>
+      <h2>{post.title}</h2>
+    </a>
+    <p class="meta">{formatDate(post.date)} • {post.readTime} minutes</p>
+    <p class="subtitle">{post.subtitle}</p>
+  </div>
+{/each}

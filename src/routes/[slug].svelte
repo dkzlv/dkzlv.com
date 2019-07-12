@@ -1,7 +1,5 @@
 <script context="module">
   export async function preload({ params }) {
-    // the `slug` parameter is available because
-    // this file is called [slug].html
     const res = await this.fetch(`/${params.slug}.json`);
     const data = await res.json();
 
@@ -16,10 +14,6 @@
 <script>
   export let post;
 </script>
-
-<style>
-
-</style>
 
 <svelte:head>
   <title>{post.title}</title>

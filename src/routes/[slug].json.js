@@ -6,7 +6,6 @@ const converter = new showdown.Converter({
   metadata: true,
   omitExtraWLInCodeBlocks: true,
   ghCompatibleHeaderId: true,
-  headerLevelStart: 2,
   strikethrough: true,
   tables: true,
   simpleLineBreaks: true,

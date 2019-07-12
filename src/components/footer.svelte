@@ -8,6 +8,7 @@
   footer {
     margin: 15px 0;
   }
+
   p {
     font-family: "Merriweather", serif;
     font-size: 15px;

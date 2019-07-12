@@ -10,7 +10,7 @@
 </style>
 
 <svelte:head>
-  <title>{status}</title>
+  <title>Oops: {status}</title>
 </svelte:head>
 
 <h1>{status}</h1>
