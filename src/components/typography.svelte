@@ -10,10 +10,12 @@
 
   :global(h1) {
     font-size: 2rem;
+    color: #8088ce;
   }
 
   :global(h2) {
     font-size: 1.6rem;
+    color: #8088ce;
   }
 
   :global(h3) {
@@ -32,10 +34,24 @@
     font-size: 0.8rem;
   }
 
-  :global(p) {
+  :global(p, ol, ul) {
     font-family: "Roboto", sans-serif;
-    margin: 0 0 10px;
-    line-height: 1.2;
+    margin-bottom: 14px;
+    line-height: 27px;
+    font-size: 18px;
+    color: #363636;
+  }
+
+  :global(strong) {
+    font-weight: 700;
+  }
+
+  :global(em) {
+    font-style: italic;
+  }
+
+  :global(li:not(:last-child)) {
+    margin-bottom: 10px;
   }
 
   :global(a, ins, u) {
@@ -44,28 +60,20 @@
 
   :global(blockquote) {
     border-left: 1px solid grey;
-    margin-left: 0;
-    padding: 0.4rem 0.8rem;
+    margin: 15px 0;
+    padding: 12px 0 12px 20px;
   }
 
   :global(blockquote > p:last-child) {
     margin-bottom: 0;
   }
 
-  :global(ul, ol) {
-    margin: 0.8rem 0 0.8rem 0.8rem;
-    padding: 0;
-  }
-  :global(ul, ol > ul, ol) {
-    margin: 0.8rem 0 0.8rem 0.8rem;
-  }
-
-  :global(ul, ol > li) {
-    margin-top: 0.4rem;
-  }
-
   :global(ul) {
-    list-style: disc inside;
+    list-style: disc;
+  }
+
+  :global(ol) {
+    list-style: decimal;
   }
 
   :global(ul > ul) {

@@ -23,6 +23,7 @@
   p {
     font-family: "Merriweather", serif;
     font-size: 15px;
+    line-height: 11px;
     margin-bottom: 1em;
   }
 
