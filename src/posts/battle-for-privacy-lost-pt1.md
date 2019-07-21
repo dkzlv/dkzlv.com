@@ -1,6 +1,9 @@
 ---
 title: The battle for Privacy that we've already lost
-date: "2019-03-10T19:30:51.895Z"
+description: Blah blah blah blah
+date: 2019-03-10T19:30:51.895Z
+readTime: 15
+imagePreview: /123.jpg
 ---
 
 It's been a few years since I started learning stuff about programming. It's a usual thing when you're kind of the only IT guy among your friends: you have nothing interesting to discuss while hanging our in a bar. Of all the boring topics that I've tried to tell my friends about there's one, that really shocked them. It's about the privacy and that literally nothing can be hidden from the big corporations.
@@ -28,8 +31,6 @@ If you visit a Walmart you are an anonymous person to the store. They know nothi
 Except now you will get a ton of marketing messages, that are hard to opt-out without losing your card, and your purchase pattern will be sold to the manufacturer of all the goods that you buy. They can even be sold to internet companies. Remember: you wrote down all of your credentials in the form, so it's a piece of cake to match you to an ID in Google's DB.
 
 ## Photos on phones
-
-
 
 1. iOS photo library — geolocation & on-device machine learning nudes detection
 2. Chrome Extensions — you practically has control over everything user ever do in their browser

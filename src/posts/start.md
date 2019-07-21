@@ -1,6 +1,10 @@
 ---
 title: Starting the Game
-date: "2019-03-10T13:56:46.565Z"
+description: This is nonsense. I honestly think the amount of blogs I've started in my life is painfully close to the number of posts I've written in them. I've always lost motivation to maintain it long enough. But still, here I am now starting this all over again. But this time something is different.
+date: 2019-03-10T13:56:46.565Z
+readTime: 2
+imagePreview: /123.jpg
+published: 1
 ---
 
 This is nonsense. I honestly think the amount of blogs I've started in my life is painfully close to the number of posts I've written in them. I've always lost motivation to maintain it long enough. But still, here I am now starting this all over again. But this time something is different.

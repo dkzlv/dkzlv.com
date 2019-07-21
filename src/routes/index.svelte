@@ -51,6 +51,6 @@
       <h2>{post.title}</h2>
     </a>
     <p class="meta">{formatDate(post.date)} • {post.readTime} minutes</p>
-    <p class="subtitle">{post.subtitle}</p>
+    <p>{post.description}</p>
   </div>
 {/each}
