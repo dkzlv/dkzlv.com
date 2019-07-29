@@ -8,23 +8,23 @@ imagePreview: /123.jpg
 
 ---
 
-1. добавить вступление, для умных айтишников, которые знают базу
-2. добавить шутеек, потому что сейчас всё суховато
-3. надо придумать, как визуализировать матрицу 3 на 3 понятным образом, а потом описать риски, связанные с каждым из этих блоков. Возможно, стоит нарисовать инфографику простенькую на этот счёт, типа дерево.
+1. добавить шутеек, потому что сейчас всё суховато
+2. надо придумать, как визуализировать матрицу 3 на 3 понятным образом, а потом описать риски, связанные с каждым из этих блоков. Возможно, стоит нарисовать инфографику простенькую на этот счёт, типа дерево.
 
 ---
 
-It's been a few years since I started learning stuff about programming. It's a usual thing when you're kind of the only IT guy among your friends: you have nothing interesting to discuss while hanging our in a bar. Of all the boring topics that I've tried to tell my friends about there's one, that really shocked them. It's about the privacy and that literally nothing can be hidden from The Big Brother.
+It's been a few years since I started learning stuff about programming. It's a usual thing when you're kind of the only IT guy among your friends: you have nothing interesting to discuss while hanging our in a bar. Of all the boring topics that I've tried to tell my friends about there's one that was new AND interesting. It's about the privacy and that literally nothing can be hidden from The Big Brother.
 
-But how do they do that? Can inkognito mode in your browser save you from surveliance? Is VPN the solution? Or should you just pack your shit, buy a small house in the middle of nowhere (with cash only) and move there and start living a life of Captain Fantastic?
+> Disclaimers:
+> 
+> - it's a long one. Will take you a while to read it through;
+> - if you're not new to the topic, you should probably scan it, because you won't find any eyeopening stuff here.
 
-Disclaimer: This one is gonna be a long one. Most probably, if you work in IT it won't be big news for you.
+But how do they do that? Can inkognito mode in your browser save you from surveliance? Is VPN the solution? Or should you just pack your shit, buy a small house in the middle of nowhere (cash only) and move there and start living a life of Captain Fantastic?
 
 # Part 1: Attention and Interest
 
-You right for privacy combines all the other rights you have: voting, free speech, equal opportunity and so on. Once you lose it you've lost everything.
-
-Most people I know easily say stuff like _"I have nothing to hide. Why would I care?"_. It is a common misinterpretation. You shouldn't worry about your private data only.
+You right for privacy combines all the other rights you have: voting, free speech, equal opportunity and so on. Once you lose it you've lost everything. Most people I know easily fall into a trap like _"I have nothing to hide. Why would I care?"_. It is a common misinterpretation. You shouldn't worry about your private data only.
 
 To understand why your privacy is as essential as your right to vote (more on that later) we need to understand 2 things:
 
