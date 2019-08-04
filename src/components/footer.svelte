@@ -6,6 +6,8 @@
 
 <style>
   footer {
+    display: flex;
+    justify-content: space-between;
     margin: 15px 0;
   }
 
@@ -17,7 +19,12 @@
 
 <footer>
   <p>
-    2015-{year},
+    2018-{year},
     <Link href="https://twitter.com/d_kzlv">Dan Kozlov</Link>
+  </p>
+  <p>
+    <a href="/ru">Ру</a>
+    /
+    <a href="/en">Eng</a>
   </p>
 </footer>
