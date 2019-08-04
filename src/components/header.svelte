@@ -67,7 +67,7 @@
             on Twitter
           </Link>
         </span>
-        — same content, but faster.
+        — same content, but faster.
       </p>
       <p>Or join the newsletter. One email a week if I'm not lazy.</p>
       <EmailCollector />

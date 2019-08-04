@@ -1,56 +1,12 @@
 <script context="module">
-  export function preload() {
-    return this.fetch("all.json")
-      .then(r => r.json())
-      .then(posts => ({ posts }));
+  let rawLang = "";
+  if (typeof navigator !== "undefined") {
+    rawLang = (navigator.language || navigator.userLanguage).slice(0, 2);
+  }
+  // Only support two langs for now
+  const lang = rawLang === "ru" ? rawLang : "en";
+
+  if (typeof window !== "undefined") {
+    window.location.href = `./${lang}`;
   }
 </script>
-
-<script>
-  export let posts;
-  export const formatDate = dateString =>
-    new Date(dateString).toLocaleString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    });
-</script>
-
-<style>
-  div {
-    margin-bottom: 37px;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  h2 {
-    font-family: "Merriweather", serif;
-
-    font-size: 31px;
-    line-height: 42px;
-    margin-bottom: 10px;
-  }
-
-  .meta {
-    font-size: 13px;
-    margin-bottom: 12px;
-
-    color: #828282;
-  }
-</style>
-
-<svelte:head>
-  <title>Dan Kozlov on tech and stuff</title>
-</svelte:head>
-
-{#each posts as post}
-  <div>
-    <a rel="prefetch" href={post.slug}>
-      <h2>{post.title}</h2>
-    </a>
-    <p class="meta">{formatDate(post.date)} • {post.readTime} minutes</p>
-    <p>{post.description}</p>
-  </div>
-{/each}

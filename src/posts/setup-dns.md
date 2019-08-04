@@ -1,8 +1,8 @@
 ---
+lang: ru
 title: Как настроить православный DNS
 description: Blah blah blah blah
 date: 2019-03-10T19:30:51.895Z
-readTime: 15
 imagePreview: /123.jpg
 ---
 

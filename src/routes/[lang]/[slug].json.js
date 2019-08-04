@@ -25,6 +25,9 @@ const posts = fs
 
     const { published = '0' } = meta
 
+    // 900 chars per minute on average.
+    meta.readTime = Math.round(rawFile.length / 900) || 1
+
     // You need to explicitly set published to 1 to make the post available on production
     if (!parseInt(published) && process.env.NODE_ENV !== 'development') return false
 
@@ -52,14 +55,13 @@ const partialSerializer = post => ({
 })
 
 export function get(req, res, next) {
-  // the `slug` parameter is available because
-  // this file is called [slug].json.js
-  const { slug } = req.params
+  const { slug, lang } = req.params
 
   let contentToSend
-  if (slug === 'all') contentToSend = JSON.stringify(posts.map(partialSerializer))
+  if (slug === 'all')
+    contentToSend = JSON.stringify(posts.filter(post => post.lang === lang).map(partialSerializer))
   else {
-    const post = posts.find(post => post.slug === slug)
+    const post = posts.find(post => post.slug === slug && post.lang === lang)
     if (post) {
       contentToSend = JSON.stringify(post)
     } else {

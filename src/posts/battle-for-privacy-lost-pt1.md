@@ -1,22 +1,15 @@
 ---
+lang: en
 title: The battle for Privacy that we've already lost
 description: Blah blah blah blah
 date: 2019-03-10T19:30:51.895Z
-readTime: 15
 imagePreview: /123.jpg
----
-
----
-
-1. добавить шутеек, потому что сейчас всё суховато
-2. надо придумать, как визуализировать матрицу 3 на 3 понятным образом, а потом описать риски, связанные с каждым из этих блоков. Возможно, стоит нарисовать инфографику простенькую на этот счёт, типа дерево.
-
 ---
 
 It's been a few years since I started learning stuff about programming. It's a usual thing when you're kind of the only IT guy among your friends: you have nothing interesting to discuss while hanging our in a bar. Of all the boring topics that I've tried to tell my friends about there's one that was new AND interesting. It's about the privacy and that literally nothing can be hidden from The Big Brother.
 
 > Disclaimers:
-> 
+>
 > - it's a long one. Will take you a while to read it through;
 > - if you're not new to the topic, you should probably scan it, because you won't find any eyeopening stuff here.
 
@@ -38,12 +31,12 @@ To understand why your privacy is as essential as your right to vote (more on th
 Актор:
 
 1. **immediate transfer**. When you type stuff in Google, Google knows what stuff you typed. Now you know this. You're welcome.
-2. **shadow transfer**. Google Analytics, tracking pixels, like buttons, embedded scripts, etc. Chrome extensions. 
+2. **shadow transfer**. Google Analytics, tracking pixels, like buttons, embedded scripts, etc. Chrome extensions.
 
 Данные:
 
 1. **то, что ты сознательно отдаёшь**. Ввод поискового запроса в гугл.
-2. **то, что ты не хотел бы отдавать**. Неожиданные последствия. Например, история всех путешествий, когда открываешь доступ к фоткам. Или все установленные у тебя на телефоне программы. Или историю посещения разных ссылок (раньше был баг про узнавание цвета посещённых ссылок). Spectre. 
+2. **то, что ты не хотел бы отдавать**. Неожиданные последствия. Например, история всех путешествий, когда открываешь доступ к фоткам. Или все установленные у тебя на телефоне программы. Или историю посещения разных ссылок (раньше был баг про узнавание цвета посещённых ссылок). Spectre.
 
 Манипуляция:
 

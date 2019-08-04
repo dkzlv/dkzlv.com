@@ -1,12 +1,12 @@
 <script context="module">
-  import Meta from "../components/meta.svelte";
+  import Meta from "../../components/meta.svelte";
 
   export async function preload({ params }) {
-    const res = await this.fetch(`/${params.slug}.json`);
+    const res = await this.fetch(`/${params.lang}/${params.slug}.json`);
     const data = await res.json();
 
     if (res.status === 200) {
-      return { post: data };
+      return { post: data, lang: params.lang };
     } else {
       this.error(res.status, data.message);
     }
@@ -15,6 +15,7 @@
 
 <script>
   export let post;
+  export let lang;
 </script>
 
 <Meta
@@ -22,7 +23,7 @@
   path={post.slug}
   description={post.description}
   imagePreview={post.imagePreview}
-  locale="en" />
+  locale={lang} />
 
 <h1>{post.title}</h1>
 
