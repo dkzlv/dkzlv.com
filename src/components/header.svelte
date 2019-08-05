@@ -1,6 +1,5 @@
 <script>
   import Logo from "./logo.svelte";
-  import Link from "./link.svelte";
   import TwitterIcon from "./twitterIcon.svelte";
   import EmailCollector from "./emailCollector.svelte";
 
@@ -25,6 +24,10 @@
     font-size: 15px;
     line-height: 11px;
     margin-bottom: 1em;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   @media (max-width: 450px) {
@@ -59,14 +62,15 @@
     <div class="newletterText">
       <p>
         Hey! Get onboard
-        <span class="twitterLink">
-          <Link href="https://twitter.com/d_kzlv/">
-            <span class="twitterIcon">
-              <TwitterIcon />
-            </span>
-            on Twitter
-          </Link>
-        </span>
+        <a
+          href="https://twitter.com/d_kzlv/"
+          rel="noreferrer nofollow"
+          target="_blank">
+          <span class="twitterIcon">
+            <TwitterIcon />
+          </span>
+          on Twitter
+        </a>
         — same content, but faster.
       </p>
       <p>Or join the newsletter. One email a week if I'm not lazy.</p>

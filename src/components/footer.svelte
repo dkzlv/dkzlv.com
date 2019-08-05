@@ -1,6 +1,4 @@
 <script>
-  import Link from "./link.svelte";
-
   const year = new Date().getFullYear();
 </script>
 
@@ -20,7 +18,12 @@
 <footer>
   <p>
     2018-{year},
-    <Link href="https://twitter.com/d_kzlv">Dan Kozlov</Link>
+    <a
+      href="https://twitter.com/d_kzlv"
+      rel="noreferrer nofollow"
+      target="_blank">
+      Dan Kozlov
+    </a>
   </p>
   <p>
     <a href="/ru">Ру</a>

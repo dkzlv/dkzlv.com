@@ -1,7 +1,7 @@
 <script>
   import Header from "../../components/header.svelte";
   import Footer from "../../components/footer.svelte";
-  import Typography from "../../components/typography.svelte";
+  import Typography from "../../components/styles/typography.svelte";
 
   export let segment;
 </script>
@@ -14,7 +14,7 @@
     min-height: 100%;
   }
 
-  :global(#app) {
+  #root {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -24,7 +24,7 @@
   }
 
   @media (max-width: 900px) {
-    :global(#app) {
+    #root {
       width: 95%;
     }
   }
@@ -35,9 +35,10 @@
   }
 </style>
 
-<Header {segment} />
-<Typography />
-<main>
-  <slot />
-</main>
-<Footer />
+<div id="root">
+  <Header {segment} />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+</div>
