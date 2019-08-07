@@ -21,3 +21,4 @@ imagePreview: /123.jpg
 - [Equifax проебали данные 147 миллионов американских клиентов](https://vc.ru/finance/76302-kreditnoe-byuro-equifax-soglasilos-vyplatit-do-700-mln-iz-za-utechki-dannyh-amerikanskih-klientov-v-2017-godu?from=rss)
 - [robinhood хранит пароли в плейн-тексте](https://twitter.com/Techmeme/status/1154154645062934528)
 - [мат-модель того, как твои неперсонализированные данные позволяют идентифицировать тебя достаточно точно](https://www.nature.com/articles/s41467-019-10933-3)
+- [хахахаха, на порносайтах тоже стоят трекеры аналитики, лолкек](https://arxiv.org/abs/1907.06520)
