@@ -22,3 +22,5 @@ imagePreview: /123.jpg
 - [robinhood хранит пароли в плейн-тексте](https://twitter.com/Techmeme/status/1154154645062934528)
 - [мат-модель того, как твои неперсонализированные данные позволяют идентифицировать тебя достаточно точно](https://www.nature.com/articles/s41467-019-10933-3)
 - [хахахаха, на порносайтах тоже стоят трекеры аналитики, лолкек](https://arxiv.org/abs/1907.06520)
+- [как cambridge analytica, только с инстаграмом: партнёр FB упиздил кучу данных](https://www.businessinsider.com/startup-hyp3r-saving-instagram-users-stories-tracking-locations-2019-8)
+- [утекли данные всех аккаунтов с сервиса поиска партнёров для тройничка — все данные вообще, встречи, почта, пароли и пр.](https://techcrunch.com/2019/08/08/group-dating-app-3fun-security-flaws/)
