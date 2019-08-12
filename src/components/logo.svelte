@@ -12,10 +12,11 @@
   const onMouseOut = () => clearInterval(interval);
 </script>
 
-<style>
+<style type="text/scss">
   .logo {
-    width: 70px;
+    width: 80px;
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    user-select: none;
   }
 
   .circle {

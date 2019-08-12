@@ -1,18 +1,18 @@
-<script>
-  const year = new Date().getFullYear();
-</script>
+<style type="text/scss">
+  @import "../styles/importable";
 
-<style>
   footer {
     display: flex;
     justify-content: space-between;
-    margin: 15px 0;
+    margin: 10px 0;
+
+    @include safeAreaPaddingMixin(bottom, 20px, 0);
   }
 </style>
 
 <footer>
   <p>
-    2018-{year},
+    2018-{new Date().getFullYear()},
     <a
       href="https://twitter.com/d_kzlv"
       rel="noreferrer nofollow"

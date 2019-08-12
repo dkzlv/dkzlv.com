@@ -38,6 +38,14 @@ h6 {
   font-size: ms(0);
 }
 
+strong {
+  font-weight: $bold;
+}
+
+em {
+  font-style: italic;
+}
+
 p,
 ol,
 ul {
@@ -48,16 +56,32 @@ ul {
   color: $text-color;
 }
 
-strong {
-  font-weight: $bold;
+ul {
+  list-style: disc;
 }
 
-em {
-  font-style: italic;
+ol {
+  list-style: decimal;
 }
 
-li:not(:last-child) {
-  margin-bottom: 10px;
+ul,
+ol {
+  @include mq($until: mobile) {
+    margin-left: 15px;
+  }
+  @include mq($from: mobile) {
+    margin-left: -10px;
+  }
+}
+
+li {
+  @include mq($from: mobile) {
+    padding-left: 10px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 
 a,
@@ -74,7 +98,7 @@ a:hover {
 
 blockquote {
   border-left: 3px solid $accent-color;
-  margin: 15px 0 15px -5px;
+  margin: 15px 0;
   padding: 12px 0 12px 20px;
 }
 
@@ -82,16 +106,10 @@ blockquote > p:last-child {
   margin-bottom: 0;
 }
 
-blockquote li {
-  margin-left: 10px;
-}
-
-ul {
-  list-style: disc;
-}
-
-ol {
-  list-style: decimal;
+blockquote ul,
+blockquote ul {
+  list-style-position: inside;
+  margin-left: 0;
 }
 
 pre {
@@ -104,7 +122,7 @@ pre {
   line-height: $base-font-size * 1.8;
   font-size: ms(0);
 
-  background-color: $lighter-accent-color;
+  background-color: $superlight-accent-color;
   border-radius: 10px;
 }
 

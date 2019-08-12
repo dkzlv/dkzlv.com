@@ -1,4 +1,4 @@
-$mobile-width: 599px;
+$mobile-width: 600px;
 $tablet-portrait: 600px;
 $tablet-landscape: 900px;
 $desktop: 1200px;
@@ -16,6 +16,9 @@ $mq-breakpoints: (
 $accent-color: hsl(235, 50%, 65%);
 $light-accent-color: mix($accent-color, #fff, 80%);
 $lighter-accent-color: mix($accent-color, #fff, 60%);
+$superlight-accent-color: mix($accent-color, #fff, 40%);
+$dark-accent-color: mix($accent-color, #000, 80%);
+$darker-accent-color: mix($accent-color, #000, 60%);
 
 $text-color: hsl(0, 0%, 20%);
 
@@ -34,3 +37,6 @@ $modularscale: (
   ratio: 1.2,
 );
 @import 'modularscale-sass/stylesheets/modularscale';
+
+$border-radius: 5px;
+$border-style: 2px solid;

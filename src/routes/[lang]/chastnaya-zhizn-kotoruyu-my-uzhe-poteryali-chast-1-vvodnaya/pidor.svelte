@@ -99,12 +99,12 @@
   }
 
   .button-wrapper {
-    width: 20%;
-    margin: 3em auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    margin: 3em auto;
 
     @include mq($until: mobile) {
       width: 90%;
@@ -114,34 +114,14 @@
     }
   }
 
-  .confessions {
-    position: static;
-  }
-
   .confession {
     @include appearFromTransparancy;
-  }
-
-  .clicker {
-    width: 100%;
-    padding: 10px 20px;
-    background-color: $accent-color;
-    color: white;
-    border: 3px solid $light-accent-color;
-    border-radius: 4px;
-    outline: none;
-    text-transform: uppercase;
-
-    &:hover {
-      background-color: $light-accent-color;
-      border-color: $lighter-accent-color;
-    }
   }
 </style>
 
 <div class="button-wrapper">
-  <div class="confessions">
-    <p class={confessionClasses} bind:this={confessionEl}>ты пидор</p>
-  </div>
-  <button class="clicker" on:click={listener}>Нажми, не ссы, не убьёт</button>
+  <p class={confessionClasses} bind:this={confessionEl}>ты пидор</p>
+  <button class="btn btn--accent btn--fullwidth" on:click={listener}>
+    Нажми, не ссы, не убьёт
+  </button>
 </div>

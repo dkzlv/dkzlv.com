@@ -1,0 +1,25 @@
+.input {
+  padding: 8px 15px 8px 5px;
+  border-radius: $border-radius;
+  border: $border-style;
+  font-family: $serif;
+  font-size: ms(0);
+
+  user-select: none;
+
+  min-width: 220px;
+}
+
+.input--is-small {
+  font-size: ms(-2);
+}
+
+.input--accent {
+  border-color: $accent-color;
+
+  outline-color: $lighter-accent-color;
+
+  &:hover {
+    border-color: $light-accent-color;
+  }
+}

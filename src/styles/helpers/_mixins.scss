@@ -2,11 +2,12 @@
 /// @access public
 /// @param {String} $direction — top, bottom, left or right
 /// @param {Number} $pixels — number of pixels by default
-@mixin safeAreaPaddingMixin($direction, $pixels) {
-  padding-#{$direction}: $pixels;
+/// @param {Number} $non-safe-area-pixels — number of pixels, that will be set on non-safe-area devices
+@mixin safeAreaPaddingMixin($direction, $pixels, $non-safe-area-pixels: $pixels) {
+  padding-#{$direction}: $non-safe-area-pixels;
 
   @supports (padding: unquote('max(0px)')) {
-    padding-#{$direction}: unquote('max(#{$pixels}, env(safe-area-inset-#{$direction}))');
+    padding-#{$direction}: unquote('calc(env(safe-area-inset-#{$direction}) + #{$pixels})');
   }
 }
 

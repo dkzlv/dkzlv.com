@@ -1,5 +1,42 @@
 .btn {
-  padding: 0px 10px;
-  border-radius: 5px;
-  font-family: "Merriweather", serif;
+  padding: 8px 15px;
+  font-family: $serif;
+  font-size: ms(0);
+
+  border: $border-style;
+  border-radius: $border-radius;
+
+  -webkit-appearance: none;
+}
+
+.btn--fullwidth {
+  width: 100%;
+}
+
+.btn--small {
+  font-size: ms(-2);
+}
+
+.btn--accent {
+  background-color: $accent-color;
+  border-color: $dark-accent-color;
+  color: #fff;
+
+  outline-color: $lighter-accent-color;
+
+  &:hover {
+    background-color: $light-accent-color;
+  }
+}
+
+.btn--accent-outline {
+  color: $accent-color;
+  border-color: $accent-color;
+
+  outline-color: $lighter-accent-color;
+
+  &:hover {
+    color: $light-accent-color;
+    border-color: $light-accent-color;
+  }
 }

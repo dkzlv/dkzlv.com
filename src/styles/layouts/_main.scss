@@ -34,5 +34,7 @@ body,
 /// Making main tag full-height
 main {
   flex: 1;
-  margin-top: 50px;
+  @include mq($from: mobile) {
+    margin-top: 40px;
+  }
 }

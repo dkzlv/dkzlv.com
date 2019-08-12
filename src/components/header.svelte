@@ -6,30 +6,37 @@
   export let segment;
 </script>
 
-<style>
+<style type="text/scss">
+  @import "../styles/importable";
+
   nav {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    margin: 30px 0px;
+    @include mq($until: mobile) {
+      margin: 15px 0px;
+    }
+    @include mq($from: mobile) {
+      margin: 30px 0px;
+    }
   }
 
-  nav > div {
-    margin-right: 1.5em;
+  .logo {
+    @include mq($from: mobile) {
+      margin-right: 1.5em;
+    }
   }
 
   a {
     text-decoration: none;
   }
 
-  @media (max-width: 450px) {
-    .newsletter-text {
-      display: none;
-    }
+  .newsletter-text {
+    font-size: ms(-1);
 
-    nav {
-      margin: 15px 0;
+    @include mq($until: mobile) {
+      display: none;
     }
   }
 
@@ -47,7 +54,7 @@
 
 <header>
   <nav>
-    <div>
+    <div class="logo">
       <a href=".">
         <Logo />
       </a>
@@ -65,8 +72,9 @@
           on Twitter
         </a>
         — same content, but faster.
+        <br />
+        Or join the newsletter. One email a week if I'm not lazy.
       </p>
-      <p>Or join the newsletter. One email a week if I'm not lazy.</p>
       <EmailCollector />
     </div>
   </nav>
