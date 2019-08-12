@@ -1,0 +1,33 @@
+/// Set padding according to safearea
+/// @access public
+/// @param {String} $direction — top, bottom, left or right
+/// @param {Number} $pixels — number of pixels by default
+@mixin safeAreaPaddingMixin($direction, $pixels) {
+  padding-#{$direction}: $pixels;
+
+  @supports (padding: unquote('max(0px)')) {
+    padding-#{$direction}: unquote('max(#{$pixels}, env(safe-area-inset-#{$direction}))');
+  }
+}
+
+/// Set position (top, bottom) according to safearea
+/// @access public
+/// @param {String} $position — top, bottom, left or right
+/// @param {Number} $pixels — number of pixels by default
+@mixin safeAreaPositionPropertyMixin($position, $pixels) {
+  #{$position}: $pixels;
+
+  @supports (top: unquote('max(0px)')) {
+    #{$position}: unquote('max(#{$pixels}, env(safe-area-inset-#{$position}))');
+  }
+}
+
+/// Mixin to make object come from opacity 0 to opacity 1 slowly
+@mixin appearFromTransparancy($duration: 1s, $animation: ease-in) {
+  opacity: 1;
+  transition: opacity $duration $animation;
+
+  &--hidden {
+    opacity: 0;
+  }
+}

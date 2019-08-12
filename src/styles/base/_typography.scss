@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Roboto&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $serif;
+  color: $accent-color;
+  font-weight: $bold;
+  line-height: 1.1;
+  margin-bottom: 0.7em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-size: ms(5);
+}
+
+h2 {
+  font-size: ms(4);
+}
+
+h3 {
+  font-size: ms(3);
+}
+
+h4 {
+  font-size: ms(2);
+}
+
+h5 {
+  font-size: ms(1);
+}
+
+h6 {
+  font-size: ms(0);
+}
+
+p,
+ol,
+ul {
+  font-family: $serif;
+  margin-bottom: 14px;
+  line-height: $base-font-size * 1.8;
+  font-size: ms(0);
+  color: $text-color;
+}
+
+strong {
+  font-weight: $bold;
+}
+
+em {
+  font-style: italic;
+}
+
+li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+a,
+ins,
+u {
+  color: $accent-color;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: $accent-color;
+  text-decoration: none;
+}
+
+blockquote {
+  border-left: 3px solid $accent-color;
+  margin: 15px 0 15px -5px;
+  padding: 12px 0 12px 20px;
+}
+
+blockquote > p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote li {
+  margin-left: 10px;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+pre {
+  overflow-y: scroll;
+  max-width: 100%;
+  margin: 15px 0 15px -4px;
+  padding: 15px;
+
+  font-family: $mono;
+  line-height: $base-font-size * 1.8;
+  font-size: ms(0);
+
+  background-color: $lighter-accent-color;
+  border-radius: 10px;
+}
+
+.paragraph--serif {
+  font-family: 'Merriweather', serif;
+}

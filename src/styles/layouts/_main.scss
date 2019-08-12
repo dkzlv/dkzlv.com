@@ -1,0 +1,38 @@
+html,
+body,
+#app,
+.root {
+  height: 100%;
+  min-height: 100%;
+}
+
+*::selection {
+  background: $accent-color;
+  color: #fff;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  margin: 0 auto;
+  @include mq($until: mobile) {
+    width: 95%;
+  }
+  @include mq($from: tablet-portrait, $until: tablet-landscape) {
+    width: $tablet-portrait * 0.9;
+  }
+  @include mq($from: tablet-landscape, $until: desktop) {
+    width: $tablet-landscape * 0.9;
+  }
+  @include mq($from: tablet-landscape) {
+    width: $tablet-landscape * 0.9;
+  }
+}
+
+/// Making main tag full-height
+main {
+  flex: 1;
+  margin-top: 50px;
+}

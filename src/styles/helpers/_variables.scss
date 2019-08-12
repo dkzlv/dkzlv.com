@@ -1,0 +1,36 @@
+$mobile-width: 599px;
+$tablet-portrait: 600px;
+$tablet-landscape: 900px;
+$desktop: 1200px;
+$wide: 1800px;
+
+$mq-breakpoints: (
+  mobile: $mobile-width,
+  tablet-portrait: $tablet-portrait,
+  tablet-landscape: $tablet-landscape,
+  desktop: $desktop,
+  wide: $wide,
+);
+@import 'sass-mq/mq';
+
+$accent-color: hsl(235, 50%, 65%);
+$light-accent-color: mix($accent-color, #fff, 80%);
+$lighter-accent-color: mix($accent-color, #fff, 60%);
+
+$text-color: hsl(0, 0%, 20%);
+
+$sans-serif: Roboto, Helvetica, Verdana, sans-serif;
+$serif: Merriweather, Georgia, 'Times New Roman', serif;
+$mono: 'Fira Code', Menlo, Monaco, 'Courier New', monospace;
+
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;
+
+$base-font-size: 1em;
+$modularscale: (
+  base: $base-font-size,
+  ratio: 1.2,
+);
+@import 'modularscale-sass/stylesheets/modularscale';
