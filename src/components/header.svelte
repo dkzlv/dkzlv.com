@@ -19,19 +19,12 @@
     margin-right: 1.5em;
   }
 
-  p {
-    font-family: "Merriweather", serif;
-    font-size: 15px;
-    line-height: 11px;
-    margin-bottom: 1em;
-  }
-
   a {
     text-decoration: none;
   }
 
   @media (max-width: 450px) {
-    .newletterText {
+    .newsletter-text {
       display: none;
     }
 
@@ -59,7 +52,7 @@
         <Logo />
       </a>
     </div>
-    <div class="newletterText">
+    <div class="newsletter-text">
       <p>
         Hey! Get onboard
         <a

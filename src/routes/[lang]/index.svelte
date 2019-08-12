@@ -28,8 +28,6 @@
   }
 
   h2 {
-    font-family: "Merriweather", serif;
-
     font-size: 31px;
     line-height: 42px;
     margin-bottom: 10px;
