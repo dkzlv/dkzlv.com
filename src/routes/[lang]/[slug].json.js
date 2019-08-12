@@ -1,85 +1,61 @@
-const fs = require('fs')
-const path = require('path')
-const showdown = require('showdown')
+import { readdirSync, existsSync } from 'fs'
+import { join } from 'path'
+import convertMdPost from '../../utils/convertMdPost'
+import commonGet from '../../utils/commonGet'
 
-const converter = new showdown.Converter({
-  metadata: true,
-  omitExtraWLInCodeBlocks: true,
-  ghCompatibleHeaderId: true,
-  headerLevelStart: 2,
-  strikethrough: true,
-  tables: true,
-  simpleLineBreaks: true,
-  openLinksInNewWindow: true,
-  emoji: true,
-})
-converter.setFlavor('github')
+const rootPostPath = join(process.env.PWD, 'src', 'posts')
+const posts = readdirSync(rootPostPath, { withFileTypes: true })
+  // returns fullpath to file and slug or nothing
+  .map(dirent => {
+    let slug
+    let filepath
 
-const rootPostPath = path.join(process.env.PWD, 'src', 'posts')
-const posts = fs
-  .readdirSync(rootPostPath)
-  .filter(fileName => fileName.endsWith('.md'))
-  .map(fileName => {
-    const rawFile = fs.readFileSync(path.join(rootPostPath, fileName), { encoding: 'utf-8' })
-    const html = converter.makeHtml(rawFile)
-    const meta = converter.getMetadata()
+    if (dirent.isDirectory()) {
+      slug = dirent.name
+      filepath = join(rootPostPath, slug, 'meta.md')
 
-    const { published = '0' } = meta
+      // There's no meta-file, so this folder is not a post
+      if (!existsSync(filepath)) return
+    } else {
+      // This file is not a markdown, so we do not convert it
+      if (!dirent.name.endsWith('.md')) return
 
-    // 900 chars per minute on average.
-    meta.readTime = Math.round(rawFile.length / 900) || 1
-
-    // You need to explicitly set published to 1 to make the post available on production
-    if (!parseInt(published) && process.env.NODE_ENV !== 'development') return false
-
-    return {
-      html,
-      // Dropping file extension
-      slug: fileName
+      slug = dirent.name
         .split('.')
         .slice(0, -1)
-        .join('.'),
-      // Enriching the post data with title and other metadata
-      ...meta,
+        .join('.')
+      filepath = join(rootPostPath, dirent.name)
     }
+    return { slug, filepath }
   })
+  // Filtering out files and folders that are not posts
+  .filter(Boolean)
+  .map(({ filepath, slug }) => convertMdPost(filepath, slug))
+  // Filtering out posts, that shouldn't be shown on production (drafts)
   .filter(Boolean)
   // Sorting by date
   .sort((a, b) => new Date(b.date) - new Date(a.date))
 
-const partialSerializer = post => ({
-  title: post.title,
-  description: post.description,
-  slug: post.slug,
-  date: post.date,
-  readTime: post.readTime,
-})
+const partialSerializer = post => {
+  const copy = {
+    ...post,
+  }
+  delete copy.html
+  return copy
+}
 
 export function get(req, res, next) {
   const { slug, lang } = req.params
-
   let contentToSend
+
   if (slug === 'all')
-    contentToSend = JSON.stringify(posts.filter(post => post.lang === lang).map(partialSerializer))
+    contentToSend = posts.filter(post => post.lang === lang).map(partialSerializer)
   else {
     const post = posts.find(post => post.slug === slug && post.lang === lang)
     if (post) {
-      contentToSend = JSON.stringify(post)
-    } else {
-      res.writeHead(404, {
-        'Content-Type': 'application/json',
-      })
-
-      res.end(
-        JSON.stringify({
-          message: `Not found`,
-        })
-      )
+      contentToSend = post
     }
   }
 
-  res.writeHead(200, {
-    'Content-Type': 'application/json',
-  })
-  res.end(contentToSend)
+  commonGet(res, contentToSend)
 }
