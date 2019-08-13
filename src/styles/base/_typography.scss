@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather|Roboto&display=swap');
-
 h1,
 h2,
 h3,
@@ -124,6 +122,12 @@ pre {
 
   background-color: $superlight-accent-color;
   border-radius: 10px;
+}
+
+code {
+  border-radius: $border-radius;
+  background-color: $superlight-accent-color;
+  padding: 3px 5px;
 }
 
 .paragraph--serif {
