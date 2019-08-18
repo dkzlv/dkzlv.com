@@ -9,7 +9,6 @@ imagePreview: /123.jpg
 - iOS photo library — geolocation & on-device machine learning nudes detection
 - Chrome Extensions — you practically has control over everything user ever do in their browser
 - finger printing — the combination of your screen resolution, fonts in your system, device, locale (and optionally IP) helps track you down quite accurately
-- [Grammarly по сути кейлоггер с вечной историей](https://twitter.com/sebmck/status/1104132993893904386)
 - [Алибаба хранили в облаке в незашифрованном виде инфу по жителям Пекина](https://vc.ru/future/66429-ekspert-nashel-v-oblake-alibaba-otkrytuyu-bazu-s-lichnymi-dannymi-zhiteley-pekina-za-nimi-sledili-sistemy-umnogo-goroda)
 - [Flipboard имел все свои сервера и БД открытыми для хакеров на 9 месяцев](https://vc.ru/services/69595-agregator-flipboard-zayavil-ob-utechke-dannyh-polzovateley-u-hakerov-byl-dostup-k-servisu-na-protyazhenii-devyati-mesyacev)
 - [US Gov requires to provide social account data for visa applicants](https://www.bloomberg.com/news/articles/2019-06-01/us-now-seeking-social-media-details-from-all-visa-applicants)
