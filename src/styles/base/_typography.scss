@@ -5,7 +5,10 @@ h4,
 h5,
 h6 {
   font-family: $serif;
-  color: $accent-color;
+  background: linear-gradient(35deg, $accent-color 33%, $darker-accent-color 100%);
+  color: #fff;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: $bold;
   line-height: 1.1;
   margin-bottom: 0.7em;
@@ -95,7 +98,9 @@ a:hover {
 }
 
 blockquote {
-  border-left: 3px solid $accent-color;
+  border-left: 3px solid;
+  border-image-source: linear-gradient(0deg, $accent-color, $superlight-accent-color);
+  border-image-slice: 1;
   margin: 15px 0;
   padding: 12px 0 12px 20px;
 }
@@ -120,13 +125,27 @@ pre {
   line-height: $base-font-size * 1.8;
   font-size: ms(0);
 
-  background-color: $superlight-accent-color;
+  @include mq($until: mobile) {
+    background: linear-gradient(35deg, $superlight-accent-color 0%, $accent-color 100%);
+  }
+  @include mq($from: mobile) {
+    background: linear-gradient(35deg, $superlight-accent-color 33%, $accent-color 66%);
+  }
   border-radius: 10px;
+
+  code {
+    /*
+    * Resetting code selector background
+    */
+    background: none;
+    padding: 0;
+  }
 }
 
 code {
   border-radius: $border-radius;
-  background-color: $superlight-accent-color;
+
+  background: linear-gradient(35deg, $superlight-accent-color 0%, $accent-color 100%);
   padding: 3px 5px;
 }
 

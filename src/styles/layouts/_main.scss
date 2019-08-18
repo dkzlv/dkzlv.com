@@ -8,7 +8,7 @@ body,
 
 *::selection {
   background: $accent-color;
-  color: #fff;
+  color: $background-color;
 }
 
 .root {

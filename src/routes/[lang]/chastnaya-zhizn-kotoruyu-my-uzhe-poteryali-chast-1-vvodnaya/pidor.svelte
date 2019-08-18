@@ -122,6 +122,6 @@
 <div class="button-wrapper">
   <p class={confessionClasses} bind:this={confessionEl}>ты пидор</p>
   <button class="btn btn--accent btn--fullwidth" on:click={listener}>
-    Нажми, не ссы, не убьёт
+    Не ссы, не убьёт
   </button>
 </div>
