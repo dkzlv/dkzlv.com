@@ -23,3 +23,6 @@ imagePreview: /123.jpg
 - [хахахаха, на порносайтах тоже стоят трекеры аналитики, лолкек](https://arxiv.org/abs/1907.06520)
 - [как cambridge analytica, только с инстаграмом: партнёр FB упиздил кучу данных](https://www.businessinsider.com/startup-hyp3r-saving-instagram-users-stories-tracking-locations-2019-8)
 - [утекли данные всех аккаунтов с сервиса поиска партнёров для тройничка — все данные вообще, встречи, почта, пароли и пр.](https://techcrunch.com/2019/08/08/group-dating-app-3fun-security-flaws/)
+- [перс.данные, данные по сканированию лиц и отпечатков пальцев лежали на открытом сервере; можно было даже создавать новые личности для этих банков и гос.структур](https://www.theguardian.com/technology/2019/aug/14/major-breach-found-in-biometrics-system-used-by-banks-uk-police-and-defence-firms)
+- [отличный сервис для проверки твоего браузера и проверки твоего фингерпринта](https://panopticlick.eff.org/) 
+- [Facebook даёт таргетировать по твоей ориентации даже в тех странах, где гомосексуализм запрещён](https://www.newscientist.com/article/2214309-facebooks-ad-data-may-put-millions-of-gay-people-at-risk/)
