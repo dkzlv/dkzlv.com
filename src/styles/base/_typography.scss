@@ -143,10 +143,11 @@ pre {
 }
 
 code {
+  display: inline-block;
   border-radius: $border-radius;
 
   background: linear-gradient(35deg, $superlight-accent-color 0%, $accent-color 100%);
-  padding: 3px 5px;
+  padding: 2px 4px;
 }
 
 .paragraph--serif {
