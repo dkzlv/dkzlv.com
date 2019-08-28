@@ -14,6 +14,7 @@
 
 <script>
   import Post from "../../../components/post.svelte";
+  import Fingerprint from "./fingerprint.svelte";
   import Pidor from "./pidor.svelte";
 
   export let data;
@@ -30,4 +31,10 @@
 
 <div class="content">
   {@html data.postParts[1]}
+</div>
+
+<Fingerprint />
+
+<div class="content">
+  {@html data.postParts[2]}
 </div>
