@@ -4,9 +4,10 @@
 @import './base/_reset';
 
 @import './vendor/fonts';
-@import './base/_typography';
+@import './base/typography';
+@import './base/animations';
 
-@import './layouts/_main';
+@import './layouts/main';
 
 @import './components/button';
 @import './components/input';

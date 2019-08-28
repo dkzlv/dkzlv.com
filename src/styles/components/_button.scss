@@ -43,3 +43,26 @@
     border-color: $light-accent-color;
   }
 }
+
+.btn--loading {
+  color: transparent !important;
+  pointer-events: none;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 1em;
+    width: 1em;
+    top: calc(50% - (1em / 2));
+    left: calc(50% - (1em / 2));
+
+    color: transparent !important;
+
+    animation: spinAround 1s infinite linear;
+    border: 2px solid $grey-lighter;
+    border-radius: $radius-rounded;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+  }
+}

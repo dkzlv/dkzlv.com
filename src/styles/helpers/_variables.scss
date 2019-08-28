@@ -19,10 +19,13 @@ $lighter-accent-color: mix($accent-color, #fff, 60%);
 $superlight-accent-color: mix($accent-color, #fff, 40%);
 $dark-accent-color: mix($accent-color, #000, 80%);
 $darker-accent-color: mix($accent-color, #000, 60%);
+$grey-lighter: hsl(0, 0%, 90%);
 
 $background-color: #fff;
 
 $text-color: hsl(0, 0%, 30%);
+
+$radius-rounded: 290486px;
 
 $sans-serif: Roboto, Helvetica, Verdana, sans-serif;
 $serif: Merriweather, Georgia, 'Times New Roman', serif;
