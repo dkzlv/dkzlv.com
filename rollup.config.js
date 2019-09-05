@@ -4,22 +4,25 @@ import commonjs from 'rollup-plugin-commonjs'
 import svelte from 'rollup-plugin-svelte'
 import babel from 'rollup-plugin-babel'
 import { terser } from 'rollup-plugin-terser'
+import typescript from 'rollup-plugin-typescript'
 import config from 'sapper/config/rollup.js'
 import pkg from './package.json'
-import sveltePreprocess from 'svelte-preprocess'
-import sass from 'rollup-plugin-sass'
+import autoPreprocess from 'svelte-preprocess'
 
 const mode = process.env.NODE_ENV
 const dev = mode === 'development'
 const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
 const onwarn = (warning, onwarn) =>
-  (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
+  (warning.code === 'CIRCULAR_DEPENDENCY' &&
+    /[/\\]@sapper[/\\]/.test(warning.message)) ||
   onwarn(warning)
 
-const preprocess = sveltePreprocess({
+const preprocess = autoPreprocess({
   postcss: true,
-  scss: true,
+  typescript: {
+    transpileOnly: true
+  }
 })
 
 export default {
@@ -29,23 +32,23 @@ export default {
     plugins: [
       replace({
         'process.browser': true,
-        'process.env.NODE_ENV': JSON.stringify(mode),
+        'process.env.NODE_ENV': JSON.stringify(mode)
       }),
       resolve({
-        browser: true,
+        browser: true
       }),
       commonjs(),
-      sass(),
+      typescript(),
       svelte({
         dev,
         preprocess,
         hydratable: true,
-        emitCss: true,
+        emitCss: true
       }),
 
       legacy &&
         babel({
-          extensions: ['.js', '.mjs', '.html', '.svelte'],
+          extensions: ['.js', '.ts', '.mjs', '.html', '.svelte'],
           runtimeHelpers: true,
           exclude: ['node_modules/@babel/**'],
           presets: ['@babel/preset-env'],
@@ -54,19 +57,19 @@ export default {
             [
               '@babel/plugin-transform-runtime',
               {
-                useESModules: true,
-              },
-            ],
-          ],
+                useESModules: true
+              }
+            ]
+          ]
         }),
 
       !dev &&
         terser({
-          module: true,
-        }),
+          module: true
+        })
     ],
 
-    onwarn,
+    onwarn
   },
 
   server: {
@@ -75,22 +78,23 @@ export default {
     plugins: [
       replace({
         'process.browser': false,
-        'process.env.NODE_ENV': JSON.stringify(mode),
+        'process.env.NODE_ENV': JSON.stringify(mode)
       }),
       resolve(),
       commonjs(),
-      sass(),
+      typescript(),
       svelte({
         generate: 'ssr',
         dev,
-        preprocess,
-      }),
+        preprocess
+      })
     ],
     external: Object.keys(pkg.dependencies).concat(
-      require('module').builtinModules || Object.keys(process.binding('natives'))
+      require('module').builtinModules ||
+        Object.keys(process.binding('natives'))
     ),
 
-    onwarn,
+    onwarn
   },
 
   serviceworker: {
@@ -99,13 +103,13 @@ export default {
     plugins: [
       replace({
         'process.browser': true,
-        'process.env.NODE_ENV': JSON.stringify(mode),
+        'process.env.NODE_ENV': JSON.stringify(mode)
       }),
       resolve(),
       commonjs(),
-      !dev && terser(),
+      !dev && terser()
     ],
 
-    onwarn,
-  },
+    onwarn
+  }
 }
