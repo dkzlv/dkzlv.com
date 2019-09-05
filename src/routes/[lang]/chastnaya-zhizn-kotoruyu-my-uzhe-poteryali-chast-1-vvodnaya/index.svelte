@@ -21,20 +21,20 @@
   export let lang;
 </script>
 
-<Post post={data.meta} {lang} showContent={false} />
+<Post post={data} {lang} showContent={false} />
 
 <div class="content">
-  {@html data.postParts[0]}
+  {@html data.content[0]}
 </div>
 
 <Pidor />
 
 <div class="content">
-  {@html data.postParts[1]}
+  {@html data.content[1]}
 </div>
 
 <Fingerprint />
 
 <div class="content">
-  {@html data.postParts[2]}
+  {@html data.content[2]}
 </div>

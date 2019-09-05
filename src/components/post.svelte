@@ -7,16 +7,16 @@
 </script>
 
 <Meta
-  title={post.title}
-  path={post.slug}
-  description={post.description}
-  imagePreview={post.imagePreview}
+  title={post.meta.title}
+  path={post.meta.slug}
+  description={post.meta.description}
+  imagePreview={post.meta.imagePreview}
   locale={lang} />
 
-<h1>{post.title}</h1>
+<h1>{post.meta.title}</h1>
 
 {#if showContent}
   <div class="content">
-    {@html post.html}
+    {@html post.content}
   </div>
 {/if}
