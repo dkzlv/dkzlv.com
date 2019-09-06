@@ -3,6 +3,20 @@
   import TwitterIcon from "./twitterIcon.svelte";
   import EmailCollector from "./emailCollector.svelte";
 
+  import { langStore } from "../routes/store";
+
+  $: getOnBoard =
+    $langStore === "en" ? "Hey! Get onboard" : "Эй ты! Подписывайся в";
+  $: twitter = $langStore === "en" ? "on Twitter" : "в Твиторе";
+  $: sameContent =
+    $langStore === "en"
+      ? "— same content, but faster."
+      : "— та же ересь, только 24/7.";
+  $: joinNewsletter =
+    $langStore === "en"
+      ? "Or join the newsletter. One email a week if I'm not lazy."
+      : "Или пользуй почту. Максимум одно письмо в неделю, если я не ленюсь.";
+
   export let segment;
 </script>
 
@@ -55,13 +69,13 @@
 <header>
   <nav>
     <div class="logo">
-      <a href=".">
+      <a href={$langStore}>
         <Logo />
       </a>
     </div>
     <div class="newsletter-text">
       <p>
-        Hey! Get onboard
+        {getOnBoard}
         <a
           href="https://twitter.com/d_kzlv/"
           rel="noreferrer nofollow"
@@ -69,11 +83,11 @@
           <span class="twitterIcon">
             <TwitterIcon />
           </span>
-          on Twitter
+          {twitter}
         </a>
-        — same content, but faster.
+        {sameContent}
         <br />
-        Or join the newsletter. One email a week if I'm not lazy.
+        {joinNewsletter}
       </p>
       <EmailCollector />
     </div>
