@@ -98,5 +98,5 @@
 </style>
 
 <div on:mouseover={onMouseOver} on:mouseout={onMouseOut}>
-  <img src="/site/logo.jpg" alt="logo" class="logo {extraClass}" />
+  <img src="/site/logo.jpg" alt="logo" class="logo {extraClass}" height="80" />
 </div>
