@@ -10,11 +10,11 @@ const converter = new showdown.Converter({
   tables: true,
   simpleLineBreaks: true,
   openLinksInNewWindow: true,
-  emoji: true
+  emoji: true,
 })
 converter.setFlavor('github')
 
 export default (rawFile: string): IPost => ({
   content: converter.makeHtml(rawFile),
-  meta: (converter.getMetadata() as unknown) as IPostMeta
+  meta: (converter.getMetadata() as unknown) as IPostMeta,
 })

@@ -1,6 +1,6 @@
 export default function commonGet(res: any, sendContent: any) {
   const headers = {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
   }
   if (sendContent) {
     res.writeHead(200, headers)
@@ -9,8 +9,8 @@ export default function commonGet(res: any, sendContent: any) {
     res.writeHead(404, headers)
     res.end(
       JSON.stringify({
-        message: `Not found`
-      })
+        message: `Not found`,
+      }),
     )
   }
 }

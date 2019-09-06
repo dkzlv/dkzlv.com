@@ -11,7 +11,7 @@ const getPostPartitions = (rootPostsPath: string): string[] =>
     .map(filename => {
       if (postPartitionMatcher.test(filename)) {
         return convert(
-          readFileSync(join(rootPostsPath, filename), { encoding: 'utf-8' })
+          readFileSync(join(rootPostsPath, filename), { encoding: 'utf-8' }),
         ).content
       }
     })
@@ -26,7 +26,7 @@ const getPostPartitions = (rootPostsPath: string): string[] =>
 export default function getPost(
   path: string,
   slug: string,
-  multiplePartitions = false
+  multiplePartitions = false,
 ): IPost | false {
   let content: IPost['content']
   let meta: IPost['meta']
@@ -48,7 +48,7 @@ export default function getPost(
           acc += curr.length
           return acc
         }, 0)
-      : content.length
+      : content.length,
   )
   meta.description = meta.description.replace(/\\n/g, '<br />')
   meta.slug = slug
