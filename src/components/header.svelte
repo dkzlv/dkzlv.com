@@ -1,27 +1,19 @@
 <script>
-  import Logo from "./logo.svelte";
-  import TwitterIcon from "./twitterIcon.svelte";
-  import EmailCollector from "./emailCollector.svelte";
+  import Logo from './logo.svelte'
+  import TwitterIcon from './twitterIcon.svelte'
+  import EmailCollector from './emailCollector.svelte'
 
-  import { langStore } from "../routes/store";
+  import t from '../routes/i18n.js'
+  import { langStore } from '../routes/store'
 
-  $: getOnBoard =
-    $langStore === "en" ? "Hey! Get onboard" : "Эй ты! Подписывайся в";
-  $: twitter = $langStore === "en" ? "on Twitter" : "в Твиторе";
-  $: sameContent =
-    $langStore === "en"
-      ? "— same content, but faster."
-      : "— та же ересь, только 24/7.";
-  $: joinNewsletter =
-    $langStore === "en"
-      ? "Or join the newsletter. One email a week if I'm not lazy."
-      : "Или пользуй почту. Максимум одно письмо в неделю, если я не ленюсь.";
-
-  export let segment;
+  $: onboard = $langStore && t('header.onboard')
+  $: twitter = $langStore && t('header.twitter')
+  $: sameContent = $langStore && t('header.sameContent')
+  $: join = $langStore && t('header.join')
 </script>
 
 <style type="text/scss">
-  @import "../styles/importable";
+  @import '../styles/importable';
 
   nav {
     display: flex;
@@ -75,7 +67,7 @@
     </div>
     <div class="newsletter-text">
       <p>
-        {getOnBoard}
+        {onboard}
         <a
           href="https://twitter.com/d_kzlv/"
           rel="noreferrer nofollow"
@@ -87,7 +79,7 @@
         </a>
         {sameContent}
         <br />
-        {joinNewsletter}
+        {join}
       </p>
       <EmailCollector />
     </div>
