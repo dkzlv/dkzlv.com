@@ -1,12 +1,12 @@
 <script>
-  import Header from "../../components/header.svelte";
-  import Footer from "../../components/footer.svelte";
+  import Header from '../../components/header.svelte'
+  import Footer from '../../components/footer.svelte'
 
-  export let segment;
+  export let segment
 </script>
 
 <style global type="text/scss">
-  @import "../../styles/main.scss";
+  @import '../../styles/main.scss';
 </style>
 
 <div class="root">

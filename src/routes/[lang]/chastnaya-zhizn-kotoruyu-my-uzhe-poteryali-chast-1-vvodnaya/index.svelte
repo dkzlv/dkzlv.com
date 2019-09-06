@@ -1,24 +1,24 @@
 <script context="module">
   export async function preload({ params }) {
     const res = await this.fetch(
-      `/${params.lang}/chastnaya-zhizn-kotoruyu-my-uzhe-poteryali-chast-1-vvodnaya/post.json`
-    );
-    const data = await res.json();
+      `/${params.lang}/chastnaya-zhizn-kotoruyu-my-uzhe-poteryali-chast-1-vvodnaya/post.json`,
+    )
+    const data = await res.json()
     if (res.status === 200) {
-      return { data: data, lang: params.lang };
+      return { data: data, lang: params.lang }
     } else {
-      this.error(res.status, data.message);
+      this.error(res.status, data.message)
     }
   }
 </script>
 
 <script>
-  import Post from "../../../components/post.svelte";
-  import Fingerprint from "./fingerprint.svelte";
-  import Pidor from "./pidor.svelte";
+  import Post from '../../../components/post.svelte'
+  import Fingerprint from './fingerprint.svelte'
+  import Pidor from './pidor.svelte'
 
-  export let data;
-  export let lang;
+  export let data
+  export let lang
 </script>
 
 <Post post={data} {lang} showContent={false} />

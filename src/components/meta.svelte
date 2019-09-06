@@ -1,14 +1,14 @@
 <script>
-  export let title = "";
-  export let description = "";
-  export let path = "";
-  export let contentType = "article";
-  export let imagePreview = "";
-  export let locale = "";
+  export let title = ''
+  export let description = ''
+  export let path = ''
+  export let contentType = 'article'
+  export let imagePreview = ''
+  export let locale = ''
 
-  let domain = "dkzlv.ru";
+  let domain = 'dkzlv.ru'
 
-  $: canonicalLocation = `https://${domain}/${path}`;
+  $: canonicalLocation = `https://${domain}/${path}`
 </script>
 
 <svelte:head>

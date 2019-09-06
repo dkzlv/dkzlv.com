@@ -1,5 +1,5 @@
 <style type="text/scss">
-  @import "../styles/importable";
+  @import '../styles/importable';
 
   footer {
     display: flex;

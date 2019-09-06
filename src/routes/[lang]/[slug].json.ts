@@ -34,7 +34,7 @@ const posts = readdirSync(rootPostPath, { withFileTypes: true })
   .sort(
     (a, b) =>
       new Date((b as IPost).meta.date).getTime() -
-      new Date((a as IPost).meta.date).getTime()
+      new Date((a as IPost).meta.date).getTime(),
   ) as IPost[]
 
 const partialSerializer = (post: IPost) => post.meta
@@ -49,7 +49,7 @@ export function get(req: any, res: any) {
       .map(partialSerializer)
   else {
     const post = posts.find(
-      post => post.meta.slug === slug && post.meta.lang === lang
+      post => post.meta.slug === slug && post.meta.lang === lang,
     )
     if (post) {
       contentToSend = post

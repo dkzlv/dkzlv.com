@@ -1,9 +1,9 @@
 <script>
-  import Meta from "./meta.svelte";
+  import Meta from './meta.svelte'
 
-  export let post;
-  export let lang;
-  export let showContent = true;
+  export let post
+  export let lang
+  export let showContent = true
 </script>
 
 <Meta

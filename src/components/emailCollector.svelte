@@ -1,9 +1,9 @@
 <script>
-  import { langStore } from "../routes/store.js";
-  import t from "../routes/i18n.js";
+  import { langStore } from '../routes/store.js'
+  import t from '../routes/i18n.js'
 
-  $: placeholder = $langStore && t("email.placeholder");
-  $: buttonText = $langStore && t("email.subscribe");
+  $: placeholder = $langStore && t('email.placeholder')
+  $: buttonText = $langStore && t('email.subscribe')
 </script>
 
 <form

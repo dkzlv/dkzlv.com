@@ -1,25 +1,25 @@
 <script>
-  const classes = ["circle", "arrow", "cross", "border", "star", "heart"];
-  let lastIndex = 2;
+  const classes = ['circle', 'arrow', 'cross', 'border', 'star', 'heart']
+  let lastIndex = 2
 
   const setNewClass = () =>
-    lastIndex + 1 === classes.length ? (lastIndex = 0) : lastIndex++;
+    lastIndex + 1 === classes.length ? (lastIndex = 0) : lastIndex++
 
-  $: extraClass = classes[lastIndex];
+  $: extraClass = classes[lastIndex]
 
-  let interval;
+  let interval
   const setInitialInterval = () => {
-    interval = setInterval(setNewClass, 3500);
-  };
-  setInitialInterval();
+    interval = setInterval(setNewClass, 3500)
+  }
+  setInitialInterval()
   const onMouseOver = () => {
-    clearInterval(interval);
-    interval = setInterval(setNewClass, 250);
-  };
+    clearInterval(interval)
+    interval = setInterval(setNewClass, 250)
+  }
   const onMouseOut = () => {
-    clearInterval(interval);
-    setInitialInterval();
-  };
+    clearInterval(interval)
+    setInitialInterval()
+  }
 </script>
 
 <style type="text/scss">

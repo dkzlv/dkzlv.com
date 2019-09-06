@@ -2,32 +2,32 @@
   export function preload({ params }) {
     return this.fetch(`${params.lang}/all.json`)
       .then(r => r.json())
-      .then(posts => ({ posts, lang: params.lang }));
+      .then(posts => ({ posts, lang: params.lang }))
   }
 </script>
 
 <script>
-  import { langStore } from "../store";
-  import t from "../i18n.js";
+  import { langStore } from '../store'
+  import t from '../i18n.js'
 
-  export let posts;
-  export let lang;
+  export let posts
+  export let lang
 
-  $: langStore.set(lang);
+  $: langStore.set(lang)
 
   const getReadTime = time =>
-    t("posts.readTime", time).replace("{{time}}", time);
+    t('posts.readTime', time).replace('{{time}}', time)
 
   const formatDate = dateString =>
     new Date(dateString).toLocaleString($langStore, {
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    });
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
 </script>
 
 <style type="text/scss">
-  @import "../../styles/importable";
+  @import '../../styles/importable';
 
   div {
     margin-bottom: 37px;
