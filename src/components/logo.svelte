@@ -1,5 +1,15 @@
 <script>
-  const classes = ['cross', 'skull', 'fire', 'peace', 'cannabis', 'heart']
+  const classes = [
+    'skull',
+    'cross',
+    'yggdrasil',
+    'fire',
+    'peace',
+    'cannabis',
+    'heart',
+    'infinity',
+    'hazard',
+  ]
   let lastIndex = 0
 
   const setNewClass = () =>
@@ -51,6 +61,18 @@
 
   .heart {
     mask-image: url(/img/heart.svg);
+  }
+
+  .infinity {
+    mask-image: url(/img/infinity.svg);
+  }
+
+  .hazard {
+    mask-image: url(/img/hazard.svg);
+  }
+
+  .yggdrasil {
+    mask-image: url(/img/yggdrasil.svg);
   }
 </style>
 
