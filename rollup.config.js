@@ -21,8 +21,8 @@ const onwarn = (warning, onwarn) =>
 const preprocess = autoPreprocess({
   postcss: true,
   typescript: {
-    transpileOnly: true
-  }
+    transpileOnly: true,
+  },
 })
 
 export default {
@@ -32,10 +32,10 @@ export default {
     plugins: [
       replace({
         'process.browser': true,
-        'process.env.NODE_ENV': JSON.stringify(mode)
+        'process.env.NODE_ENV': JSON.stringify(mode),
       }),
       resolve({
-        browser: true
+        browser: true,
       }),
       commonjs(),
       typescript(),
@@ -43,7 +43,7 @@ export default {
         dev,
         preprocess,
         hydratable: true,
-        emitCss: true
+        emitCss: true,
       }),
 
       legacy &&
@@ -57,19 +57,19 @@ export default {
             [
               '@babel/plugin-transform-runtime',
               {
-                useESModules: true
-              }
-            ]
-          ]
+                useESModules: true,
+              },
+            ],
+          ],
         }),
 
       !dev &&
         terser({
-          module: true
-        })
+          module: true,
+        }),
     ],
 
-    onwarn
+    onwarn,
   },
 
   server: {
@@ -78,7 +78,7 @@ export default {
     plugins: [
       replace({
         'process.browser': false,
-        'process.env.NODE_ENV': JSON.stringify(mode)
+        'process.env.NODE_ENV': JSON.stringify(mode),
       }),
       resolve(),
       commonjs(),
@@ -86,15 +86,15 @@ export default {
       svelte({
         generate: 'ssr',
         dev,
-        preprocess
-      })
+        preprocess,
+      }),
     ],
     external: Object.keys(pkg.dependencies).concat(
       require('module').builtinModules ||
-        Object.keys(process.binding('natives'))
+        Object.keys(process.binding('natives')),
     ),
 
-    onwarn
+    onwarn,
   },
 
   serviceworker: {
@@ -103,13 +103,13 @@ export default {
     plugins: [
       replace({
         'process.browser': true,
-        'process.env.NODE_ENV': JSON.stringify(mode)
+        'process.env.NODE_ENV': JSON.stringify(mode),
       }),
       resolve(),
       commonjs(),
-      !dev && terser()
+      !dev && terser(),
     ],
 
-    onwarn
-  }
+    onwarn,
+  },
 }

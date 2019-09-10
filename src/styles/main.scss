@@ -1,7 +1,7 @@
 @charset "utf-8";
-@import './_importable';
+@import './importable';
 
-@import './base/_reset';
+@import './base/reset';
 
 @import './vendor/fonts';
 @import './base/typography';

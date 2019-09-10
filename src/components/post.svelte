@@ -3,7 +3,6 @@
 
   export let post
   export let lang
-  export let showContent = true
 </script>
 
 <Meta
@@ -15,8 +14,8 @@
 
 <h1>{post.meta.title}</h1>
 
-{#if showContent}
+<slot>
   <div class="content">
     {@html post.content}
   </div>
-{/if}
+</slot>

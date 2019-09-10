@@ -17,7 +17,7 @@ function input(query) {
     rl.question(query, ans => {
       rl.close()
       resolve(ans)
-    })
+    }),
   )
 }
 
@@ -28,9 +28,12 @@ async function main() {
   const description = await input('Описание:\n')
 
   const postPath = join(process.cwd(), 'src', 'posts', `${slug}.md`)
-  const templateFile = await readFile(join(process.cwd(), 'scripts', 'template.md'), {
-    encoding: 'utf-8',
-  })
+  const templateFile = await readFile(
+    join(process.cwd(), 'scripts', 'template.md'),
+    {
+      encoding: 'utf-8',
+    },
+  )
 
   await writeFile(
     postPath,
@@ -39,7 +42,7 @@ async function main() {
       .replace('{title}', title)
       .replace('{description}', description || 'blah blah')
       .replace('{date}', new Date().toISOString()),
-    { encoding: 'utf-8' }
+    { encoding: 'utf-8' },
   )
 }
 
