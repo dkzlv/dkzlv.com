@@ -4,6 +4,9 @@ body,
 .root {
   height: 100%;
   min-height: 100%;
+  
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: $superlight-accent-semi-transparent-color;
 }
 
 *::selection {
@@ -34,7 +37,7 @@ body,
 /// Making main tag full-height
 main {
   flex: 1;
-  @include mq($from: mobile) {
+  @include mq($from: tablet-landscape) {
     margin-top: 40px;
   }
 }

@@ -17,6 +17,7 @@ $accent-color: hsl(135, 70%, 50%);
 $light-accent-color: mix($accent-color, #fff, 80%);
 $lighter-accent-color: mix($accent-color, #fff, 60%);
 $superlight-accent-color: mix($accent-color, #fff, 40%);
+$superlight-accent-semi-transparent-color: mix($superlight-accent-color, rgba(255, 255, 255, 0), 40%);
 $dark-accent-color: mix($accent-color, #000, 80%);
 $darker-accent-color: mix($accent-color, #000, 60%);
 
@@ -24,6 +25,7 @@ $background-color: #fff;
 
 $text-color: hsl(0, 0%, 30%);
 $grey: hsl(0, 0%, 60%);
+$grey-light: hsl(0, 0%, 75%);
 $grey-lighter: hsl(0, 0%, 90%);
 
 $radius-rounded: 290486px;
