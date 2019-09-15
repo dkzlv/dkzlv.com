@@ -14,6 +14,10 @@ body,
   color: $background-color;
 }
 
+* {
+  outline-color: $superlight-accent-semi-transparent-color;
+}
+
 .root {
   display: flex;
   flex-direction: column;
