@@ -5,6 +5,7 @@ export interface IPostMeta {
   date: string
   imagePreview: string
 
+  emailCollectorMessage?: string
   slug?: string
   published?: string
   readTime?: any

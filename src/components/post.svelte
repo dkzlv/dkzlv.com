@@ -1,6 +1,10 @@
 <script>
   import Meta from './meta.svelte'
   import EmailCollector from './emailCollector.svelte'
+  import t from '../routes/i18n.js'
+  import { langStore } from '../routes/store.js'
+
+  $: endPostEngagement = $langStore && t('email.endPostEngagement')
 
   export let post
   export let lang
@@ -10,24 +14,20 @@
   @import '../styles/importable';
 
   .subscription {
-    background-color: rgb(255, 227, 190);
+    background-color: $email-collector-background;
     border-radius: 5px;
-    transition: box-shadow 0.3s;
+
     @include mq($until: mobile) {
       width: 110%;
       margin: 40px -20px 40px -20px;
       padding: 20px 40px;
     }
     @include mq($from: mobile) {
-      width: 450px;
+      width: 500px;
       margin: 40px auto 40px auto;
       padding: 20px 30px;
 
-      box-shadow: 0px 0px 7px 0.1px $grey-light;
-
-      &:hover {
-        box-shadow: 0px 0px 10px 1px $grey-light;
-      }
+      @include stylishShadow($includeHover: true);
     }
   }
 </style>
@@ -50,7 +50,10 @@
 
 <div class="subscription">
   <p>
-    Божечки-кошечки, безумец, ты дочитал до конца. Ну тогда подпишись что-ли.
+    {#if post.meta.emailCollectorMessage}
+      {@html post.meta.emailCollectorMessage}
+    {:else}{endPostEngagement}{/if}
   </p>
+
   <EmailCollector />
 </div>

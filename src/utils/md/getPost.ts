@@ -51,6 +51,9 @@ export default function getPost(
       : content.length,
   )
   meta.description = meta.description.replace(/\\n/g, '<br />')
+  meta.emailCollectorMessage = meta.emailCollectorMessage
+    ? meta.emailCollectorMessage.replace(/\\n/g, '<br />')
+    : ''
   meta.slug = slug
 
   // You need to explicitly set published to 1 to make the post available on production

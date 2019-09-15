@@ -1,7 +1,8 @@
 ---
 lang: {lang}
 title: {title}
-description: {description}
 date: {date}
+description: {description}
+emailCollectorMessage: {emailCollectorMessage}
 imagePreview:
 ---

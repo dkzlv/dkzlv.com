@@ -22,12 +22,15 @@ function input(query) {
 }
 
 async function main() {
-  const lang = await input('Язык (en или ru):\n')
-  const title = await input('Заголовок:\n')
-  const slug = slugify(title)
-  const description = await input('Описание:\n')
+  const metadata = {
+    lang: (await input('Язык, ru или en (ru по умолчанию):\n')) || 'ru',
+    title: await input('Заголовок:\n'),
+    description: (await input('Описание:\n')) || '-',
+    emailCollectorMessage: (await input('Завлекуха в блок подписки:\n')) || '-',
+  }
+  metadata.slug = slugify(metadata.title)
 
-  const postPath = join(process.cwd(), 'src', 'posts', `${slug}.md`)
+  const postPath = join(process.cwd(), 'src', 'posts', `${metadata.slug}.md`)
   const templateFile = await readFile(
     join(process.cwd(), 'scripts', 'template.md'),
     {
@@ -38,9 +41,10 @@ async function main() {
   await writeFile(
     postPath,
     templateFile
-      .replace('{lang}', lang)
-      .replace('{title}', title)
-      .replace('{description}', description || 'blah blah')
+      .replace('{lang}', metadata.lang)
+      .replace('{title}', metadata.title)
+      .replace('{description}', metadata.description)
+      .replace('{emailCollectorMessage}', metadata.emailCollectorMessage)
       .replace('{date}', new Date().toISOString()),
     { encoding: 'utf-8' },
   )
