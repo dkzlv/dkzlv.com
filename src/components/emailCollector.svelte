@@ -3,7 +3,9 @@
   import { langStore } from '../routes/store.js'
   import t from '../routes/i18n.js'
   import isEmail from '../utils/validations/email.js'
+  import delay from '../utils/delay.js'
   import Tooltip from './tooltip.svelte'
+  import request from '../routes/service'
 
   $: placeholder = $langStore && t('email.placeholder')
   $: buttonText = $langStore && t('email.subscribe')
@@ -16,21 +18,35 @@
     100: t('email.error100'),
     101: t('email.error101'),
     102: t('email.error102'),
+    103: t('email.error103'),
   }
 
   let email = ''
 
   $: errorCode = email && 0
   let success = false
+  let isLoading = false
 
-  const onSubmit = () => {
-    if (isEmail(email)) {
-      // subscribe
+  const onSubmit = async () => {
+    if (!email) {
+      return (errorCode = 103)
+    } else if (!isEmail(email)) {
+      return (errorCode = 102)
+    }
+
+    isLoading = true
+    const res = await request('POST', 'subscribe', {
+      email,
+      language: $langStore,
+    })
+    isLoading = false
+    if (res.ok) {
       email = ''
       success = true
-      setTimeout(() => (success = false), 5000)
+      await delay(5000)
+      success = false
     } else {
-      errorCode = 102
+      errorCode = (await res.json()).code
     }
   }
 </script>
@@ -38,7 +54,7 @@
 <style type="text/scss">
   @import '../styles/importable';
 
-  .form {
+  .group {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
@@ -81,22 +97,26 @@
 
   .email-input,
   .subscribe-button {
-    margin-right: 5px;
     margin-bottom: 5px;
+  }
+
+  form {
+    margin-right: 3px;
   }
 </style>
 
-<div class="form">
+<div class="group">
   <form novalidate on:submit|preventDefault={onSubmit}>
     <input
       type="email"
       class="input input--accent email-input"
       bind:value={email}
       {placeholder} />
-    <input
-      type="submit"
-      class="btn btn--accent-outline subscribe-button"
-      value={buttonText} />
+    <button
+      class={'btn btn--accent-outline subscribe-button ' + (isLoading && 'btn--loading')}
+      disabled={isLoading}>
+      {buttonText}
+    </button>
   </form>
   <Tooltip>
     <div class="tooltip__trigger" slot="trigger">?</div>

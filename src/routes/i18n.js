@@ -9,6 +9,7 @@ const phrases = {
       error100: 'STOP HACKING ME',
       error101: "Smth went wrong. Maybe I'll someday fix. Probably not",
       error102: "Cmon, we both know it's not your email",
+      error103: 'Do I need to guess it?',
       success:
         "All done. Confirm your email and you'll get your portion of spam soon",
       endPostEngagement:
@@ -38,6 +39,7 @@ const phrases = {
       error101:
         'Ой, чёт не сработало. Не знаю, в чём проблема, давай в другой раз',
       error102: 'Да брось, это не твоя почта, чего ты гонишь',
+      error103: 'Предлагаешь мне угадать что ли?',
       success: 'Готовченко. Подтверди почту и вскоре получишь уже первый спам',
       endPostEngagement:
         'Божечки-кошечки, безумец, ты дочитал до конца. Ну тогда подпишись что-ли.',
