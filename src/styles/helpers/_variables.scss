@@ -21,12 +21,19 @@ $superlight-accent-semi-transparent-color: mix($superlight-accent-color, rgba(25
 $dark-accent-color: mix($accent-color, #000, 80%);
 $darker-accent-color: mix($accent-color, #000, 60%);
 
-$background-color: #fff;
-
-$text-color: hsl(0, 0%, 30%);
+$black: hsl(0, 0%, 30%);
+$red: hsl(350, 75%, 65%);
+$white: #fff;
 $grey: hsl(0, 0%, 60%);
 $grey-light: hsl(0, 0%, 75%);
 $grey-lighter: hsl(0, 0%, 90%);
+
+$background-color: $white;
+$text-color: $black;
+$error-text-color: $red;
+$success-text-color: $accent-color;
+$email-collector-background: rgb(255, 230, 190);
+$shadow-color: mix($text-color, rgba(255, 255, 255, 0), 25%);
 
 $radius-rounded: 290486px;
 

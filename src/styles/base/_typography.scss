@@ -59,6 +59,16 @@ ul {
   color: $text-color;
 }
 
+.text--error {
+  color: $error-text-color;
+  font-size: ms(-1);
+}
+
+.text--success {
+  color: $success-text-color;
+  font-size: ms(-1);
+}
+
 ul {
   list-style: disc;
 }
