@@ -16,25 +16,27 @@
   import Post from '../../../components/post.svelte'
   import Fingerprint from './fingerprint.svelte'
   import Pidor from './pidor.svelte'
+  import { langStore } from '../../store.js'
 
   export let data
   export let lang
+  $: langStore.set(lang)
 </script>
 
-<Post post={data} {lang} showContent={false} />
+<Post post={data} {lang}>
+  <div class="content">
+    {@html data.content[0]}
+  </div>
 
-<div class="content">
-  {@html data.content[0]}
-</div>
+  <Pidor />
 
-<Pidor />
+  <div class="content">
+    {@html data.content[1]}
+  </div>
 
-<div class="content">
-  {@html data.content[1]}
-</div>
+  <Fingerprint />
 
-<Fingerprint />
-
-<div class="content">
-  {@html data.content[2]}
-</div>
+  <div class="content">
+    {@html data.content[2]}
+  </div>
+</Post>
