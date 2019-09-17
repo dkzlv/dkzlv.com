@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte'
+  import { fade } from 'svelte/transition'
 
   let pentagons
   let redSquares
@@ -44,21 +45,18 @@
   })
 
   let counter = 0
-  let confessionClasses = 'confession confession--hidden'
+  let confessionText = ''
   $: {
-    if (counter >= 1) {
-      confessionClasses = 'confession'
-    }
-
-    if (counter === 2) confessionEl.innerText = 'всё еще пидор'
-    else if (counter === 3) confessionEl.innerText = 'хорош уже'
-    else if (counter === 5) confessionEl.innerText = ':('
-    else if (counter === 10) confessionEl.innerText = 'ПАСХАЛКА'
-    else if (counter === 28) confessionEl.innerText = 'ПАСХАЛКА №2'
-    else if (counter === 50) confessionEl.innerText = 'А ты упорный, молодец'
+    if (counter === 1) confessionText = 'ты пидор'
+    if (counter === 2) confessionText = 'всё еще пидор'
+    else if (counter === 3) confessionText = 'хорош уже'
+    else if (counter === 5) confessionText = ':('
+    else if (counter === 10) confessionText = 'ПАСХАЛКА'
+    else if (counter === 28) confessionText = 'ПАСХАЛКА №2'
+    else if (counter === 50) confessionText = 'А ты упорный, молодец'
   }
 
-  function listener() {
+  const listener = () => {
     const rawCoor = confessionEl.getBoundingClientRect()
     const coor = {
       x: rawCoor.x + rawCoor.width / 2,
@@ -78,32 +76,6 @@
 <style type="text/scss">
   @import '../../../styles/_importable.scss';
 
-  :global(.acid-background) {
-    background: linear-gradient(
-      270deg,
-      #ffffff,
-      #f02020,
-      #ebf020,
-      #20f03a,
-      #1403ff,
-      #ffffff
-    );
-    background-size: 2000% 2000%;
-
-    animation: BackgroundQuickChange 3s ease infinite;
-    @keyframes BackgroundQuickChange {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 51%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-  }
-
   .button-wrapper {
     display: flex;
     flex-direction: column;
@@ -121,12 +93,16 @@
   }
 
   .confession {
-    @include appearFromTransparancy;
+    min-height: 45px;
   }
 </style>
 
 <div class="button-wrapper">
-  <p class={confessionClasses} bind:this={confessionEl}>ты пидор</p>
+  <div bind:this={confessionEl} class="confession">
+    {#if confessionText}
+      <p in:fade>{confessionText}</p>
+    {/if}
+  </div>
   <button class="btn btn--accent btn--fullwidth" on:click={listener}>
     Не ссы, не убьёт
   </button>

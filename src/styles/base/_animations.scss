@@ -6,3 +6,29 @@
     transform: rotate(359deg);
   }
 }
+
+.acid-background {
+  background: linear-gradient(
+    270deg,
+    $background-color,
+    #f02020,
+    #ebf020,
+    #20f03a,
+    #1403ff,
+    $background-color
+  );
+  background-size: 2000% 2000%;
+
+  animation: BackgroundQuickChange 3s ease infinite;
+  @keyframes BackgroundQuickChange {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 51%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
