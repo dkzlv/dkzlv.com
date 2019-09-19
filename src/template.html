@@ -27,7 +27,10 @@
   %sapper.styles% %sapper.head%
 </head>
 
-<body>
+<body data-night-theme='0'>
+  <script>
+    document.body.setAttribute('data-night-theme', localStorage.getItem('data-night-theme') || '0')
+  </script>
   <div id="app">%sapper.html%</div>
   %sapper.scripts%
 </body>
