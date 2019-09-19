@@ -56,15 +56,16 @@
     else if (counter === 50) confessionText = 'А ты упорный, молодец'
   }
 
+  const app = document.getElementById('app')
   const listener = () => {
     const rawCoor = confessionEl.getBoundingClientRect()
     const coor = {
       x: rawCoor.x + rawCoor.width / 2,
       y: confessionEl.offsetTop + rawCoor.height / 2,
     }
-    document.body.classList.add('acid-background')
+    app.classList.add('acid-background')
     setTimeout(() => {
-      document.body.classList.remove('acid-background')
+      app.classList.remove('acid-background')
       counter++
     }, 1500)
 

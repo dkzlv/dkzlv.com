@@ -10,14 +10,14 @@
 .acid-background {
   background: linear-gradient(
     270deg,
-    $background-color,
+    transparent,
     #f02020,
     #ebf020,
     #20f03a,
     #1403ff,
-    $background-color
+    transparent
   );
-  background-size: 3000% 3000%;
+  background-size: 5000% 5000%;
 
   animation: BackgroundQuickChange 3s ease infinite;
   @keyframes BackgroundQuickChange {

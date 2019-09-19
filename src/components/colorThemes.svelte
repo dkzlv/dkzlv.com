@@ -11,30 +11,15 @@
   let value
   $: checkboxValue = value === '1'
 
-  /**
-   * Оборачиваю это в таймаут, потому что иначе getComputedStyle перехватывает цвет в процессе анимации
-   * смены цвета фона.
-   */
-  const setInlineHtmlBgColor = () =>
-    setTimeout(
-      () =>
-        (document.documentElement.style.backgroundColor = window.getComputedStyle(
-          document.body,
-        ).backgroundColor),
-      400,
-    )
-
   onMount(() => {
     value = document.body.getAttribute(attr)
     show = true
-    setInlineHtmlBgColor()
   })
 
   const onChange = () => {
     value = value === '0' ? '1' : '0'
     document.body.setAttribute(attr, value)
     localStorage.setItem(attr, value)
-    setInlineHtmlBgColor()
   }
 
   let y
