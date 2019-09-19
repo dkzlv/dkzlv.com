@@ -70,20 +70,6 @@
   }
 
   .tooltip {
-    &__trigger {
-      height: 30px;
-      width: 30px;
-      padding: 7px;
-      border-radius: $radius-rounded;
-
-      border: 2px dotted $accent-color;
-      color: $accent-color;
-      background-color: $background-color;
-      text-align: center;
-
-      user-select: none;
-    }
-
     &__header {
       font-weight: $bold;
       margin-bottom: 5px;
@@ -119,13 +105,9 @@
     </button>
   </form>
   <Tooltip>
-    <div class="tooltip__trigger" slot="trigger">?</div>
-
-    <div class="tooltip__content" slot="content">
-      <p class="tooltip__header">{headerText}</p>
-      <p class="tooltip__p">{noNudesText}</p>
-      <p class="tooltip__p">{articlesText}</p>
-    </div>
+    <p class="tooltip__header">{headerText}</p>
+    <p class="tooltip__p">{noNudesText}</p>
+    <p class="tooltip__p">{articlesText}</p>
   </Tooltip>
 </div>
 

@@ -1,8 +1,31 @@
+<script>
+  export let triggerText
+</script>
+
 <style type="text/scss">
   @import '../styles/importable';
 
   .tooltip {
     position: relative;
+
+    &__trigger {
+      height: 30px;
+      width: 30px;
+      padding: 7px;
+      border-radius: $radius-rounded;
+
+      border: 2px dotted $tooltip-outline-color;
+      color: $tooltip-outline-color;
+      background-color: transparent;
+      text-align: center;
+
+      user-select: none;
+
+      &:hover {
+        border-color: $tooltip-outline-color--hover;
+        color: $tooltip-outline-color--hover;
+      }
+    }
 
     &__content {
       $width: 265px;
@@ -11,18 +34,17 @@
       visibility: hidden;
       width: $width;
       top: 100%;
-
       left: 50%;
-
       padding: 15px 10px;
+
       z-index: z(tooltip);
-      background-color: $background-color;
+      opacity: 0;
+      background-color: $tooltip-bg-color;
       text-align: center;
       border-radius: 6px;
-      opacity: 0;
-      transition: opacity 0.3s;
 
-      @include stylishShadow();
+      box-shadow: 0px 0px 15px 0px $tooltip-shadow-color;
+
       @include mq($from: mobile) {
         /**
          * На айфоне позиционирование блока с тултипом — слева с краю экрана. Вот если центрировать
@@ -40,10 +62,8 @@
 </style>
 
 <div class="tooltip">
-  <div class="tooltip__trigger">
-    <slot name="trigger" />
-  </div>
+  <div class="tooltip__trigger">{triggerText || '?'}</div>
   <div class="tooltip__content">
-    <slot name="content" />
+    <slot />
   </div>
 </div>
