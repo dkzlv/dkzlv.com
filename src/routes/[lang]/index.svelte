@@ -45,7 +45,7 @@
     font-size: ms(-2);
     margin-bottom: 12px;
 
-    color: $grey;
+    color: $text-color--dimmed;
   }
 </style>
 

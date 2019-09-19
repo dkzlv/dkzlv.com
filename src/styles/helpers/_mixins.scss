@@ -35,17 +35,3 @@
     opacity: 0;
   }
 }
-
-/// Generates a cool stylish shadow
-/// @access public
-/// @param {Boolean} $includeHover — if true, then generates a hover state with a correct blur and other stuff
-@mixin stylishShadow($includeHover: false) {
-  transition: box-shadow 0.3s;
-  box-shadow: 0px 0px 15px 0px $shadow-color;
-
-  @if $includeHover {
-    &:hover {
-      box-shadow: 0px 0px 25px 0px $shadow-color;
-    }
-  }
-}

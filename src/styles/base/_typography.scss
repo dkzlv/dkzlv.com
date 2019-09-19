@@ -11,8 +11,9 @@ h6 {
   font-weight: $bold;
   line-height: 1.3;
   
-  background: linear-gradient(35deg, $accent-color 33%, $darker-accent-color 100%);
+  background: linear-gradient(35deg, $header-gradient-1 33%, $header-gradient-2 100%);
   background-clip: text;
+  // Fallback, if clip doesn't work. In this case it's just showing white text on green back
   color: #fff;
   -webkit-text-fill-color: transparent;
 }
@@ -100,18 +101,17 @@ li {
 a,
 ins,
 u {
-  color: $accent-color;
+  color: $link-color;
   text-decoration: underline;
 }
 
 a:hover {
-  color: $accent-color;
   text-decoration: none;
 }
 
 blockquote {
   border-left: 3px solid;
-  border-image-source: linear-gradient(0deg, $accent-color, $superlight-accent-color);
+  border-image-source: linear-gradient(0deg, $blockquote-gradient-1, $blockquote-gradient-2);
   border-image-slice: 1;
   margin: 15px 0;
   padding: 12px 0 12px 20px;
@@ -136,12 +136,13 @@ pre {
   font-family: $mono;
   line-height: $base-font-size * 1.8;
   font-size: ms(0);
+  color: $text-color;
 
   @include mq($until: mobile) {
-    background: linear-gradient(35deg, $superlight-accent-color 0%, $accent-color 100%);
+    background: linear-gradient(35deg, $code-gradient-1 0%, $code-gradient-2 100%);
   }
   @include mq($from: mobile) {
-    background: linear-gradient(35deg, $superlight-accent-color 33%, $accent-color 66%);
+    background: linear-gradient(35deg, $code-gradient-1 33%, $code-gradient-2 66%);
   }
   border-radius: 10px;
 
@@ -158,11 +159,7 @@ code {
   display: inline-block;
   border-radius: $border-radius;
 
-  background: linear-gradient(35deg, $superlight-accent-color 0%, $accent-color 100%);
+  background: linear-gradient(35deg, $code-gradient-1 0%, $code-gradient-2 100%);
   padding: 2px 4px;
   font-family: $mono;
-}
-
-.paragraph--serif {
-  font-family: 'Merriweather', serif;
 }

@@ -27,7 +27,10 @@
       margin: 40px auto 40px auto;
       padding: 20px 30px;
 
-      @include stylishShadow($includeHover: true);
+      box-shadow: 0px 0px 15px 0px $email-collector-shadow-color;
+      &:hover {
+        box-shadow: 0px 0px 25px 0px $email-collector-shadow-color;
+      }
     }
   }
 </style>

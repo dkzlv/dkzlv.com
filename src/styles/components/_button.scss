@@ -7,8 +7,6 @@
   border: $border-style;
   border-radius: $border-radius;
 
-  background-color: $background-color;
-
   -webkit-appearance: none;
   user-select: none;
   cursor: pointer;
@@ -18,32 +16,34 @@
   width: 100%;
 }
 
-.btn--small {
-  font-size: ms(-2);
-}
-
 .btn--accent {
-  background-color: $accent-color;
-  border-color: $dark-accent-color;
-  color: #fff;
+  background-color: $btn-bg-color;
+  border-color: $btn-border-color;
+  color: $btn-text-color;
 
-  outline-color: $lighter-accent-color;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 10px $btn-bg-color;
+  }
 
   &:hover {
-    background-color: $light-accent-color;
+    background-color: $btn-bg-color--hover;
   }
 }
 
 .btn--accent-outline {
   background-color: transparent;
-  color: $accent-color;
-  border-color: $accent-color;
+  color: $btn-bg-color;
+  border-color: $btn-bg-color;
 
-  outline-color: $lighter-accent-color;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 10px $btn-bg-color;
+  }
 
   &:hover {
-    color: $light-accent-color;
-    border-color: $light-accent-color;
+    color: $btn-bg-color--hover;
+    border-color: $btn-bg-color--hover;
   }
 }
 
@@ -63,7 +63,7 @@
     color: transparent !important;
 
     animation: spinAround 1s infinite linear;
-    border: 2px solid $grey-lighter;
+    border: 2px solid $btn-spinner-color;
     border-radius: $radius-rounded;
     border-bottom-color: transparent;
     border-top-color: transparent;

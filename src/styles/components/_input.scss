@@ -1,26 +1,31 @@
 .input {
   padding: 8px 7px;
-  line-height: 1;
-  border-radius: $border-radius;
+  min-width: 220px;
   border: $border-style;
+  border-radius: $border-radius;
+
   font-family: $serif;
   font-size: ms(0);
+  line-height: 1;
+  color: $text-color;
 
   user-select: text;
-
-  min-width: 220px;
-}
-
-.input--is-small {
-  font-size: ms(-2);
 }
 
 .input--accent {
-  border-color: $accent-color;
+  border-color: $input-border-color;
+  background-color: transparent;
 
-  outline-color: $lighter-accent-color;
+  &::placeholder {
+    color: $input-placeholder-color;
+  }
 
   &:hover {
-    border-color: $light-accent-color;
+    border-color: $input-border-color--hover;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 10px $input-border-color;
   }
 }

@@ -1,3 +1,47 @@
+// ------------------------------------------------------------------
+// SEMANTIC COLORS --------------------------------------------------
+// ------------------------------------------------------------------
+$accent-color: var(--accent-color);
+$background-color: var(--background-color);
+$selection-color: var(--selection-color);
+$outline-color: var(--outline-color);
+$tap-highlight-color: var(--tap-highlight-color);
+
+$header-gradient-1: var(--header-gradient-1);
+$header-gradient-2: var(--header-gradient-2);
+
+$text-color: var(--text-color);
+$text-color--dimmed: var(--text-color--dimmed);
+$link-color: var(--link-color);
+$error-text-color: var(--error-text-color);
+$success-text-color: var(--success-text-color);
+$blockquote-gradient-1: var(--blockquote-gradient-1);
+$blockquote-gradient-2: var(--blockquote-gradient-2);
+$code-gradient-1: var(--code-gradient-1);
+$code-gradient-2: var(--code-gradient-2);
+
+$btn-bg-color: var(--btn-bg-color);
+$btn-bg-outline-color: var(--btn-bg-outline-color);
+$btn-border-color: var(--btn-border-color);
+$btn-bg-color--hover: var(--btn-bg-color--hover);
+$btn-text-color: var(--btn-text-color);
+$btn-spinner-color: var(--btn-spinner-color);
+
+$input-border-color: var(--input-border-color);
+$input-border-color--hover: var(--input-border-color--hover);
+$input-placeholder-color: var(--input-placeholder-color);
+
+$email-collector-background: var(--email-collector-background);
+$email-collector-shadow-color: var(--email-collector-shadow-color);
+
+$tooltip-outline-color: var(--tooltip-outline-color);
+$tooltip-outline-color--hover: var(--tooltip-outline-color--hover);
+$tooltip-bg-color: var(--tooltip-bg-color);
+$tooltip-shadow-color: var(--tooltip-shadow-color);
+
+// ------------------------------------------------------------------
+// BREAKPOINTS ------------------------------------------------------
+// ------------------------------------------------------------------
 $mobile-width: 600px;
 $tablet-portrait: 600px;
 $tablet-landscape: 900px;
@@ -13,31 +57,9 @@ $mq-breakpoints: (
 );
 @import 'sass-mq/mq';
 
-$accent-color: hsl(135, 70%, 50%);
-$light-accent-color: mix($accent-color, #fff, 80%);
-$lighter-accent-color: mix($accent-color, #fff, 60%);
-$superlight-accent-color: mix($accent-color, #fff, 40%);
-$superlight-accent-semi-transparent-color: mix($superlight-accent-color, rgba(255, 255, 255, 0), 40%);
-$dark-accent-color: mix($accent-color, #000, 80%);
-$darker-accent-color: mix($accent-color, #000, 60%);
-
-$black: hsl(0, 0%, 30%);
-$red: hsl(350, 75%, 65%);
-$white: #fff;
-$grey: hsl(0, 0%, 60%);
-$grey-light: hsl(0, 0%, 75%);
-$grey-lighter: hsl(0, 0%, 90%);
-
-$background-color: $white;
-$text-color: $black;
-$error-text-color: $red;
-$success-text-color: $accent-color;
-$email-collector-background: rgb(255, 230, 190);
-$shadow-color: mix($text-color, rgba(255, 255, 255, 0), 25%);
-
-$radius-rounded: 290486px;
-
-$sans-serif: Roboto, Helvetica, Verdana, sans-serif;
+// ------------------------------------------------------------------
+// FONTS ------------------------------------------------------------
+// ------------------------------------------------------------------
 $serif: Merriweather, Georgia, 'Times New Roman', serif;
 $mono: 'Fira Code', Menlo, Monaco, 'Courier New', monospace;
 
@@ -53,5 +75,9 @@ $modularscale: (
 );
 @import 'modularscale-sass/stylesheets/modularscale';
 
+// ------------------------------------------------------------------
+// DIFFERENT --------------------------------------------------------
+// ------------------------------------------------------------------
+$radius-rounded: 290486px;
 $border-radius: 5px;
 $border-style: 2px solid;

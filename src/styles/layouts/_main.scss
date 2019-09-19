@@ -1,24 +1,20 @@
-html,
-body,
-#app,
-.root {
-  height: 100%;
-  min-height: 100%;
-  
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: $superlight-accent-semi;
+body {
+  background-color: $background-color;
 }
 
 *::selection {
   background: $accent-color;
-  color: $background-color;
+  color: $selection-color;
 }
 
 * {
-  transition-property: opacity, background-color, box-shadow, color, border-color;
+  transition-property: opacity, background-color, box-shadow, color, border-color, opacity;
   transition-duration: 0.3s;
 
-  outline-color: $superlight-accent-semi;
+  outline-color: $outline-color;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: $tap-highlight-color;
+  -webkit-font-smoothing: antialiased;
 }
 
 .root {

@@ -1,0 +1,97 @@
+:root, [data-night-theme="0"]  {
+  $_accent-color: hsl(135, 70%, 50%);
+  $_accent-bg-contrast-lower: mix($_accent-color, #fff, 60%);
+  $_accent-bg-contrast-low: mix($_accent-color, #fff, 80%);
+  $_accent-bg-contrast-high: mix($_accent-color, #000, 80%);
+  $_accent-bg-contrast-higher: mix($_accent-color, #000, 60%);
+
+  $_shadow: hsla(0, 0%, 70%, 50%);
+  $_text-color: hsl(0, 0%, 30%);
+
+  #{cvts($accent-color)}: $_accent-color;
+  #{cvts($background-color)}: #fff;
+  #{cvts($selection-color)}: #fff;
+  #{cvts($outline-color)}: $_accent-bg-contrast-low;
+  #{cvts($tap-highlight-color)}: adjust-color($_accent-bg-contrast-low, $alpha: -0.6);
+  
+  #{cvts($header-gradient-1)}: $accent-color;
+  #{cvts($header-gradient-2)}: $_accent-bg-contrast-high;
+
+  #{cvts($text-color)}: $_text-color;
+  #{cvts($text-color--dimmed)}: adjust-color($_text-color, $alpha: -0.5);
+  #{cvts($link-color)}: $accent-color;
+  #{cvts($error-text-color)}: hsl(350, 75%, 65%);
+  #{cvts($success-text-color)}: $accent-color;
+  #{cvts($blockquote-gradient-1)}: $_accent-bg-contrast-high;
+  #{cvts($blockquote-gradient-2)}: $_accent-bg-contrast-low;
+  #{cvts($code-gradient-1)}: $accent-color;
+  #{cvts($code-gradient-2)}: $_accent-bg-contrast-low;
+
+  #{cvts($btn-bg-color)}: $accent-color;
+  #{cvts($btn-border-color)}: $_accent-bg-contrast-higher;
+  #{cvts($btn-bg-color--hover)}: $_accent-bg-contrast-high;
+  #{cvts($btn-text-color)}: #fff;
+  #{cvts($btn-spinner-color)}: hsl(0, 0%, 60%);
+
+  #{cvts($input-border-color)}: $accent-color;
+  #{cvts($input-border-color--hover)}: $_accent-bg-contrast-low;
+  #{cvts($input-placeholder-color)}: hsla(0, 0%, 60%, 50%);
+
+  #{cvts($email-collector-background)}: hsl(35, 100%, 85%);
+  #{cvts($email-collector-shadow-color)}: $_shadow;
+
+  #{cvts($tooltip-outline-color)}: $accent-color;
+  #{cvts($tooltip-outline-color--hover)}: $_accent-bg-contrast-low;
+  #{cvts($tooltip-bg-color)}: #fff;
+  #{cvts($tooltip-shadow-color)}: $_shadow;
+}
+
+:root, [data-night-theme="1"] {
+  $_accent-color: hsl(135, 70%, 40%);
+  $_accent-bg-contrast-lower: mix($_accent-color, #000, 60%);
+  $_accent-bg-contrast-low: mix($_accent-color, #000, 80%);
+  $_accent-bg-contrast-high: mix($_accent-color, #fff, 60%);
+  $_accent-bg-contrast-higher: mix($_accent-color, #fff, 80%);
+
+  $_bg-color: hsl(135, 10%, 20%);
+  $_text-color: hsl(0, 0%, 95%);
+  $_shadow: hsl(0, 0%, 10%); 
+
+  #{cvts($accent-color)}: $_accent-color;
+  #{cvts($background-color)}: $_bg-color;
+  #{cvts($selection-color)}: #fff;
+  #{cvts($outline-color)}: $_accent-bg-contrast-low;
+  #{cvts($tap-highlight-color)}: adjust-color($_accent-bg-contrast-low, $alpha: -0.6);
+
+  #{cvts($header-gradient-1)}: $accent-color;
+  #{cvts($header-gradient-2)}: $_accent-bg-contrast-high;
+
+  #{cvts($text-color)}: hsl(0, 0%, 95%);
+  #{cvts($text-color--dimmed)}: adjust-color($_text-color, $alpha: -0.5);
+  #{cvts($link-color)}: $accent-color;
+  #{cvts($error-text-color)}: hsl(350, 40%, 50%);
+  #{cvts($success-text-color)}: $accent-color;
+  #{cvts($blockquote-gradient-1)}: $_accent-bg-contrast-high;
+  #{cvts($blockquote-gradient-2)}: $_accent-bg-contrast-low;
+  #{cvts($code-gradient-1)}: $accent-color;
+  #{cvts($code-gradient-2)}: $_accent-bg-contrast-low;
+
+  #{cvts($btn-bg-color)}: $accent-color;
+  #{cvts($btn-bg-outline-color)}: $_accent-bg-contrast-high;
+  #{cvts($btn-border-color)}: $_accent-bg-contrast-lower;
+  #{cvts($btn-bg-color--hover)}: $_accent-bg-contrast-low;
+  #{cvts($btn-text-color)}: #fff;
+  #{cvts($btn-spinner-color)}: #fff;
+
+  #{cvts($input-border-color)}: $accent-color;
+  #{cvts($input-border-color--hover)}: $_accent-bg-contrast-low;
+  #{cvts($input-placeholder-color)}: hsla(0, 0%, 70%, 60%);
+
+  #{cvts($email-collector-background)}: hsl(33, 20%, 32%);
+  #{cvts($email-collector-shadow-color)}: $_shadow;
+
+  #{cvts($tooltip-outline-color)}: $accent-color;
+  #{cvts($tooltip-outline-color--hover)}: $_accent-bg-contrast-low;
+  #{cvts($tooltip-bg-color)}: mix($_bg-color, #fff, 90%);
+  #{cvts($tooltip-shadow-color)}: $_shadow;
+}
