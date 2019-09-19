@@ -7,3 +7,8 @@
     goto('./' + lang)
   }
 </script>
+
+<div style="display: none">
+  <a href="/ru">ru</a>
+  <a href="/en">en</a>
+</div>
