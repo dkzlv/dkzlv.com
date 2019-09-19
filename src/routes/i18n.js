@@ -30,6 +30,7 @@ const phrases = {
     posts: {
       readTime: '{{time}} minute |||| {{time}} minutes',
     },
+    colorSwitcher: 'Change colors',
   },
   ru: {
     email: {
@@ -60,6 +61,7 @@ const phrases = {
     posts: {
       readTime: '{{time}} минута |||| {{time}} минуты |||| {{time}} минут',
     },
+    colorSwitcher: 'Сменить цвета',
   },
 }
 

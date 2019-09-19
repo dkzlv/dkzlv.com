@@ -1,6 +1,7 @@
 <script>
   import Header from '../../components/header.svelte'
   import Footer from '../../components/footer.svelte'
+  import Switcher from '../../components/colorThemes.svelte'
 
   export let segment
 </script>
@@ -9,6 +10,7 @@
   @import '../../styles/main.scss';
 </style>
 
+<Switcher />
 <div class="root">
   <Header {segment} />
   <main>
