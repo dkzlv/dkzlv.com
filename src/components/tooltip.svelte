@@ -1,5 +1,5 @@
 <script>
-  export let triggerText
+  export let triggerText = '?'
 </script>
 
 <style type="text/scss">
@@ -62,7 +62,7 @@
 </style>
 
 <div class="tooltip">
-  <div class="tooltip__trigger">{triggerText || '?'}</div>
+  <div class="tooltip__trigger">{triggerText}</div>
   <div class="tooltip__content">
     <slot />
   </div>

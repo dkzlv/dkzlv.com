@@ -22,4 +22,4 @@
   $: langStore.set(lang)
 </script>
 
-<Post {post} />
+<Post {post} {lang} />
