@@ -48,9 +48,9 @@
     "rollup-plugin-svelte": "^5.0.1",
     "rollup-plugin-terser": "^4.0.4",
     "rollup-plugin-typescript": "^1.0.1",
-    "sapper": "^0.27.0",
+    "sapper": "0.27.8",
     "sass-mq": "^5.0.1",
-    "svelte": "^3.0.0",
+    "svelte": "3.12.1",
     "svelte-preprocess": "^2.15.0",
     "tslib": "^1.10.0",
     "typescript": "^3.6.2"
