@@ -20,6 +20,7 @@ const onwarn = (warning, onwarn) =>
 
 const preprocess = autoPreprocess({
   postcss: true,
+  scss: true,
   typescript: {
     transpileOnly: true,
   },
