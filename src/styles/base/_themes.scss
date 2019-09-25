@@ -23,6 +23,7 @@
 
   #{cvts($text-color)}: $_text-color;
   #{cvts($text-color--dimmed)}: adjust-color($_text-color, $alpha: -0.5);
+  #{cvts($highlight-bg)}: rgb(248, 246, 107);
   #{cvts($link-color)}: $accent-color;
   #{cvts($error-text-color)}: hsl(350, 75%, 65%);
   #{cvts($success-text-color)}: $accent-color;
@@ -76,6 +77,7 @@
 
   #{cvts($text-color)}: hsl(0, 0%, 95%);
   #{cvts($text-color--dimmed)}: adjust-color($_text-color, $alpha: -0.5);
+  #{cvts($highlight-bg)}: rgb(182, 178, 72);
   #{cvts($link-color)}: $accent-color;
   #{cvts($error-text-color)}: hsl(350, 40%, 50%);
   #{cvts($success-text-color)}: $accent-color;

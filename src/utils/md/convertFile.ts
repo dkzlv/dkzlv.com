@@ -15,6 +15,7 @@ const metaSplitter = (rawFile: string): [string, string] => {
 }
 
 const renderer = new Renderer()
+
 // Тут добавляем анкорную ссылку на этот заголовок
 renderer.heading = (text, level) => {
   // @ts-ignore
@@ -25,8 +26,14 @@ renderer.heading = (text, level) => {
       <h${level}>${text}</h${level}>
     </a>`
 }
+
+// Открываем ссылки в новом окне и без утекающего доступа к блогу
 renderer.link = (href, _, text) =>
   `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`
+
+// Добавляем костыльно поддержку для выделения текста жёлтым фоном
+renderer.em = text =>
+  text.charAt(0) === '#' ? `<mark>${text.slice(1)}</mark>` : `<em>${text}</em>`
 
 type Options = {
   baseUrl?: string

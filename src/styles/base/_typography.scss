@@ -143,6 +143,20 @@ a.anchor {
   }
 }
 
+mark {
+  color: $text-color;
+  padding: 0 2px;
+  border-radius: 3px;
+
+  background-color: $background-color;
+  background-image: linear-gradient(
+    to right,
+    $highlight-bg,
+    $highlight-bg 85%,
+    transparent
+  );
+}
+
 blockquote {
   border-left: 3px solid;
   border-image-source: linear-gradient(
