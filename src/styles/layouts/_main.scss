@@ -8,7 +8,8 @@ body {
 }
 
 * {
-  transition-property: opacity, background-color, box-shadow, color, border-color, opacity;
+  transition-property: opacity, background-color, box-shadow, color,
+    border-color, opacity;
   transition-duration: 0.3s;
 
   outline-color: $outline-color;
@@ -43,4 +44,8 @@ main {
   @include mq($from: tablet-landscape) {
     margin-top: 40px;
   }
+}
+
+.email-collector {
+  display: none;
 }
