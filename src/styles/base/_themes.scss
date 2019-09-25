@@ -1,4 +1,5 @@
-:root, [data-night-theme="0"]  {
+:root,
+[data-night-theme='0'] {
   $_accent-color: hsl(135, 70%, 50%);
   $_accent-bg-contrast-lower: mix($_accent-color, #fff, 60%);
   $_accent-bg-contrast-low: mix($_accent-color, #fff, 80%);
@@ -12,8 +13,11 @@
   #{cvts($background-color)}: #fff;
   #{cvts($selection-color)}: #fff;
   #{cvts($outline-color)}: $_accent-bg-contrast-low;
-  #{cvts($tap-highlight-color)}: adjust-color($_accent-bg-contrast-low, $alpha: -0.6);
-  
+  #{cvts($tap-highlight-color)}: adjust-color(
+    $_accent-bg-contrast-low,
+    $alpha: -0.6
+  );
+
   #{cvts($header-gradient-1)}: $accent-color;
   #{cvts($header-gradient-2)}: $_accent-bg-contrast-high;
 
@@ -34,19 +38,20 @@
   #{cvts($btn-spinner-color)}: hsl(0, 0%, 60%);
 
   #{cvts($input-border-color)}: $accent-color;
-  #{cvts($input-border-color--hover)}: $_accent-bg-contrast-low;
+  #{cvts($input-border-color--hover)}: $_accent-bg-contrast-high;
   #{cvts($input-placeholder-color)}: hsla(0, 0%, 60%, 50%);
 
   #{cvts($email-collector-background)}: hsl(35, 100%, 85%);
   #{cvts($email-collector-shadow-color)}: $_shadow;
 
   #{cvts($tooltip-outline-color)}: $accent-color;
-  #{cvts($tooltip-outline-color--hover)}: $_accent-bg-contrast-low;
+  #{cvts($tooltip-outline-color--hover)}: $_accent-bg-contrast-high;
   #{cvts($tooltip-bg-color)}: #fff;
   #{cvts($tooltip-shadow-color)}: $_shadow;
 }
 
-:root, [data-night-theme="1"] {
+:root,
+[data-night-theme='1'] {
   $_accent-color: hsl(135, 70%, 40%);
   $_accent-bg-contrast-lower: mix($_accent-color, #000, 60%);
   $_accent-bg-contrast-low: mix($_accent-color, #000, 80%);
@@ -55,13 +60,16 @@
 
   $_bg-color: hsl(135, 10%, 20%);
   $_text-color: hsl(0, 0%, 95%);
-  $_shadow: hsl(0, 0%, 10%); 
+  $_shadow: hsl(0, 0%, 10%);
 
   #{cvts($accent-color)}: $_accent-color;
   #{cvts($background-color)}: $_bg-color;
   #{cvts($selection-color)}: #fff;
   #{cvts($outline-color)}: $_accent-bg-contrast-low;
-  #{cvts($tap-highlight-color)}: adjust-color($_accent-bg-contrast-low, $alpha: -0.6);
+  #{cvts($tap-highlight-color)}: adjust-color(
+    $_accent-bg-contrast-low,
+    $alpha: -0.6
+  );
 
   #{cvts($header-gradient-1)}: $accent-color;
   #{cvts($header-gradient-2)}: $_accent-bg-contrast-high;

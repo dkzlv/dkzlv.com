@@ -6,9 +6,11 @@
   export let imagePreview = ''
   export let locale = ''
 
-  let domain = 'dkzlv.ru'
+  const domain =
+    process.env.NODE_ENV === 'production' ? 'dkzlv.com' : 'blog.local:3000'
+  const scheme = process.env.NODE_ENV === 'production' ? 'https' : 'http'
 
-  $: canonicalLocation = `https://${domain}/${path}`
+  $: canonicalLocation = `${scheme}://${domain}/${path}/`
 </script>
 
 <svelte:head>
