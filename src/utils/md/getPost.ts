@@ -6,12 +6,17 @@ import { join } from 'path'
 
 const postPartitionMatcher = /^[0-9]+\.md$/
 
-const getPostPartitions = (rootPostsPath: string): string[] =>
+const getPostPartitions = (
+  rootPostsPath: string,
+  lang: string,
+  slug: string,
+): string[] =>
   readdirSync(rootPostsPath)
     .map(filename => {
       if (postPartitionMatcher.test(filename)) {
         return convert(
           readFileSync(join(rootPostsPath, filename), { encoding: 'utf-8' }),
+          { baseUrl: `/${lang}/${slug}`, prependLangFromMeta: false },
         ).content
       }
     })
@@ -34,9 +39,11 @@ export default function getPost(
   if (multiplePartitions) {
     meta = convert(readFileSync(join(path, 'meta.md'), { encoding: 'utf-8' }))
       .meta
-    content = getPostPartitions(path)
+    content = getPostPartitions(path, meta.lang, slug)
   } else {
-    const converted = convert(readFileSync(path, { encoding: 'utf-8' }))
+    const converted = convert(readFileSync(path, { encoding: 'utf-8' }), {
+      baseUrl: slug,
+    })
     content = converted.content
     meta = converted.meta
   }

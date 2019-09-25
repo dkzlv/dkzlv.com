@@ -1,6 +1,7 @@
 import { IPostMeta, IPost } from './types'
-import marked from 'marked'
+import marked, { Renderer } from 'marked'
 import yaml from 'js-yaml'
+import slugify from '@sindresorhus/slugify'
 
 const metaSplitter = (rawFile: string): [string, string] => {
   if (rawFile.slice(0, 3) !== '---') return ['', rawFile]
@@ -13,11 +14,34 @@ const metaSplitter = (rawFile: string): [string, string] => {
     : ['', rawFile]
 }
 
-export default (rawFile: string): IPost => {
-  const [meta, text] = metaSplitter(rawFile)
+const renderer = new Renderer()
+// Тут добавляем анкорную ссылку на этот заголовок
+renderer.heading = (text, level) => {
+  // @ts-ignore
+  const baseUrl = renderer.options.baseUrl as string
+  const slug = slugify(text)
+  return `
+    <a class="anchor" href="${baseUrl}#${slug}" id="${slug}">
+      <h${level}>${text}</h${level}>
+    </a>`
+}
+renderer.link = (href, _, text) =>
+  `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`
+
+type Options = {
+  baseUrl?: string
+  prependLangFromMeta?: boolean
+}
+export default (rawFile: string, opts = {} as Options): IPost => {
+  const [rawMeta, text] = metaSplitter(rawFile)
+  const { baseUrl, prependLangFromMeta = true } = opts
+  const meta = yaml.safeLoad(rawMeta) as IPostMeta
 
   return {
-    content: marked(text),
-    meta: yaml.safeLoad(meta) as IPostMeta,
+    content: marked(text, {
+      renderer,
+      baseUrl: prependLangFromMeta ? `${meta.lang}/${baseUrl}` : baseUrl,
+    }),
+    meta,
   }
 }
