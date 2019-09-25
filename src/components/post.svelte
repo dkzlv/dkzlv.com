@@ -53,9 +53,7 @@
 
 <div class="subscription">
   <p>
-    {#if post.meta.emailCollectorMessage}
-      {@html post.meta.emailCollectorMessage}
-    {:else}{endPostEngagement}{/if}
+    {@html post.meta.emailCollectorMessage || endPostEngagement}
   </p>
 
   <EmailCollector />

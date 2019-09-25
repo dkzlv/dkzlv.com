@@ -56,8 +56,8 @@
     else if (counter === 50) confessionText = 'А ты упорный, молодец'
   }
 
-  const app = document.getElementById('app')
   const listener = () => {
+    const app = document.getElementById('app')
     const rawCoor = confessionEl.getBoundingClientRect()
     const coor = {
       x: rawCoor.x + rawCoor.width / 2,
