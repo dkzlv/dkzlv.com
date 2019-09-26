@@ -1,4 +1,6 @@
 <script>
+  import { baseClientPath } from '../routes/config.js'
+
   export let title = ''
   export let description = ''
   export let path = ''
@@ -6,11 +8,7 @@
   export let imagePreview = ''
   export let locale = ''
 
-  const domain =
-    process.env.NODE_ENV === 'production' ? 'dkzlv.com' : 'blog.local:3000'
-  const scheme = process.env.NODE_ENV === 'production' ? 'https' : 'http'
-
-  $: canonicalLocation = `${scheme}://${domain}/${path}/`
+  $: canonicalLocation = `${baseClientPath}/${path}/`
 </script>
 
 <svelte:head>
@@ -19,9 +17,9 @@
   <meta name="twitter:title" content={title} />
   <meta property="og:title" content={title} />
 
-  <meta name="twitter:site" content={domain} />
-  <meta property="og:site_name" content={domain} />
-  <meta itemprop="name" content={domain} />
+  <meta name="twitter:site" content={baseClientPath} />
+  <meta property="og:site_name" content={baseClientPath} />
+  <meta itemprop="name" content={baseClientPath} />
 
   <meta name="description" content={description} />
   <meta name="twitter:description" content={description} />
