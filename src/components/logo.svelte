@@ -36,43 +36,43 @@
   .logo {
     width: 80px;
     user-select: none;
-    mask-image: url(/img/skull.svg);
+    mask-image: url(/img/logomask/skull.svg);
   }
 
   .cross {
-    mask-image: url(/img/cross.svg);
+    mask-image: url(/img/logomask/cross.svg);
   }
 
   .skull {
-    mask-image: url(/img/skull.svg);
+    mask-image: url(/img/logomask/skull.svg);
   }
 
   .fire {
-    mask-image: url(/img/fire.svg);
+    mask-image: url(/img/logomask/fire.svg);
   }
 
   .peace {
-    mask-image: url(/img/peace.svg);
+    mask-image: url(/img/logomask/peace.svg);
   }
 
   .cannabis {
-    mask-image: url(/img/cannabis.svg);
+    mask-image: url(/img/logomask/cannabis.svg);
   }
 
   .heart {
-    mask-image: url(/img/heart.svg);
+    mask-image: url(/img/logomask/heart.svg);
   }
 
   .infinity {
-    mask-image: url(/img/infinity.svg);
+    mask-image: url(/img/logomask/infinity.svg);
   }
 
   .hazard {
-    mask-image: url(/img/hazard.svg);
+    mask-image: url(/img/logomask/hazard.svg);
   }
 
   .yggdrasil {
-    mask-image: url(/img/yggdrasil.svg);
+    mask-image: url(/img/logomask/yggdrasil.svg);
   }
 </style>
 
