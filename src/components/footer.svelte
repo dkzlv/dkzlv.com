@@ -1,3 +1,7 @@
+<script>
+  import { langStore } from '../routes/store'
+</script>
+
 <style type="text/scss">
   @import '../styles/importable';
 
@@ -7,6 +11,14 @@
     margin: 10px 0;
 
     @include safeAreaPaddingMixin(bottom, 20px, 0);
+  }
+
+  .right {
+    display: flex;
+  }
+
+  .rss {
+    margin-left: 15px;
   }
 </style>
 
@@ -20,9 +32,18 @@
       Dan Kozlov
     </a>
   </p>
-  <p>
-    <a href="/ru">Ру</a>
-    /
-    <a href="/en">Eng</a>
-  </p>
+  <div class="right">
+    {#if $langStore === 'ru'}
+      <a href="/en">
+        <img src="/img/footer/gb.svg" alt="Brit's flag" />
+      </a>
+    {:else if $langStore === 'en'}
+      <a href="/ru">
+        <img src="/img/footer/ru.svg" alt="Russ' flag" />
+      </a>
+    {/if}
+    <a href={$langStore + '/rss'} class="rss">
+      <img src="/img/footer/rss.svg" alt="RSS" />
+    </a>
+  </div>
 </footer>
