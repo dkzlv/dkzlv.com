@@ -1,6 +1,6 @@
 import { join } from 'path'
 import commonGet from '../../../utils/commonGet'
-import getPost from '../../../utils/md/getPost'
+import getPost from '../../../utils/posts/getPost'
 import { RequestHandler } from 'express'
 
 const slug = 'chastnaya-zhizn-kotoruyu-my-uzhe-poteryali-chast-1-vvodnaya'
