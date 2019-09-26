@@ -3,6 +3,7 @@ import { join } from 'path'
 import getPost from '../../utils/md/getPost'
 import commonGet from '../../utils/commonGet'
 import { IPost } from '../../utils/md/types'
+import { RequestHandler } from 'express'
 
 const rootPostPath = join(process.env.PWD as string, 'src', 'posts')
 const posts = readdirSync(rootPostPath, { withFileTypes: true })
@@ -39,7 +40,7 @@ const posts = readdirSync(rootPostPath, { withFileTypes: true })
 
 const partialSerializer = (post: IPost) => post.meta
 
-export function get(req: any, res: any) {
+export const get: RequestHandler = (req, res) => {
   const { slug, lang } = req.params
   let contentToSend
 

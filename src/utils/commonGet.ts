@@ -1,4 +1,6 @@
-export default function commonGet(res: any, sendContent: any) {
+import { Response } from 'express'
+
+const commonGet = (res: Response, sendContent?: Object) => {
   const headers = {
     'Content-Type': 'application/json',
   }
@@ -14,3 +16,5 @@ export default function commonGet(res: any, sendContent: any) {
     )
   }
 }
+
+export default commonGet

@@ -8,7 +8,7 @@ export interface IPostMeta {
   emailCollectorMessage?: string
   slug?: string
   published?: string
-  readTime?: any
+  readTime?: number
 }
 
 export interface IPost {
