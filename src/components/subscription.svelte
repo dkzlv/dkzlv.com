@@ -1,6 +1,6 @@
 <script>
   import EmailCollector from './emailCollector.svelte'
-  import t from '../routes/i18n.js'
+  import t from '../routes/_i18n/client.js'
   import { langStore } from '../routes/store.js'
 
   $: endPostEngagement = $langStore && t('email.endPostEngagement')

@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import { fade } from 'svelte/transition'
   import { langStore } from '../routes/store.js'
-  import t from '../routes/i18n.js'
+  import t from '../routes/_i18n/client.js'
 
   $: buttonText = $langStore && t('colorSwitcher')
 

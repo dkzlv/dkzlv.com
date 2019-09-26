@@ -8,7 +8,7 @@
 
 <script>
   import { langStore } from '../store'
-  import t from '../i18n.js'
+  import t from '../_i18n/client.js'
 
   export let posts
   export let lang

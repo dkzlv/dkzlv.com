@@ -1,7 +1,7 @@
 <script>
   import { fade } from 'svelte/transition'
   import { langStore } from '../routes/store.js'
-  import t from '../routes/i18n.js'
+  import t from '../routes/_i18n/client.js'
   import isEmail from '../utils/validations/email.js'
   import delay from '../utils/delay.js'
   import Tooltip from './tooltip.svelte'
