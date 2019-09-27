@@ -17,19 +17,16 @@
 
   $: extraClass = classes[lastIndex]
 
+  classes.forEach(() => setNewClass())
+
   let interval
-  const setInitialInterval = () => {
-    interval = setInterval(setNewClass, 3500)
-  }
-  setInitialInterval()
-  const onMouseOver = () => {
+  const setFixedInterval = tm => {
     clearInterval(interval)
-    interval = setInterval(setNewClass, 250)
+    interval = setInterval(setNewClass, tm)
   }
-  const onMouseOut = () => {
-    clearInterval(interval)
-    setInitialInterval()
-  }
+  setFixedInterval(3500)
+  const onMouseOver = () => setFixedInterval(250)
+  const onMouseOut = () => setFixedInterval(3500)
 </script>
 
 <style type="text/scss">
