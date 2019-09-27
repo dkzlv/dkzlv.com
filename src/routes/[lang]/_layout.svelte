@@ -2,8 +2,11 @@
   import Header from '../../components/header.svelte'
   import Footer from '../../components/footer.svelte'
   import Switcher from '../../components/colorThemes.svelte'
+  import { stores } from '@sapper/app'
+  import { langStore } from '../../core/store'
 
-  export let segment
+  const { page } = stores()
+  $: langStore.set($page.params.lang)
 </script>
 
 <style global type="text/scss">
@@ -12,7 +15,7 @@
 
 <Switcher />
 <div class="root">
-  <Header {segment} />
+  <Header />
   <main>
     <slot />
   </main>

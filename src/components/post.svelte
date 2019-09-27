@@ -2,9 +2,9 @@
   import Meta from './meta.svelte'
   import Subscription from './subscription.svelte'
   import { onMount, tick } from 'svelte'
+  import { langStore } from '../core/store.js'
 
   export let post
-  export let lang
 
   onMount(async () => {
     // Тут вот бажина в Svelte: https://github.com/sveltejs/svelte/issues/3218
@@ -27,7 +27,7 @@
   path={post.meta.slug}
   description={post.meta.description}
   imagePreview={post.meta.imagePreview}
-  locale={lang} />
+  locale={$langStore} />
 
 <article>
   <h1>{post.meta.title}</h1>

@@ -14,12 +14,7 @@
 </script>
 
 <script>
-  import { langStore } from '../../core/store.js'
-
   export let post
-  export let lang
-
-  $: langStore.set(lang)
 </script>
 
-<Post {post} {lang} />
+<Post {post} />

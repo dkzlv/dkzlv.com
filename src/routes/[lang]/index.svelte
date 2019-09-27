@@ -13,8 +13,6 @@
   export let posts
   export let lang
 
-  $: langStore.set(lang)
-
   const getReadTime = time =>
     t('posts.readTime', time).replace('{{time}}', time)
 

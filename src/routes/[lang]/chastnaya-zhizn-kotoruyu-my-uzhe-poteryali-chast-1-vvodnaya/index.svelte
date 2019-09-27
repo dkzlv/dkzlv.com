@@ -1,11 +1,11 @@
 <script context="module">
-  export async function preload({ params }) {
+  export async function preload() {
     const res = await this.fetch(
-      `/${params.lang}/chastnaya-zhizn-kotoruyu-my-uzhe-poteryali-chast-1-vvodnaya/post.json`,
+      '/ru/chastnaya-zhizn-kotoruyu-my-uzhe-poteryali-chast-1-vvodnaya/post.json',
     )
     const data = await res.json()
     if (res.status === 200) {
-      return { data: data, lang: params.lang }
+      return { data: data }
     } else {
       this.error(res.status, data.message)
     }
@@ -16,14 +16,11 @@
   import Post from '../../../components/post.svelte'
   import Fingerprint from '../../../components/posts/privacy-pt1/fingerprint.svelte'
   import Pidor from '../../../components/posts/privacy-pt1/pidor.svelte'
-  import { langStore } from '../../../core/store.js'
 
   export let data
-  export let lang
-  $: langStore.set(lang)
 </script>
 
-<Post post={data} {lang}>
+<Post post={data}>
   <div class="content">
     {@html data.content[0]}
   </div>
