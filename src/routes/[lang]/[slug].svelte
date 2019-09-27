@@ -14,7 +14,7 @@
 </script>
 
 <script>
-  import { langStore } from '../store.js'
+  import { langStore } from '../../core/store.js'
 
   export let post
   export let lang

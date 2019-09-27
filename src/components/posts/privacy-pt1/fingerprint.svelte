@@ -1,5 +1,5 @@
 <script>
-  import request from '../../service.js'
+  import request from '../../../core/service.js'
   import getFingerprintHash from './getFingerprintHash.js'
   import { onMount } from 'svelte'
   import { sample } from '../../../utils/random.js'

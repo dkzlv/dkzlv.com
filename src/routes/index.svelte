@@ -1,6 +1,6 @@
 <script context="module">
   import { goto } from '@sapper/app'
-  import { langStore, setCurrentLang } from './store'
+  import { langStore, setCurrentLang } from '../core/store'
 
   if (typeof window !== 'undefined') {
     const lang = setCurrentLang()

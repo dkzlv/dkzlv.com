@@ -1,5 +1,5 @@
 <script>
-  import { langStore } from '../routes/store'
+  import { langStore } from '../core/store'
 </script>
 
 <style type="text/scss">

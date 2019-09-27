@@ -1,8 +1,8 @@
 import posts from './posts'
 import { Feed } from 'feed'
-import t, { setLang, SupportedLangs } from '../../routes/_i18n/back'
+import t, { setLang, SupportedLangs } from '../i18n/back'
 // @ts-ignore
-import { baseClientPath } from '../../routes/config.js'
+import { baseClientPath } from '../config.js'
 
 const feedGenerator = (lang: SupportedLangs) => {
   setLang(lang)

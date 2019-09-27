@@ -3,8 +3,8 @@
   import TwitterIcon from './twitterIcon.svelte'
   import EmailCollector from './emailCollector.svelte'
 
-  import t from '../routes/_i18n/client.js'
-  import { langStore } from '../routes/store'
+  import t from '../core/i18n/client.js'
+  import { langStore } from '../core/store'
 
   $: onboard = $langStore && t('header.onboard')
   $: twitter = $langStore && t('header.twitter')

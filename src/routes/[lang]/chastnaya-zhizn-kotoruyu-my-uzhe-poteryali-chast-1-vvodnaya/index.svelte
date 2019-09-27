@@ -14,9 +14,9 @@
 
 <script>
   import Post from '../../../components/post.svelte'
-  import Fingerprint from './fingerprint.svelte'
-  import Pidor from './pidor.svelte'
-  import { langStore } from '../../store.js'
+  import Fingerprint from '../../../components/posts/privacy-pt1/fingerprint.svelte'
+  import Pidor from '../../../components/posts/privacy-pt1/pidor.svelte'
+  import { langStore } from '../../../core/store.js'
 
   export let data
   export let lang

@@ -1,7 +1,7 @@
 <script>
   import EmailCollector from './emailCollector.svelte'
-  import t from '../routes/_i18n/client.js'
-  import { langStore } from '../routes/store.js'
+  import t from '../core/i18n/client.js'
+  import { langStore } from '../core/store.js'
 
   $: endPostEngagement = $langStore && t('email.endPostEngagement')
   export let engagement
