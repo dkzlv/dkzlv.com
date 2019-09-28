@@ -9,6 +9,6 @@
 </script>
 
 <div style="display: none">
-  <a href="/ru">ru</a>
-  <a href="/en">en</a>
+  <a href="/ru" rel="prefetch">ru</a>
+  <a href="/en" rel="prefetch">en</a>
 </div>

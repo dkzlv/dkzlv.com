@@ -42,7 +42,7 @@
         <img src="/img/footer/ru.svg" alt="Russ' flag" />
       </a>
     {/if}
-    <a href={$langStore + '/rss'} class="rss">
+    <a href={$langStore + '/rss'} class="rss" rel="prefetch">
       <img src="/img/footer/rss.svg" alt="RSS" />
     </a>
   </div>
