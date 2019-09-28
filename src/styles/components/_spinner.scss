@@ -1,0 +1,7 @@
+.loading {
+  animation: spinAround 1s infinite linear;
+  border: 2px solid $btn-spinner-color;
+  border-radius: $radius-rounded;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}

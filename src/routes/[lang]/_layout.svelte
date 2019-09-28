@@ -1,11 +1,12 @@
 <script>
   import Header from '../../components/header.svelte'
   import Footer from '../../components/footer.svelte'
-  import Switcher from '../../components/colorThemes.svelte'
+  import ColorThemes from '../../components/colorThemes.svelte'
+  import PageLoading from '../../components/pageLoading.svelte'
   import { stores } from '@sapper/app'
   import { langStore } from '../../core/store'
 
-  const { page } = stores()
+  const { page, preloading } = stores()
   $: langStore.set($page.params.lang)
 </script>
 
@@ -13,7 +14,10 @@
   @import '../../styles/main.scss';
 </style>
 
-<Switcher />
+<ColorThemes />
+{#if $preloading}
+  <PageLoading />
+{/if}
 <div class="root">
   <Header />
   <main>
