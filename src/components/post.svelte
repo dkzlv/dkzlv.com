@@ -2,7 +2,7 @@
   import Meta from './meta.svelte'
   import Subscription from './subscription.svelte'
   import { onMount, tick } from 'svelte'
-  import { langStore } from '../core/store.js'
+  import { langStore } from 'core/store.js'
 
   export let post
 

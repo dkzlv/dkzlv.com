@@ -1,5 +1,5 @@
 import { RequestHandler } from 'express'
-import feeds from '../../core/posts/feeds'
+import feeds from 'core/posts/feeds'
 
 export const get: RequestHandler = (req, res) => {
   const { lang } = req.params

@@ -1,3 +1,4 @@
+import path from 'path'
 import resolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
 import commonjs from 'rollup-plugin-commonjs'
@@ -38,6 +39,9 @@ export default {
       }),
       resolve({
         browser: true,
+        customResolveOptions: {
+          paths: [path.join(__dirname, 'src')],
+        },
       }),
       commonjs(),
       typescript(),
@@ -83,7 +87,11 @@ export default {
         'process.browser': false,
         'process.env.NODE_ENV': JSON.stringify(mode),
       }),
-      resolve(),
+      resolve({
+        customResolveOptions: {
+          paths: [path.join(__dirname, 'src')],
+        },
+      }),
       commonjs(),
       typescript(),
       svelte({

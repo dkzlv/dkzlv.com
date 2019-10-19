@@ -75,7 +75,7 @@
 </script>
 
 <style type="text/scss">
-  @import '../../../styles/_importable.scss';
+  @import 'src/styles/_importable.scss';
 
   .button-wrapper {
     display: flex;

@@ -3,7 +3,7 @@
 </script>
 
 <style type="text/scss">
-  @import '../styles/importable';
+  @import 'src/styles/importable';
 
   .loading {
     position: fixed;

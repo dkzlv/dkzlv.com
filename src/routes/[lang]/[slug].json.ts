@@ -1,7 +1,7 @@
-import commonGet from '../../utils/commonGet'
-import { IPost } from '../../core/posts/types'
+import commonGet from 'utils/commonGet'
+import { IPost } from 'core/posts/types'
 import { RequestHandler } from 'express'
-import posts from '../../core/posts/posts'
+import posts from 'core/posts/posts'
 
 const partialSerializer = (post: IPost) => post.meta
 

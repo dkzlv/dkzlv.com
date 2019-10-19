@@ -1,14 +1,14 @@
 <script>
   import EmailCollector from './emailCollector.svelte'
-  import t from '../core/i18n/client.js'
-  import { langStore } from '../core/store.js'
+  import t from 'core/i18n/client.js'
+  import { langStore } from 'core/store.js'
 
   $: endPostEngagement = $langStore && t('email.endPostEngagement')
   export let engagement
 </script>
 
 <style type="text/scss">
-  @import '../styles/importable';
+  @import 'src/styles/importable';
 
   .subscription {
     background-color: $email-collector-background;

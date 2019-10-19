@@ -1,8 +1,8 @@
 <script>
-  import request from '../../../core/service.js'
+  import request from 'core/service.js'
   import getFingerprintHash from './getFingerprintHash.js'
   import { onMount } from 'svelte'
-  import { sample } from '../../../utils/random.js'
+  import { sample } from 'utils/random.js'
 
   let isLoading = false
   let justSent = false
@@ -47,7 +47,7 @@
 </script>
 
 <style type="text/scss">
-  @import '../../../styles/importable.scss';
+  @import 'src/styles/importable.scss';
 
   .container {
     display: flex;

@@ -1,9 +1,9 @@
 <script>
-  import { langStore } from '../core/store'
+  import { langStore } from 'core/store'
 </script>
 
 <style type="text/scss">
-  @import '../styles/importable';
+  @import 'src/styles/importable';
 
   footer {
     display: flex;

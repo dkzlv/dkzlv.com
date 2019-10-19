@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import { fade } from 'svelte/transition'
   import { langStore } from '../core/store.js'
-  import t from '../core/i18n/client.js'
+  import t from 'core/i18n/client.js'
 
   $: buttonText = $langStore && t('colorSwitcher')
 
@@ -27,7 +27,7 @@
 </script>
 
 <style type="text/scss">
-  @import '../styles/importable';
+  @import 'src/styles/importable';
 
   .wrapper {
     position: fixed;

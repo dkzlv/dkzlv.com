@@ -7,8 +7,8 @@
 </script>
 
 <script>
-  import { langStore } from '../../core/store'
-  import t from '../../core/i18n/client.js'
+  import { langStore } from 'core/store'
+  import t from 'core/i18n/client.js'
 
   export let posts
   export let lang
@@ -25,7 +25,7 @@
 </script>
 
 <style type="text/scss">
-  @import '../../styles/importable';
+  @import 'src/styles/importable';
 
   div {
     margin-bottom: 37px;

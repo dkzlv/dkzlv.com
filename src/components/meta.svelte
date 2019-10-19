@@ -1,5 +1,5 @@
 <script>
-  import { baseClientPath } from '../core/config.js'
+  import { baseClientPath } from 'core/config.js'
 
   export let title = ''
   export let description = ''

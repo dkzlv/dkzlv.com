@@ -1,11 +1,11 @@
 <script>
   import { fade } from 'svelte/transition'
-  import { langStore } from '../core/store.js'
-  import t from '../core/i18n/client.js'
-  import isEmail from '../utils/validations/email.js'
-  import delay from '../utils/delay.js'
+  import { langStore } from 'core/store.js'
+  import t from 'core/i18n/client.js'
+  import isEmail from 'utils/validations/email.js'
+  import delay from 'utils/delay.js'
   import Tooltip from './tooltip.svelte'
-  import request from '../core/service'
+  import request from 'core/service'
 
   $: placeholder = $langStore && t('email.placeholder')
   $: buttonText = $langStore && t('email.subscribe')
@@ -52,7 +52,7 @@
 </script>
 
 <style type="text/scss">
-  @import '../styles/importable';
+  @import 'src/styles/importable';
 
   .group {
     display: flex;

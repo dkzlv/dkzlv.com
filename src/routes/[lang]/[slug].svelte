@@ -1,5 +1,5 @@
 <script context="module">
-  import Post from '../../components/post.svelte'
+  import Post from 'components/post.svelte'
 
   export async function preload({ params }) {
     const res = await this.fetch(`/${params.lang}/${params.slug}.json`)

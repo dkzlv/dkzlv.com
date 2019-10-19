@@ -13,9 +13,9 @@
 </script>
 
 <script>
-  import Post from '../../../components/post.svelte'
-  import Fingerprint from '../../../components/posts/privacy-pt1/fingerprint.svelte'
-  import Pidor from '../../../components/posts/privacy-pt1/pidor.svelte'
+  import Post from 'components/post.svelte'
+  import Fingerprint from 'components/posts/privacy-pt1/fingerprint.svelte'
+  import Pidor from 'components/posts/privacy-pt1/pidor.svelte'
 
   export let data
 </script>
