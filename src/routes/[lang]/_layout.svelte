@@ -5,9 +5,14 @@
   import PageLoading from 'components/pageLoading.svelte'
   import { stores } from '@sapper/app'
   import { langStore } from 'core/store'
+  import { onMount } from 'svelte'
+  import warn from 'core/consoleWarning'
+  import t from 'core/i18n/client.js'
 
   const { page, preloading } = stores()
   $: langStore.set($page.params.lang)
+
+  onMount(() => warn(t('consoleWarning')))
 </script>
 
 <style global type="text/scss">

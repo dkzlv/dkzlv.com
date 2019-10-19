@@ -24,7 +24,8 @@
     "posts": {
       "readTime": "{{time}} minute |||| {{time}} minutes"
     },
-    "colorSwitcher": "Change colors"
+    "colorSwitcher": "Change colors",
+    "consoleWarning": "Hi there, anonymous hacker! We hire THE BEST janitors our there, and you seem to fit our team! Drop a few lines to trash@bin.com"
   },
   "ru": {
     "email": {
@@ -51,6 +52,7 @@
     "posts": {
       "readTime": "{{time}} минута |||| {{time}} минуты |||| {{time}} минут"
     },
-    "colorSwitcher": "Сменить цвета"
+    "colorSwitcher": "Сменить цвета",
+    "consoleWarning": "Даров, хакир! Мы нанимаем лучших уборщиков, и ты — прекрасный кандидат! Пиши на trash@bin.com"
   }
 }

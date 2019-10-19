@@ -1,9 +1,10 @@
 const styles = [
-  'color: #4dbb63',
-  'background: #999588',
-  'font-size: 20px',
+  'color: #29f20e',
+  'background: #000',
+  'font-size: 15px',
   'text-shadow: 2px 2px #615e57',
-  'padding: 5px',
+  'padding: 55px',
+  'margin: 55px',
 ].join(';')
 
 const warn = text => console.log(`%c${text}`, styles)
