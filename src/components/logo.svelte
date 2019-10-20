@@ -29,7 +29,7 @@
   const onMouseOut = () => setFixedInterval(3500)
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   .logo {
     width: 80px;
     user-select: none;

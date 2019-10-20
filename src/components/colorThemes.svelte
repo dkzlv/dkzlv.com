@@ -26,7 +26,7 @@
   $: showBeforeHiding = y <= 500
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   @import 'src/styles/importable';
 
   .wrapper {

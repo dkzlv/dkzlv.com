@@ -7,7 +7,7 @@
   export let engagement
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   @import 'src/styles/importable';
 
   .subscription {

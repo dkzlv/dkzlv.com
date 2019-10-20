@@ -2,7 +2,7 @@
   import { fade } from 'svelte/transition'
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   @import 'src/styles/importable';
 
   .loading {

@@ -74,7 +74,7 @@
   }
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   @import 'src/styles/_importable.scss';
 
   .button-wrapper {

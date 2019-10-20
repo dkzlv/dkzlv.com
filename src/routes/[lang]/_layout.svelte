@@ -15,7 +15,7 @@
   onMount(() => warn(t('consoleWarning')))
 </script>
 
-<style global type="text/scss">
+<style global lang="scss">
   @import 'src/styles/main.scss';
 </style>
 

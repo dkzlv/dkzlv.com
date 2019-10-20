@@ -12,7 +12,7 @@
   $: join = $langStore && t('header.join')
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   @import 'src/styles/importable';
 
   nav {

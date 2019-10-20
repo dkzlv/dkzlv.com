@@ -2,7 +2,7 @@
   import { langStore } from 'core/store'
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   @import 'src/styles/importable';
 
   footer {
