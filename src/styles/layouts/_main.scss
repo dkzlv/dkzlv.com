@@ -18,10 +18,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+#app {
+  min-height: 100vh;
+}
+
 .root {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100vh;
 
   margin: 0 auto;
   @include mq($until: mobile) {
