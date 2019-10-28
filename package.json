@@ -33,6 +33,7 @@
     "@types/node-polyglot": "^0.4.34",
     "@typescript-eslint/parser": "^2.1.0",
     "autoprefixer": "^9.6.1",
+    "cssnano": "^4.1.10",
     "eslint": "^6.3.0",
     "eslint-config-prettier": "^6.2.0",
     "eslint-plugin-prettier": "^3.1.1",
