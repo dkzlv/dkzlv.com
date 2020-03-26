@@ -2,6 +2,7 @@ import { config as dotenvConfig } from 'dotenv';
 dotenvConfig();
 
 import path from 'path';
+import fs from 'fs';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
@@ -43,11 +44,19 @@ const commonReplace = {
   'process.env.ROOT_STATIC_PATH': JSON.stringify(process.env.ROOT_STATIC_PATH),
 };
 
+const watchPostsPlugin = {
+  buildStart() {
+    const files = fs.readdirSync('./src/posts/');
+    files.forEach((file) => this.addWatchFile('./src/posts/' + file));
+  },
+};
+
 export default {
   client: {
     input: config.client.input(),
     output: config.client.output(),
     plugins: [
+      watchPostsPlugin,
       replace({
         'process.browser': true,
         ...commonReplace,
@@ -97,6 +106,7 @@ export default {
     input: config.server.input(),
     output: config.server.output(),
     plugins: [
+      watchPostsPlugin,
       replace({
         'process.browser': false,
         ...commonReplace,
