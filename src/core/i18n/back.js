@@ -1,7 +1,5 @@
 import Polyglot from 'node-polyglot'
 
-export type SupportedLangs = 'en' | 'ru'
-
 const phrases = {
   en: {
     rss: {
@@ -22,10 +20,9 @@ const phrases = {
 }
 
 let polyglot = new Polyglot({ interpolation: { prefix: '{{', suffix: '}}' } })
-// @ts-ignore
-const t = (...args: any[]) => polyglot.t(...args)
+const t = (...args) => polyglot.t(...args)
 
-export const setLang = (lang: SupportedLangs) => {
+export const setLang = (lang) => {
   polyglot.locale(lang)
   polyglot.extend(phrases[lang])
 }

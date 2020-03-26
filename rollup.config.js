@@ -2,14 +2,13 @@ import { config as dotenvConfig } from 'dotenv'
 dotenvConfig()
 
 import path from 'path'
-import resolve from 'rollup-plugin-node-resolve'
-import replace from 'rollup-plugin-replace'
-import commonjs from 'rollup-plugin-commonjs'
+import resolve from '@rollup/plugin-node-resolve'
+import replace from '@rollup/plugin-replace'
+import commonjs from '@rollup/plugin-commonjs'
 import svelte from 'rollup-plugin-svelte'
 import babel from 'rollup-plugin-babel'
 import { terser } from 'rollup-plugin-terser'
-import typescript from 'rollup-plugin-typescript'
-import json from 'rollup-plugin-json'
+import json from '@rollup/plugin-json'
 import config from 'sapper/config/rollup.js'
 import pkg from './package.json'
 import autoPreprocess from 'svelte-preprocess'
@@ -31,9 +30,6 @@ const onwarn = (warning, onwarn) => {
 const preprocess = autoPreprocess({
   postcss: true,
   scss: true,
-  typescript: {
-    transpileOnly: true,
-  },
 })
 
 const commonReplace = {
@@ -63,7 +59,6 @@ export default {
         },
       }),
       commonjs(),
-      typescript(),
       svelte({
         dev,
         preprocess,
@@ -112,7 +107,6 @@ export default {
         },
       }),
       commonjs(),
-      typescript(),
       svelte({
         generate: 'ssr',
         dev,

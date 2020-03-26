@@ -1,14 +1,13 @@
 import { readFileSync, readdirSync } from 'fs'
 import calcReadTime from './calcReadTime'
-import { IPost } from './types'
 import convert from './convertFile'
 import { join } from 'path'
 
 const postPartitionMatcher = /^[0-9]+\.md$/
 
-const getPostPartitions = (rootPostsPath: string, lang: string, slug: string): string[] =>
+const getPostPartitions = (rootPostsPath, lang, slug) =>
   readdirSync(rootPostsPath)
-    .map(filename => {
+    .map((filename) => {
       if (postPartitionMatcher.test(filename)) {
         return convert(readFileSync(join(rootPostsPath, filename), { encoding: 'utf-8' }), {
           baseUrl: `/${lang}/${slug}`,
@@ -16,7 +15,7 @@ const getPostPartitions = (rootPostsPath: string, lang: string, slug: string): s
         }).content
       }
     })
-    .filter(Boolean) as string[]
+    .filter(Boolean)
 
 /**
  * @param path If multiplePartitions is false, then it's the path to post file. If multiplePartitions is true,
@@ -24,13 +23,8 @@ const getPostPartitions = (rootPostsPath: string, lang: string, slug: string): s
  * @param slug Slug for the post
  * @param multiplePartitions Defines if the passed path is to a meta-file, meaning the post has multiple partitions
  */
-export default function getPost(
-  path: string,
-  slug: string,
-  multiplePartitions = false,
-): IPost | false {
-  let content: IPost['content']
-  let meta: IPost['meta']
+export default function getPost(path, slug, multiplePartitions = false) {
+  let content, meta
 
   if (multiplePartitions) {
     meta = convert(readFileSync(join(path, 'meta.md'), { encoding: 'utf-8' })).meta

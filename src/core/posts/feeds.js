@@ -1,10 +1,10 @@
-import posts from './posts'
 import { Feed } from 'feed'
-import t, { setLang, SupportedLangs } from '../i18n/back'
-// @ts-ignore
-import { rootSitePath } from '../paths.js'
 
-const feedGenerator = (lang: SupportedLangs) => {
+import posts from './posts'
+import t, { setLang } from '../i18n/back'
+import { rootSitePath } from '../paths'
+
+const feedGenerator = (lang) => {
   setLang(lang)
   const baseLocalizedPath = `${rootSitePath}/${lang}`
 
@@ -30,8 +30,8 @@ const feedGenerator = (lang: SupportedLangs) => {
   feed.addCategory(t('rss.category'))
 
   posts
-    .filter(post => post.meta.lang === lang)
-    .forEach(post =>
+    .filter((post) => post.meta.lang === lang)
+    .forEach((post) =>
       feed.addItem({
         title: post.meta.title,
         id: post.meta.slug,

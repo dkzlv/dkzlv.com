@@ -1,6 +1,4 @@
-import { Response } from 'express'
-
-const commonGet = (res: Response, sendContent?: Object) => {
+const commonGet = (res, sendContent) => {
   const headers = {
     'Content-Type': 'application/json',
   }
