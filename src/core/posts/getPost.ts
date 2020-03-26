@@ -6,18 +6,14 @@ import { join } from 'path'
 
 const postPartitionMatcher = /^[0-9]+\.md$/
 
-const getPostPartitions = (
-  rootPostsPath: string,
-  lang: string,
-  slug: string,
-): string[] =>
+const getPostPartitions = (rootPostsPath: string, lang: string, slug: string): string[] =>
   readdirSync(rootPostsPath)
     .map(filename => {
       if (postPartitionMatcher.test(filename)) {
-        return convert(
-          readFileSync(join(rootPostsPath, filename), { encoding: 'utf-8' }),
-          { baseUrl: `/${lang}/${slug}`, prependLangFromMeta: false },
-        ).content
+        return convert(readFileSync(join(rootPostsPath, filename), { encoding: 'utf-8' }), {
+          baseUrl: `/${lang}/${slug}`,
+          prependLangFromMeta: false,
+        }).content
       }
     })
     .filter(Boolean) as string[]
@@ -37,8 +33,7 @@ export default function getPost(
   let meta: IPost['meta']
 
   if (multiplePartitions) {
-    meta = convert(readFileSync(join(path, 'meta.md'), { encoding: 'utf-8' }))
-      .meta
+    meta = convert(readFileSync(join(path, 'meta.md'), { encoding: 'utf-8' })).meta
     content = getPostPartitions(path, meta.lang, slug)
   } else {
     const converted = convert(readFileSync(path, { encoding: 'utf-8' }), {
@@ -64,8 +59,7 @@ export default function getPost(
   meta.slug = slug
 
   // You need to explicitly set published to 1 to make the post available on production
-  if (!parseInt(published) && process.env.NODE_ENV !== 'development')
-    return false
+  if (!parseInt(published) && process.env.NODE_ENV !== 'development') return false
 
   return { meta, content }
 }

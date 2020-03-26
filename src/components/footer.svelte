@@ -1,5 +1,6 @@
 <script>
   import { langStore } from 'core/store'
+  import { rootSitePath, staticPath } from 'core/paths'
 </script>
 
 <style lang="scss">
@@ -25,25 +26,20 @@
 <footer>
   <p>
     2018-{new Date().getFullYear()},
-    <a
-      href="https://twitter.com/d_kzlv"
-      rel="noreferrer nofollow"
-      target="_blank">
-      Dan Kozlov
-    </a>
+    <a href="https://twitter.com/d_kzlv" rel="noreferrer nofollow" target="_blank">Dan Kozlov</a>
   </p>
   <div class="right">
     {#if $langStore === 'ru'}
       <a href="/en">
-        <img src="/img/footer/gb.svg" alt="Brit's flag" />
+        <img src={`${staticPath}/img/footer/gb.svg`} alt="Brit's flag" />
       </a>
     {:else if $langStore === 'en'}
       <a href="/ru">
-        <img src="/img/footer/ru.svg" alt="Russ' flag" />
+        <img src={`${staticPath}/img/footer/ru.svg`} alt="Russ' flag" />
       </a>
     {/if}
     <a href={$langStore + '/rss'} class="rss" rel="prefetch">
-      <img src="/img/footer/rss.svg" alt="RSS" />
+      <img src={`${staticPath}/img/footer/rss.svg`} alt="RSS" />
     </a>
   </div>
 </footer>

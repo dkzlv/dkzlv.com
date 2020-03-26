@@ -2,20 +2,20 @@ import posts from './posts'
 import { Feed } from 'feed'
 import t, { setLang, SupportedLangs } from '../i18n/back'
 // @ts-ignore
-import { baseClientPath } from '../config.js'
+import { rootSitePath } from '../paths.js'
 
 const feedGenerator = (lang: SupportedLangs) => {
   setLang(lang)
-  const baseLocalizedPath = `${baseClientPath}/${lang}`
+  const baseLocalizedPath = `${rootSitePath}/${lang}`
 
   const feed = new Feed({
     title: 'dkzlv.com',
     description: t('rss.description'),
-    id: baseClientPath,
-    link: baseClientPath,
+    id: rootSitePath,
+    link: rootSitePath,
     language: lang,
-    image: `${baseClientPath}/icons/rss.png`,
-    favicon: `${baseClientPath}/icons/favicon.ico`,
+    image: `${rootSitePath}/icons/rss.png`,
+    favicon: `${rootSitePath}/icons/favicon.ico`,
     generator: t('rss.generator'),
     copyright: '©©©',
     feedLinks: {
@@ -24,7 +24,7 @@ const feedGenerator = (lang: SupportedLangs) => {
     },
     author: {
       name: t('rss.author'),
-      link: baseClientPath,
+      link: rootSitePath,
     },
   })
   feed.addCategory(t('rss.category'))
@@ -37,9 +37,7 @@ const feedGenerator = (lang: SupportedLangs) => {
         id: post.meta.slug,
         link: `${baseLocalizedPath}/${post.meta.slug}`,
         description: post.meta.description,
-        content: Array.isArray(post.content)
-          ? post.content.join('')
-          : post.content,
+        content: Array.isArray(post.content) ? post.content.join('') : post.content,
         date: new Date(post.meta.date),
         image: post.meta.imagePreview,
       }),

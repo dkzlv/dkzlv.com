@@ -32,8 +32,7 @@ const posts = readdirSync(rootPostPath, { withFileTypes: true })
   // Sorting by date
   .sort(
     (a, b) =>
-      new Date((b as IPost).meta.date).getTime() -
-      new Date((a as IPost).meta.date).getTime(),
+      new Date((b as IPost).meta.date).getTime() - new Date((a as IPost).meta.date).getTime(),
   ) as IPost[]
 
 export default posts

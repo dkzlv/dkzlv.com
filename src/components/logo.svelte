@@ -1,6 +1,8 @@
 <script>
+  import { staticPath } from 'core/paths'
+
   const classes = [
-    'skull',
+    '',
     'cross',
     'yggdrasil',
     'fire',
@@ -10,14 +12,12 @@
     'infinity',
     'hazard',
   ]
-  let lastIndex = 0
+  let currIndex = 0
 
-  const setNewClass = () =>
-    lastIndex + 1 === classes.length ? (lastIndex = 0) : lastIndex++
+  const setNewClass = () => (currIndex + 1 === classes.length ? (currIndex = 0) : currIndex++)
 
-  $: extraClass = classes[lastIndex]
-
-  classes.forEach(() => setNewClass())
+  // Used to force browser to pre-cache all svgs
+  classes.forEach(() => setTimeout(() => setNewClass()))
 
   let interval
   const setFixedInterval = tm => {
@@ -33,46 +33,46 @@
   .logo {
     width: 80px;
     user-select: none;
-    mask-image: url(/img/logomask/skull.svg);
+    mask-image: url(/static/img/logomask/skull.svg);
   }
 
   .cross {
-    mask-image: url(/img/logomask/cross.svg);
-  }
-
-  .skull {
-    mask-image: url(/img/logomask/skull.svg);
+    mask-image: url(/static/img/logomask/cross.svg);
   }
 
   .fire {
-    mask-image: url(/img/logomask/fire.svg);
+    mask-image: url(/static/img/logomask/fire.svg);
   }
 
   .peace {
-    mask-image: url(/img/logomask/peace.svg);
+    mask-image: url(/static/img/logomask/peace.svg);
   }
 
   .cannabis {
-    mask-image: url(/img/logomask/cannabis.svg);
+    mask-image: url(/static/img/logomask/cannabis.svg);
   }
 
   .heart {
-    mask-image: url(/img/logomask/heart.svg);
+    mask-image: url(/static/img/logomask/heart.svg);
   }
 
   .infinity {
-    mask-image: url(/img/logomask/infinity.svg);
+    mask-image: url(/static/img/logomask/infinity.svg);
   }
 
   .hazard {
-    mask-image: url(/img/logomask/hazard.svg);
+    mask-image: url(/static/img/logomask/hazard.svg);
   }
 
   .yggdrasil {
-    mask-image: url(/img/logomask/yggdrasil.svg);
+    mask-image: url(/static/img/logomask/yggdrasil.svg);
   }
 </style>
 
 <div on:mouseover={onMouseOver} on:mouseout={onMouseOut}>
-  <img src="/site/logo.jpg" alt="logo" class="logo {extraClass}" height="80" />
+  <img
+    src={`${staticPath}/img/logo.jpg`}
+    class={`logo ${classes[currIndex]}`}
+    alt="logo"
+    height="80" />
 </div>

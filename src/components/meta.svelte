@@ -1,5 +1,6 @@
 <script>
-  import { baseClientPath } from 'core/config.js'
+  import { rootSitePath } from 'core/paths'
+  import { langStore } from 'core/store.js'
 
   export let title = ''
   export let description = ''
@@ -8,7 +9,7 @@
   export let imagePreview = ''
   export let locale = ''
 
-  $: canonicalLocation = `${baseClientPath}/${path}/`
+  $: canonicalLocation = `${rootSitePath}/${$langStore}/${path}/`
 </script>
 
 <svelte:head>
@@ -17,9 +18,9 @@
   <meta name="twitter:title" content={title} />
   <meta property="og:title" content={title} />
 
-  <meta name="twitter:site" content={baseClientPath} />
-  <meta property="og:site_name" content={baseClientPath} />
-  <meta itemprop="name" content={baseClientPath} />
+  <meta name="twitter:site" content={rootSitePath} />
+  <meta property="og:site_name" content={rootSitePath} />
+  <meta itemprop="name" content={rootSitePath} />
 
   <meta name="description" content={description} />
   <meta name="twitter:description" content={description} />

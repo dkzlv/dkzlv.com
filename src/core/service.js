@@ -1,7 +1,7 @@
-import { baseBackPath } from './config'
+import { rootApiPath } from './paths'
 
 const request = (method, path, data) =>
-  fetch(`${baseBackPath}/${path}`, {
+  fetch(`${rootApiPath}/${path}`, {
     method,
     headers: {
       Accept: 'application/json',
