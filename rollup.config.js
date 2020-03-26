@@ -1,3 +1,6 @@
+import { config as dotenvConfig } from 'dotenv'
+dotenvConfig()
+
 import path from 'path'
 import resolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
@@ -15,10 +18,15 @@ const mode = process.env.NODE_ENV
 const dev = mode === 'development'
 const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
-const onwarn = (warning, onwarn) =>
-  (warning.code === 'CIRCULAR_DEPENDENCY' &&
-    /[/\\]@sapper[/\\]/.test(warning.message)) ||
-  onwarn(warning)
+const onwarn = (warning, onwarn) => {
+  // Shows up after I added svelte-i18n for some reason, safe to ignore
+  if (warning.code === 'THIS_IS_UNDEFINED') return
+
+  return (
+    (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
+    onwarn(warning)
+  )
+}
 
 const preprocess = autoPreprocess({
   postcss: true,
@@ -28,6 +36,17 @@ const preprocess = autoPreprocess({
   },
 })
 
+const commonReplace = {
+  'process.env.NODE_ENV': JSON.stringify(mode),
+  'process.env.API_SCHEME': JSON.stringify(process.env.API_SCHEME),
+  'process.env.API_HOST': JSON.stringify(process.env.API_HOST),
+  'process.env.API_PORT': JSON.stringify(process.env.API_PORT),
+  'process.env.SITE_SCHEME': JSON.stringify(process.env.SITE_SCHEME),
+  'process.env.SITE_HOST': JSON.stringify(process.env.SITE_HOST),
+  'process.env.SITE_PORT': JSON.stringify(process.env.SITE_PORT),
+  'process.env.ROOT_STATIC_PATH': JSON.stringify(process.env.ROOT_STATIC_PATH),
+}
+
 export default {
   client: {
     input: config.client.input(),
@@ -35,7 +54,7 @@ export default {
     plugins: [
       replace({
         'process.browser': true,
-        'process.env.NODE_ENV': JSON.stringify(mode),
+        ...commonReplace,
       }),
       resolve({
         browser: true,
@@ -85,7 +104,7 @@ export default {
     plugins: [
       replace({
         'process.browser': false,
-        'process.env.NODE_ENV': JSON.stringify(mode),
+        ...commonReplace,
       }),
       resolve({
         customResolveOptions: {
@@ -102,8 +121,7 @@ export default {
       json(),
     ],
     external: Object.keys(pkg.dependencies).concat(
-      require('module').builtinModules ||
-        Object.keys(process.binding('natives')),
+      require('module').builtinModules || Object.keys(process.binding('natives')),
     ),
 
     onwarn,
@@ -115,7 +133,7 @@ export default {
     plugins: [
       replace({
         'process.browser': true,
-        'process.env.NODE_ENV': JSON.stringify(mode),
+        ...commonReplace,
       }),
       resolve(),
       commonjs(),
