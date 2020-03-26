@@ -1,9 +1,8 @@
 <script>
-  import EmailCollector from './emailCollector.svelte';
-  import t from 'core/i18n/client.js';
-  import { langStore } from 'core/store.js';
+  import { _ } from 'svelte-i18n';
 
-  $: endPostEngagement = $langStore && t('email.endPostEngagement');
+  import EmailCollector from './emailCollector.svelte';
+
   export let engagement;
 </script>
 
@@ -34,7 +33,7 @@
 
 <div class="subscription">
   <p>
-    {@html engagement || endPostEngagement}
+    {@html engagement || $_('email.endPostEngagement')}
   </p>
 
   <EmailCollector />

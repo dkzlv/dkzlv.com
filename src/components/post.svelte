@@ -1,8 +1,9 @@
 <script>
+  import { onMount } from 'svelte';
+  import { locale } from 'svelte-i18n';
+
   import Meta from './meta.svelte';
   import Subscription from './subscription.svelte';
-  import { onMount } from 'svelte';
-  import { langStore } from 'core/store.js';
 
   export let post;
 
@@ -26,7 +27,7 @@
   path={post.meta.slug}
   description={post.meta.description}
   imagePreview={post.meta.imagePreview}
-  locale={$langStore} />
+  locale={$locale} />
 
 <article>
   <h1>{post.meta.title}</h1>

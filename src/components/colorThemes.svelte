@@ -1,10 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
-  import { langStore } from '../core/store.js';
-  import t from 'core/i18n/client.js';
-
-  $: buttonText = $langStore && t('colorSwitcher');
+  import { _ } from 'svelte-i18n';
 
   const attr = 'data-night-theme';
   let show = false;
@@ -113,7 +110,7 @@
     in:fade={{ delay: 500, duration: 200 }}
     out:fade={{ duration: 200 }}
     on:click={onChange}>
-    <p>{buttonText}</p>
+    <p>{$_('colorSwitcher')}</p>
     <label class="switch">
       <input type="checkbox" bind:checked={checkboxValue} on:change={onChange} />
       <span class="slider" />

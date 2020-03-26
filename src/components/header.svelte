@@ -1,15 +1,9 @@
 <script>
+  import { _, locale } from 'svelte-i18n';
+
   import Logo from './logo.svelte';
   import TwitterIcon from './twitterIcon.svelte';
   import EmailCollector from './emailCollector.svelte';
-
-  import t from 'core/i18n/client.js';
-  import { langStore } from 'core/store';
-
-  $: onboard = $langStore && t('header.onboard');
-  $: twitter = $langStore && t('header.twitter');
-  $: sameContent = $langStore && t('header.sameContent');
-  $: join = $langStore && t('header.join');
 </script>
 
 <style lang="scss">
@@ -61,22 +55,22 @@
 <header>
   <nav>
     <div class="logo">
-      <a href={$langStore}>
+      <a href={$locale}>
         <Logo />
       </a>
     </div>
     <div class="newsletter-text">
       <p>
-        {onboard}
+        {$_('header.onboard')}
         <a href="https://twitter.com/d_kzlv/" rel="noreferrer nofollow" target="_blank">
           <span class="twitterIcon">
             <TwitterIcon />
           </span>
-          {twitter}
+          {$_('header.twitter')}
         </a>
-        {sameContent}
+        {$_('header.sameContent')}
         <br />
-        {join}
+        {$_('header.join')}
       </p>
       <EmailCollector />
     </div>

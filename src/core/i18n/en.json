@@ -1,0 +1,34 @@
+{
+  "rss": {
+    "description": "Me telling you where you are wrong",
+    "generator": "My pretty straight hands",
+    "category": "existential bullshit",
+    "author": "Dan Kozlov"
+  },
+  "email": {
+    "placeholder": "Drop your burner-email here",
+    "subscribe": "Subscribe",
+    "error100": "STOP HACKING ME",
+    "error101": "Smth went wrong. Maybe I'll someday fix. Probably not",
+    "error102": "Cmon, we both know it's not your email",
+    "error103": "Do I need to guess it?",
+    "success": "All done. Confirm your email and you'll get your portion of spam soon",
+    "endPostEngagement": "Holy shit, you've read it to the very end. Care to subscribe?",
+    "tooltip": {
+      "header": "What you'll get?",
+      "noNudes": "No nudes or dickpicks, I promise 🤞",
+      "articles": "I'll send you my articles and summaries of other's that I like"
+    }
+  },
+  "header": {
+    "onboard": "Hey! Get onboard",
+    "twitter": "on Twitter",
+    "sameContent": "— same content, but faster.",
+    "join": "Or join the newsletter. One email a week if I'm not lazy."
+  },
+  "posts": {
+    "readTime": "{time, plural, one {1 minute} other {{time} minutes}}"
+  },
+  "colorSwitcher": "Change colors",
+  "consoleWarning": "Hi there, anonymous hacker! We hire THE BEST janitors our there, and you seem to fit our team! Drop a few lines to trash@bin.com"
+}

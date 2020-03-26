@@ -7,20 +7,10 @@
 </script>
 
 <script>
-  import { langStore } from 'core/store';
-  import t from 'core/i18n/client.js';
+  import { _, locale, date, format } from 'svelte-i18n';
 
   export let posts;
   export let lang;
-
-  const getReadTime = time => t('posts.readTime', time).replace('{{time}}', time);
-
-  const formatDate = dateString =>
-    new Date(dateString).toLocaleString($langStore, {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
 </script>
 
 <style lang="scss">
@@ -52,10 +42,14 @@
 
 {#each posts as post}
   <div>
-    <a rel="prefetch" href={`${$langStore}/${post.slug}`}>
+    <a rel="prefetch" href={`${$locale}/${post.slug}`}>
       <h2>{post.title}</h2>
     </a>
-    <p class="meta">{formatDate(post.date)} • {getReadTime(post.readTime)}</p>
+    <p class="meta">
+      {$date(new Date(post.date), { format: 'long' })} • {$format('posts.readTime', {
+        values: { time: post.readTime },
+      })}
+    </p>
     <p>
       {@html post.description}
     </p>

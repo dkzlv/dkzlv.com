@@ -1,24 +1,18 @@
 <script>
   import { fade } from 'svelte/transition';
-  import { langStore } from 'core/store.js';
-  import t from 'core/i18n/client.js';
+  import { _, locale } from 'svelte-i18n';
+
+  import request from 'core/service';
   import isEmail from 'utils/validations/email.js';
   import delay from 'utils/delay.js';
+
   import Tooltip from './tooltip.svelte';
-  import request from 'core/service';
 
-  $: placeholder = $langStore && t('email.placeholder');
-  $: buttonText = $langStore && t('email.subscribe');
-  $: successText = $langStore && t('email.success');
-  $: headerText = $langStore && t('email.tooltip.header');
-  $: noNudesText = $langStore && t('email.tooltip.noNudes');
-  $: articlesText = $langStore && t('email.tooltip.articles');
-
-  $: errors = $langStore && {
-    100: t('email.error100'),
-    101: t('email.error101'),
-    102: t('email.error102'),
-    103: t('email.error103'),
+  $: errors = {
+    100: $_('email.error100'),
+    101: $_('email.error101'),
+    102: $_('email.error102'),
+    103: $_('email.error103'),
   };
 
   let email = '';
@@ -37,7 +31,7 @@
     isLoading = true;
     const res = await request('POST', 'subscribe', {
       email,
-      language: $langStore,
+      language: $locale,
     });
     isLoading = false;
     if (res.ok) {
@@ -93,28 +87,29 @@
 
 <div class="group">
   <form novalidate on:submit|preventDefault={onSubmit}>
-    <input type="email" class="input input--accent email-input" bind:value={email} {placeholder} />
+    <input
+      type="email"
+      class="input input--accent email-input"
+      bind:value={email}
+      placeholder={$_('email.placeholder')} />
     <button
-      class={'btn btn--accent-outline subscribe-button ' + (isLoading && 'btn--loading')}
+      class="btn btn--accent-outline subscribe-button"
+      class:btn--loading={isLoading}
       disabled={isLoading}>
-      {buttonText}
+      {$_('email.subscribe')}
     </button>
   </form>
   <Tooltip>
-    <p class="tooltip__header">{headerText}</p>
-    <p class="tooltip__p">{noNudesText}</p>
-    <p class="tooltip__p">{articlesText}</p>
+    <p class="tooltip__header">{$_('email.tooltip.header')}</p>
+    <p class="tooltip__p">{$_('email.tooltip.noNudes')}</p>
+    <p class="tooltip__p">{$_('email.tooltip.articles')}</p>
   </Tooltip>
 </div>
 
 <div class="below-form">
   {#if errorCode}
-    <p class="text--error" in:fade={{ duration: 200 }} out:fade={{ duration: 200 }}>
-      {errors[errorCode]}
-    </p>
+    <p class="text--error" transition:fade={{ duration: 200 }}>{errors[errorCode]}</p>
   {:else if success}
-    <p class="text--success" in:fade={{ duration: 200 }} out:fade={{ duration: 200 }}>
-      {successText}
-    </p>
+    <p class="text--success" transition:fade={{ duration: 200 }}>{$_('email.success')}</p>
   {/if}
 </div>

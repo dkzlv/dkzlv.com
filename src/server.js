@@ -3,6 +3,10 @@ import express from 'express';
 import compression from 'compression';
 import * as sapper from '@sapper/server';
 
+import i18nInitialize from 'core/i18n/index';
+
+i18nInitialize();
+
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
 

@@ -1,5 +1,5 @@
 <script>
-  import { langStore } from 'core/store';
+  import { locale } from 'svelte-i18n';
   import { rootSitePath, staticPath } from 'core/paths';
 </script>
 
@@ -29,16 +29,16 @@
     <a href="https://twitter.com/d_kzlv" rel="noreferrer nofollow" target="_blank">Dan Kozlov</a>
   </p>
   <div class="right">
-    {#if $langStore === 'ru'}
+    {#if $locale === 'ru'}
       <a href="/en">
         <img src={`${staticPath}/img/footer/gb.svg`} alt="Brit's flag" />
       </a>
-    {:else if $langStore === 'en'}
+    {:else if $locale === 'en'}
       <a href="/ru">
         <img src={`${staticPath}/img/footer/ru.svg`} alt="Russ' flag" />
       </a>
     {/if}
-    <a href={$langStore + '/rss'} class="rss" rel="prefetch">
+    <a href={$locale + '/rss'} class="rss" rel="prefetch">
       <img src={`${staticPath}/img/footer/rss.svg`} alt="RSS" />
     </a>
   </div>

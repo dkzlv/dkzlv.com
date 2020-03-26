@@ -1,6 +1,7 @@
 <script>
+  import { locale as localeStore } from 'svelte-i18n';
+
   import { rootSitePath } from 'core/paths';
-  import { langStore } from 'core/store.js';
 
   export let title = '',
     description = '',
@@ -9,7 +10,7 @@
     imagePreview = '',
     locale = '';
 
-  $: canonicalLocation = `${rootSitePath}/${$langStore}/${path}/`;
+  $: canonicalLocation = `${rootSitePath}/${$localeStore}/${path}/`;
 </script>
 
 <svelte:head>
