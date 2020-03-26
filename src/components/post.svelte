@@ -31,7 +31,7 @@
 
 <article>
   <h1>{post.meta.title}</h1>
-  <div>
+  <div class="post-content">
     <slot>
       {@html post.content}
     </slot>

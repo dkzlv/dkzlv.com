@@ -13,10 +13,7 @@
   #{cvts($background-color)}: #fff;
   #{cvts($selection-color)}: #fff;
   #{cvts($outline-color)}: $_accent-bg-contrast-low;
-  #{cvts($tap-highlight-color)}: adjust-color(
-    $_accent-bg-contrast-low,
-    $alpha: -0.6
-  );
+  #{cvts($tap-highlight-color)}: adjust-color($_accent-bg-contrast-low, $alpha: -0.6);
 
   #{cvts($header-gradient-1)}: $accent-color;
   #{cvts($header-gradient-2)}: $_accent-bg-contrast-high;
@@ -31,6 +28,7 @@
   #{cvts($blockquote-gradient-2)}: $_accent-bg-contrast-low;
   #{cvts($code-gradient-1)}: $accent-color;
   #{cvts($code-gradient-2)}: $_accent-bg-contrast-low;
+  #{cvts($image-filter)}: none;
 
   #{cvts($btn-bg-color)}: $accent-color;
   #{cvts($btn-border-color)}: $_accent-bg-contrast-higher;
@@ -67,10 +65,7 @@
   #{cvts($background-color)}: $_bg-color;
   #{cvts($selection-color)}: #fff;
   #{cvts($outline-color)}: $_accent-bg-contrast-low;
-  #{cvts($tap-highlight-color)}: adjust-color(
-    $_accent-bg-contrast-low,
-    $alpha: -0.6
-  );
+  #{cvts($tap-highlight-color)}: adjust-color($_accent-bg-contrast-low, $alpha: -0.6);
 
   #{cvts($header-gradient-1)}: $accent-color;
   #{cvts($header-gradient-2)}: $_accent-bg-contrast-high;
@@ -85,6 +80,7 @@
   #{cvts($blockquote-gradient-2)}: $_accent-bg-contrast-low;
   #{cvts($code-gradient-1)}: $accent-color;
   #{cvts($code-gradient-2)}: $_accent-bg-contrast-low;
+  #{cvts($image-filter)}: invert(1);
 
   #{cvts($btn-bg-color)}: $accent-color;
   #{cvts($btn-bg-outline-color)}: $_accent-bg-contrast-high;

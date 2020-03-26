@@ -16,11 +16,7 @@ h6 {
   font-weight: $bold;
   line-height: 1.3;
 
-  background: linear-gradient(
-    35deg,
-    $header-gradient-1 33%,
-    $header-gradient-2 100%
-  );
+  background: linear-gradient(35deg, $header-gradient-1 33%, $header-gradient-2 100%);
   background-clip: text;
   // Fallback, if clip doesn't work. In this case it's just showing white text on green back
   color: #fff;
@@ -149,21 +145,12 @@ mark {
   border-radius: 3px;
 
   background-color: $background-color;
-  background-image: linear-gradient(
-    to right,
-    $highlight-bg,
-    $highlight-bg 85%,
-    transparent
-  );
+  background-image: linear-gradient(to right, $highlight-bg, $highlight-bg 85%, transparent);
 }
 
 blockquote {
   border-left: 3px solid;
-  border-image-source: linear-gradient(
-    0deg,
-    $blockquote-gradient-1,
-    $blockquote-gradient-2
-  );
+  border-image-source: linear-gradient(0deg, $blockquote-gradient-1, $blockquote-gradient-2);
   border-image-slice: 1;
   margin: 15px 0;
   padding: 12px 0 12px 20px;
@@ -191,18 +178,10 @@ pre {
   color: $text-color;
 
   @include mq($until: mobile) {
-    background: linear-gradient(
-      35deg,
-      $code-gradient-1 0%,
-      $code-gradient-2 100%
-    );
+    background: linear-gradient(35deg, $code-gradient-1 0%, $code-gradient-2 100%);
   }
   @include mq($from: mobile) {
-    background: linear-gradient(
-      35deg,
-      $code-gradient-1 33%,
-      $code-gradient-2 66%
-    );
+    background: linear-gradient(35deg, $code-gradient-1 33%, $code-gradient-2 66%);
   }
   border-radius: 10px;
 
@@ -219,11 +198,11 @@ code {
   display: inline-block;
   border-radius: $border-radius;
 
-  background: linear-gradient(
-    35deg,
-    $code-gradient-1 0%,
-    $code-gradient-2 100%
-  );
+  background: linear-gradient(35deg, $code-gradient-1 0%, $code-gradient-2 100%);
   padding: 2px 4px;
   font-family: $mono;
+}
+
+.post-content img {
+  filter: $image-filter;
 }
