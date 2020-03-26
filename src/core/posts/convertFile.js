@@ -2,6 +2,8 @@ import marked, { Renderer } from 'marked';
 import yaml from 'js-yaml';
 import slugify from '@sindresorhus/slugify';
 
+import { rootStaticPath } from 'core/paths';
+
 const metaSplitter = (rawFile) => {
   if (rawFile.slice(0, 3) !== '---') return ['', rawFile];
 
@@ -33,6 +35,16 @@ renderer.link = (href, _, text) =>
 // Добавляем костыльно поддержку для выделения текста жёлтым фоном
 renderer.em = (text) =>
   text.charAt(0) === '#' ? `<mark>${text.slice(1)}</mark>` : `<em>${text}</em>`;
+
+// Adding root image path for posts
+renderer.image = (href, title, text) => {
+  let out = `<img src="${rootStaticPath}/${href}" alt="${text}"`;
+  if (title) {
+    out += ` title="${title}"`;
+  }
+  out += '/>';
+  return out;
+};
 
 export default (rawFile, opts = {}) => {
   const [rawMeta, text] = metaSplitter(rawFile);
