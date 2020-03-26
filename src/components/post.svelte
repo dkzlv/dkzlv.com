@@ -7,14 +7,17 @@
   export let post;
 
   onMount(async () => {
-    const el = document.querySelector('.email-collector');
-    if (!el) return;
+    const elements = document.querySelectorAll('.email-collector');
 
-    const engagement = el.innerText || undefined;
-    el.innerText = '';
-    el.classList.remove('email-collector');
-    const cmp = new Subscription({ target: el, props: { engagement } });
-    return () => cmp.$destroy();
+    const cmps = [];
+    elements.forEach(el => {
+      const engagement = el.innerText || undefined;
+      el.innerText = '';
+      el.classList.remove('email-collector');
+      cmps.push(new Subscription({ target: el, props: { engagement } }));
+    });
+
+    return () => cmps.forEach(cmp => cmp.$destroy());
   });
 </script>
 
