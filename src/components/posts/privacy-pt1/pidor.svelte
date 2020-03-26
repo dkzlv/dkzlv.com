@@ -1,13 +1,11 @@
 <script>
-  import { onMount } from 'svelte'
-  import { fade } from 'svelte/transition'
+  import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
 
-  let pentagons
-  let redSquares
-  let confessionEl
+  let pentagons, redSquares, confessionEl;
 
   onMount(async () => {
-    const mojs = (await import('@mojs/core')).default
+    const mojs = (await import('@mojs/core')).default;
 
     pentagons = new mojs.Burst({
       radius: { 0: 1000, easing: 'cubic.out' },
@@ -22,7 +20,7 @@
         fill: ['purple', 'pink', 'yellow', 'green'],
         duration: 3000,
       },
-    })
+    });
 
     redSquares = new mojs.Burst({
       radius: { 0: 1000, easing: 'cubic.out' },
@@ -41,37 +39,37 @@
         delay: 500,
         duration: 3000,
       },
-    })
-  })
+    });
+  });
 
-  let counter = 0
-  let confessionText = ''
+  let counter = 0,
+    confessionText = '';
   $: {
-    if (counter === 1) confessionText = 'ты пидор'
-    if (counter === 2) confessionText = 'всё еще пидор'
-    else if (counter === 3) confessionText = 'хорош уже'
-    else if (counter === 5) confessionText = ':('
-    else if (counter === 10) confessionText = 'ПАСХАЛКА'
-    else if (counter === 28) confessionText = 'ПАСХАЛКА №2'
-    else if (counter === 50) confessionText = 'А ты упорный, молодец'
+    if (counter === 1) confessionText = 'ты пидор';
+    if (counter === 2) confessionText = 'всё еще пидор';
+    else if (counter === 3) confessionText = 'хорош уже';
+    else if (counter === 5) confessionText = ':(';
+    else if (counter === 10) confessionText = 'ПАСХАЛКА';
+    else if (counter === 28) confessionText = 'ПАСХАЛКА №2';
+    else if (counter === 50) confessionText = 'А ты упорный, молодец';
   }
 
   const listener = () => {
-    const app = document.getElementById('app')
-    const rawCoor = confessionEl.getBoundingClientRect()
+    const app = document.getElementById('app');
+    const rawCoor = confessionEl.getBoundingClientRect();
     const coor = {
       x: rawCoor.x + rawCoor.width / 2,
       y: confessionEl.offsetTop + rawCoor.height / 2,
-    }
-    app.classList.add('acid-background')
+    };
+    app.classList.add('acid-background');
     setTimeout(() => {
-      app.classList.remove('acid-background')
-      counter++
-    }, 1500)
+      app.classList.remove('acid-background');
+      counter++;
+    }, 1500);
 
-    pentagons.tune(coor).replay()
-    redSquares.tune(coor).replay()
-  }
+    pentagons.tune(coor).replay();
+    redSquares.tune(coor).replay();
+  };
 </script>
 
 <style lang="scss">
@@ -104,7 +102,5 @@
       <p in:fade>{confessionText}</p>
     {/if}
   </div>
-  <button class="btn btn--accent btn--fullwidth" on:click={listener}>
-    Не ссы, не убьёт
-  </button>
+  <button class="btn btn--accent btn--fullwidth" on:click={listener}>Не ссы, не убьёт</button>
 </div>

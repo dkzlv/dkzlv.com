@@ -1,6 +1,6 @@
 <script>
-  import { langStore } from 'core/store'
-  import { rootSitePath, staticPath } from 'core/paths'
+  import { langStore } from 'core/store';
+  import { rootSitePath, staticPath } from 'core/paths';
 </script>
 
 <style lang="scss">

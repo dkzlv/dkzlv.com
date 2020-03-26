@@ -1,3 +1,3 @@
-const range = size => [...Array(size).keys()]
+const range = (size) => [...Array(size).keys()];
 
-export default range
+export default range;

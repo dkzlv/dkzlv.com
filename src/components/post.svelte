@@ -1,21 +1,21 @@
 <script>
-  import Meta from './meta.svelte'
-  import Subscription from './subscription.svelte'
-  import { onMount } from 'svelte'
-  import { langStore } from 'core/store.js'
+  import Meta from './meta.svelte';
+  import Subscription from './subscription.svelte';
+  import { onMount } from 'svelte';
+  import { langStore } from 'core/store.js';
 
-  export let post
+  export let post;
 
   onMount(async () => {
-    const el = document.querySelector('.email-collector')
-    if (!el) return
+    const el = document.querySelector('.email-collector');
+    if (!el) return;
 
-    const engagement = el.innerText || undefined
-    el.innerText = ''
-    el.classList.remove('email-collector')
-    const cmp = new Subscription({ target: el, props: { engagement } })
-    return () => cmp.$destroy()
-  })
+    const engagement = el.innerText || undefined;
+    el.innerText = '';
+    el.classList.remove('email-collector');
+    const cmp = new Subscription({ target: el, props: { engagement } });
+    return () => cmp.$destroy();
+  });
 </script>
 
 <Meta

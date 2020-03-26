@@ -1,15 +1,15 @@
 <script>
-  import Logo from './logo.svelte'
-  import TwitterIcon from './twitterIcon.svelte'
-  import EmailCollector from './emailCollector.svelte'
+  import Logo from './logo.svelte';
+  import TwitterIcon from './twitterIcon.svelte';
+  import EmailCollector from './emailCollector.svelte';
 
-  import t from 'core/i18n/client.js'
-  import { langStore } from 'core/store'
+  import t from 'core/i18n/client.js';
+  import { langStore } from 'core/store';
 
-  $: onboard = $langStore && t('header.onboard')
-  $: twitter = $langStore && t('header.twitter')
-  $: sameContent = $langStore && t('header.sameContent')
-  $: join = $langStore && t('header.join')
+  $: onboard = $langStore && t('header.onboard');
+  $: twitter = $langStore && t('header.twitter');
+  $: sameContent = $langStore && t('header.sameContent');
+  $: join = $langStore && t('header.join');
 </script>
 
 <style lang="scss">
@@ -68,10 +68,7 @@
     <div class="newsletter-text">
       <p>
         {onboard}
-        <a
-          href="https://twitter.com/d_kzlv/"
-          rel="noreferrer nofollow"
-          target="_blank">
+        <a href="https://twitter.com/d_kzlv/" rel="noreferrer nofollow" target="_blank">
           <span class="twitterIcon">
             <TwitterIcon />
           </span>

@@ -1,15 +1,15 @@
 <script>
-  import { rootSitePath } from 'core/paths'
-  import { langStore } from 'core/store.js'
+  import { rootSitePath } from 'core/paths';
+  import { langStore } from 'core/store.js';
 
-  export let title = ''
-  export let description = ''
-  export let path = ''
-  export let contentType = 'article'
-  export let imagePreview = ''
-  export let locale = ''
+  export let title = '',
+    description = '',
+    path = '',
+    contentType = 'article',
+    imagePreview = '',
+    locale = '';
 
-  $: canonicalLocation = `${rootSitePath}/${$langStore}/${path}/`
+  $: canonicalLocation = `${rootSitePath}/${$langStore}/${path}/`;
 </script>
 
 <svelte:head>

@@ -1,29 +1,29 @@
 <script>
-  import { onMount } from 'svelte'
-  import { fade } from 'svelte/transition'
-  import { langStore } from '../core/store.js'
-  import t from 'core/i18n/client.js'
+  import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
+  import { langStore } from '../core/store.js';
+  import t from 'core/i18n/client.js';
 
-  $: buttonText = $langStore && t('colorSwitcher')
+  $: buttonText = $langStore && t('colorSwitcher');
 
-  const attr = 'data-night-theme'
-  let show = false
-  let value
-  $: checkboxValue = value === '1'
+  const attr = 'data-night-theme';
+  let show = false;
+  let value;
+  $: checkboxValue = value === '1';
 
   onMount(() => {
-    value = document.body.getAttribute(attr)
-    show = true
-  })
+    value = document.body.getAttribute(attr);
+    show = true;
+  });
 
   const onChange = () => {
-    value = value === '0' ? '1' : '0'
-    document.body.setAttribute(attr, value)
-    localStorage.setItem(attr, value)
-  }
+    value = value === '0' ? '1' : '0';
+    document.body.setAttribute(attr, value);
+    localStorage.setItem(attr, value);
+  };
 
-  let y
-  $: showBeforeHiding = y <= 500
+  let y;
+  $: showBeforeHiding = y <= 500;
 </script>
 
 <style lang="scss">
@@ -115,10 +115,7 @@
     on:click={onChange}>
     <p>{buttonText}</p>
     <label class="switch">
-      <input
-        type="checkbox"
-        bind:checked={checkboxValue}
-        on:change={onChange} />
+      <input type="checkbox" bind:checked={checkboxValue} on:change={onChange} />
       <span class="slider" />
     </label>
   </div>

@@ -1,36 +1,36 @@
-import { config as dotenvConfig } from 'dotenv'
-dotenvConfig()
+import { config as dotenvConfig } from 'dotenv';
+dotenvConfig();
 
-import path from 'path'
-import resolve from '@rollup/plugin-node-resolve'
-import replace from '@rollup/plugin-replace'
-import commonjs from '@rollup/plugin-commonjs'
-import svelte from 'rollup-plugin-svelte'
-import babel from 'rollup-plugin-babel'
-import { terser } from 'rollup-plugin-terser'
-import json from '@rollup/plugin-json'
-import config from 'sapper/config/rollup.js'
-import pkg from './package.json'
-import autoPreprocess from 'svelte-preprocess'
+import path from 'path';
+import resolve from '@rollup/plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
+import commonjs from '@rollup/plugin-commonjs';
+import svelte from 'rollup-plugin-svelte';
+import babel from 'rollup-plugin-babel';
+import { terser } from 'rollup-plugin-terser';
+import json from '@rollup/plugin-json';
+import config from 'sapper/config/rollup.js';
+import pkg from './package.json';
+import autoPreprocess from 'svelte-preprocess';
 
-const mode = process.env.NODE_ENV
-const dev = mode === 'development'
-const legacy = !!process.env.SAPPER_LEGACY_BUILD
+const mode = process.env.NODE_ENV;
+const dev = mode === 'development';
+const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
 const onwarn = (warning, onwarn) => {
   // Shows up after I added svelte-i18n for some reason, safe to ignore
-  if (warning.code === 'THIS_IS_UNDEFINED') return
+  if (warning.code === 'THIS_IS_UNDEFINED') return;
 
   return (
     (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
     onwarn(warning)
-  )
-}
+  );
+};
 
 const preprocess = autoPreprocess({
   postcss: true,
   scss: true,
-})
+});
 
 const commonReplace = {
   'process.env.NODE_ENV': JSON.stringify(mode),
@@ -41,7 +41,7 @@ const commonReplace = {
   'process.env.SITE_HOST': JSON.stringify(process.env.SITE_HOST),
   'process.env.SITE_PORT': JSON.stringify(process.env.SITE_PORT),
   'process.env.ROOT_STATIC_PATH': JSON.stringify(process.env.ROOT_STATIC_PATH),
-}
+};
 
 export default {
   client: {
@@ -136,4 +136,4 @@ export default {
 
     onwarn,
   },
-}
+};

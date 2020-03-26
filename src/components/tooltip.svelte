@@ -1,5 +1,5 @@
 <script>
-  export let triggerText = '?'
+  export let triggerText = '?';
 </script>
 
 <style lang="scss">

@@ -1,4 +1,4 @@
-import { rootApiPath } from './paths'
+import { rootApiPath } from './paths';
 
 const request = (method, path, data) =>
   fetch(`${rootApiPath}/${path}`, {
@@ -8,6 +8,6 @@ const request = (method, path, data) =>
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
-  })
+  });
 
-export default request
+export default request;

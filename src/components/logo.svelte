@@ -1,5 +1,5 @@
 <script>
-  import { staticPath } from 'core/paths'
+  import { staticPath } from 'core/paths';
 
   const classes = [
     '',
@@ -11,22 +11,22 @@
     'heart',
     'infinity',
     'hazard',
-  ]
-  let currIndex = 0
+  ];
+  let currIndex = 0;
 
-  const setNewClass = () => (currIndex + 1 === classes.length ? (currIndex = 0) : currIndex++)
+  const setNewClass = () => (currIndex + 1 === classes.length ? (currIndex = 0) : currIndex++);
 
   // Used to force browser to pre-cache all svgs
-  classes.forEach(() => setTimeout(() => setNewClass()))
+  classes.forEach(() => setTimeout(() => setNewClass()));
 
-  let interval
+  let interval;
   const setFixedInterval = tm => {
-    clearInterval(interval)
-    interval = setInterval(setNewClass, tm)
-  }
-  setFixedInterval(3500)
-  const onMouseOver = () => setFixedInterval(250)
-  const onMouseOut = () => setFixedInterval(3500)
+    clearInterval(interval);
+    interval = setInterval(setNewClass, tm);
+  };
+  setFixedInterval(3500);
+  const onMouseOver = () => setFixedInterval(250);
+  const onMouseOut = () => setFixedInterval(3500);
 </script>
 
 <style lang="scss">

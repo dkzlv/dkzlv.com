@@ -1,4 +1,4 @@
-import Polyglot from 'node-polyglot'
+import Polyglot from 'node-polyglot';
 
 const phrases = {
   en: {
@@ -17,14 +17,14 @@ const phrases = {
       author: 'Даня Козлов',
     },
   },
-}
+};
 
-let polyglot = new Polyglot({ interpolation: { prefix: '{{', suffix: '}}' } })
-const t = (...args) => polyglot.t(...args)
+let polyglot = new Polyglot({ interpolation: { prefix: '{{', suffix: '}}' } });
+const t = (...args) => polyglot.t(...args);
 
 export const setLang = (lang) => {
-  polyglot.locale(lang)
-  polyglot.extend(phrases[lang])
-}
+  polyglot.locale(lang);
+  polyglot.extend(phrases[lang]);
+};
 
-export default t
+export default t;

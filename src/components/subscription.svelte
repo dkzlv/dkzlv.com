@@ -1,10 +1,10 @@
 <script>
-  import EmailCollector from './emailCollector.svelte'
-  import t from 'core/i18n/client.js'
-  import { langStore } from 'core/store.js'
+  import EmailCollector from './emailCollector.svelte';
+  import t from 'core/i18n/client.js';
+  import { langStore } from 'core/store.js';
 
-  $: endPostEngagement = $langStore && t('email.endPostEngagement')
-  export let engagement
+  $: endPostEngagement = $langStore && t('email.endPostEngagement');
+  export let engagement;
 </script>
 
 <style lang="scss">

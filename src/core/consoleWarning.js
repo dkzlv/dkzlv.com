@@ -5,8 +5,8 @@ const styles = [
   'text-shadow: 2px 2px #615e57',
   'padding: 55px',
   'margin: 55px',
-].join(';')
+].join(';');
 
-const warn = text => console.log(`%c${text}`, styles)
+const warn = (text) => console.log(`%c${text}`, styles);
 
-export default warn
+export default warn;

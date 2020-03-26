@@ -1,28 +1,26 @@
 <script>
-  import request from 'core/service.js'
-  import getFingerprintHash from './getFingerprintHash.js'
-  import { onMount } from 'svelte'
-  import { sample } from 'utils/random.js'
+  import request from 'core/service.js';
+  import getFingerprintHash from './getFingerprintHash.js';
+  import { onMount } from 'svelte';
+  import { sample } from 'utils/random.js';
 
-  let isLoading = false
-  let justSent = false
-  let message = ''
+  let isLoading = false,
+    justSent = false,
+    message = '';
 
-  const id = 'fingerprint-demo'
+  const id = 'fingerprint-demo';
 
-  let href
-  let fingerprint
-  let prevMessage
+  let href, fingerprint, prevMessage;
 
   onMount(async () => {
-    href = window.location.href + `#${id}`
-    fingerprint = await getFingerprintHash()
+    href = window.location.href + `#${id}`;
+    fingerprint = await getFingerprintHash();
     try {
       prevMessage = (await (await request('POST', 'fingerprint/get', {
         fingerprint,
-      })).json()).message
+      })).json()).message;
     } catch (err) {}
-  })
+  });
 
   const textVariants = [
     'Зоофилия под Бетховена',
@@ -31,19 +29,19 @@
     'Рик и Морти',
     'Великаны в костюмах карликов',
     'Трахать горячий хачапури',
-  ]
+  ];
 
   const onClick = async () => {
-    if (!message) message = sample(textVariants)
+    if (!message) message = sample(textVariants);
 
-    isLoading = true
+    isLoading = true;
     await request('POST', 'fingerprint/save', {
       fingerprint,
       message: message.slice(0, 200),
-    })
-    isLoading = false
-    justSent = true
-  }
+    });
+    isLoading = false;
+    justSent = true;
+  };
 </script>
 
 <style lang="scss">
@@ -83,13 +81,8 @@
   <p>Признайся, киса, какой у тебя любимый жанр порно?</p>
 
   <div class="interactive">
-    <input
-      class="input input--accent"
-      bind:value={message}
-      placeholder="Не стесняйся 👉👌💦👄" />
-    <button
-      class="btn btn--accent {isLoading && 'btn--loading'}"
-      on:click={onClick}>
+    <input class="input input--accent" bind:value={message} placeholder="Не стесняйся 👉👌💦👄" />
+    <button class="btn btn--accent {isLoading && 'btn--loading'}" on:click={onClick}>
       Сохранить до полуночи
     </button>
   </div>
