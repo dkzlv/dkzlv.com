@@ -1,6 +1,6 @@
 <script context="module">
   export async function preload() {
-    const res = await this.fetch('/ru/privacy-fuckup.json');
+    const res = await this.fetch('/ru/kak-sobirayut-dannye.json');
     const data = await res.json();
     if (res.status === 200) return { data: data };
     else this.error(res.status, data.message);
@@ -11,8 +11,8 @@
   import { onMount } from 'svelte';
 
   import Post from 'components/post.svelte';
-  import Fingerprint from 'components/posts/privacy-pt1/fingerprint.svelte';
-  import Pidor from 'components/posts/privacy-pt1/pidor.svelte';
+  import Fingerprint from 'components/posts/dataCollection/fingerprint.svelte';
+  import Pidor from 'components/posts/dataCollection/pidor.svelte';
 
   onMount(() => {
     const pidor = new Pidor({ target: document.querySelector('.pidor') });

@@ -31,7 +31,7 @@ async function main() {
   metadata.slug = slugify(metadata.title);
 
   const postPath = join(process.cwd(), 'src', 'posts', `${metadata.slug}.md`);
-  const templateFile = await readFile(join(process.cwd(), 'scripts', 'template.md'), {
+  const templateFile = await readFile(join(__dirname, 'template.md'), {
     encoding: 'utf-8',
   });
 
