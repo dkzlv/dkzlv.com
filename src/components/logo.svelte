@@ -34,6 +34,14 @@
     width: 80px;
     user-select: none;
     mask-image: url(/static/img/logomask/skull.svg);
+
+    filter: invert(1);
+
+    transition: filter 0.25s ease-in-out;
+
+    &:hover {
+      filter: invert(0);
+    }
   }
 
   .cross {
