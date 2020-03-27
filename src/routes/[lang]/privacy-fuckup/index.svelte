@@ -1,8 +1,6 @@
 <script context="module">
   export async function preload() {
-    const res = await this.fetch(
-      '/ru/chastnaya-zhizn-kotoruyu-my-uzhe-poteryali-chast-1-vvodnaya.json',
-    );
+    const res = await this.fetch('/ru/privacy-fuckup.json');
     const data = await res.json();
     if (res.status === 200) return { data: data };
     else this.error(res.status, data.message);
