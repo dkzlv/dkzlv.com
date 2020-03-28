@@ -2,7 +2,7 @@
   export function preload({ params }) {
     return this.fetch(`${params.lang}/all.json`)
       .then(r => r.json())
-      .then(posts => ({ posts, lang: params.lang }));
+      .then(posts => ({ posts }));
   }
 </script>
 
@@ -10,7 +10,6 @@
   import { _, locale, date, format } from 'svelte-i18n';
 
   export let posts;
-  export let lang;
 </script>
 
 <style lang="scss">
