@@ -4,10 +4,9 @@ const join = require('path').join;
 const fs = require('fs');
 const promisify = require('util').promisify;
 
-const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
-function input(query) {
+const input = (query) => {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -19,32 +18,33 @@ function input(query) {
       resolve(ans);
     }),
   );
-}
+};
 
 async function main() {
   const metadata = {
     lang: (await input('Язык, ru или en (ru по умолчанию):\n')) || 'ru',
     title: await input('Заголовок:\n'),
-    description: (await input('Описание:\n')) || '-',
-    emailCollectorMessage: (await input('Завлекуха в блок подписки:\n')) || '-',
+    date: new Date().toISOString(),
   };
   metadata.slug = slugify(metadata.title);
 
-  const postPath = join(process.cwd(), 'src', 'posts', `${metadata.slug}.md`);
-  const templateFile = await readFile(join(__dirname, 'template.md'), {
-    encoding: 'utf-8',
-  });
+  const description = await input('Описание (опц.):\n'),
+    emailCollectorMessage = await input('Завлекуха в блок подписки (опц.):\n'),
+    announced = await input('Анонс? (если да, напиши что угодно)\n');
 
-  await writeFile(
-    postPath,
-    templateFile
-      .replace('{lang}', metadata.lang)
-      .replace('{title}', metadata.title)
-      .replace('{description}', metadata.description)
-      .replace('{emailCollectorMessage}', metadata.emailCollectorMessage)
-      .replace('{date}', new Date().toISOString()),
-    { encoding: 'utf-8' },
+  Object.entries({ description, emailCollectorMessage, announced }).forEach(
+    ([key, val]) => val !== '' && (metadata[key] = val),
   );
+
+  const postPath = join(process.cwd(), 'src', 'posts', `${metadata.slug}.md`);
+
+  let resultString = '---\n';
+  Object.entries(metadata).forEach(([key, val]) => {
+    resultString += `${key}: ${val}\n`;
+  });
+  resultString += '---\n';
+
+  await writeFile(postPath, resultString, { encoding: 'utf-8' });
 }
 
 main();
