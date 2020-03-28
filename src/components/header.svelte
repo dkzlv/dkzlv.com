@@ -32,6 +32,10 @@
     text-decoration: none;
   }
 
+  .twitter-link {
+    color: $accent-color;
+  }
+
   .newsletter-text {
     font-size: ms(-1);
 
@@ -62,7 +66,11 @@
     <div class="newsletter-text">
       <p>
         {$_('header.onboard')}
-        <a href="https://twitter.com/d_kzlv/" rel="noreferrer nofollow" target="_blank">
+        <a
+          class="twitter-link"
+          href="https://twitter.com/d_kzlv/"
+          rel="noreferrer nofollow"
+          target="_blank">
           <span class="twitterIcon">
             <TwitterIcon />
           </span>
