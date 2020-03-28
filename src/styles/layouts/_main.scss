@@ -8,8 +8,7 @@ body {
 }
 
 * {
-  transition-property: opacity, background-color, box-shadow, color,
-    border-color, opacity;
+  transition-property: opacity, background-color, box-shadow, color, border-color, opacity;
   transition-duration: 0.3s;
 
   outline-color: $outline-color;
@@ -22,12 +21,7 @@ body {
   min-height: 100vh;
 }
 
-.root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-
-  margin: 0 auto;
+@mixin content-width {
   @include mq($until: mobile) {
     width: 95%;
   }
@@ -40,6 +34,16 @@ body {
   @include mq($from: tablet-landscape) {
     width: $tablet-landscape * 0.9;
   }
+}
+
+.root {
+  @include content-width;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  margin: 0 auto;
 }
 
 /// Making main tag full-height

@@ -14,6 +14,7 @@ $text-color: var(--text-color);
 $text-color--dimmed: var(--text-color--dimmed);
 $highlight-bg: var(--highlight-bg);
 $link-color: var(--link-color);
+$visited-link-color: var(--visited-link-color);
 $error-text-color: var(--error-text-color);
 $success-text-color: var(--success-text-color);
 $blockquote-gradient-1: var(--blockquote-gradient-1);
@@ -33,8 +34,8 @@ $input-border-color: var(--input-border-color);
 $input-border-color--hover: var(--input-border-color--hover);
 $input-placeholder-color: var(--input-placeholder-color);
 
-$email-collector-background: var(--email-collector-background);
-$email-collector-shadow-color: var(--email-collector-shadow-color);
+$box-background: var(--box-background);
+$box-shadow-color: var(--box-shadow-color);
 
 $tooltip-outline-color: var(--tooltip-outline-color);
 $tooltip-outline-color--hover: var(--tooltip-outline-color--hover);
@@ -83,3 +84,4 @@ $modularscale: (
 $radius-rounded: 290486px;
 $border-radius: 5px;
 $border-style: 2px solid;
+$logo-filter: var(--logo-filter);
