@@ -1,5 +1,5 @@
 <script>
-  import { fade } from 'svelte/transition';
+  import { slide } from 'svelte/transition';
   import { _, locale } from 'svelte-i18n';
 
   import request from 'core/service';
@@ -54,15 +54,6 @@
     flex-wrap: wrap;
   }
 
-  .below-form {
-    margin-top: 5px;
-    min-height: 25px;
-
-    > p {
-      margin-bottom: 0;
-    }
-  }
-
   .tooltip {
     &__header {
       font-weight: $bold;
@@ -106,10 +97,8 @@
   </Tooltip>
 </div>
 
-<div class="below-form">
-  {#if errorCode}
-    <p class="text--error" transition:fade={{ duration: 200 }}>{errors[errorCode]}</p>
-  {:else if success}
-    <p class="text--success" transition:fade={{ duration: 200 }}>{$_('email.success')}</p>
-  {/if}
-</div>
+{#if errorCode}
+  <p class="text--error" transition:slide={{ duration: 200 }}>{errors[errorCode]}</p>
+{:else if success}
+  <p class="text--success" transition:slide={{ duration: 200 }}>{$_('email.success')}</p>
+{/if}
