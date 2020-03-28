@@ -2,10 +2,13 @@
   import { onMount } from 'svelte';
   import { locale } from 'svelte-i18n';
 
-  import Meta from './meta.svelte';
+  import Meta from 'components/meta.svelte';
+  import SeriesData from './seriesData.svelte';
   import Subscription from './subscription.svelte';
 
   export let post;
+
+  $: isAnnounced = post.meta.announced;
 
   onMount(async () => {
     const elements = document.querySelectorAll('.email-collector');
@@ -31,11 +34,18 @@
 
 <article>
   <h1>{post.meta.title}</h1>
-  <div class="post-content">
-    <slot>
-      {@html post.content}
-    </slot>
-  </div>
+  {#if post.meta.series}
+    <SeriesData postMeta={post.meta} />
+  {/if}
+  {#if !isAnnounced}
+    <div class="post-content">
+      <slot>
+        {@html post.content}
+      </slot>
+    </div>
+  {/if}
 </article>
 
-<Subscription engagement={post.meta.emailCollectorMessage} />
+{#if !isAnnounced}
+  <Subscription engagement={post.meta.emailCollectorMessage} />
+{/if}

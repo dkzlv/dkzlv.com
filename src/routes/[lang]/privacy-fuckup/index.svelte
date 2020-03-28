@@ -10,7 +10,7 @@
 <script>
   import { onMount } from 'svelte';
 
-  import Post from 'components/post.svelte';
+  import Post from 'components/post/index.svelte';
   import Fingerprint from 'components/posts/dataCollection/fingerprint.svelte';
   import Pidor from 'components/posts/dataCollection/pidor.svelte';
 
