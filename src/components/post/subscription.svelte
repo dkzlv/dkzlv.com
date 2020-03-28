@@ -8,9 +8,9 @@
 
 <div class="box">
   <div class="nested">
-    <p class="size-3 bold">Рещще подпишитесь!</p>
+    <p class="size-3 bold">{$_('email.endPostEngagement.header')}</p>
     <p>
-      {@html engagement || $_('email.endPostEngagement')}
+      {@html engagement || $_('email.endPostEngagement.text')}
     </p>
 
     <EmailCollector />

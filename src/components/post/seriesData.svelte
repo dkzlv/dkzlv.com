@@ -1,4 +1,6 @@
 <script>
+  import { _ } from 'svelte-i18n';
+
   import EmailCollector from 'components/emailCollector.svelte';
 
   export let postMeta;
@@ -44,17 +46,17 @@
 
 <div class="box">
   <div class="nested">
-    <p class="series-header">Серия постов</p>
+    <p class="series-header">{$_('posts.series.header')}</p>
     <ol>
       {#each postMeta.series as seriesPost}
         <li>
           {#if seriesPost === null}
             <span class="size-1 bold">{postMeta.title}</span>
-            <span class="italic">(этот пост)</span>
+            <span class="italic">{$_('posts.series.thisPost')}</span>
           {:else if seriesPost.announced}
             <p>
               <span class="size-1 bold">{seriesPost.title}</span>
-              <span class="tag soon">скоро!</span>
+              <span class="tag soon">{$_('posts.series.soon')}</span>
               <br />
               {@html seriesPost.description}
             </p>
@@ -73,9 +75,9 @@
 
     {#if hasAnnounced}
       <p>
-        Не все посты в этой серии опубликованы.
+        {$_('posts.series.notPublished.teaser')}
         <br />
-        Подпишитесь на рассылку, чтоб не пропустить эпичное продолжение.
+        {$_('posts.series.notPublished.subscribe')}
       </p>
       <EmailCollector />
     {/if}
