@@ -8,7 +8,7 @@
 
   export let post;
 
-  $: isAnnounced = post.meta.announced;
+  $: hasAnnounced = post.meta.series && post.meta.series.some(meta => meta && meta.announced);
 
   onMount(async () => {
     const elements = document.querySelectorAll('.email-collector');
@@ -37,15 +37,15 @@
   {#if post.meta.series}
     <SeriesData postMeta={post.meta} />
   {/if}
-  {#if !isAnnounced}
-    <div class="post-content">
-      <slot>
-        {@html post.content}
-      </slot>
-    </div>
-  {/if}
+  <div class="post-content">
+    <slot>
+      {@html post.content}
+    </slot>
+  </div>
 </article>
 
-{#if !isAnnounced}
+{#if post.meta.series && hasAnnounced}
+  <SeriesData postMeta={post.meta} />
+{:else}
   <Subscription engagement={post.meta.emailCollectorMessage} />
 {/if}

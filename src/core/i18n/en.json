@@ -37,7 +37,8 @@
       "soon": "soon!",
       "notPublished": {
         "teaser": "Not all the posts are published.",
-        "subscribe": "Subscribe so you don't miss new epicly cool parts."
+        "subscribeAsap": "Subscribe ASAP!",
+        "explain": "Or you can miss all the goodies later."
       }
     }
   },

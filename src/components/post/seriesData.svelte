@@ -4,7 +4,7 @@
   import EmailCollector from 'components/emailCollector.svelte';
 
   export let postMeta;
-  $: hasAnnounced = postMeta.series.some(meta => meta && meta.announced);
+  $: hasAnnounced = postMeta.series && postMeta.series.some(meta => meta && meta.announced);
 </script>
 
 <style lang="scss">
@@ -77,7 +77,8 @@
       <p>
         {$_('posts.series.notPublished.teaser')}
         <br />
-        {$_('posts.series.notPublished.subscribe')}
+        <span class="bold">{$_('posts.series.notPublished.subscribeAsap')}</span>
+        {$_('posts.series.notPublished.explain')}
       </p>
       <EmailCollector />
     {/if}
