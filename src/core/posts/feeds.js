@@ -1,11 +1,13 @@
 import { Feed } from 'feed';
 import { get } from 'svelte/store';
-import { _, locale } from 'svelte-i18n';
+import { _, locale, dictionary } from 'svelte-i18n';
 
 import posts from './posts';
 import { rootSitePath } from '../paths';
 
 // const t = (key) => get(_(key));
+
+console.log(get(dictionary));
 
 const feedGenerator = (lang) => {
   locale.set(lang);
@@ -17,13 +19,11 @@ const feedGenerator = (lang) => {
     id: rootSitePath,
     link: rootSitePath,
     language: lang,
-    image: `${rootSitePath}/icons/rss.png`,
-    favicon: `${rootSitePath}/icons/favicon.ico`,
+    image: `${rootSitePath}/static/icons/rss.png`,
+    favicon: `${rootSitePath}/static/icons/favicon.ico`,
     // generator: t('rss.generator'),
-    copyright: '©©©',
     feedLinks: {
       rss: `${baseLocalizedPath}/rss`,
-      atom: `${baseLocalizedPath}/atom`,
     },
     author: {
       // name: t('rss.author'),
