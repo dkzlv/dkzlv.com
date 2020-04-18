@@ -10,7 +10,7 @@
     "new": "node scripts/newPost.js"
   },
   "dependencies": {
-    "@mojs/core": "git+ssh://git@github.com/dkzlv/mojs",
+    "@mojs/core": "git+https://github.com/dkzlv/mojs.git",
     "@sindresorhus/slugify": "^0.11.0",
     "compression": "^1.7.1",
     "dotenv": "^8.2.0",
