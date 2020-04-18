@@ -30,18 +30,15 @@
 </script>
 
 <style lang="scss">
+  @import 'src/styles/importable';
+
   .logo {
     width: 80px;
+    max-width: unset;
     user-select: none;
     mask-image: url(/static/img/logomask/skull.svg);
 
-    filter: invert(1);
-
-    transition: filter 0.25s ease-in-out;
-
-    &:hover {
-      filter: invert(0);
-    }
+    filter: $logo-filter;
   }
 
   .cross {

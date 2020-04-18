@@ -7,10 +7,10 @@
     "build": "sapper build --legacy",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
-    "new": "node scripts/newPost/index.js"
+    "new": "node scripts/newPost.js"
   },
   "dependencies": {
-    "@mojs/core": "git+ssh://git@github.com/dkzlv/mojs",
+    "@mojs/core": "git+https://github.com/dkzlv/mojs.git",
     "@sindresorhus/slugify": "^0.11.0",
     "compression": "^1.7.1",
     "dotenv": "^8.2.0",

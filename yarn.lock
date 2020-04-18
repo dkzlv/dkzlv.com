@@ -764,9 +764,9 @@
   resolved "https://registry.yarnpkg.com/@formatjs/intl-utils/-/intl-utils-2.2.0.tgz#ba6e12fe64ff7fd160be392007c47d24b7ae5c75"
   integrity sha512-+Az7tR1av1DHZu9668D8uh9atT6vp+FFmEF8BrEssv0OqzpVjpVBGVmcgPzQP8k2PQjVlm/h2w8cTt0knn132w==
 
-"@mojs/core@git+ssh://git@github.com/dkzlv/mojs":
+"@mojs/core@git+https://github.com/dkzlv/mojs.git":
   version "0.288.2"
-  resolved "git+ssh://git@github.com/dkzlv/mojs#5cd2de6ae1a4d34b4324d7df9c10e93e83906636"
+  resolved "git+https://github.com/dkzlv/mojs.git#5cd2de6ae1a4d34b4324d7df9c10e93e83906636"
   dependencies:
     babel-runtime "^6.5.0"
 

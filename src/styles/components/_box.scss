@@ -1,0 +1,16 @@
+.box {
+  background-color: $box-background;
+
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin: 2em -50vw;
+
+  .nested {
+    padding: 1em 0;
+    margin: 0 auto;
+
+    @include content-width;
+  }
+}

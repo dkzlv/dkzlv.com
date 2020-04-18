@@ -77,32 +77,39 @@
   }
 </style>
 
-<div class="container" {id}>
-  <p>Признайся, киса, какой у тебя любимый жанр порно?</p>
+<div class="box">
+  <div class="nested">
+    <div class="container" {id}>
+      <p>Признайся, киса, какой у тебя любимый жанр порно?</p>
 
-  <div class="interactive">
-    <input class="input input--accent" bind:value={message} placeholder="Не стесняйся 👉👌💦👄" />
-    <button class="btn btn--accent {isLoading && 'btn--loading'}" on:click={onClick}>
-      Сохранить до полуночи
-    </button>
+      <div class="interactive">
+        <input
+          class="input input--accent"
+          bind:value={message}
+          placeholder="Не стесняйся 👉👌💦👄" />
+        <button class="btn btn--accent {isLoading && 'btn--loading'}" on:click={onClick}>
+          Сохранить до полуночи
+        </button>
+      </div>
+      {#if justSent}
+        <p class="previous">
+          Записал. Твой ID:
+          <code>{fingerprint}</code>
+          . Теперь давай
+          <a {href}>заходи сюда же</a>
+          из анон-режима.
+        </p>
+      {/if}
+
+      {#if prevMessage && !justSent}
+        <p class="previous">
+          Штош, я сдетектил, что твоя любимая порка — это
+          <code>{prevMessage}</code>
+          , а твой ID:
+          <code>{fingerprint}</code>
+          .
+        </p>
+      {/if}
+    </div>
   </div>
-  {#if justSent}
-    <p class="previous">
-      Записал. Твой ID:
-      <code>{fingerprint}</code>
-      . Теперь давай
-      <a {href}>заходи сюда же</a>
-      из анон-режима.
-    </p>
-  {/if}
-
-  {#if prevMessage && !justSent}
-    <p class="previous">
-      Штош, я сдетектил, что твоя любимая порка — это
-      <code>{prevMessage}</code>
-      , а твой ID:
-      <code>{fingerprint}</code>
-      .
-    </p>
-  {/if}
 </div>

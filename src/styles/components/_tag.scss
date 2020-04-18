@@ -1,0 +1,8 @@
+.tag {
+  display: inline-block;
+  border-radius: $border-radius;
+  font-size: ms(-1);
+
+  background: linear-gradient(35deg, $code-gradient-1 0%, $code-gradient-2 100%);
+  padding: 1px 4px;
+}

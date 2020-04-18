@@ -1,32 +1,44 @@
-import { readdirSync, existsSync } from 'fs';
+import { readdirSync } from 'fs';
 import { join } from 'path';
 
 import getPost from './getPost';
 
 const rootPostPath = join(process.env.PWD, 'src', 'posts');
-const posts = readdirSync(rootPostPath, { withFileTypes: true })
-  .map((dirent) => {
-    const multiplePartitions = dirent.isDirectory();
+const slugBasedObj = {};
+for (let filename of readdirSync(rootPostPath)) {
+  if (!filename.endsWith('.md')) continue;
 
-    if (multiplePartitions) {
-      const slug = dirent.name;
-      const filepath = join(rootPostPath, slug);
+  const slug = filename.split('.').slice(0, -1).join('.');
+  const filepath = join(rootPostPath, filename);
 
-      if (!existsSync(join(filepath, 'meta.md'))) return;
+  const post = getPost(filepath, slug);
+  slugBasedObj[post.meta.slug] = post;
+}
 
-      return getPost(filepath, slug, true);
-    } else {
-      // This file is not a markdown, so we do not convert it
-      if (!dirent.name.endsWith('.md')) return;
+// Need to provide components with enough data to render "Related" block
+for (let [_, post] of Object.entries(slugBasedObj)) {
+  if (post.meta.series) {
+    post.meta.series = post.meta.series.map((slug) => {
+      if (!slug) return;
 
-      const slug = dirent.name.split('.').slice(0, -1).join('.');
-      const filepath = join(rootPostPath, dirent.name);
-      return getPost(filepath, slug);
-    }
-  })
-  // Filtering out posts, that shouldn't be shown on production (drafts)
-  .filter(Boolean)
-  // Sorting by date
+      const postFromSeries = slugBasedObj[slug];
+      if (!postFromSeries)
+        throw new Error(`В посте ${_} ссылаешься на неизвестный мне пост ${slug}`);
+
+      return {
+        slug: postFromSeries.meta.slug,
+        title: postFromSeries.meta.title,
+        description: postFromSeries.meta.description,
+        announced: postFromSeries.meta.announced,
+      };
+    });
+  }
+}
+
+const posts = Object.values(slugBasedObj)
+  // We return everything on stage.
+  // We only return published on production.
+  .filter((post) => process.env.NODE_ENV === 'development' || post.meta.published)
   .sort((a, b) => new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime());
 
 export default posts;
