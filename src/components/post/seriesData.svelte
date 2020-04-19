@@ -42,6 +42,14 @@
       }
     }
   }
+
+  .short-hr {
+    width: 40%;
+    margin: 1em auto;
+
+    border-color: $hr-color;
+    border-style: dashed;
+  }
 </style>
 
 <div class="box">
@@ -58,7 +66,9 @@
               <span class="size-1 bold">{seriesPost.title}</span>
               <span class="tag soon">{$_('posts.series.soon')}</span>
               <br />
-              {@html seriesPost.description}
+              <span class="post-content">
+                {@html seriesPost.description}
+              </span>
             </p>
           {:else}
             <p>
@@ -66,7 +76,9 @@
                 <a rel="prefetch" href={seriesPost.slug}>{seriesPost.title}</a>
               </span>
               <br />
-              {@html seriesPost.description}
+              <span class="post-content">
+                {@html seriesPost.description}
+              </span>
             </p>
           {/if}
         </li>
@@ -74,6 +86,8 @@
     </ol>
 
     {#if hasAnnounced}
+      <hr class="short-hr" />
+
       <p>
         {$_('posts.series.notPublished.teaser')}
         <br />
