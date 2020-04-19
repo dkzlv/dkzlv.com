@@ -3,7 +3,6 @@ lang: en
 title: The battle for Privacy that we've already lost
 description: Blah blah blah blah
 date: 2019-03-10T19:30:51.895Z
-imagePreview: /123.jpg
 ---
 
 It's been a few years since I started learning stuff about programming. It's a usual thing when you're kind of the only IT guy among your friends: you have nothing interesting to discuss while hanging our in a bar. Of all the boring topics that I've tried to tell my friends about there's one that was new AND interesting. It's about the privacy and that literally nothing can be hidden from The Big Brother.

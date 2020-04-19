@@ -49,8 +49,10 @@
         values: { time: post.readTime },
       })}
     </p>
-    <p>
-      {@html post.description}
-    </p>
+    <div class="post-content">
+      <p>
+        {@html post.description}
+      </p>
+    </div>
   </div>
 {/each}
