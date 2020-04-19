@@ -6,7 +6,6 @@ emailCollectorMessage: Знаю, bad PR, но должен сразу преду
 date: 2020-04-19T15:21:45.546Z
 published: 1
 series: ["", "chto-mozhno-poluchit-iz-dannyh", "chto-s-nami-stanet-i-chto-my-mozhem-izmenit"]
-imagePreview:
 ---
 
 Тяжело быть в IT, потому что все твои школьные друзья вообще не вдупляют, чем ты занимаешься. Программист, продакт-менеджер, QA — чем это всё отличается от починки принтера? (подсказка: за починку принтера не получаешь 300k в секунду)

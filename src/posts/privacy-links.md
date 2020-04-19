@@ -4,7 +4,6 @@ title: _Links
 description: Blah blah blah blah
 date: 2019-03-10T19:30:51.895Z
 readTime: 15
-imagePreview: /123.jpg
 ---
 
 - iOS photo library — geolocation & on-device machine learning nudes detection

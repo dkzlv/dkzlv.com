@@ -1,13 +1,13 @@
 <script>
   import { locale as localeStore } from 'svelte-i18n';
 
-  import { rootSitePath } from 'core/paths';
+  import { rootSitePath, rootStaticPath } from 'core/paths';
 
   export let title = '',
     description = '',
     path = '',
     contentType = 'article',
-    imagePreview = '',
+    imagePreview = `${rootStaticPath}/icons/apple-icon.png`,
     locale = '';
 
   $: canonicalLocation = `${rootSitePath}/${$localeStore}/${path}/`;
