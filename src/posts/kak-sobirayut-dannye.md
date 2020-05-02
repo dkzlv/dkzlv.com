@@ -215,7 +215,7 @@ DEMO-TIME. Идею я беспардонно забрал [отсюда](https:
 
 А теперь к самому вопросу!
 
-<div class='fingerprint'></div>
+<div class='fingerprint' id='fingerprint-demo'></div>
 
 Я использую тут штуку из [открытого доступа](https://github.com/Valve/fingerprintjs), у этих же ребят есть [коммерческий продукт](https://fpjs.io/), который даёт 99.95% попаданий (там есть похожая демка, рекомендую).
 

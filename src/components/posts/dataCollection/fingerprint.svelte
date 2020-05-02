@@ -8,6 +8,7 @@
     justSent = false,
     message = '';
 
+  // Оно повторяется в тексте поста!
   const id = 'fingerprint-demo';
 
   let href, fingerprint, prevMessage;
@@ -79,7 +80,7 @@
 
 <div class="box">
   <div class="nested">
-    <div class="container" {id}>
+    <div class="container">
       <p>Признайся, киса, какой у тебя любимый жанр порно?</p>
 
       <div class="interactive">
