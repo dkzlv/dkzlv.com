@@ -8,9 +8,11 @@
     path = '',
     contentType = 'article',
     imagePreview = `${rootStaticPath}/icons/apple-icon.png`,
-    locale = '';
+    locale = '' || $localeStore;
 
-  $: canonicalLocation = `${rootSitePath}/${$localeStore}/${path}/`;
+  $: canonPath = path ? path + '/' : '';
+
+  $: canonicalLocation = `${rootSitePath}/${$localeStore}/${canonPath}`;
 </script>
 
 <svelte:head>
@@ -20,7 +22,7 @@
   <meta property="og:title" content={title} />
 
   <meta name="twitter:site" content={rootSitePath} />
-  <meta property="og:site_name" content={rootSitePath} />
+  <meta property="og:site_name" content="dkzlv.com" />
   <meta itemprop="name" content={rootSitePath} />
 
   <meta name="description" content={description} />
