@@ -78,8 +78,10 @@
 
 <div class="group">
   <form novalidate on:submit|preventDefault={onSubmit}>
+    <label for="emailInput" class="hide">{$_('email.placeholder')}</label>
     <input
       type="email"
+      id="emailInput"
       class="input input--accent email-input"
       bind:value={email}
       placeholder={$_('email.placeholder')} />

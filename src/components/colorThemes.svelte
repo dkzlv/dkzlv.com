@@ -43,10 +43,11 @@
     cursor: pointer;
     user-select: none;
 
-    > p {
+    > .label {
       font-size: ms(-1);
       margin: 0 8px 0 0;
       color: $accent-color;
+      cursor: pointer;
     }
   }
 
@@ -110,10 +111,10 @@
     in:fade={{ delay: 500, duration: 200 }}
     out:fade={{ duration: 200 }}
     on:click={onChange}>
-    <p>{$_('colorSwitcher')}</p>
-    <label class="switch">
-      <input type="checkbox" bind:checked={checkboxValue} on:change={onChange} />
+    <label class="p label" for="switch">{$_('colorSwitcher')}</label>
+    <div class="switch">
+      <input id="switch" type="checkbox" bind:checked={checkboxValue} on:change={onChange} />
       <span class="slider" />
-    </label>
+    </div>
   </div>
 {/if}

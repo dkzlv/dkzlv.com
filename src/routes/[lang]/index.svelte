@@ -9,6 +9,8 @@
 <script>
   import { _, locale, date, format } from 'svelte-i18n';
 
+  import Meta from 'components/meta.svelte';
+
   export let posts;
 </script>
 
@@ -35,9 +37,7 @@
   }
 </style>
 
-<svelte:head>
-  <title>Dan Kozlov on tech and stuff</title>
-</svelte:head>
+<Meta title={$_('meta.title')} description={$_('meta.description')} contentType="website" />
 
 {#each posts as post}
   <div>
