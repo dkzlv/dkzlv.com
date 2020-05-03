@@ -21,28 +21,29 @@
   let success = false,
     isLoading = false;
 
-  const onSubmit = async () => {
-    if (!email) {
-      return (errorCode = 103);
-    } else if (!isEmail(email)) {
-      return (errorCode = 102);
-    }
+  const id = Math.random(),
+    onSubmit = async () => {
+      if (!email) {
+        return (errorCode = 103);
+      } else if (!isEmail(email)) {
+        return (errorCode = 102);
+      }
 
-    isLoading = true;
-    const res = await request('POST', 'subscribe', {
-      email,
-      language: $locale,
-    });
-    isLoading = false;
-    if (res.ok) {
-      email = '';
-      success = true;
-      await delay(5000);
-      success = false;
-    } else {
-      errorCode = (await res.json()).code;
-    }
-  };
+      isLoading = true;
+      const res = await request('POST', 'subscribe', {
+        email,
+        language: $locale,
+      });
+      isLoading = false;
+      if (res.ok) {
+        email = '';
+        success = true;
+        await delay(5000);
+        success = false;
+      } else {
+        errorCode = (await res.json()).code;
+      }
+    };
 </script>
 
 <style lang="scss">
@@ -78,10 +79,10 @@
 
 <div class="group">
   <form novalidate on:submit|preventDefault={onSubmit}>
-    <label for="emailInput" class="hide">{$_('email.placeholder')}</label>
+    <label for={id} class="hide">{$_('email.placeholder')}</label>
     <input
+      {id}
       type="email"
-      id="emailInput"
       class="input input--accent email-input"
       bind:value={email}
       placeholder={$_('email.placeholder')} />
