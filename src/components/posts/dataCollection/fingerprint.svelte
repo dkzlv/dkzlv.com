@@ -14,7 +14,7 @@
   let href, fingerprint, prevMessage;
 
   onMount(async () => {
-    href = window.location.href + `#${id}`;
+    href = location.href.replace(location.hash, '') + `#${id}`;
     fingerprint = await getFingerprintHash();
     try {
       prevMessage = (await (await request('POST', 'fingerprint/get', {
@@ -84,8 +84,10 @@
       <p>Признайся, киса, какой у тебя любимый жанр порно?</p>
 
       <div class="interactive">
+        <label for="demoInput" class="hide">Любимое порно</label>
         <input
           class="input input--accent"
+          id="demoInput"
           bind:value={message}
           placeholder="Не стесняйся 👉👌💦👄" />
         <button class="btn btn--accent {isLoading && 'btn--loading'}" on:click={onClick}>

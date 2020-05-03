@@ -3,7 +3,8 @@ $header-anchor-padding: 0.35em;
 
 p,
 ol,
-ul {
+ul,
+.p {
   font-family: $serif;
   margin-bottom: 14px;
   line-height: $base-font-size * 1.8;
