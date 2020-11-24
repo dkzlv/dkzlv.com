@@ -12,7 +12,7 @@ export type PostMetaFromFile = {
   /**
    * A string, that looks like a JS array of slugs to other posts
    */
-  series?: string;
+  series?: string[];
 };
 export type BasePostMeta = {
   lang: string;
@@ -26,7 +26,6 @@ export type BasePostMeta = {
   imagePreview?: string;
   emailCollectorMessage?: string;
 };
-export type ParsedSeries = string[];
 export type PreprocessedSeries = Array<
   | {
       slug: string;
@@ -39,7 +38,7 @@ export type PreprocessedSeries = Array<
 
 export type UnfinishedPost = {
   content: string;
-  meta: BasePostMeta & { series?: ParsedSeries };
+  meta: BasePostMeta & { series?: string[] };
 };
 export type Post = {
   content: string;

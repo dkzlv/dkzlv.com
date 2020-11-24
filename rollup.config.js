@@ -49,7 +49,7 @@ const commonReplace = {
 const watchPostsPlugin = {
   buildStart() {
     const files = fs.readdirSync('./src/posts/');
-    files.forEach((file) => this.addWatchFile('./src/posts/' + file));
+    files.forEach(file => this.addWatchFile('./src/posts/' + file));
   },
 };
 
@@ -102,6 +102,7 @@ export default {
         }),
     ],
 
+    preserveEntrySignatures: false,
     onwarn,
   },
 
@@ -132,6 +133,7 @@ export default {
       require('module').builtinModules || Object.keys(process.binding('natives')),
     ),
 
+    preserveEntrySignatures: 'strict',
     onwarn,
   },
 };

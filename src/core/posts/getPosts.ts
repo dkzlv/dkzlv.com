@@ -25,7 +25,7 @@ export const getPostByPath = (path: string, postUrlSlug: string): UnfinishedPost
       readTime: calcReadTime(content.length),
       imagePreview: meta.imagePreview,
       emailCollectorMessage: meta.emailCollectorMessage?.replace(/\\n/g, '<br />'),
-      series: meta.series ? (eval(meta.series) as string[]) : undefined,
+      series: meta.series,
     },
   };
 };
