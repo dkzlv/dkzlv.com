@@ -1,6 +1,4 @@
 <script context="module" lang="ts">
-  import type { Post } from 'core/types';
-
   export function preload({ params }: { params: { lang: string } }) {
     return this.fetch(`${params.lang}/all.json`)
       .then((r: any) => r.json())
@@ -9,6 +7,8 @@
 </script>
 
 <script lang="ts">
+  import type { Post } from 'core/types';
+
   import { locale, date, _ } from 'svelte-i18n';
 
   import Meta from 'components/meta.svelte';

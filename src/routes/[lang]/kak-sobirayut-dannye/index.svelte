@@ -1,25 +1,23 @@
 <script lang="ts" context="module">
-  import type { Post as PostModel } from 'core/types';
+  import { commonPreload } from 'core/posts/preloadPost.ts';
 
-  export async function preload() {
-    const res = await this.fetch('/ru/kak-sobirayut-dannye.json'),
-      data = await res.json();
-
-    if (res.status === 200) return { post: data };
-    else this.error(res.status, data.message);
+  export function preload() {
+    return commonPreload(this.fetch.bind(this), { lang: 'ru', slug: 'kak-sobirayut-dannye' });
   }
 </script>
 
 <script lang="ts">
+  import type { Post as PostModel } from 'core/types';
+
   import { onMount } from 'svelte';
 
   import Post from 'components/post/index.svelte';
-  import Fingerprint from 'components/posts/dataCollection/fingerprint.svelte';
-  import Pidor from 'components/posts/dataCollection/pidor.svelte';
+  import Fingerprint from 'components/posts/privacy/fingerprint.svelte';
+  import Pidor from 'components/posts/privacy/pidor.svelte';
 
   onMount(() => {
-    const pidor = new Pidor({ target: document.querySelector('.pidor') });
-    const fingerprint = new Fingerprint({ target: document.querySelector('.fingerprint') });
+    const pidor = new Pidor({ target: document.querySelector('.pidor') }),
+      fingerprint = new Fingerprint({ target: document.querySelector('.fingerprint') });
 
     return () => {
       pidor.$destroy();

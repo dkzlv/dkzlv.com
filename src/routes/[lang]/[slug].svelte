@@ -1,19 +1,13 @@
 <script lang="ts" context="module">
-  import type { Post as PostModel } from 'core/types';
+  import { commonPreload } from 'core/posts/preloadPost.ts';
 
-  export async function preload({ params }: { params: { lang: string; slug: string } }) {
-    const res = await this.fetch(`/${params.lang}/${params.slug}.json`),
-      data = await res.json();
-
-    if (res.status === 200) {
-      return { post: data };
-    } else {
-      this.error(res.status, data.message);
-    }
+  export function preload({ params }: { params: { lang: string; slug: string } }) {
+    return commonPreload(this.fetch.bind(this), params);
   }
 </script>
 
 <script lang="ts">
+  import type { Post as PostModel } from 'core/types';
   import Post from 'components/post/index.svelte';
 
   export let post: PostModel;

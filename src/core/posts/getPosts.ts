@@ -35,9 +35,10 @@ export const getPosts = (): Post[] => {
     .filter(filename => filename.endsWith('.md'))
     .reduce((acc, filename) => {
       const filenameSlug = filename.split('.').slice(0, -1).join('.'),
-        filepath = join(rootPostPath, filename);
+        filepath = join(rootPostPath, filename),
+        post = getPostByPath(filepath, filenameSlug);
 
-      acc[filenameSlug] = getPostByPath(filepath, filenameSlug);
+      acc[post.meta.slug] = post;
       return acc;
     }, {} as { [slug: string]: UnfinishedPost });
 
@@ -59,6 +60,7 @@ export const getPosts = (): Post[] => {
               throw new Error(`You reference an unknown post ${postSlug} in post ${meta.slug}`);
 
             return {
+              lang: postFromSeries.meta.lang,
               slug: postFromSeries.meta.slug,
               title: postFromSeries.meta.title,
               description: postFromSeries.meta.description,

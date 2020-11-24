@@ -6,7 +6,7 @@
   import EmailCollector from 'components/emailCollector.svelte';
 
   export let series: Exclude<Post['meta']['series'], undefined>, fallbackTitle: string;
-  $: hasAnnounced = series && series.some((meta) => meta && meta.announced);
+  $: hasAnnounced = series && series.some(meta => meta && meta.announced);
 </script>
 
 <style lang="scss">
@@ -60,7 +60,7 @@
     <ol>
       {#each series as seriesPost}
         <li>
-          {#if seriesPost === null}
+          {#if !seriesPost}
             <span class="size-1 bold">{fallbackTitle}</span>
             <span class="italic">{$_('posts.series.thisPost')}</span>
           {:else if seriesPost.announced}
@@ -75,7 +75,9 @@
           {:else}
             <p>
               <span class="size-1 bold">
-                <a rel="prefetch" href={seriesPost.slug}>{seriesPost.title}</a>
+                <a
+                  rel="prefetch"
+                  href={`${seriesPost.lang}/${seriesPost.slug}`}>{seriesPost.title}</a>
               </span>
               <br />
               <span class="post-content">

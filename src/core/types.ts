@@ -28,6 +28,7 @@ export type BasePostMeta = {
 };
 export type PreprocessedSeries = Array<
   | {
+      lang: string;
       slug: string;
       title: string;
       description: string;

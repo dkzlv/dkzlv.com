@@ -36,9 +36,15 @@ renderer.link = (href, _, text) =>
 renderer.em = text =>
   text.charAt(0) == '#' ? `<mark>${text.slice(1)}</mark>` : `<em>${text}</em>`;
 
-// Root image path for posts
+// Root image path for posts. Adds "invertable" class to all images except those with
+// alt-text starting with `*`
 renderer.image = (href, title, text) => {
-  let out = `<img src="${rootStaticPath}/${href}" alt="${text}"`;
+  const addClass = !text.startsWith('*'),
+    alt = text.startsWith('') ? text.slice(1) : text;
+
+  let out = `<img ${
+    addClass ? 'class="invertable" ' : ''
+  }src="${rootStaticPath}/${href}" alt="${alt}"`;
   if (title) out += ` title="${title}"`;
   out += '/>';
   return out;
@@ -46,7 +52,7 @@ renderer.image = (href, title, text) => {
 
 export const convertFile = (
   rawFile: string,
-  opts: { postUrlSlug?: string; prependLangFromMeta?: boolean } = {},
+  opts: { postUrlSlug?: string; prependLangFromMeta?: boolean; lang?: string } = {},
 ) => {
   const [rawMeta, text] = metaSplitter(rawFile),
     { postUrlSlug, prependLangFromMeta = true } = opts,
@@ -55,7 +61,9 @@ export const convertFile = (
   return {
     content: marked(text, {
       renderer,
-      baseUrl: prependLangFromMeta ? `${meta.lang}/${postUrlSlug}` : postUrlSlug,
+      baseUrl: prependLangFromMeta
+        ? `${opts.lang || meta.lang}/${meta.slug || postUrlSlug}`
+        : postUrlSlug,
     }),
     meta,
   };
