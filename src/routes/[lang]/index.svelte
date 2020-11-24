@@ -1,17 +1,19 @@
-<script context="module">
-  export function preload({ params }) {
+<script context="module" lang="ts">
+  import type { Post } from 'core/types';
+
+  export function preload({ params }: { params: { lang: string } }) {
     return this.fetch(`${params.lang}/all.json`)
-      .then(r => r.json())
-      .then(posts => ({ posts }));
+      .then((r: any) => r.json())
+      .then((postsMeta: Post['meta'][]) => ({ postsMeta }));
   }
 </script>
 
-<script>
-  import { _, locale, date, format } from 'svelte-i18n';
+<script lang="ts">
+  import { locale, date, _ } from 'svelte-i18n';
 
   import Meta from 'components/meta.svelte';
 
-  export let posts;
+  export let postsMeta: Post['meta'][];
 </script>
 
 <style lang="scss">
@@ -39,15 +41,15 @@
 
 <Meta title={$_('meta.title')} description={$_('meta.description')} contentType="website" />
 
-{#each posts as post}
+{#each postsMeta as post}
   <div>
     <a rel="prefetch" href={`${$locale}/${post.slug}`}>
       <h2>{post.title}</h2>
     </a>
     <p class="meta">
-      {$date(new Date(post.date), { format: 'long' })} • {$format('posts.readTime', {
-        values: { time: post.readTime },
-      })}
+      {$date(new Date(post.date), { format: 'long' })}
+      •
+      {$_('posts.readTime', { values: { time: post.readTime } })}
     </p>
     <div class="post-content">
       <p>

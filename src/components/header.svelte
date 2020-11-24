@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { _, locale } from 'svelte-i18n';
 
   import Logo from './logo.svelte';

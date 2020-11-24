@@ -1,6 +1,6 @@
 import { rootApiPath } from './paths';
 
-const request = (method, path, data) =>
+export const request = (method: string, path: string, data: Object) =>
   fetch(`${rootApiPath}/${path}`, {
     method,
     headers: {
@@ -9,5 +9,3 @@ const request = (method, path, data) =>
     },
     body: JSON.stringify(data),
   });
-
-export default request;

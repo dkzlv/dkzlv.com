@@ -1,8 +1,11 @@
-<script>
-  import request from 'core/service.js';
-  import getFingerprintHash from './getFingerprintHash.js';
+<script lang="ts">
   import { onMount } from 'svelte';
-  import { sample } from 'utils/random.js';
+  import { slide } from 'svelte/transition';
+
+  import { sample } from 'utils/random.ts';
+
+  import { request } from 'core/service.ts';
+  import { getFingerprintHash } from 'core/dataCollection/fingerprint.ts';
 
   let isLoading = false,
     justSent = false,
@@ -11,15 +14,19 @@
   // Оно повторяется в тексте поста!
   const id = 'fingerprint-demo';
 
-  let href, fingerprint, prevMessage;
+  let href: string, fingerprint: string, prevMessage: string;
 
   onMount(async () => {
     href = location.href.replace(location.hash, '') + `#${id}`;
     fingerprint = await getFingerprintHash();
     try {
-      prevMessage = (await (await request('POST', 'fingerprint/get', {
-        fingerprint,
-      })).json()).message;
+      prevMessage = (
+        await (
+          await request('POST', 'fingerprint/get', {
+            fingerprint,
+          })
+        ).json()
+      ).message;
     } catch (err) {}
   });
 
@@ -95,7 +102,7 @@
         </button>
       </div>
       {#if justSent}
-        <p class="previous">
+        <p class="previous" in:slide>
           Записал. Твой ID:
           <code>{fingerprint}</code>
           . Теперь давай
@@ -105,7 +112,7 @@
       {/if}
 
       {#if prevMessage && !justSent}
-        <p class="previous">
+        <p class="previous" in:slide>
           Штош, я сдетектил, что твоя любимая порка — это
           <code>{prevMessage}</code>
           , а твой ID:

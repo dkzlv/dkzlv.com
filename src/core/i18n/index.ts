@@ -1,7 +1,7 @@
 import { addMessages, init, getLocaleFromNavigator } from 'svelte-i18n';
 
-import ru from './ru.json';
-import en from './en.json';
+import ru from './locales/ru.json';
+import en from './locales/en.json';
 
 const i18nInitialize = () => {
   addMessages('en', en);

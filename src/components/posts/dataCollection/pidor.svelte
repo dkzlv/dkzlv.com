@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
 
-  let pentagons, redSquares, confessionEl;
+  let pentagons: any, redSquares: any, confessionEl: HTMLDivElement;
 
   onMount(async () => {
+    // @ts-ignore
     const mojs = (await import('@mojs/core')).default;
 
     pentagons = new mojs.Burst({
@@ -55,7 +56,7 @@
   }
 
   const listener = () => {
-    const app = document.getElementById('app');
+    const app = document.getElementById('app')!;
     const rawCoor = confessionEl.getBoundingClientRect();
     const coor = {
       x: rawCoor.x + rawCoor.width / 2,

@@ -1,23 +1,26 @@
-<script>
-  import { onMount } from 'svelte';
+<script lang="ts">
+  import type { Post } from 'core/types';
+
+  import { onMount, SvelteComponent } from 'svelte';
   import { locale } from 'svelte-i18n';
 
   import Meta from 'components/meta.svelte';
   import SeriesData from './seriesData.svelte';
   import Subscription from './subscription.svelte';
 
-  export let post;
+  export let post: Post;
 
   $: hasAnnounced = post.meta.series && post.meta.series.some(meta => meta && meta.announced);
 
   onMount(async () => {
     const elements = document.querySelectorAll('.email-collector');
 
-    const cmps = [];
+    const cmps: SvelteComponent[] = [];
     elements.forEach(el => {
-      const engagement = el.innerText || undefined;
-      el.innerText = '';
-      el.classList.remove('email-collector');
+      const element = el as HTMLElement,
+        engagement = element.innerText || undefined;
+      element.innerText = '';
+      element.classList.remove('email-collector');
       cmps.push(new Subscription({ target: el, props: { engagement } }));
     });
 
@@ -35,7 +38,7 @@
 <article>
   <h1>{post.meta.title}</h1>
   {#if post.meta.series}
-    <SeriesData postMeta={post.meta} />
+    <SeriesData series={post.meta.series} fallbackTitle={post.meta.title} />
   {/if}
   <div class="post-content">
     <slot>
@@ -45,7 +48,7 @@
 </article>
 
 {#if post.meta.series && hasAnnounced}
-  <SeriesData postMeta={post.meta} />
+  <SeriesData series={post.meta.series} fallbackTitle={post.meta.title} />
 {:else}
   <Subscription engagement={post.meta.emailCollectorMessage} />
 {/if}

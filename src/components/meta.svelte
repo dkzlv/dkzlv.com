@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
   import { locale as localeStore } from 'svelte-i18n';
 
-  import { rootSitePath, rootStaticPath } from 'core/paths';
+  import { rootSitePath, rootStaticPath } from 'core/paths.ts';
 
   export let title = '',
     description = '',

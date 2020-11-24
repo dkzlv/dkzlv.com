@@ -8,6 +8,7 @@ import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
 import babel from 'rollup-plugin-babel';
+import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
 import json from '@rollup/plugin-json';
 import config from 'sapper/config/rollup.js';
@@ -18,19 +19,20 @@ const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
-const onwarn = (warning, onwarn) => {
+const onwarn = (warning, onwarn) =>
   // Shows up after I added svelte-i18n for some reason, safe to ignore
-  if (warning.code === 'THIS_IS_UNDEFINED') return;
-
-  return (
-    (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
-    onwarn(warning)
-  );
-};
+  warning.code === 'THIS_IS_UNDEFINED' ||
+  // Defaults from sapper template: https://github.com/sveltejs/sapper-template/blob/master/rollup.config.js#L14
+  (warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
+  (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
+  onwarn(warning);
 
 const preprocess = autoPreprocess({
   postcss: true,
   scss: true,
+  typescript: {
+    transpileOnly: true,
+  },
 });
 
 const commonReplace = {
@@ -68,11 +70,12 @@ export default {
         },
       }),
       commonjs(),
+      typescript(),
       svelte({
         dev,
         preprocess,
         hydratable: true,
-        emitCss: true,
+        emitCss: false,
       }),
       json(),
 
@@ -117,6 +120,7 @@ export default {
         },
       }),
       commonjs(),
+      typescript(),
       svelte({
         generate: 'ssr',
         dev,

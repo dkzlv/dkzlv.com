@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
   import { slide } from 'svelte/transition';
   import { _, locale } from 'svelte-i18n';
 
-  import request from 'core/service';
-  import isEmail from 'utils/validations/email.js';
-  import delay from 'utils/delay.js';
+  import { request } from 'core/service.ts';
+  import { isEmail } from 'utils/validations/email.ts';
+  import { delay } from 'utils/delay.ts';
 
   import Tooltip from './tooltip.svelte';
 
@@ -17,11 +17,12 @@
 
   let email = '';
 
-  $: errorCode = email && 0;
+  $: placeholderMessage = $_('email.placeholder') as string;
+  $: errorCode = (email && 0) as keyof typeof errors;
   let success = false,
     isLoading = false;
 
-  const id = Math.random(),
+  const id = Math.random().toString(),
     onSubmit = async () => {
       if (!email) {
         return (errorCode = 103);
@@ -85,7 +86,7 @@
       type="email"
       class="input input--accent email-input"
       bind:value={email}
-      placeholder={$_('email.placeholder')} />
+      placeholder={placeholderMessage} />
     <button
       class="btn btn--accent-outline subscribe-button"
       class:btn--loading={isLoading}

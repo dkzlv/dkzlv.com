@@ -7,6 +7,4 @@ const styles = [
   'margin: 55px',
 ].join(';');
 
-const warn = (text) => console.log(`%c${text}`, styles);
-
-export default warn;
+export const warn = (text: string) => console.log(`%c${text}`, styles);

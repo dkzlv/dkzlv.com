@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
   import { _ } from 'svelte-i18n';
 
   import EmailCollector from 'components/emailCollector.svelte';
 
-  export let engagement;
+  export let engagement: string;
 </script>
 
 <div class="box">

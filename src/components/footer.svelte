@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
   import { locale } from 'svelte-i18n';
-  import { rootSitePath, staticPath } from 'core/paths';
+  import { staticPath } from 'core/paths.ts';
 </script>
 
 <style lang="scss">
@@ -29,14 +29,10 @@
     <a href="https://twitter.com/d_kzlv" rel="noreferrer nofollow" target="_blank">Dan Kozlov</a>
   </p>
   <div class="right">
-    {#if $locale === 'ru'}
-      <a href="/en">
-        <img src={`${staticPath}/img/footer/gb.svg`} alt="Brit's flag" />
-      </a>
-    {:else if $locale === 'en'}
-      <a href="/ru">
-        <img src={`${staticPath}/img/footer/ru.svg`} alt="Russ' flag" />
-      </a>
+    {#if $locale == 'ru'}
+      <a href="/en"> <img src={`${staticPath}/img/footer/gb.svg`} alt="Brit's flag" /> </a>
+    {:else if $locale == 'en'}
+      <a href="/ru"> <img src={`${staticPath}/img/footer/ru.svg`} alt="Russ' flag" /> </a>
     {/if}
     <a href={$locale + '/rss'} class="rss" rel="prefetch">
       <img src={`${staticPath}/img/footer/rss.svg`} alt="RSS" />

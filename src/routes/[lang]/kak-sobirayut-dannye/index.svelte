@@ -1,13 +1,16 @@
-<script context="module">
+<script lang="ts" context="module">
+  import type { Post as PostModel } from 'core/types';
+
   export async function preload() {
-    const res = await this.fetch('/ru/kak-sobirayut-dannye.json');
-    const data = await res.json();
-    if (res.status === 200) return { data: data };
+    const res = await this.fetch('/ru/kak-sobirayut-dannye.json'),
+      data = await res.json();
+
+    if (res.status === 200) return { post: data };
     else this.error(res.status, data.message);
   }
 </script>
 
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
 
   import Post from 'components/post/index.svelte';
@@ -24,7 +27,7 @@
     };
   });
 
-  export let data;
+  export let post: PostModel;
 </script>
 
-<Post post={data} />
+<Post {post} />
