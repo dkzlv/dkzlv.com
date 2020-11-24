@@ -139,6 +139,11 @@ h6 {
     &:not(:last-child) {
       margin-bottom: 10px;
     }
+
+    > ol,
+    ul {
+      margin: 15px 0 15px;
+    }
   }
 
   a.anchor {
@@ -227,7 +232,18 @@ h6 {
   }
 
   img {
-    filter: $image-filter;
+    &.invertable {
+      filter: $image-filter;
+    }
+
     margin: 2.5em auto;
   }
+}
+
+hr {
+  width: 150px;
+  margin: 3em auto;
+
+  border: none;
+  border-top: dotted 1px #b3b3b3;
 }
