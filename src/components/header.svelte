@@ -4,6 +4,7 @@
   import Logo from './logo.svelte';
   import TwitterIcon from './twitterIcon.svelte';
   import EmailCollector from './emailCollector.svelte';
+  import Link from './link.svelte';
 </script>
 
 <style lang="scss">
@@ -32,15 +33,16 @@
     text-decoration: none;
   }
 
-  .twitter-link {
-    color: $accent-color;
-  }
-
   .newsletter-text {
     font-size: ms(-1);
 
     @include mq($until: mobile) {
       display: none;
+    }
+
+    :global(.twitter-link) {
+      color: $accent-color;
+      text-decoration: none;
     }
   }
 
@@ -66,16 +68,12 @@
     <div class="newsletter-text">
       <p>
         {$_('header.onboard')}
-        <a
-          class="twitter-link"
-          href="https://twitter.com/d_kzlv/"
-          rel="noreferrer nofollow"
-          target="_blank">
+        <Link nofollow class="twitter-link" href="https://twitter.com/d_kzlv/">
           <span class="twitterIcon">
             <TwitterIcon />
           </span>
           {$_('header.twitter')}
-        </a>
+        </Link>
         {$_('header.sameContent')}
         <br />
         {$_('header.join')}

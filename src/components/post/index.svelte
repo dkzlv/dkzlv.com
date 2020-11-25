@@ -1,27 +1,35 @@
 <script lang="ts">
   import type { Post } from 'core/types';
 
-  import { onMount, SvelteComponent } from 'svelte';
+  import { onMount } from 'svelte';
   import { locale } from 'svelte-i18n';
 
   import Meta from 'components/meta.svelte';
   import SeriesData from './seriesData.svelte';
   import Subscription from './subscription.svelte';
+  import Share from './share.svelte';
 
   export let post: Post;
 
   $: hasAnnounced = post.meta.series && post.meta.series.some(meta => meta && meta.announced);
 
   onMount(async () => {
-    const elements = document.querySelectorAll('.email-collector');
+    const emailCollectorEls = document.querySelectorAll('.email-collector'),
+      shareEls = document.querySelectorAll('.share'),
+      cmps = [...emailCollectorEls].map(el => {
+        const element = el as HTMLElement,
+          engagement = element.innerHTML || undefined;
+        element.innerHTML = '';
+        element.classList.remove('email-collector');
+        return new Subscription({ target: el, props: { engagement } });
+      });
 
-    const cmps: SvelteComponent[] = [];
-    elements.forEach(el => {
+    shareEls.forEach(el => {
       const element = el as HTMLElement,
-        engagement = element.innerText || undefined;
-      element.innerText = '';
-      element.classList.remove('email-collector');
-      cmps.push(new Subscription({ target: el, props: { engagement } }));
+        text = element.innerHTML;
+      element.innerHTML = '';
+      element.classList.remove('share');
+      return new Share({ target: el, props: { text } });
     });
 
     return () => cmps.forEach(cmp => cmp.$destroy());

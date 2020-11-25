@@ -11,7 +11,6 @@
 
     @include mq($until: mobile) {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 3fr;
     }
     @include mq($from: mobile) {
       grid-template-columns: 1fr 4fr;

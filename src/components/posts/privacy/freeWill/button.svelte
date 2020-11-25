@@ -11,7 +11,7 @@
       dispatch('clicked');
     },
     commonCryptoText =
-      'все свои <a href="https://etherscan.io/address/0x33dD3a9296319D7DFe1b0Cd22c4a7e8DC0111DBc" target="_blank" rel="noopener noreferrer">эфиры сюда</a>, а <a href="https://blockchair.com/bitcoin/address/12Q9AyNcHCXij33ciiKRKeUByTFExNMhxc?_type=address" target="_blank" rel="noopener noreferrer">битки — сюда</a>';
+      'все свои <a href="https://etherscan.io/address/0x33dD3a9296319D7DFe1b0Cd22c4a7e8DC0111DBc" target="_blank" rel="noopener noreferrer nofollow">эфиры сюда</a>, а <a href="https://blockchair.com/bitcoin/address/12Q9AyNcHCXij33ciiKRKeUByTFExNMhxc?_type=address" target="_blank" rel="noopener noreferrer nofollow">битки — сюда</a>';
 
   let clicked = false,
     text = `Ну и о какой свободе воли идёт речь, если вы просто слушаетесь первого же приказа? Давайте тогда переводите ${commonCryptoText}.`;

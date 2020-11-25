@@ -1,5 +1,7 @@
 <script lang="ts">
   import { locale } from 'svelte-i18n';
+  import Link from './link.svelte';
+
   import { staticPath } from 'core/paths.ts';
 </script>
 
@@ -18,7 +20,7 @@
     display: flex;
   }
 
-  .rss {
+  footer :global(.rss) {
     margin-left: 15px;
   }
 </style>
@@ -26,16 +28,17 @@
 <footer>
   <p>
     2018-{new Date().getFullYear()},
-    <a href="https://twitter.com/d_kzlv" rel="noreferrer nofollow" target="_blank">Dan Kozlov</a>
+
+    <Link href="https://twitter.com/d_kzlv">Dan Kozlov</Link>
   </p>
   <div class="right">
     {#if $locale == 'ru'}
-      <a href="/en"> <img src={`${staticPath}/img/footer/gb.svg`} alt="Brit's flag" /> </a>
+      <Link href="/en"><img src={`${staticPath}/img/footer/gb.svg`} alt="Brit's flag" /></Link>
     {:else if $locale == 'en'}
-      <a href="/ru"> <img src={`${staticPath}/img/footer/ru.svg`} alt="Russ' flag" /> </a>
+      <Link href="/ru"><img src={`${staticPath}/img/footer/ru.svg`} alt="Russ' flag" /></Link>
     {/if}
-    <a href={$locale + '/rss'} class="rss" rel="prefetch">
+    <Link class="rss" href={$locale + '/rss'}>
       <img src={`${staticPath}/img/footer/rss.svg`} alt="RSS" />
-    </a>
+    </Link>
   </div>
 </footer>
