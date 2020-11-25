@@ -141,8 +141,8 @@ h6 {
     }
 
     > ol,
-    ul {
-      margin: 15px 0 15px;
+    > ul {
+      margin: 15px 0 15px 15px;
     }
   }
 
@@ -238,12 +238,48 @@ h6 {
 
     margin: 2.5em auto;
   }
-}
 
-hr {
-  width: 150px;
-  margin: 3em auto;
+  hr {
+    width: 150px;
+    margin: 3em auto;
 
-  border: none;
-  border-top: dotted 1px #b3b3b3;
+    border: none;
+    border-top: dotted 1px #b3b3b3;
+  }
+
+  .callout {
+    display: flex;
+
+    margin-bottom: 1em;
+
+    $padding: 1em;
+    > p {
+      margin: 0;
+
+      &:first-child {
+        font-size: 150%;
+        padding: $padding;
+
+        user-select: none;
+      }
+
+      &:not(:first-child) {
+        flex: 1;
+        padding: $padding;
+        padding-left: 0;
+      }
+    }
+
+    &.green {
+      background-color: $callout-green;
+    }
+
+    &.yellow {
+      background-color: $callout-yellow;
+    }
+
+    &.red {
+      background-color: $callout-red;
+    }
+  }
 }
