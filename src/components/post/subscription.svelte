@@ -3,14 +3,14 @@
 
   import EmailCollector from 'components/emailCollector.svelte';
 
-  export let engagement: string;
+  export let text: string;
 </script>
 
 <div class="box">
   <div class="nested">
     <p class="size-3 bold">{$_('email.endPostEngagement.header')}</p>
     <p>
-      {@html engagement || $_('email.endPostEngagement.text')}
+      {@html text || $_('email.endPostEngagement.text')}
     </p>
 
     <EmailCollector />

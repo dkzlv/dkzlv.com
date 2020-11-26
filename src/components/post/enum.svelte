@@ -1,17 +1,22 @@
 <script lang="ts">
-  export let content: string;
+  export let text: string;
 </script>
 
 <style lang="scss">
   @import 'src/styles/importable';
 
-  .wrapper {
+  .enum {
     display: grid;
     grid-row-gap: 1em;
 
     @include mq($until: mobile) {
       grid-template-columns: 1fr;
+
+      &:nth-child(odd) {
+        place-self: center;
+      }
     }
+
     @include mq($from: mobile) {
       grid-template-columns: 1fr 4fr;
       grid-template-rows: 1fr;
@@ -26,7 +31,7 @@
 </style>
 
 <div class="box">
-  <div class="nested wrapper">
-    {@html content}
+  <div class="nested enum">
+    {@html text}
   </div>
 </div>
