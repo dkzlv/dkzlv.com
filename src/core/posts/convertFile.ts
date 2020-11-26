@@ -40,14 +40,16 @@ renderer.em = text =>
 // alt-text starting with `*`
 renderer.image = (href, title, text) => {
   const addClass = !text.startsWith('*'),
-    alt = text.startsWith('') ? text.slice(1) : text;
+    alt = text.startsWith('') ? text.slice(1) : text,
+    url = `${rootStaticPath}/${href}`;
 
-  let out = `<img ${
-    addClass ? 'class="invertable" ' : ''
-  }src="${rootStaticPath}/${href}" alt="${alt}"`;
-  if (title) out += ` title="${title}"`;
-  out += '/>';
-  return out;
+  return `
+  <a href="${url}" target="_blank">
+    <img src="${url}" alt=${alt} ${addClass ? 'class="invertable"' : ''} ${
+    title ? `title=${title}` : ''
+  } />
+  </a>
+  `;
 };
 
 export const convertFile = (
