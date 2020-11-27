@@ -4865,10 +4865,10 @@ supports-color@^7.0.0, supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-svelte-i18n@^3.2.6:
-  version "3.2.7"
-  resolved "https://registry.yarnpkg.com/svelte-i18n/-/svelte-i18n-3.2.7.tgz#59c54c31d59e0570e69e64afc1b421228f4929e2"
-  integrity sha512-eL0Ew/Rk8Yk1W5P8FGednGwWWms4GkOoGc5nbqhfX5EujtdRcIQLTIDSMlz1ELOwZFFUS+ZuxHQeXbicmqxY5g==
+svelte-i18n@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/svelte-i18n/-/svelte-i18n-3.3.0.tgz#6c93f005b749263ef9db84c38cd7b0456019ad2f"
+  integrity sha512-2pIfd4G8QfB87udPugt6g2Wl/qZ0kIB60+nQKHdon7d7aFzY5qsYT2NqQgK7dnVO2Gu0R8i2kSsNzsaVSk5UsA==
   dependencies:
     deepmerge "^4.2.2"
     dlv "^1.1.3"

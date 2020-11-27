@@ -3,6 +3,7 @@
 </script>
 
 <script lang="ts">
+  import { _, json } from 'svelte-i18n';
   import { onMount } from 'svelte';
   import { slide } from 'svelte/transition';
 
@@ -15,7 +16,6 @@
     justSent = false,
     message = '';
 
-  // Оно повторяется в тексте поста!
   const id = 'fingerprint-demo';
 
   let href: string, fingerprint: string, prevMessage: string;
@@ -34,17 +34,8 @@
     } catch (err) {}
   });
 
-  const textVariants = [
-    'Зоофилия под Бетховена',
-    'BBC с ЗППП',
-    'Карлики в костюмах великанов',
-    'Рик и Морти',
-    'Великаны в костюмах карликов',
-    'Трахать горячий хачапури',
-  ];
-
   const onClick = async () => {
-    if (!message) message = sample(textVariants);
+    if (!message) message = sample($json('specials.fingerprint.form.variants'));
 
     isLoading = true;
     await request('POST', 'fingerprint/save', {
@@ -89,39 +80,31 @@
   }
 </style>
 
-<div class="box">
+<div class="box" {id}>
   <div class="nested">
     <div class="container">
-      <p>Признайся, киса, какой у тебя любимый жанр порно?</p>
+      <p>{$_('specials.fingerprint.header')}</p>
 
       <div class="interactive">
-        <label for="demoInput" class="hide">Любимое порно</label>
+        <label for="demoInput" class="hide">{$_('specials.fingerprint.form.label')}</label>
         <input
           class="input input--accent"
           id="demoInput"
           bind:value={message}
-          placeholder="Не стесняйся 👉👌💦👄" />
+          placeholder={$_('specials.fingerprint.form.placeholder')} />
         <button class="btn btn--accent {isLoading && 'btn--loading'}" on:click={onClick}>
-          Сохранить до полуночи
+          {$_('specials.fingerprint.form.button')}
         </button>
       </div>
       {#if justSent}
         <p class="previous" in:slide>
-          Записал. Твой ID:
-          <code>{fingerprint}</code>
-          . Теперь давай
-          <a {href}>заходи сюда же</a>
-          из анон-режима.
+          {@html $_('specials.fingerprint.result.success', { values: { fingerprint, href } })}
         </p>
       {/if}
 
       {#if prevMessage && !justSent}
         <p class="previous" in:slide>
-          Штош, я сдетектил, что твоя любимая порка — это
-          <code>{prevMessage}</code>
-          , а твой ID:
-          <code>{fingerprint}</code>
-          .
+          {@html $_('specials.fingerprint.result.guess', { values: { fingerprint, prevMessage } })}
         </p>
       {/if}
     </div>

@@ -22,7 +22,7 @@
     "js-yaml": "^3.14.0",
     "marked": "^1.2.5",
     "sirv": "^1.0.7",
-    "svelte-i18n": "^3.2.6"
+    "svelte-i18n": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.7",
