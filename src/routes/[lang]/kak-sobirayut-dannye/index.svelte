@@ -12,7 +12,7 @@
   import { onMount } from 'svelte';
 
   import Post from 'components/post/index.svelte';
-  import Fingerprint from 'components/specials/privacy/fingerprint/post.svelte';
+  import Fingerprint from 'components/specials/privacy/fingerprint.svelte';
   import Pidor from 'components/specials/privacy/pidor.svelte';
 
   onMount(() => {
