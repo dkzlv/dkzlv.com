@@ -1,3 +1,7 @@
+<script lang="ts" context="module">
+  export const classname = 'fingerprint';
+</script>
+
 <script lang="ts">
   import { onMount } from 'svelte';
   import { slide } from 'svelte/transition';

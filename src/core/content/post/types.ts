@@ -13,6 +13,12 @@ export type PostMetaFromFile = {
    * A string, that looks like a JS array of slugs to other posts
    */
   series?: string[];
+
+  /**
+   * A list of paths relative to `components` folder with components that we
+   * attach to the post programmatically
+   */
+  registerExtraComponents?: string[];
 };
 export type BasePostMeta = {
   lang: string;
@@ -23,6 +29,8 @@ export type BasePostMeta = {
   published: boolean;
   announced: boolean;
   readTime: number;
+  registerExtraComponents: string[];
+
   imagePreview?: string;
   emailCollectorMessage?: string;
 };

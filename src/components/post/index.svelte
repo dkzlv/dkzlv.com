@@ -18,6 +18,8 @@
   import { onMount, SvelteComponent } from 'svelte';
   import { locale } from 'svelte-i18n';
 
+  import { generateString } from 'utils/random.ts';
+
   import Meta from 'components/meta.svelte';
   import SeriesData from './seriesData.svelte';
 
@@ -31,10 +33,32 @@
 
   onMount(async () => {
     const cmps = [
-      ...mountComponentToSelector('email-collector', Subscription),
-      ...mountComponentToSelector('share', Share),
-      ...mountComponentToSelector('enum', Enum),
-    ];
+        ...mountComponentToSelector('email-collector', Subscription),
+        ...mountComponentToSelector('share', Share),
+        ...mountComponentToSelector('enum', Enum),
+      ],
+      programmaticComponentClasses = (await Promise.all(
+        (post.meta.registerExtraComponents || []).map(file => {
+          switch (file) {
+            case 'fingerprint':
+              return import('components/specials/privacy/fingerprint.svelte');
+            case 'freeWill':
+              return import('components/specials/privacy/freeWill.svelte');
+            case 'pidor':
+              return import('components/specials/privacy/pidor.svelte');
+          }
+        }),
+      )) as any;
+
+    for (const cmpClass of programmaticComponentClasses) {
+      const mountToClassname = cmpClass.classname || generateString(10);
+      if (!cmpClass.classname) {
+        const el = document.createElement('div');
+        el.classList.add(mountToClassname);
+        document.body.appendChild(el);
+      }
+      cmps.push(...mountComponentToSelector(mountToClassname, cmpClass.default));
+    }
 
     return () => cmps.forEach(cmp => cmp.$destroy());
   });

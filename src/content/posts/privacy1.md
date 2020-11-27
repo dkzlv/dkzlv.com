@@ -7,6 +7,7 @@ date: 29.05.2020
 published: 1
 slug: kak-sobirayut-dannye
 series: ["", "chto-mozhno-poluchit-iz-dannyh-i-chto-delat"]
+registerExtraComponents: ["fingerprint", "pidor"]
 ---
 
 Тяжело быть в IT, потому что все твои школьные друзья вообще не вдупляют, чем ты занимаешься. Программист, продакт-менеджер, QA — чем это всё отличается от починки принтера? (подсказка: за починку принтера не получаешь 300k в секунду)

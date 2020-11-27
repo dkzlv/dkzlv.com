@@ -24,6 +24,7 @@ const getPostByFileContent = (rawFileContent: string, postUrlSlug: string): Unfi
       imagePreview: meta.imagePreview,
       emailCollectorMessage: meta.emailCollectorMessage?.replace(/\\n/g, '<br />'),
       series: meta.series,
+      registerExtraComponents: meta.registerExtraComponents || [],
     },
   };
 };

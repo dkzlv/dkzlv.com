@@ -1,3 +1,7 @@
+<script lang="ts" context="module">
+  export const classname = 'pidor';
+</script>
+
 <script lang="ts">
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
