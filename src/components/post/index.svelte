@@ -1,19 +1,19 @@
 <script lang="ts" context="module">
   const mountComponentToSelector = (
-    selector: string,
+    classname: string,
     component: AConstructorTypeOf<SvelteComponent>,
   ) =>
-    [...document.querySelectorAll(selector)].map(el => {
-      const element = el,
-        text = element.innerHTML || undefined;
-      element.innerHTML = '';
-      element.classList.remove(selector);
-      return new component({ target: el, props: { text } });
+    [...document.querySelectorAll('.' + classname)].map(el => {
+      const target = el,
+        text = target.innerHTML || undefined;
+      target.innerHTML = '';
+      target.classList.remove(classname);
+      return new component({ target, props: { text } });
     });
 </script>
 
 <script lang="ts">
-  import type { Post } from 'core/types';
+  import type { Post } from 'core/content/post/types';
 
   import { onMount, SvelteComponent } from 'svelte';
   import { locale } from 'svelte-i18n';
@@ -31,9 +31,9 @@
 
   onMount(async () => {
     const cmps = [
-      ...mountComponentToSelector('.email-collector', Subscription),
-      ...mountComponentToSelector('.share', Share),
-      ...mountComponentToSelector('.enum', Enum),
+      ...mountComponentToSelector('email-collector', Subscription),
+      ...mountComponentToSelector('share', Share),
+      ...mountComponentToSelector('enum', Enum),
     ];
 
     return () => cmps.forEach(cmp => cmp.$destroy());

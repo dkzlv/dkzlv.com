@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-  import { commonPreload } from 'core/posts/preloadPost.ts';
+  import { commonPreload } from 'core/content/post/preloadPost.ts';
 
   export function preload() {
     return commonPreload(this.fetch.bind(this), {
@@ -10,12 +10,12 @@
 </script>
 
 <script lang="ts">
-  import type { Post as PostModel } from 'core/types';
+  import type { Post as PostModel } from 'core/content/post/types';
 
   import { onMount } from 'svelte';
 
   import Post from 'components/post/index.svelte';
-  import { FreeWillButton, FreeWillFollowup } from 'components/posts/privacy/freeWill/index.ts';
+  import { FreeWillButton, FreeWillFollowup } from 'components/specials/privacy/freeWill/index.ts';
 
   export let post: PostModel;
 

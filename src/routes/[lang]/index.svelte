@@ -7,7 +7,7 @@
 </script>
 
 <script lang="ts">
-  import type { Post } from 'core/types';
+  import type { Post } from 'core/content/post/types';
 
   import { locale, date, _ } from 'svelte-i18n';
 

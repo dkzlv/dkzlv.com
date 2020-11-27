@@ -2,7 +2,6 @@ const slugify = require('@sindresorhus/slugify'),
   input = require('../src/utils/input'),
   join = require('path').join,
   fs = require('fs'),
-  { format } = require('date-fns'),
   promisify = require('util').promisify;
 
 const writeFile = promisify(fs.writeFile);
@@ -11,7 +10,7 @@ async function main() {
   const metadata = {
     lang: (await input('Язык, ru или en (ru по умолчанию):\n')) || 'ru',
     title: await input('Заголовок:\n'),
-    date: format(new Date(), 'dd.MM.yyyy'),
+    date: new Date().toISOString(),
   };
   metadata.slug = slugify(metadata.title);
 
@@ -32,8 +31,6 @@ async function main() {
   resultString += '---\n';
 
   await writeFile(postPath, resultString, { encoding: 'utf-8' });
-
-  process.exit();
 }
 
 main();

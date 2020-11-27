@@ -3,7 +3,7 @@ import { _, locale } from 'svelte-i18n';
 import { get } from 'svelte/store';
 
 import { getPosts } from './getPosts';
-import { rootSitePath } from '../paths';
+import { rootSitePath } from 'core/paths';
 
 const t = (key: string) => get(_)(key) as string,
   feedGenerator = (lang: string) => {

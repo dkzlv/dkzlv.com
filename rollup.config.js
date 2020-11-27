@@ -48,8 +48,11 @@ const commonReplace = {
 
 const watchPostsPlugin = {
   buildStart() {
-    const files = fs.readdirSync('./src/posts/');
-    files.forEach(file => this.addWatchFile('./src/posts/' + file));
+    ['posts', 'leaks'].forEach(folder =>
+      fs
+        .readdirSync(`./src/content/${folder}`)
+        .forEach(file => this.addWatchFile(`./src/content/${folder}/${file}`)),
+    );
   },
 };
 

@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
 
-import { getPosts } from 'core/posts/getPosts';
+import { getPosts } from 'core/content/post/getPosts';
 
 const posts = getPosts();
 

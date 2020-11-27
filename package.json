@@ -7,12 +7,14 @@
     "build": "sapper build --legacy",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
-    "new": "node scripts/newPost.js"
+    "post": "node scripts/newPost.js",
+    "leak": "node scripts/newLeak.js"
   },
   "dependencies": {
     "@mojs/core": "git+https://github.com/dkzlv/mojs.git",
     "@sindresorhus/slugify": "^1.1.0",
     "compression": "^1.7.1",
+    "date-fns": "^2.16.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "feed": "^4.2.1",

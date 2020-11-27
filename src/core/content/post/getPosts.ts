@@ -1,22 +1,20 @@
-import { readdirSync, readFileSync } from 'fs';
-import { join } from 'path';
+import { parse } from 'date-fns';
 
-import { Post, PreprocessedSeries, UnfinishedPost } from 'core/types';
+import { Post, PreprocessedSeries, UnfinishedPost } from './types';
 import { calcReadTime } from './calcReadTime';
-import { convertFile } from './convertFile';
+import { convertPost } from './convertPost';
+import { getFilesContent } from 'core/content/common/getFilesContent';
 
-const rootPostPath = join(process.env.PWD as string, 'src', 'posts');
+const rootPostSubpath = 'posts';
 
-export const getPostByPath = (path: string, postUrlSlug: string): UnfinishedPost => {
-  const { content, meta } = convertFile(readFileSync(path, { encoding: 'utf-8' }), {
-    postUrlSlug,
-  });
+const getPostByFileContent = (rawFileContent: string, postUrlSlug: string): UnfinishedPost => {
+  const { content, meta } = convertPost(rawFileContent, { postUrlSlug });
 
   return {
     content,
     meta: {
       lang: meta.lang,
-      date: new Date(meta.date),
+      date: parse(meta.date, 'dd.MM.yyyy', new Date()),
       title: meta.title,
       slug: meta.slug || postUrlSlug,
       description: meta.description?.replace(/\\n/g, '<br />'),
@@ -31,23 +29,19 @@ export const getPostByPath = (path: string, postUrlSlug: string): UnfinishedPost
 };
 
 export const getPosts = (): Post[] => {
-  const slugBasedObj = readdirSync(rootPostPath)
-    .filter(filename => filename.endsWith('.md'))
-    .reduce((acc, filename) => {
-      const filenameSlug = filename.split('.').slice(0, -1).join('.'),
-        filepath = join(rootPostPath, filename),
-        post = getPostByPath(filepath, filenameSlug);
-
-      acc[post.meta.slug] = post;
-      return acc;
-    }, {} as { [slug: string]: UnfinishedPost });
+  const slugBasedObj = getFilesContent(rootPostSubpath)
+    .map(({ fileContent, filenameSlug }) => getPostByFileContent(fileContent, filenameSlug))
+    .reduce(
+      (acc, post) => ((acc[post.meta.slug] = post), acc),
+      {} as { [slug: string]: UnfinishedPost },
+    );
 
   return (
     Object.values(slugBasedObj)
       // We return everything on stage.
       // We only return published on production.
       .filter(post => process.env.NODE_ENV === 'development' || post.meta.published)
-      .sort((a, b) => new Date(b.meta.date!).getTime() - new Date(a.meta.date!).getTime())
+      .sort((a, b) => b.meta.date.getTime() - a.meta.date.getTime())
       .map(({ content, meta }) => {
         let series: PreprocessedSeries | undefined = undefined;
         if (meta.series)
