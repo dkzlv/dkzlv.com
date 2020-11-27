@@ -12,6 +12,7 @@
   import { locale, date, _ } from 'svelte-i18n';
 
   import Meta from 'components/meta.svelte';
+  import PromoList from 'components/promoList.svelte';
 
   export let postsMeta: Post['meta'][];
 </script>
@@ -40,6 +41,13 @@
 </style>
 
 <Meta title={$_('meta.title')} description={$_('meta.description')} contentType="website" />
+
+<div class="box">
+  <div class="nested">
+    <h3>{$_('specials.header')}</h3>
+    <PromoList />
+  </div>
+</div>
 
 {#each postsMeta as post}
   <div>

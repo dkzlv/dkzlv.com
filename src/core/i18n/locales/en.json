@@ -72,8 +72,10 @@
           "This is a part of my post about how corporations gather data about us even if we don't know nothing about it. It's a very small and simple demo. The idea is that you visit a porn-site as a thing you're most ashamed of with inkognito mode on. You're a bit of a hacker yourself, aren't you?",
           "This demo will show you how silly of you it is to think that rich powerful and smart corporations cannot deduce your ID if you use inkognito more. Go ahead!"
         ]
-      }
-    }
+      },
+      "promoHeader": "Pr0n + fingerprinting"
+    },
+    "header": "Timeless demos"
   },
   "colorSwitcher": "Change colors",
   "consoleWarning": "Hi there, anonymous hacker! We hire THE BEST janitors our there, and you seem to fit our team! Drop a few lines to trash@bin.com"
