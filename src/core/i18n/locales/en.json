@@ -78,5 +78,17 @@
     "header": "Timeless demos"
   },
   "colorSwitcher": "Change colors",
-  "consoleWarning": "Hi there, anonymous hacker! We hire THE BEST janitors our there, and you seem to fit our team! Drop a few lines to trash@bin.com"
+  "consoleWarning": "Hi there, anonymous hacker! We hire THE BEST janitors our there, and you seem to fit our team! Drop a few lines to trash@bin.com",
+  "leaks": {
+    "table": {
+      "title": "Title",
+      "org": "Organization",
+      "spread": "Location",
+      "tags": "Tags",
+      "victims": "Potential victims",
+      "start": "Started",
+      "end": "Ended",
+      "unknown": "Unknown"
+    }
+  }
 }

@@ -14,18 +14,25 @@ export type LeakMetaFromFile = {
 export type BaseLeakMeta = {
   organization: string;
   tags: string[];
-  spread: 'us' | 'un' | string;
+  spread: string[];
   potentialVictims?: string;
   potentialVictimsSort?: number;
   source: string;
 
-  added: Date;
+  added: number;
 
-  start?: Date;
-  end: Date;
+  start?: number;
+  end: number;
 };
 
+type LeakContent = { slug: string; title: string; content: string };
+
 export type Leak = {
-  content: { [locale: string]: { slug: string; title: string; content: string } };
+  content: { [locale: string]: LeakContent };
+  meta: BaseLeakMeta;
+};
+
+export type LeakInComponent = {
+  content: LeakContent;
   meta: BaseLeakMeta;
 };

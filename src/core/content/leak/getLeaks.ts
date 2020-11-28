@@ -30,7 +30,7 @@ const getPrintValueForVictims = (rawData?: string) => {
 
 const getLeakByFileContent = (rawFileContent: string): Leak => {
   const { content, meta } = convertLeak(rawFileContent),
-    { tags, added, start, end, potentialVictims, ...rest } = meta;
+    { tags, added, start, end, potentialVictims, spread, ...rest } = meta;
 
   return {
     content: Object.entries(content).reduce(
@@ -46,10 +46,11 @@ const getLeakByFileContent = (rawFileContent: string): Leak => {
     meta: {
       ...rest,
       ...getPrintValueForVictims(meta.potentialVictims),
+      spread: spread.split(', '),
       tags: tags.split(', '),
-      added: parse(added, dateFormat, refDate),
-      end: parse(end, dateFormat, refDate),
-      start: start ? parse(start, dateFormat, refDate) : undefined,
+      added: parse(added, dateFormat, refDate).getTime(),
+      end: parse(end, dateFormat, refDate).getTime(),
+      start: start ? parse(start, dateFormat, refDate).getTime() : undefined,
     },
   };
 };
@@ -57,4 +58,4 @@ const getLeakByFileContent = (rawFileContent: string): Leak => {
 export const getLeaks = () =>
   getFilesContent(rootLeakSubpath)
     .map(({ fileContent }) => getLeakByFileContent(fileContent))
-    .sort((leak1, leak2) => leak2.meta.end.getTime() - leak1.meta.end.getTime());
+    .sort((leak1, leak2) => leak2.meta.end - leak1.meta.end);

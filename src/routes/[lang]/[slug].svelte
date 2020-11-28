@@ -2,7 +2,12 @@
   import { commonPreload } from 'core/content/post/preloadPost.ts';
 
   export function preload({ params }: { params: { lang: string; slug: string } }) {
-    return commonPreload(this.fetch.bind(this), params);
+    return commonPreload(
+      this.fetch.bind(this),
+      this.error.bind(this),
+      `/${params.lang}/${params.slug}.json`,
+      'post',
+    );
   }
 </script>
 

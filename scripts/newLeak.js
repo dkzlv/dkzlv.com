@@ -2,35 +2,45 @@ const slugify = require('@sindresorhus/slugify'),
   input = require('../src/utils/input'),
   join = require('path').join,
   fs = require('fs'),
+  { format } = require('date-fns'),
   promisify = require('util').promisify;
 
 const writeFile = promisify(fs.writeFile);
 
 async function main() {
+  const ruTitle = await input('Что произошло? (на русском)\n'),
+    enTitle = await input('Что произошло? (на английском)\n'),
+    slug = slugify(enTitle);
+
   const metadata = {
-    lang: (await input('Язык, ru или en (ru по умолчанию):\n')) || 'ru',
-    title: await input('Заголовок:\n'),
-    date: new Date().toISOString(),
+    organization: await input('Что за организация?\n'),
+    tags: await input('Теги через запятую:\n'),
+    spread: await input('Кого затронуло?\n'),
+    potentialVictims: `"${await input(
+      'Сколько потенциальных жертв? В начале можно использовать `>`, если непонятно\n',
+    )}"`,
+    source: await input('Ссылка?\n'),
+    start: (await input('Когда началось? (необязательно)\n')) || '',
+    end: await input('Когда пофиксили?\n'),
+    added: format(new Date(), 'dd.MM.yyyy'),
   };
-  metadata.slug = slugify(metadata.title);
 
-  const description = await input('Описание (опц.):\n'),
-    emailCollectorMessage = await input('Завлекуха в блок подписки (опц.):\n'),
-    announced = await input('Анонс? (если да, напиши что угодно)\n');
-
-  Object.entries({ description, emailCollectorMessage, announced }).forEach(
-    ([key, val]) => val !== '' && (metadata[key] = val),
+  const leakPath = join(
+    process.cwd(),
+    'src',
+    'content',
+    'leaks',
+    `${metadata.organization.toLowerCase()}--${slug}.md`,
   );
-
-  const postPath = join(process.cwd(), 'src', 'content', 'posts', `${metadata.slug}.md`);
 
   let resultString = '---\n';
   Object.entries(metadata).forEach(([key, val]) => {
     resultString += `${key}: ${val}\n`;
   });
   resultString += '---\n';
+  resultString += `\n# ${ruTitle}\n\nОписание\n\n---\n\n# ${enTitle}\n\nDescription\n\n`;
 
-  await writeFile(postPath, resultString, { encoding: 'utf-8' });
+  await writeFile(leakPath, resultString, { encoding: 'utf-8' });
 }
 
 main();

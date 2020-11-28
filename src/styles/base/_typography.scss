@@ -1,15 +1,19 @@
 $header-anchor-width: 1.1em;
 $header-anchor-padding: 0.35em;
 
+html,
+body {
+  font-family: $serif;
+  font-size: ms(0);
+  color: $text-color;
+}
+
 p,
 ol,
 ul,
 .p {
-  font-family: $serif;
   margin-bottom: 14px;
   line-height: $base-font-size * 1.8;
-  font-size: ms(0);
-  color: $text-color;
 }
 
 p,

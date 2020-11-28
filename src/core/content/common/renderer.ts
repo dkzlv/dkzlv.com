@@ -42,6 +42,8 @@ MarkedRenderer.image = (href, title, text) => {
 const noop = () => '';
 // Simplest way to leave <strong>, <em> and <header> only
 export const HeaderRenderer = new Renderer();
+HeaderRenderer.heading = (text, level) => (level == 1 ? text : '');
+HeaderRenderer.text = text => text;
 HeaderRenderer.code = noop;
 HeaderRenderer.blockquote = noop;
 HeaderRenderer.html = noop;
@@ -58,4 +60,3 @@ HeaderRenderer.br = noop;
 HeaderRenderer.del = noop;
 HeaderRenderer.link = noop;
 HeaderRenderer.image = noop;
-HeaderRenderer.text = noop;

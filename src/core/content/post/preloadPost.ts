@@ -1,10 +1,12 @@
 export async function commonPreload(
   fetch: (path: string) => Promise<any>,
-  { lang, slug }: { lang: string; slug: string },
+  error: (...args: any[]) => any,
+  path: string,
+  propKey?: string,
 ) {
-  const res = await fetch(`/${lang}/${slug}.json`),
+  const res = await fetch(path),
     data = await res.json();
 
-  if (res.status === 200) return { post: data };
-  else this.error(res.status, data.message);
+  if (res.status === 200) return propKey ? { [propKey]: data } : data;
+  else error(res.status, data.message);
 }
