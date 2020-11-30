@@ -13,7 +13,7 @@ const askData = locale => {
     },
     {
       type: 'input',
-      name: 'description',
+      name: 'content',
       message: 'Description?',
     },
   ]);

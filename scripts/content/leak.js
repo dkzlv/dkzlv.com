@@ -19,7 +19,6 @@ async function main() {
   const organization = await new MultiSelect({
       name: 'organization',
       message: 'Organization?',
-      limit: 1,
       choices: organizationsChoices,
       result(choices) {
         return Object.values(this.map(choices));
