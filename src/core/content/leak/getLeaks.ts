@@ -1,10 +1,12 @@
 import { parse } from 'date-fns';
 import slugify from '@sindresorhus/slugify';
 
+import { abbreviateNumber } from 'utils/abbreviateNumber';
+
 import { getFilesContent } from 'core/content/common/getFilesContent';
 import { convertLeak } from './convertLeak';
-import { Leak } from './types';
-import { abbreviateNumber } from 'utils/abbreviateNumber';
+import { LeakBackend } from './types';
+import { locationsDb, orgsDb, tagsDb } from './db';
 
 const rootLeakSubpath = 'leaks',
   dateFormat = 'dd.MM.yyyy',
@@ -28,9 +30,9 @@ const getPrintValueForVictims = (rawData?: string) => {
   }
 };
 
-const getLeakByFileContent = (rawFileContent: string): Leak => {
+const getLeakByFileContent = (rawFileContent: string): LeakBackend => {
   const { content, meta } = convertLeak(rawFileContent),
-    { tags, added, start, end, potentialVictims, spread, ...rest } = meta;
+    { organization, tags, added, start, end, potentialVictims, locations, ...rest } = meta;
 
   return {
     content: Object.entries(content).reduce(
@@ -41,16 +43,17 @@ const getLeakByFileContent = (rawFileContent: string): Leak => {
         }),
         acc
       ),
-      {} as Leak['content'],
+      {} as LeakBackend['content'],
     ),
     meta: {
       ...rest,
       ...getPrintValueForVictims(meta.potentialVictims),
-      spread: spread.split(', '),
-      tags: tags.split(', '),
       added: parse(added, dateFormat, refDate).getTime(),
       end: parse(end, dateFormat, refDate).getTime(),
       start: start ? parse(start, dateFormat, refDate).getTime() : undefined,
+      organization: orgsDb.value().find(({ id }) => id == organization)!,
+      locations: locations.split(', ').map(id => locationsDb.value().find(loc => loc.id == id)!),
+      tags: tags.split(', ').map(id => tagsDb.value().find(loc => loc.id == id)!),
     },
   };
 };

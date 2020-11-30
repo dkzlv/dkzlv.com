@@ -1,16 +1,39 @@
 import type { Request, Response } from 'express';
 
 import { getLeaks } from 'core/content/leak/getLeaks';
-import { Leak } from 'core/content/leak/types';
+import { LeakBackend, LeakClient } from 'core/content/leak/types';
 
-const leaks = getLeaks();
+const leaks = getLeaks(),
+  getEntityWithSingleLang = <Y, T extends { content: { [locale: string]: Y } }>(
+    lang: string,
+    ent: T,
+  ): Omit<T, 'content'> & { content: Y } => {
+    const { content, ...rest } = ent;
+    return { ...rest, content: content[lang] };
+  };
 
 export const commonGetLeakFactory = <T>(
-  getLeaks: (leaks: Leak[], params: { lang: string } & T) => Leak[] | Leak | undefined,
+  getLeaks: (
+    leaks: LeakBackend[],
+    params: { lang: string } & T,
+  ) => LeakBackend[] | LeakBackend | undefined,
 ) => (req: Request<{ lang: string } & T>, res: Response) => {
   const { lang } = req.params,
-    mapToLocale = (leak?: Leak) =>
-      leak ? { meta: leak.meta, content: leak.content[lang] } : undefined,
+    mapToLocale = (leak?: LeakBackend): LeakClient | undefined => {
+      if (!leak) return;
+
+      const { organization, locations, tags, ...rest } = leak.meta;
+
+      return {
+        content: leak.content[lang],
+        meta: {
+          ...rest,
+          organization: getEntityWithSingleLang(lang, organization),
+          tags: tags.map(tag => getEntityWithSingleLang(lang, tag)),
+          locations: locations.map(loc => getEntityWithSingleLang(lang, loc)),
+        },
+      };
+    },
     content = getLeaks(leaks, req.params);
 
   if (content) res.json(Array.isArray(content) ? content.map(mapToLocale) : mapToLocale(content));

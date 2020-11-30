@@ -19,5 +19,5 @@ const leakTypeFactory = (type: string) =>
   derived(leaksPath, $base => (org: string) => `${$base}/${type}/${org}`);
 export const leaksPath = derived(locale, $locale => `/${$locale}/leaks`),
   orgPath = leakTypeFactory('org'),
-  spreadPath = leakTypeFactory('spread'),
+  locationPath = leakTypeFactory('location'),
   tagPath = leakTypeFactory('tag');

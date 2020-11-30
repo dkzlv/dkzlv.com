@@ -12,10 +12,17 @@
 </script>
 
 <script lang="ts">
-  import type { LeakInComponent } from 'core/content/leak/types';
+  import { stores } from '@sapper/app';
+
+  import type { LeakClient } from 'core/content/leak/types';
   import List from 'components/leaks/list/main.svelte';
 
-  export let leaks: LeakInComponent[];
+  const { page } = stores();
+
+  $: hideLocation = $page.params.type == 'location';
+  $: hideOrg = $page.params.type == 'org';
+
+  export let leaks: LeakClient[];
 </script>
 
-<List {leaks} hideSpread />
+<List {leaks} {hideLocation} {hideOrg} />

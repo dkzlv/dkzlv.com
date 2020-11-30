@@ -1,7 +1,10 @@
+type LocalizedContent = { slug: string; title: string; content: string };
+type ContentByLocale = { [locale: string]: LocalizedContent };
+
 export type LeakMetaFromFile = {
   organization: string;
   tags: string;
-  spread: string;
+  locations: string;
   potentialVictims?: string;
   source: string;
 
@@ -11,10 +14,23 @@ export type LeakMetaFromFile = {
   end: string;
 };
 
+type BaseTag = { id: string };
+type BaseOrg = { id: string; img?: string; site?: string };
+type BaseLocation = { id: string; emoji: string };
+
+type CommonBackendContentByLocale = { content: ContentByLocale };
+
+export type TagBackend = BaseTag & CommonBackendContentByLocale;
+export type OrgBackend = BaseOrg & CommonBackendContentByLocale;
+export type LocationBackend = BaseLocation & CommonBackendContentByLocale;
+
+type CommonClientContentByLocale = { content: LocalizedContent };
+
+export type TagClient = BaseTag & CommonClientContentByLocale;
+export type OrgClient = BaseOrg & CommonClientContentByLocale;
+export type LocationClient = BaseLocation & CommonClientContentByLocale;
+
 export type BaseLeakMeta = {
-  organization: string;
-  tags: string[];
-  spread: string[];
   potentialVictims?: string;
   potentialVictimsSort?: number;
   source: string;
@@ -25,31 +41,20 @@ export type BaseLeakMeta = {
   end: number;
 };
 
-type LeakContent = { slug: string; title: string; content: string };
-
-export type Leak = {
-  content: { [locale: string]: LeakContent };
-  meta: BaseLeakMeta;
-};
-
-export type LeakInComponent = {
-  content: LeakContent;
-  meta: BaseLeakMeta;
+export type LeakBackend = {
+  content: ContentByLocale;
+  meta: BaseLeakMeta & {
+    organization: OrgBackend;
+    tags: TagBackend[];
+    locations: LocationBackend[];
+  };
 };
 
-type ContentByLocale = { [locale: string]: { slug: string; title: string; description: string } };
-export type Tag = {
-  id: string;
-  content: ContentByLocale;
-};
-export type Org = {
-  id: string;
-  img?: string;
-  site?: string;
-  content: ContentByLocale;
-};
-export type Location = {
-  id: string;
-  emoji: string;
-  content: ContentByLocale;
+export type LeakClient = {
+  content: LocalizedContent;
+  meta: BaseLeakMeta & {
+    organization: OrgClient;
+    tags: TagClient[];
+    locations: LocationClient[];
+  };
 };

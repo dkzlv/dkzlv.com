@@ -12,10 +12,10 @@
 </script>
 
 <script lang="ts">
-  import type { LeakInComponent } from 'core/content/leak/types';
+  import type { LeakClient } from 'core/content/leak/types';
   import List from 'components/leaks/list/main.svelte';
 
-  export let leaks: LeakInComponent[];
+  export let leaks: LeakClient[];
 </script>
 
 <List {leaks} />

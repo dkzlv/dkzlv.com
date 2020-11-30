@@ -2,20 +2,18 @@ import { join } from 'path';
 
 import low from 'lowdb';
 import FileSync from 'lowdb/adapters/FileSync';
-import { Org, Tag, Location } from './types';
+import { OrgBackend, TagBackend, LocationBackend } from './types';
 
 type DBState = {
-  tags: Tag[];
-  organizations: Org[];
-  locations: Location[];
+  tags: TagBackend[];
+  organizations: OrgBackend[];
+  locations: LocationBackend[];
 };
 
 const dbPath = join(process.env.PWD as string, 'src', 'content', 'leaks', '_db.json'),
   adapter = new FileSync<DBState>(dbPath),
   db = low(adapter);
 
-db.defaults({ tags: [], organizations: [], locations: [] }).write();
-
-export const tags = db.get('tags'),
-  orgs = db.get('organizations'),
-  locations = db.get('locations');
+export const tagsDb = db.get('tags'),
+  orgsDb = db.get('organizations'),
+  locationsDb = db.get('locations');
