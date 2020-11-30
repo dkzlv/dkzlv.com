@@ -1,0 +1,56 @@
+{
+  "tags": [
+    {
+      "id": "IOUnLZCsnxlMA1utcAAxN",
+      "content": {
+        "ru": {
+          "title": "b2c",
+          "description": "Все бизнесы, которые обслуживают конечных потребителей",
+          "slug": "b2c"
+        },
+        "en": {
+          "title": "b2c",
+          "description": "All businesses that serve end users",
+          "slug": "b2c"
+        }
+      }
+    }
+  ],
+  "organizations": [
+    {
+      "id": "pAmobzKMYHMP1uzAumo8d",
+      "img": null,
+      "site": "https://nra.bg/",
+      "content": {
+        "ru": {
+          "title": "ФНС Болгарии",
+          "description": "",
+          "slug": "fns-bolgarii"
+        },
+        "en": {
+          "title": "National Revenue Agency of Bulgaria",
+          "description": "",
+          "slug": "national-revenue-agency-of-bulgaria"
+        }
+      }
+    }
+  ],
+  "locations": [
+    {
+      "id": "n8lsD7FbUS8GOe5jTvaFq",
+      "emoji": "🇧🇬",
+      "content": {
+        "ru": {
+          "title": "Болгария",
+          "description": "",
+          "slug": "bolgariya"
+        },
+        "en": {
+          "title": "Bulgaria",
+          "description": "",
+          "slug": "bulgaria"
+        }
+      }
+    }
+  ]
+}

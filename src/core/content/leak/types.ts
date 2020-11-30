@@ -36,3 +36,20 @@ export type LeakInComponent = {
   content: LeakContent;
   meta: BaseLeakMeta;
 };
+
+type ContentByLocale = { [locale: string]: { slug: string; title: string; description: string } };
+export type Tag = {
+  id: string;
+  content: ContentByLocale;
+};
+export type Org = {
+  id: string;
+  img?: string;
+  site?: string;
+  content: ContentByLocale;
+};
+export type Location = {
+  id: string;
+  emoji: string;
+  content: ContentByLocale;
+};
