@@ -18,11 +18,14 @@
 
   import Leak from 'components/leaks/leak.svelte';
   import Breadcrumbs from 'components/breadcrumbs.svelte';
+  import Meta from 'components/meta.svelte';
 
   import { mainPath, leaksPath } from 'core/paths.ts';
 
   export let leak: LeakClient;
 </script>
+
+<Meta title={leak.content.title + ` / ${$_('nav.leaks')}`} description={leak.content.content} />
 
 <Breadcrumbs
   paths={[{ text: $_('nav.main'), link: $mainPath }, { text: $_('nav.leaks'), link: $leaksPath }]} />

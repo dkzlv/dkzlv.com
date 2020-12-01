@@ -66,11 +66,7 @@ h6 {
   font-weight: $bold;
   line-height: 1.3;
 
-  background: linear-gradient(35deg, $header-gradient-1 33%, $header-gradient-2 100%);
-  background-clip: text;
-  // Fallback, if clip doesn't work. In this case it's just showing white text on green back
-  color: #fff;
-  -webkit-text-fill-color: transparent;
+  color: $header-gradient-1;
 }
 
 h1 {

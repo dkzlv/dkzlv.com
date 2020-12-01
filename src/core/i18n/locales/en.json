@@ -96,6 +96,15 @@
   },
   "nav": {
     "main": "Main",
-    "leaks": "Leaks database"
+    "leaks": "Leaks database",
+    "meta": {
+      "leaks": {
+        "description": "All significant data leaks and hacks in one place",
+        "orgTitle": "All data leaks by this organization",
+        "tagTitle": "All data leaks for this category",
+        "locationTitle": "All data leaks that harmed people in this area",
+        "filterBreadcrumb": "With filter"
+      }
+    }
   }
 }
