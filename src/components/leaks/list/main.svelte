@@ -16,7 +16,7 @@
   let showOverlay = true,
     containerEl: HTMLDivElement;
   const scrollHandler = () =>
-    (showOverlay = containerEl.scrollWidth - containerEl.scrollLeft != containerEl.clientWidth);
+    (showOverlay = containerEl.scrollWidth - containerEl.scrollLeft > containerEl.clientWidth);
 </script>
 
 <style lang="scss">
@@ -49,7 +49,11 @@
     top: 0;
     bottom: 0;
     width: $overlay-width;
-    background: linear-gradient(90deg, transparent 0%, $leaks-grid-background 60%);
+    background: linear-gradient(
+      90deg,
+      $leaks-grid-overlay-transparent 0%,
+      $leaks-grid-background 60%
+    );
   }
 
   .arrow {
