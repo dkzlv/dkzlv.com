@@ -15,7 +15,7 @@
     justify-content: center;
 
     position: sticky;
-    top: 5px;
+    top: 0;
 
     padding: 0.8em 1.2em;
 

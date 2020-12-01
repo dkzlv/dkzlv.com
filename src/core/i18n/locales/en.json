@@ -88,7 +88,10 @@
       "victims": "Potential victims",
       "start": "Started",
       "end": "Ended",
-      "unknown": "Unknown"
+      "unknown": "Unknown",
+      "duration": "Duration",
+      "source": "Source",
+      "added": "Added"
     }
   }
 }

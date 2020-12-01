@@ -9,11 +9,14 @@
   export let hideOrg = false,
     hideLocation = false;
 
-  const defaultColumnSize = 'minmax(150px, 1fr)';
-
   $: inlineStyle =
-    `--orgSize: ${hideOrg ? '' : defaultColumnSize};` +
-    `--spreadSize: ${hideLocation ? '' : defaultColumnSize}`;
+    `--orgSize: ${hideOrg ? '' : 'minmax(150px, 250px)'};` +
+    `--spreadSize: ${hideLocation ? '' : 'min-content'}`;
+
+  let showOverlay = true,
+    containerEl: HTMLDivElement;
+  const scrollHandler = () =>
+    (showOverlay = containerEl.scrollWidth - containerEl.scrollLeft != containerEl.clientWidth);
 </script>
 
 <style lang="scss">
@@ -24,13 +27,63 @@
     overflow: scroll;
 
     @include mq($from: tablet-landscape) {
-      max-width: 80vw;
       margin: 0 auto;
+      padding-left: 15vw;
     }
   }
 
+  .hiding-overlay {
+    opacity: 0;
+
+    transition: opacity 0.25s ease-in-out;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  $overlay-width: 80px;
+  .overlay {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: $overlay-width;
+    background: linear-gradient(90deg, transparent 0%, $leaks-grid-background 60%);
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: $overlay-width / 2;
+
+    text-align: center;
+
+    $base-translate-y: translateY(-50%);
+    transform: $base-translate-y;
+
+    @keyframes arrowAnim {
+      0% {
+        transform: $base-translate-y translateX(0);
+      }
+      60% {
+        transform: $base-translate-y translateX(-5px);
+      }
+      100% {
+        transform: $base-translate-y translateX(0);
+      }
+    }
+
+    animation: arrowAnim ease-in 1s;
+    animation-delay: 1s;
+    animation-iteration-count: 3;
+
+    color: $text-color--dimmed;
+  }
+
   .box {
-    background-color: hsl(0, 0%, 97%);
+    background-color: $leaks-grid-background;
   }
 
   .table {
@@ -38,7 +91,7 @@
     place-items: stretch;
     grid-template-columns: minmax(300px, max-content) var(--orgSize) var(--spreadSize) repeat(
         4,
-        minmax(150px, 250px)
+        minmax(150px, 200px)
       );
 
     min-width: 600px;
@@ -52,7 +105,7 @@
     }
 
     &:nth-child(odd) > :global(div) {
-      background-color: hsl(0, 0%, 95%);
+      background-color: $leaks-grid-background-odd;
     }
 
     &:nth-child(2) > :global(div) {
@@ -62,7 +115,7 @@
 </style>
 
 <div class="box">
-  <div class="main">
+  <div class="main" bind:this={containerEl} on:scroll={scrollHandler}>
     <div class="table" style={inlineStyle}>
       <div class="row">
         <Header {hideOrg} {hideLocation} />
@@ -74,4 +127,6 @@
       {/each}
     </div>
   </div>
+  <div class="overlay hiding-overlay" class:show={showOverlay} />
+  <div class="arrow hiding-overlay" class:show={showOverlay}>→</div>
 </div>

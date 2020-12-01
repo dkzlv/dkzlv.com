@@ -56,6 +56,9 @@
   #{cvts($tooltip-outline-color--hover)}: $_accent-bg-contrast-high;
   #{cvts($tooltip-bg-color)}: #fff;
   #{cvts($tooltip-shadow-color)}: $_shadow;
+
+  #{cvts($leaks-grid-background)}: hsl(60, 25%, 97%);
+  #{cvts($leaks-grid-background-odd)}: hsl(60, 25%, 95%);
 }
 
 :root,
@@ -118,4 +121,7 @@
   #{cvts($tooltip-outline-color--hover)}: $_accent-bg-contrast-low;
   #{cvts($tooltip-bg-color)}: mix($_bg-color, #fff, 90%);
   #{cvts($tooltip-shadow-color)}: $_shadow;
+
+  #{cvts($leaks-grid-background)}: hsl(70, 25%, 25%);
+  #{cvts($leaks-grid-background-odd)}: hsl(70, 25%, 20%);
 }

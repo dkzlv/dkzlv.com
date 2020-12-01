@@ -1,8 +1,28 @@
-.tag {
-  display: inline-block;
-  border-radius: $border-radius;
-  font-size: ms(-1);
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+}
 
-  background: linear-gradient(35deg, $code-gradient-1 0%, $code-gradient-2 100%);
-  padding: 1px 4px;
+.tag {
+  display: block;
+
+  margin-right: 0.3em;
+  margin-bottom: 0.3em;
+  padding: 0.5em 0.2em;
+
+  font-size: 80%;
+  white-space: nowrap;
+
+  border: 1px dashed #bfbfbf;
+  border-radius: 3px;
+
+  .no-underline {
+    display: inline-block;
+
+    margin-right: 0.2em;
+    text-decoration: none;
+    user-select: none;
+  }
 }
