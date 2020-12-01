@@ -52,7 +52,7 @@
 
   .group {
     display: flex;
-    align-items: baseline;
+    align-items: stretch;
     flex-wrap: wrap;
   }
 
@@ -74,7 +74,17 @@
   }
 
   form {
-    margin-right: 3px;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    > * {
+      margin-right: 3px;
+    }
+  }
+
+  .tooltip-wrapper {
+    align-self: center;
   }
 </style>
 
@@ -94,11 +104,13 @@
       {$_('email.subscribe')}
     </button>
   </form>
-  <Tooltip>
-    <p class="tooltip__header">{$_('email.tooltip.header')}</p>
-    <p class="tooltip__p">{$_('email.tooltip.noNudes')}</p>
-    <p class="tooltip__p">{$_('email.tooltip.articles')}</p>
-  </Tooltip>
+  <div class="tooltip-wrapper">
+    <Tooltip>
+      <p class="tooltip__header">{$_('email.tooltip.header')}</p>
+      <p class="tooltip__p">{$_('email.tooltip.noNudes')}</p>
+      <p class="tooltip__p">{$_('email.tooltip.articles')}</p>
+    </Tooltip>
+  </div>
 </div>
 
 {#if errorCode}

@@ -1,11 +1,13 @@
 .btn {
   height: 100%;
   padding: 8px 15px;
-  font-family: $serif;
-  font-size: ms(0);
 
   border: $border-style;
   border-radius: $border-radius;
+
+  font-family: $serif;
+  text-transform: uppercase;
+  font-size: ms(-1);
 
   appearance: none;
   user-select: none;
