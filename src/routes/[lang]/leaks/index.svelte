@@ -13,9 +13,17 @@
 
 <script lang="ts">
   import type { LeakClient } from 'core/content/leak/types';
+
+  import { _ } from 'svelte-i18n';
+
   import List from 'components/leaks/list/main.svelte';
+  import Breadcrumbs from 'components/breadcrumbs.svelte';
+
+  import { mainPath } from 'core/paths.ts';
 
   export let leaks: LeakClient[];
 </script>
+
+<Breadcrumbs paths={[{ text: $_('nav.main'), link: $mainPath }, { text: $_('nav.leaks') }]} />
 
 <List {leaks} />

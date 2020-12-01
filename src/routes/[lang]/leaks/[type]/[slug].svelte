@@ -12,10 +12,15 @@
 </script>
 
 <script lang="ts">
+  import type { LeakClient } from 'core/content/leak/types';
+
+  import { _ } from 'svelte-i18n';
   import { stores } from '@sapper/app';
 
-  import type { LeakClient } from 'core/content/leak/types';
   import List from 'components/leaks/list/main.svelte';
+  import Breadcrumbs from 'components/breadcrumbs.svelte';
+
+  import { leaksPath, mainPath } from 'core/paths.ts';
 
   const { page } = stores();
 
@@ -24,5 +29,8 @@
 
   export let leaks: LeakClient[];
 </script>
+
+<Breadcrumbs
+  paths={[{ text: $_('nav.main'), link: $mainPath }, { text: $_('nav.leaks'), link: $leaksPath }, { text: 'С фильтром' }]} />
 
 <List {leaks} {hideLocation} {hideOrg} />

@@ -89,9 +89,13 @@
       "start": "Started",
       "end": "Ended",
       "unknown": "Unknown",
-      "duration": "Duration",
+      "when": "When",
       "source": "Source",
       "added": "Added"
     }
+  },
+  "nav": {
+    "main": "Main",
+    "leaks": "Leaks database"
   }
 }

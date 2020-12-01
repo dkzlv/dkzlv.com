@@ -10,7 +10,9 @@ export const rootSitePath = `${process.env.SITE_SCHEME}://${process.env.SITE_HOS
 export const rootStaticPath = `${rootSitePath}/${process.env.ROOT_STATIC_PATH}`,
   staticPath = `/${process.env.ROOT_STATIC_PATH}`;
 
-const baseSpecialsPath = derived(locale, $locale => `/${$locale}/specials`);
+export const mainPath = derived(locale, $locale => `/${$locale}`);
+
+const baseSpecialsPath = derived(mainPath, $base => `${$base}/specials`);
 
 export const fingerprintPath = derived(baseSpecialsPath, $base => `${$base}/fingerprint`),
   appRespectData = derived(baseSpecialsPath, $base => `${$base}/safe-apps`);
