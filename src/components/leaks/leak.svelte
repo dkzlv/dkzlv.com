@@ -4,6 +4,8 @@
   import { date, _ } from 'svelte-i18n';
 
   import Link from 'components/link.svelte';
+  import Feedback from './feedback.svelte';
+  import EmailCollector from 'components/emailCollector.svelte';
 
   import { orgPath, locationPath, tagPath } from 'core/paths.ts';
 
@@ -62,7 +64,9 @@
   }
 </style>
 
-<h1>{leak.content.title}</h1>
+<h1>
+  {@html leak.content.title}
+</h1>
 <p class="added">
   {$_('leaks.table.added')}:
   {$date(new Date(leak.meta.added), { format: 'medium' })}
@@ -119,4 +123,16 @@
 
 <div class="post-content">
   {@html leak.content.content}
+
+  <hr />
+
+  <Feedback {leak} />
+
+  <div class="box">
+    <div class="nested">
+      <h4>{$_('email.endPostEngagement.header')}</h4>
+      <p>{$_('leaks.emailText')}</p>
+      <EmailCollector />
+    </div>
+  </div>
 </div>

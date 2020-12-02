@@ -92,7 +92,17 @@
       "when": "When",
       "source": "Source",
       "added": "Added"
-    }
+    },
+    "feedback": {
+      "headerNew": "Do you know such stories?",
+      "headerOld": "Is something incorrect?",
+      "pNew": "If we missed some really cool story on data leaks, please '<'a rel='noreferrer noopener' target='_blank' href=\"{link}\"'>'write us an email'<'/a'>'. Important: we're not publishing stories without valid sources.",
+      "pOld": "You can send any corrections and additions to this article '<'a rel='noreferrer noopener' target='_blank' href=\"{link}\"'>'on my email'<'/a'>', I'll surely review them.",
+      "emailSubjectNew": "New story",
+      "emailSubjectOld": "Updates to a story",
+      "newStoryBody": "What is it about in two words: \n\nSource: "
+    },
+    "emailText": "Subscribe to get these stories in your inbox from time to time. Pinky swear: I won't sell you out."
   },
   "nav": {
     "main": "Main",

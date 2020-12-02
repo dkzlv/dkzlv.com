@@ -38,7 +38,9 @@
 </style>
 
 <div class="cell title" title={leak.content.title}>
-  <Link href={$leakPath(leak.content.slug)}>{leak.content.title}</Link>
+  <Link href={$leakPath(leak.content.slug)}>
+    {@html leak.content.title}
+  </Link>
 </div>
 {#if !hideOrg}
   <div class="cell">
