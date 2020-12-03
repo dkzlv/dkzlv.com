@@ -12,9 +12,11 @@ added: 30.11.2020
 
 # Оставили сервера открытыми на 9 месяцев
 
-Во-первых, стоит подметить спешность в удалении информации о взломе. Techcrunch [в своей статье](https://techcrunch.com/2019/05/28/flipboard-hacks-password-resets/) ссылается на страницу, которая на сайте блога Flipboard [уже недоступна](https://about.flipboard.com/support-information-incident-May-2019/) — немногим больше, чем через год после взлома! Кроме того, они настолько хорошо настроили свой блог на WordPress, что на странице правил вылезает ошибка PHP. Браво. Эту страницу и в блоге не найти, у меня получилось только [на русском её разыскать](https://ru-ru.about.flipboard.com/support-information-incident-may-2019/).
+Во-первых, стоит подметить спешность в удалении информации о взломе. Techcrunch [в своей статье](https://techcrunch.com/2019/05/28/flipboard-hacks-password-resets/) ссылается на страницу, которая на сайте блога Flipboard [уже недоступна](https://about.flipboard.com/support-information-incident-May-2019/) — немногим больше, чем через год после взлома! Кроме того, они настолько хорошо настроили свой блог на WordPress, что на странице правил вылезает ошибка PHP. Браво.
 
-Ну ничего, [Wayback Machine всё помнит](https://web.archive.org/web/20201107223738/https://about.flipboard.com/support-information-incident-May-2019/).
+![PHP goes brrrr](/img/leaks/flipboard/php-error.png)
+
+Эту страницу и в блоге не найти, у меня получилось только [на русском её разыскать](https://ru-ru.about.flipboard.com/support-information-incident-may-2019/). Ну ничего, [Wayback Machine всё помнит](https://web.archive.org/web/20201107223738/https://about.flipboard.com/support-information-incident-May-2019/).
 
 Я обращаюсь к первоисточнику, потому что его точно писали какие-то скользкие юристы — это видно вдоль и поперёк. Их учат писать так, чтобы подкопаться было нельзя, но и чтобы ничего лишнего не рассказать. Поэтому я буду цитировать их текст и приводить перевод на человеческий язык
 
@@ -40,9 +42,11 @@ added: 30.11.2020
 
 # Left the servers open for intruders for 9 months
 
-Firstly, I'm fascinated by the face that they wipe the information about the leak. Techcrunch refferences [in their article](https://techcrunch.com/2019/05/28/flipboard-hacks-password-resets/) a stetement by Flipboard team that is [already unavailable](https://about.flipboard.com/support-information-incident-May-2019/) — a little more than a year from the event itself! Besides, they did such a great setup of their WordPress blog, that this page now shows a PHP error right there. Bravo. The statement cannot be found in the blog, I just managed to find it [in Russian](https://ru-ru.about.flipboard.com/support-information-incident-may-2019/).
+Firstly, I'm fascinated by the face that they wipe the information about the leak. Techcrunch refferences [in their article](https://techcrunch.com/2019/05/28/flipboard-hacks-password-resets/) a stetement by Flipboard team that is [already unavailable](https://about.flipboard.com/support-information-incident-May-2019/) — a little more than a year from the event itself! Besides, they did such a great setup of their WordPress blog, that this page now shows a PHP error right there. Bravo.
 
-But it's okay, [Wayback Machine remembers everything](https://web.archive.org/web/20201107223738/https://about.flipboard.com/support-information-incident-May-2019/).
+![PHP goes brrrr](/img/leaks/flipboard/php-error.png)
+
+The statement cannot be found in the blog, I just managed to find it [in Russian](https://ru-ru.about.flipboard.com/support-information-incident-may-2019/). But it's okay, [Wayback Machine remembers everything](https://web.archive.org/web/20201107223738/https://about.flipboard.com/support-information-incident-May-2019/).
 
 I turn to the original source, because it was written by ~liers~ lawers — you can see it. They learn how to write statements so that they never tell anything really important. So I'll quote the original and then translate it from their language to the human language.
 
