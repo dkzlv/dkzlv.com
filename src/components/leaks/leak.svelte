@@ -8,6 +8,7 @@
   import EmailCollector from 'components/emailCollector.svelte';
 
   import { orgPath, locationPath, tagPath } from 'core/paths.ts';
+  import CompanyDisclosure from './companyDisclosure.svelte';
 
   export let leak: LeakClient;
 </script>
@@ -122,6 +123,10 @@
 </div>
 
 <div class="post-content">
+  {#if leak.meta.isCorporationLeak}
+    <CompanyDisclosure />
+  {/if}
+
   {@html leak.content.content}
 
   <hr />

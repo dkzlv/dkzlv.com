@@ -32,7 +32,17 @@ const getPrintValueForVictims = (rawData?: string) => {
 
 const getLeakByFileContent = (rawFileContent: string): LeakBackend => {
   const { content, meta } = convertLeak(rawFileContent),
-    { organization, tags, added, start, end, potentialVictims, locations, ...rest } = meta;
+    {
+      organization,
+      tags,
+      added,
+      start,
+      end,
+      potentialVictims,
+      locations,
+      isCorporationLeak,
+      ...rest
+    } = meta;
 
   return {
     content: Object.entries(content).reduce(
@@ -51,6 +61,7 @@ const getLeakByFileContent = (rawFileContent: string): LeakBackend => {
       added: parse(added, dateFormat, refDate).getTime(),
       end: parse(end, dateFormat, refDate).getTime(),
       start: start ? parse(start, dateFormat, refDate).getTime() : undefined,
+      isCorporationLeak: !!isCorporationLeak,
       organization: orgsDb.value().find(({ id }) => id == organization)!,
       locations: locations.split(', ').map(id => locationsDb.value().find(loc => loc.id == id)!),
       tags: tags.split(', ').map(id => tagsDb.value().find(loc => loc.id == id)!),

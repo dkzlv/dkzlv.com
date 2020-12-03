@@ -247,25 +247,35 @@ h6 {
   }
 
   .callout {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 5fr;
+    grid-template-rows: repeat(auto-fill, 1fr);
 
     margin-bottom: 1em;
 
-    $padding: 1em;
-    > p {
-      margin: 0;
+    $padding: 20px;
 
+    > * {
       &:first-child {
+        grid-column: 1 / span 1;
+        grid-row: 1 / last-line;
+        grid-row-start: span 9000;
+
         font-size: 150%;
         padding: $padding;
+        line-height: 1;
 
         user-select: none;
       }
 
       &:not(:first-child) {
-        flex: 1;
-        padding: $padding;
-        padding-left: 0;
+        margin: 0;
+        padding-top: $padding;
+        padding-right: $padding;
+      }
+
+      &:last-child {
+        padding-bottom: $padding;
       }
     }
 

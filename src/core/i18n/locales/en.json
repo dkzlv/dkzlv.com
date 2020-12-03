@@ -102,6 +102,11 @@
       "emailSubjectOld": "Updates to a story",
       "newStoryBody": "What is it about in two words: \n\nSource: "
     },
+    "disclosure": {
+      "header": "This article is about a data leak",
+      "personalP": "Typically corporations are not obligated to disclose information about all the data that leaked, but only personal users' data.",
+      "tableP": "But we understand that company's valuable aggregated data is stored, most of the time, in the same database as users' data. If one was leaked, we presume the other was as well."
+    },
     "emailText": "Subscribe to get these stories in your inbox from time to time. Pinky swear: I won't sell you out."
   },
   "nav": {

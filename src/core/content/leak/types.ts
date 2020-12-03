@@ -7,6 +7,7 @@ export type LeakMetaFromFile = {
   locations: string;
   potentialVictims?: string;
   source: string;
+  isCorporationLeak?: string;
 
   added: string;
 
@@ -34,6 +35,7 @@ export type BaseLeakMeta = {
   potentialVictims?: string;
   potentialVictimsSort?: number;
   source: string;
+  isCorporationLeak: boolean;
 
   added: number;
 
