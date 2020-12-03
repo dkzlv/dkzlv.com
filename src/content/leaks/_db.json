@@ -97,6 +97,23 @@
           "slug": "equifax"
         }
       }
+    },
+    {
+      "id": "a_wFsomjeg-umnpJnFq7O",
+      "img": null,
+      "site": "https://apple.com/",
+      "content": {
+        "ru": {
+          "title": "Apple",
+          "content": "",
+          "slug": "apple"
+        },
+        "en": {
+          "title": "Apple",
+          "content": "",
+          "slug": "apple"
+        }
+      }
     }
   ],
   "locations": [
