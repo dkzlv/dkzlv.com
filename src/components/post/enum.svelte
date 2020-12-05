@@ -7,7 +7,6 @@
 
   .enum {
     display: grid;
-    grid-row-gap: 1em;
 
     @include mq($until: mobile) {
       grid-template-columns: 1fr;
@@ -20,12 +19,29 @@
     @include mq($from: mobile) {
       grid-template-columns: 1fr 4fr;
       grid-template-rows: 1fr;
-      grid-column-gap: 1em;
     }
 
     :global(ul),
     :global(ol) {
       list-style-position: inside;
+    }
+
+    :global(img) {
+      margin: 0;
+    }
+
+    > :global(*) {
+      padding: 1em 0;
+      padding-right: 1em;
+
+      &:nth-child(odd) {
+        padding-left: 1em;
+      }
+
+      &:nth-child(4n + 3),
+      &:nth-child(4n + 4) {
+        background-color: $box-odd-background;
+      }
     }
   }
 </style>

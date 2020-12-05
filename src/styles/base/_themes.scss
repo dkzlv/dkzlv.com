@@ -49,7 +49,9 @@
   #{cvts($input-border-color--hover)}: $_accent-bg-contrast-high;
   #{cvts($input-placeholder-color)}: hsla(0, 0%, 60%, 50%);
 
-  #{cvts($box-background)}: hsl(116, 79%, 96%);
+  $_box-background: hsl(116, 79%, 96%);
+  #{cvts($box-background)}: $_box-background;
+  #{cvts($box-odd-background)}: adjust-color($_box-background, $lightness: -2);
   #{cvts($box-shadow-color)}: $_shadow;
 
   #{cvts($tooltip-outline-color)}: $accent-color;
@@ -118,6 +120,7 @@
 
   $_box-background: hsl(116, 17%, 35%);
   #{cvts($box-background)}: $_box-background;
+  #{cvts($box-odd-background)}: adjust-color($_box-background, $lightness: -2);
   #{cvts($box-shadow-color)}: $_shadow;
 
   #{cvts($tooltip-outline-color)}: $accent-color;
