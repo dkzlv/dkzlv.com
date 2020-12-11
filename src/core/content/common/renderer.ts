@@ -27,12 +27,12 @@ MarkedRenderer.em = text =>
 // alt-text starting with `*`
 MarkedRenderer.image = (href, title, text) => {
   const addClass = !text.startsWith('*'),
-    alt = text.startsWith('') ? text.slice(1) : text,
-    url = `${rootStaticPath}/${href}`;
+    alt = !addClass ? text.slice(1) : text,
+    url = `${rootStaticPath}${href}`;
 
   return `
   <a href="${url}" target="_blank">
-    <img src="${url}" alt=${alt} ${addClass ? 'class="invertable"' : ''} ${
+    <img src="${url}" alt="${alt}" ${addClass ? 'class="invertable"' : ''} ${
     title ? `title=${title}` : ''
   } />
   </a>
