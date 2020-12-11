@@ -35,7 +35,10 @@
   },
   "posts": {
     "readTime": "{time, plural, one {1 minute} other {{time} minutes}}",
-    "leaks": "Leaks database: total of {count, plural, one {{count} leak} other {{count} leaks}} added",
+    "leaks": {
+      "title": "Leaks database",
+      "count": "Total of {count, plural, one {{count} leak} other {{count} leaks}} added"
+    },
     "series": {
       "header": "Post series",
       "thisPost": "(this one)",

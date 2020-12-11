@@ -210,7 +210,7 @@ registerExtraComponents: ["freeWill", "productBingo"]
   
   </div>
 
-  Сделать повседневную автокормушку для домашних животных
+  Повседневная автокормушка для домашних животных
 
   <div class="hide-behind-blur">
   
@@ -226,7 +226,7 @@ registerExtraComponents: ["freeWill", "productBingo"]
   
   </div>
 
-  Сделать сейф-спейс для ЛГБТ-сообщества
+  Сейф-спейс для ЛГБТ-сообщества
 
   <div class="hide-behind-blur">
   
@@ -234,7 +234,7 @@ registerExtraComponents: ["freeWill", "productBingo"]
   
   </div>
 
-  Сделать анонимную систему доносов на коррупцию и превышение полномочий
+  Анонимная система доносов на коррупцию и превышение полномочий
 
   <div class="hide-behind-blur">
 

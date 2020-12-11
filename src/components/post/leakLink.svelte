@@ -41,8 +41,10 @@
         text-decoration: none;
       }
 
-      h3 {
+      h3,
+      h4 {
         text-align: center;
+        margin: 0;
       }
 
       a span {
@@ -58,6 +60,7 @@
 
 <div class="wrapper">
   <Link href={$leaksPath}>
-    <h3><span>{$_('posts.leaks', { values: { count } })}</span></h3>
+    <h3><span>{$_('posts.leaks.title')}</span></h3>
+    <h4><span>{$_('posts.leaks.count', { values: { count } })}</span></h4>
   </Link>
 </div>
