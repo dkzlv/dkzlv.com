@@ -2,6 +2,7 @@ type LocalizedContent = { slug: string; title: string; content: string };
 type ContentByLocale = { [locale: string]: LocalizedContent };
 
 export type LeakMetaFromFile = {
+  id: string;
   organization: string;
   tags: string;
   locations: string;
@@ -32,6 +33,8 @@ export type OrgClient = BaseOrg & CommonClientContentByLocale;
 export type LocationClient = BaseLocation & CommonClientContentByLocale;
 
 export type BaseLeakMeta = {
+  id: string;
+
   potentialVictims?: string;
   potentialVictimsSort?: number;
   source: string;

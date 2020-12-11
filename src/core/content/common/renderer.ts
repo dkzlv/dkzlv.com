@@ -39,6 +39,14 @@ MarkedRenderer.image = (href, title, text) => {
   `;
 };
 
+const leakCountRegex = /class='leaks-db-link'/;
+export const lateRenderLeakCount = (count: number, content: string) => {
+  while (content.match(leakCountRegex)) {
+    content = content.replace(leakCountRegex, `class='leaks-db' data-count='${count}'`);
+  }
+  return content;
+};
+
 const noop = () => '';
 // Simplest way to leave <strong>, <em> and <header> only
 export const HeaderRenderer = new Renderer();

@@ -2,6 +2,7 @@ import type { Request, Response } from 'express';
 
 import { getLeaks } from 'core/content/leak/getLeaks';
 import { LeakBackend, LeakClient } from 'core/content/leak/types';
+import { lateRenderLeakCount } from '../common/renderer';
 
 const leaks = getLeaks(),
   getEntityWithSingleLang = <Y, T extends { content: { [locale: string]: Y } }>(
@@ -25,7 +26,10 @@ export const commonGetLeakFactory = <T>(
       const { organization, locations, tags, ...rest } = leak.meta;
 
       return {
-        content: leak.content[lang],
+        content: {
+          ...leak.content[lang],
+          content: lateRenderLeakCount(leaks.length, leak.content[lang].content),
+        },
         meta: {
           ...rest,
           organization: getEntityWithSingleLang(lang, organization),

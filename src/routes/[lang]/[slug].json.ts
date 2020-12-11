@@ -1,8 +1,16 @@
 import type { Request, Response } from 'express';
 
 import { getPosts } from 'core/content/post/getPosts';
+import { lateRenderLeakCount } from 'core/content/common/renderer';
+import { getLeaks } from 'core/content/leak/getLeaks';
 
-const posts = getPosts();
+const leaks = getLeaks(),
+  posts = getPosts().map(post => {
+    return {
+      meta: post.meta,
+      content: lateRenderLeakCount(leaks.length, post.content),
+    };
+  });
 
 export const get = (req: Request<{ slug: string; lang: string }>, res: Response) => {
   const { slug, lang } = req.params,

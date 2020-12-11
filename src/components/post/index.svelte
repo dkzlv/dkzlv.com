@@ -26,6 +26,7 @@
   import Subscription from './subscription.svelte';
   import Share from './share.svelte';
   import Enum from './enum.svelte';
+  import LeakLink from './leakLink.svelte';
 
   export let post: Post;
 
@@ -59,6 +60,11 @@
       }
       cmps.push(...mountComponentToSelector(mountToClassname, cmpClass.default));
     }
+
+    document.querySelectorAll('.leaks-db').forEach(el => {
+      const count = parseInt((el as HTMLElement).dataset.count || '0');
+      cmps.push(new LeakLink({ target: el, props: { count } }));
+    });
 
     return () => cmps.forEach(cmp => cmp.$destroy());
   });
