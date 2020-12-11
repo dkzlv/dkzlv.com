@@ -1,24 +1,11 @@
-<script lang="ts" context="module">
-  const mountComponentToSelector = (
-    classname: string,
-    component: AConstructorTypeOf<SvelteComponent>,
-  ) =>
-    [...document.querySelectorAll('.' + classname)].map(el => {
-      const target = el,
-        text = target.innerHTML || undefined;
-      target.innerHTML = '';
-      target.classList.remove(classname);
-      return new component({ target, props: { text } });
-    });
-</script>
-
 <script lang="ts">
   import type { Post } from 'core/content/post/types';
 
-  import { onMount, SvelteComponent } from 'svelte';
+  import { onMount } from 'svelte';
   import { locale } from 'svelte-i18n';
 
   import { generateString } from 'utils/random.ts';
+  import { mountComponentToClassSelector } from 'utils/mountComponentToSelector.ts';
 
   import Meta from 'components/meta.svelte';
   import SeriesData from './seriesData.svelte';
@@ -34,9 +21,9 @@
 
   onMount(async () => {
     const cmps = [
-        ...mountComponentToSelector('email-collector', Subscription),
-        ...mountComponentToSelector('share', Share),
-        ...mountComponentToSelector('enum', Enum),
+        ...mountComponentToClassSelector('email-collector', Subscription),
+        ...mountComponentToClassSelector('share', Share),
+        ...mountComponentToClassSelector('enum', Enum),
       ],
       programmaticComponentClasses = (await Promise.all(
         (post.meta.registerExtraComponents || []).map(file => {
@@ -47,6 +34,8 @@
               return import('components/specials/privacy/freeWill.svelte');
             case 'pidor':
               return import('components/specials/privacy/pidor.svelte');
+            case 'productBingo':
+              return import('components/specials/privacy/productBingo/main.svelte');
           }
         }),
       )) as any;
@@ -58,7 +47,7 @@
         el.classList.add(mountToClassname);
         document.body.appendChild(el);
       }
-      cmps.push(...mountComponentToSelector(mountToClassname, cmpClass.default));
+      cmps.push(...mountComponentToClassSelector(mountToClassname, cmpClass.default));
     }
 
     document.querySelectorAll('.leaks-db').forEach(el => {

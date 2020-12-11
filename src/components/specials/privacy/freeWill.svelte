@@ -6,9 +6,9 @@
 
   onMount(() => {
     const button = new FreeWillButton({
-        target: document.querySelector(`.freewill`),
+        target: document.querySelector(`.freewill`)!,
       }),
-      followUp = new FreeWillFollowup({ target: document.querySelector('.freewill-followup') });
+      followUp = new FreeWillFollowup({ target: document.querySelector('.freewill-followup')! });
 
     followUp.$on('opened', () => button.$set({ followUpWasScrolled: true }));
     button.$on('clicked', () => followUp.$set({ shouldFire: false }));
