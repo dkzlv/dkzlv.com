@@ -231,11 +231,14 @@ h6 {
   }
 
   img {
+    // Preserving aspect ratio
+    height: auto;
+
+    margin: 2.5em auto;
+
     &.invertable {
       filter: $image-filter;
     }
-
-    margin: 2.5em auto;
   }
 
   hr {

@@ -1,5 +1,7 @@
+import { join } from 'path';
 import slugify from '@sindresorhus/slugify';
 import { Renderer } from 'marked';
+import sizeOf from 'image-size';
 
 import { rootStaticPath } from 'core/paths';
 
@@ -30,11 +32,14 @@ MarkedRenderer.image = (href, title, text) => {
     alt = !addClass ? text.slice(1) : text,
     url = `${rootStaticPath}${href}`;
 
+  const dimensions = sizeOf(join(process.cwd(), 'static', 'static', ...href!.split('/'))),
+    dimensionsString = `width=${dimensions.width} height=${dimensions.height}`;
+
   return `
   <a href="${url}" target="_blank">
     <img src="${url}" alt="${alt}" ${addClass ? 'class="invertable"' : ''} ${
     title ? `title=${title}` : ''
-  } />
+  } ${dimensionsString} />
   </a>
   `;
 };
