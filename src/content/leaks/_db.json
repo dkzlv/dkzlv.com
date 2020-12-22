@@ -114,6 +114,23 @@
           "slug": "apple"
         }
       }
+    },
+    {
+      "id": "h9XV1Ecs_8XXsGGk81Yjd",
+      "img": null,
+      "site": "https://en.wikipedia.org/wiki/Likud",
+      "content": {
+        "ru": {
+          "title": "Ликуд",
+          "content": "Партия власти, в которую входил Премьер-министр Израиля на 2020 год Биньямин Нетаньяху.",
+          "slug": "likud"
+        },
+        "en": {
+          "title": "Likud",
+          "content": "Israel political party in power that supported Benjamin Netanyahu, who was Prime Minister in 2020.",
+          "slug": "likud"
+        }
+      }
     }
   ],
   "locations": [
@@ -194,6 +211,22 @@
           "title": "Canada",
           "content": "",
           "slug": "canada"
+        }
+      }
+    },
+    {
+      "id": "1s29mmrHNGxJn5q8PPw9D",
+      "emoji": "🇮🇱",
+      "content": {
+        "ru": {
+          "title": "Израиль",
+          "content": "",
+          "slug": "izrail"
+        },
+        "en": {
+          "title": "Israel",
+          "content": "",
+          "slug": "israel"
         }
       }
     }
