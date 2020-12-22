@@ -148,6 +148,23 @@
           "slug": "3fun"
         }
       }
+    },
+    {
+      "id": "iummNN9Jvchcfg33R_bMB",
+      "img": null,
+      "site": "https://beeline.ru/",
+      "content": {
+        "ru": {
+          "title": "Билайн",
+          "content": "Топ-3 сотовый оператор России.",
+          "slug": "bilajn"
+        },
+        "en": {
+          "title": "Beeline",
+          "content": "Top-3 telecommunications operator in Russia",
+          "slug": "beeline"
+        }
+      }
     }
   ],
   "locations": [
@@ -244,6 +261,22 @@
           "title": "Israel",
           "content": "",
           "slug": "israel"
+        }
+      }
+    },
+    {
+      "id": "U0ZCCQguv_-5BFZNL2MbC",
+      "emoji": "🇷🇺",
+      "content": {
+        "ru": {
+          "title": "Россия",
+          "content": "",
+          "slug": "rossiya"
+        },
+        "en": {
+          "title": "Russia",
+          "content": "",
+          "slug": "russia"
         }
       }
     }
