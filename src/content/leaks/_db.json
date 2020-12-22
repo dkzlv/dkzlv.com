@@ -131,6 +131,23 @@
           "slug": "likud"
         }
       }
+    },
+    {
+      "id": "7rUSHZqOErtsRmeJWzZyh",
+      "img": null,
+      "site": "https://www.go3fun.co/",
+      "content": {
+        "ru": {
+          "title": "3fun",
+          "content": "Дейтинговый сервис для полиаморов. То есть, для поиска тройничков, в общем.",
+          "slug": "3fun"
+        },
+        "en": {
+          "title": "3fun",
+          "content": "Dating app for polyamorous couples. So to search for threesomes.",
+          "slug": "3fun"
+        }
+      }
     }
   ],
   "locations": [
