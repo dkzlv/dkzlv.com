@@ -16,6 +16,10 @@
 
   let showOverlay = true,
     containerEl: HTMLDivElement;
+
+  // Hiding overlay on ultrawide displays
+  $: if (containerEl) showOverlay = containerEl.scrollWidth > containerEl.clientWidth;
+
   const scrollHandler = () =>
     (showOverlay = containerEl.scrollWidth - containerEl.scrollLeft > containerEl.clientWidth);
 </script>
