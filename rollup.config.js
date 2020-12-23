@@ -71,6 +71,7 @@ export default {
         customResolveOptions: {
           paths: [path.join(__dirname, 'src')],
         },
+        dedupe: ['svelte'],
       }),
       commonjs(),
       typescript(),
@@ -122,6 +123,7 @@ export default {
         customResolveOptions: {
           paths: [path.join(__dirname, 'src')],
         },
+        dedupe: ['svelte'],
       }),
       commonjs(),
       typescript(),

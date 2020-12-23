@@ -27,7 +27,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/static/icons/ms-icon-144x144.png" />
-    %sapper.styles% %sapper.head%
+    %sapper.styles% %sapper.head% %sapper.scripts%
   </head>
 
   <body data-night-theme="0">
@@ -38,7 +38,6 @@
       );
     </script>
     <div id="app">%sapper.html%</div>
-    %sapper.scripts%
 
     <script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
     <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt="" /></noscript>
