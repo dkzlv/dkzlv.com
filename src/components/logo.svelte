@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  import { staticPath } from 'core/paths.ts';
+  import { rootStaticPath } from 'core/paths.ts';
 
   const classes = [
     '',
@@ -22,14 +22,12 @@
   classes.forEach(() => setTimeout(() => setNewClass()));
 
   let interval: number;
-  const setFixedInterval = (tm: number) => {
-      clearInterval(interval);
-      interval = window.setInterval(setNewClass, tm);
-    },
-    onMouseOver = () => setFixedInterval(250),
-    onMouseOut = () => setFixedInterval(3500);
+  const setFixedInterval = (tm = 3500) => {
+    clearInterval(interval);
+    interval = window.setInterval(setNewClass, tm);
+  };
 
-  onMount(() => setFixedInterval(3500));
+  onMount(setFixedInterval);
 </script>
 
 <style lang="scss">
@@ -77,9 +75,9 @@
   }
 </style>
 
-<div on:mouseover={onMouseOver} on:mouseout={onMouseOut}>
+<div on:mouseover={() => setFixedInterval(250)} on:mouseout={() => setFixedInterval()}>
   <img
-    src={`${staticPath}/img/logo.jpg`}
+    src={`${rootStaticPath}/img/logo.jpg`}
     class={`logo ${classes[currIndex]}`}
     alt="logo"
     height="80" />

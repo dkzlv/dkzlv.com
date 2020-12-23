@@ -4,6 +4,7 @@ title: Чего можно добиться с данными и что вооб
 date: 22.11.2020
 description: "<strong>TL;DR:</strong> всё очень плохо. Текущий прогноз неутешительный; а если ничего не делать, то дистопии фантастов покажутся нам летними каникулами у бабушки"
 slug: chto-mozhno-poluchit-iz-dannyh-i-chto-delat
+published: 1
 series: ["kak-sobirayut-dannye", ""]
 registerExtraComponents: ["freeWill", "productBingo"]
 ---

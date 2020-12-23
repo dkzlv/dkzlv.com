@@ -2,7 +2,7 @@
   import { locale } from 'svelte-i18n';
   import Link from './link.svelte';
 
-  import { staticPath } from 'core/paths.ts';
+  import { rootStaticPath } from 'core/paths.ts';
 </script>
 
 <style lang="scss">
@@ -33,12 +33,12 @@
   </p>
   <div class="right">
     {#if $locale == 'ru'}
-      <Link href="/en"><img src={`${staticPath}/img/footer/gb.svg`} alt="Brit's flag" /></Link>
+      <Link href="/en"><img src={`${rootStaticPath}/img/footer/gb.svg`} alt="Brit's flag" /></Link>
     {:else if $locale == 'en'}
-      <Link href="/ru"><img src={`${staticPath}/img/footer/ru.svg`} alt="Russ' flag" /></Link>
+      <Link href="/ru"><img src={`${rootStaticPath}/img/footer/ru.svg`} alt="Russ' flag" /></Link>
     {/if}
     <Link class="rss" href={$locale + '/rss'}>
-      <img src={`${staticPath}/img/footer/rss.svg`} alt="RSS" />
+      <img src={`${rootStaticPath}/img/footer/rss.svg`} alt="RSS" />
     </Link>
   </div>
 </footer>
