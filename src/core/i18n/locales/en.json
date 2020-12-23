@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "title": "Even grandma understands / Dan Kozlov",
+    "description": "TODO: Gotta come up with a cool description, it should be funny, a little bit scary, but also interesting and just a bit stylish"
+  },
+  "rss": {
+    "description": "Me telling you where you are wrong",
+    "generator": "My pretty straight hands",
+    "category": "existential bullshit",
+    "author": "Dan Kozlov"
+  },
+  "email": {
+    "placeholder": "Your real email",
+    "subscribe": "Subscribe",
+    "error100": "STOP HACKING ME",
+    "error101": "Smth went wrong. Maybe I'll someday fix. Probably not",
+    "error102": "Cmon, we both know it's not your email",
+    "error103": "Do I need to guess it?",
+    "success": "All done. Confirm your email and you'll get your portion of spam soon",
+    "endPostEngagement": {
+      "header": "Subscribe ASAP!",
+      "text": "You've read it to the end. Wow. Care for a subscribe?"
+    },
+    "tooltip": {
+      "header": "What you'll get?",
+      "noNudes": "No nudes or dickpicks, I promise 🤞",
+      "articles": "I'll send you my articles and summaries of other's that I like"
+    }
+  },
+  "header": {
+    "onboard": "Hey! Get onboard",
+    "twitter": "on Twitter",
+    "sameContent": "— same content, but faster.",
+    "join": "Or join the newsletter. One email a week if I'm not lazy."
+  },
+  "posts": {
+    "readTime": "{time, plural, one {1 minute} other {{time} minutes}}",
+    "leaks": {
+      "title": "Leaks database",
+      "count": "Total of {count, plural, one {{count} leak} other {{count} leaks}} added"
+    },
+    "series": {
+      "header": "Post series",
+      "thisPost": "(this one)",
+      "soon": "soon!",
+      "notPublished": {
+        "teaser": "Not all the posts are published.",
+        "subscribeAsap": "Subscribe ASAP!",
+        "explain": "Or you can miss all the goodies later."
+      }
+    }
+  },
+  "specials": {
+    "fingerprint": {
+      "header": "C'mon, sweatie, tell me what your favorite pr0n is?",
+      "form": {
+        "label": "Favorite porn",
+        "placeholder": "Don't be shy 👉👌💦👄",
+        "button": "Save till midnight",
+        "variants": [
+          "Bestiality accompanied by Beethoven",
+          "USAF with STD",
+          "Dwarfs dressed as giants",
+          "Rick and Morty",
+          "Giants dressed as dwarfs",
+          "Sticing fingers into a hot khachapuri"
+        ]
+      },
+      "result": {
+        "success": "Noted! Your ID: '<'code'>'{fingerprint}'<'/code'>'. Now '<'a href='{href}''>'go to the same page'<'/a'>' from inkognito mode.",
+        "guess": "Well, I presume, your favorite pr0n is '<'code'>'{prevMessage}'<'/code'>' (you filthy bastard), and your ID is '<'code'>'{fingerprint}'<'/code'>'."
+      },
+      "standalone": {
+        "header": "Fingerprinting in Web",
+        "description": [
+          "This is a part of my post about how corporations gather data about us even if we don't know nothing about it. It's a very small and simple demo. The idea is that you visit a porn-site as a thing you're most ashamed of with inkognito mode on. You're a bit of a hacker yourself, aren't you?",
+          "This demo will show you how silly of you it is to think that rich powerful and smart corporations cannot deduce your ID if you use inkognito more. Go ahead!"
+        ]
+      },
+      "promoHeader": "Pr0n + fingerprinting"
+    },
+    "appDb": {
+      "title": "Apps that respect your data",
+      "inProgress": "In progress",
+      "main": "Main idea is to create a list of apps that, to my opinion, respect users' data. The requirements are listed {tagO}in this post{tagC}. I'm in the middle of the process right now. While you wait please subscribe for my newsletter, then you'll get the content even faster."
+    },
+    "header": "Timeless demos"
+  },
+  "colorSwitcher": "Change colors",
+  "consoleWarning": "Hi there, anonymous hacker! We hire THE BEST janitors our there, and you seem to fit our team! Drop a few lines to trash@bin.com",
+  "leaks": {
+    "table": {
+      "title": "Title",
+      "org": "Organization",
+      "spread": "Location",
+      "tags": "Tags",
+      "victims": "Potential victims",
+      "start": "Started",
+      "end": "Ended",
+      "unknown": "Unknown",
+      "when": "When",
+      "source": "Source",
+      "added": "Added"
+    },
+    "feedback": {
+      "headerNew": "Do you know such stories?",
+      "headerOld": "Is something incorrect?",
+      "pNew": "If we missed some really cool story on data leaks, please '<'a rel='noreferrer noopener' target='_blank' href=\"{link}\"'>'write us an email'<'/a'>'. Important: we're not publishing stories without valid sources.",
+      "pOld": "You can send any corrections and additions to this article '<'a rel='noreferrer noopener' target='_blank' href=\"{link}\"'>'on my email'<'/a'>', I'll surely review them.",
+      "emailSubjectNew": "New story",
+      "emailSubjectOld": "Updates to a story",
+      "newStoryBody": "What is it about in two words: \n\nSource: "
+    },
+    "disclosure": {
+      "header": "This article is about a data leak",
+      "personalP": "Typically corporations are not obligated to disclose information about all the data that leaked, but only personal users' data.",
+      "tableP": "But we understand that company's valuable aggregated data is stored, most of the time, in the same database as users' data. If one was leaked, we presume the other was as well."
+    },
+    "emailText": "Subscribe to get these stories in your inbox from time to time. Pinky swear: I won't sell you out."
+  },
+  "nav": {
+    "main": "Main",
+    "leaks": "Leaks database",
+    "meta": {
+      "leaks": {
+        "description": "All significant data leaks and hacks in one place",
+        "orgTitle": "All data leaks by this organization",
+        "tagTitle": "All data leaks for this category",
+        "locationTitle": "All data leaks that harmed people in this area",
+        "filterBreadcrumb": "With filter"
+      }
+    }
+  }
+}

@@ -1,15 +1,19 @@
 $header-anchor-width: 1.1em;
 $header-anchor-padding: 0.35em;
 
+html,
+body {
+  font-family: $serif;
+  font-size: ms(0);
+  color: $text-color;
+}
+
 p,
 ol,
 ul,
 .p {
-  font-family: $serif;
   margin-bottom: 14px;
   line-height: $base-font-size * 1.8;
-  font-size: ms(0);
-  color: $text-color;
 }
 
 p,
@@ -43,9 +47,8 @@ a:visited {
 }
 
 a:hover,
-a:visited,
 a.anchor {
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 h1,
@@ -63,11 +66,7 @@ h6 {
   font-weight: $bold;
   line-height: 1.3;
 
-  background: linear-gradient(35deg, $header-gradient-1 33%, $header-gradient-2 100%);
-  background-clip: text;
-  // Fallback, if clip doesn't work. In this case it's just showing white text on green back
-  color: #fff;
-  -webkit-text-fill-color: transparent;
+  color: $header-gradient-1;
 }
 
 h1 {
@@ -138,6 +137,11 @@ h6 {
 
     &:not(:last-child) {
       margin-bottom: 10px;
+    }
+
+    > ol,
+    > ul {
+      margin: 15px 0 15px 15px;
     }
   }
 
@@ -227,7 +231,67 @@ h6 {
   }
 
   img {
-    filter: $image-filter;
+    // Preserving aspect ratio
+    height: auto;
+
     margin: 2.5em auto;
+
+    &.invertable {
+      filter: $image-filter;
+    }
+  }
+
+  hr {
+    width: 150px;
+    margin: 3em auto;
+
+    border: none;
+    border-top: dotted 1px #b3b3b3;
+  }
+
+  .callout {
+    display: grid;
+    grid-template-columns: auto 5fr;
+    grid-template-rows: repeat(auto-fill, 1fr);
+
+    margin-bottom: 1em;
+
+    $padding: 20px;
+
+    > * {
+      &:first-child {
+        grid-column: 1 / span 1;
+        grid-row: 1 / last-line;
+        grid-row-start: span 9000;
+
+        font-size: 150%;
+        padding: $padding;
+        line-height: 1;
+
+        user-select: none;
+      }
+
+      &:not(:first-child) {
+        margin: 0;
+        padding-top: $padding;
+        padding-right: $padding;
+      }
+
+      &:last-child {
+        padding-bottom: $padding;
+      }
+    }
+
+    &.green {
+      background-color: $callout-green;
+    }
+
+    &.yellow {
+      background-color: $callout-yellow;
+    }
+
+    &.red {
+      background-color: $callout-red;
+    }
   }
 }

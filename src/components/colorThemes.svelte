@@ -1,15 +1,16 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import { _ } from 'svelte-i18n';
 
   const attr = 'data-night-theme';
+
   let show = false;
-  let value;
+  let value: string;
   $: checkboxValue = value === '1';
 
   onMount(() => {
-    value = document.body.getAttribute(attr);
+    value = document.body.getAttribute(attr)!;
     show = true;
   });
 
@@ -19,7 +20,7 @@
     localStorage.setItem(attr, value);
   };
 
-  let y;
+  let y: number;
   $: showBeforeHiding = y <= 500;
 </script>
 

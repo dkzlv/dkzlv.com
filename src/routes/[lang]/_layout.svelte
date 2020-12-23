@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { stores, goto } from '@sapper/app';
   import { onMount } from 'svelte';
   import { locale, locales, _ } from 'svelte-i18n';
@@ -8,7 +8,7 @@
   import ColorThemes from 'components/colorThemes.svelte';
   import PageLoading from 'components/pageLoading.svelte';
 
-  import warn from 'core/consoleWarning';
+  import { warn } from 'core/consoleWarning.ts';
 
   const { page, preloading } = stores();
 

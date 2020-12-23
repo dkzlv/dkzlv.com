@@ -1,5 +1,7 @@
-<script>
-  import { staticPath } from 'core/paths';
+<script lang="ts">
+  import { onMount } from 'svelte';
+
+  import { rootStaticPath } from 'core/paths.ts';
 
   const classes = [
     '',
@@ -19,14 +21,13 @@
   // Used to force browser to pre-cache all svgs
   classes.forEach(() => setTimeout(() => setNewClass()));
 
-  let interval;
-  const setFixedInterval = tm => {
+  let interval: number;
+  const setFixedInterval = (tm = 3500) => {
     clearInterval(interval);
-    interval = setInterval(setNewClass, tm);
+    interval = window.setInterval(setNewClass, tm);
   };
-  setFixedInterval(3500);
-  const onMouseOver = () => setFixedInterval(250);
-  const onMouseOut = () => setFixedInterval(3500);
+
+  onMount(setFixedInterval);
 </script>
 
 <style lang="scss">
@@ -74,9 +75,9 @@
   }
 </style>
 
-<div on:mouseover={onMouseOver} on:mouseout={onMouseOut}>
+<div on:mouseover={() => setFixedInterval(250)} on:mouseout={() => setFixedInterval()}>
   <img
-    src={`${staticPath}/img/logo.jpg`}
+    src={`${rootStaticPath}/img/logo.jpg`}
     class={`logo ${classes[currIndex]}`}
     alt="logo"
     height="80" />

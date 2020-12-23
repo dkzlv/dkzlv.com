@@ -1,4 +1,4 @@
-import { config as dotenvConfig } from 'dotenv';
+import { config as dotenvConfig } from 'dotenv-flow';
 dotenvConfig();
 
 import path from 'path';
@@ -8,29 +8,31 @@ import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
 import babel from 'rollup-plugin-babel';
+import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
 import json from '@rollup/plugin-json';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import autoPreprocess from 'svelte-preprocess';
 
-const mode = process.env.NODE_ENV;
-const dev = mode === 'development';
-const legacy = !!process.env.SAPPER_LEGACY_BUILD;
+const mode = process.env.NODE_ENV,
+  dev = mode === 'development',
+  legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
-const onwarn = (warning, onwarn) => {
+const onwarn = (warning, onwarn) =>
   // Shows up after I added svelte-i18n for some reason, safe to ignore
-  if (warning.code === 'THIS_IS_UNDEFINED') return;
-
-  return (
-    (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
-    onwarn(warning)
-  );
-};
+  warning.code === 'THIS_IS_UNDEFINED' ||
+  // Defaults from sapper template: https://github.com/sveltejs/sapper-template/blob/master/rollup.config.js#L14
+  (warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
+  (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
+  onwarn(warning);
 
 const preprocess = autoPreprocess({
   postcss: true,
   scss: true,
+  typescript: {
+    transpileOnly: true,
+  },
 });
 
 const commonReplace = {
@@ -46,8 +48,11 @@ const commonReplace = {
 
 const watchPostsPlugin = {
   buildStart() {
-    const files = fs.readdirSync('./src/posts/');
-    files.forEach((file) => this.addWatchFile('./src/posts/' + file));
+    ['posts', 'leaks'].forEach(folder =>
+      fs
+        .readdirSync(`./src/content/${folder}`)
+        .forEach(file => this.addWatchFile(`./src/content/${folder}/${file}`)),
+    );
   },
 };
 
@@ -68,11 +73,12 @@ export default {
         },
       }),
       commonjs(),
+      typescript(),
       svelte({
         dev,
         preprocess,
         hydratable: true,
-        emitCss: true,
+        emitCss: false,
       }),
       json(),
 
@@ -99,6 +105,7 @@ export default {
         }),
     ],
 
+    preserveEntrySignatures: false,
     onwarn,
   },
 
@@ -117,6 +124,7 @@ export default {
         },
       }),
       commonjs(),
+      typescript(),
       svelte({
         generate: 'ssr',
         dev,
@@ -128,6 +136,7 @@ export default {
       require('module').builtinModules || Object.keys(process.binding('natives')),
     ),
 
+    preserveEntrySignatures: 'strict',
     onwarn,
   },
 };

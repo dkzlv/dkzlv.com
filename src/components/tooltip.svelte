@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   export let triggerText = '?';
 </script>
 
@@ -42,6 +42,8 @@
       background-color: $tooltip-bg-color;
       text-align: center;
       border-radius: 6px;
+
+      transition: opacity 0.3s ease-in-out;
 
       box-shadow: 0px 0px 15px 0px $tooltip-shadow-color;
 

@@ -1,0 +1,284 @@
+{
+  "tags": [
+    {
+      "id": "IOUnLZCsnxlMA1utcAAxN",
+      "content": {
+        "ru": {
+          "title": "b2c",
+          "content": "Все бизнесы, которые обслуживают конечных потребителей",
+          "slug": "b2c"
+        },
+        "en": {
+          "title": "b2c",
+          "content": "All businesses that serve end users",
+          "slug": "b2c"
+        }
+      }
+    },
+    {
+      "id": "dSYpQlJl_6Hig8aBEdqVa",
+      "content": {
+        "ru": {
+          "title": "государство",
+          "content": "Факапы, совершённые святая святых: государственными органами",
+          "slug": "gosudarstvo"
+        },
+        "en": {
+          "title": "government",
+          "content": "Leaks provided to you by the allmighty governments",
+          "slug": "government"
+        }
+      }
+    },
+    {
+      "id": "ONLbNEXvifJdDoF9pmbs9",
+      "content": {
+        "ru": {
+          "title": "b2b",
+          "content": "Обслуживают другие компании",
+          "slug": "b2b"
+        },
+        "en": {
+          "title": "b2b",
+          "content": "Serving the need of corporations",
+          "slug": "b2b"
+        }
+      }
+    }
+  ],
+  "organizations": [
+    {
+      "id": "pAmobzKMYHMP1uzAumo8d",
+      "img": null,
+      "site": "https://nra.bg/",
+      "content": {
+        "ru": {
+          "title": "ФНС Болгарии",
+          "content": "",
+          "slug": "fns-bolgarii"
+        },
+        "en": {
+          "title": "National Revenue Agency of Bulgaria",
+          "content": "",
+          "slug": "national-revenue-agency-of-bulgaria"
+        }
+      }
+    },
+    {
+      "id": "-ZTFQxVn-NsXLRwnTq64N",
+      "img": null,
+      "site": "https://flipboard.com/",
+      "content": {
+        "ru": {
+          "title": "Flipboard",
+          "content": "Локально популярный агрегатор новостей из RSS и не только",
+          "slug": "flipboard"
+        },
+        "en": {
+          "title": "Flipboard",
+          "content": "Locally popular news aggregator for mobile devices",
+          "slug": "flipboard"
+        }
+      }
+    },
+    {
+      "id": "JVdKL5f9Ecv0C4CEWCk4e",
+      "img": null,
+      "site": "https://www.equifax.com/",
+      "content": {
+        "ru": {
+          "title": "Equifax",
+          "content": "Американское бюро кредитной истории. Собирает данные о людях и оценивает их кредитоспособность.",
+          "slug": "equifax"
+        },
+        "en": {
+          "title": "Equifax",
+          "content": "American multinational consumer credit reporting agency. Gathers data about people and then sells it.",
+          "slug": "equifax"
+        }
+      }
+    },
+    {
+      "id": "a_wFsomjeg-umnpJnFq7O",
+      "img": null,
+      "site": "https://apple.com/",
+      "content": {
+        "ru": {
+          "title": "Apple",
+          "content": "",
+          "slug": "apple"
+        },
+        "en": {
+          "title": "Apple",
+          "content": "",
+          "slug": "apple"
+        }
+      }
+    },
+    {
+      "id": "h9XV1Ecs_8XXsGGk81Yjd",
+      "img": null,
+      "site": "https://en.wikipedia.org/wiki/Likud",
+      "content": {
+        "ru": {
+          "title": "Ликуд",
+          "content": "Партия власти, в которую входил Премьер-министр Израиля на 2020 год Биньямин Нетаньяху.",
+          "slug": "likud"
+        },
+        "en": {
+          "title": "Likud",
+          "content": "Israel political party in power that supported Benjamin Netanyahu, who was Prime Minister in 2020.",
+          "slug": "likud"
+        }
+      }
+    },
+    {
+      "id": "7rUSHZqOErtsRmeJWzZyh",
+      "img": null,
+      "site": "https://www.go3fun.co/",
+      "content": {
+        "ru": {
+          "title": "3fun",
+          "content": "Дейтинговый сервис для полиаморов. То есть, для поиска тройничков, в общем.",
+          "slug": "3fun"
+        },
+        "en": {
+          "title": "3fun",
+          "content": "Dating app for polyamorous couples. So to search for threesomes.",
+          "slug": "3fun"
+        }
+      }
+    },
+    {
+      "id": "iummNN9Jvchcfg33R_bMB",
+      "img": null,
+      "site": "https://beeline.ru/",
+      "content": {
+        "ru": {
+          "title": "Билайн",
+          "content": "Топ-3 сотовый оператор России.",
+          "slug": "bilajn"
+        },
+        "en": {
+          "title": "Beeline",
+          "content": "Top-3 telecommunications operator in Russia",
+          "slug": "beeline"
+        }
+      }
+    }
+  ],
+  "locations": [
+    {
+      "id": "n8lsD7FbUS8GOe5jTvaFq",
+      "emoji": "🇧🇬",
+      "content": {
+        "ru": {
+          "title": "Болгария",
+          "content": "",
+          "slug": "bolgariya"
+        },
+        "en": {
+          "title": "Bulgaria",
+          "content": "",
+          "slug": "bulgaria"
+        }
+      }
+    },
+    {
+      "id": "0Syf58_CBCHX--ncU5TKb",
+      "emoji": "🌍",
+      "content": {
+        "ru": {
+          "title": "весь мир",
+          "content": "",
+          "slug": "ves-mir"
+        },
+        "en": {
+          "title": "worldwide",
+          "content": "",
+          "slug": "worldwide"
+        }
+      }
+    },
+    {
+      "id": "yWEOd5367syP85wv3OUd3",
+      "emoji": "🇺🇸",
+      "content": {
+        "ru": {
+          "title": "США",
+          "content": "",
+          "slug": "s-sh-a"
+        },
+        "en": {
+          "title": "US",
+          "content": "",
+          "slug": "us"
+        }
+      }
+    },
+    {
+      "id": "cACMjE8L4T8Dx2xngqd3q",
+      "emoji": "🇬🇧",
+      "content": {
+        "ru": {
+          "title": "Великобритания",
+          "content": "",
+          "slug": "velikobritaniya"
+        },
+        "en": {
+          "title": "UK",
+          "content": "",
+          "slug": "uk"
+        }
+      }
+    },
+    {
+      "id": "gfDZnE38gDwkwrSKfniTL",
+      "emoji": "🇨🇦",
+      "content": {
+        "ru": {
+          "title": "Канада",
+          "content": "",
+          "slug": "kanada"
+        },
+        "en": {
+          "title": "Canada",
+          "content": "",
+          "slug": "canada"
+        }
+      }
+    },
+    {
+      "id": "1s29mmrHNGxJn5q8PPw9D",
+      "emoji": "🇮🇱",
+      "content": {
+        "ru": {
+          "title": "Израиль",
+          "content": "",
+          "slug": "izrail"
+        },
+        "en": {
+          "title": "Israel",
+          "content": "",
+          "slug": "israel"
+        }
+      }
+    },
+    {
+      "id": "U0ZCCQguv_-5BFZNL2MbC",
+      "emoji": "🇷🇺",
+      "content": {
+        "ru": {
+          "title": "Россия",
+          "content": "",
+          "slug": "rossiya"
+        },
+        "en": {
+          "title": "Russia",
+          "content": "",
+          "slug": "russia"
+        }
+      }
+    }
+  ]
+}

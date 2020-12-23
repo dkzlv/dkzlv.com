@@ -1,5 +1,5 @@
 import * as sapper from '@sapper/app';
-import i18nInitialize from 'core/i18n/index';
+import i18nInitialize from 'core/i18n/index.ts';
 
 i18nInitialize();
 

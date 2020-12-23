@@ -1,15 +1,27 @@
 {
+  "exclude": [
+    "node_modules/*",
+    "__sapper__/*",
+    "**/*.js"
+  ],
   "compilerOptions": {
-    "target": "ES2015",
-    "module": "commonjs",
-    "strict": true,
+    "target": "es2019",
+    "types": [
+      "svelte",
+      "node",
+      "express"
+    ],
+    "esModuleInterop": true,
     "noImplicitAny": true,
-    "baseUrl": "./src",
+    "strictNullChecks": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "baseUrl": "./",
     "paths": {
-      "@/*": [
+      "*": [
         "src/*"
       ]
-    },
-    "esModuleInterop": true
+    }
   }
 }
