@@ -4,9 +4,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "open http://blog:3000/ & sapper dev",
-    "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
-    "start": "node __sapper__/build",
+    "export": "NODE_ENV=production sapper export --legacy",
     "content:post": "node scripts/content/post.js",
     "content:leak": "node scripts/content/leak.js",
     "db:tag": "node scripts/db/tag.js",

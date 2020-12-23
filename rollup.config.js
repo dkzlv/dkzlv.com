@@ -15,9 +15,9 @@ import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import autoPreprocess from 'svelte-preprocess';
 
-const mode = process.env.NODE_ENV;
-const dev = mode === 'development';
-const legacy = !!process.env.SAPPER_LEGACY_BUILD;
+const mode = process.env.NODE_ENV,
+  dev = mode === 'development',
+  legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
 const onwarn = (warning, onwarn) =>
   // Shows up after I added svelte-i18n for some reason, safe to ignore

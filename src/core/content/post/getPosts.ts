@@ -41,7 +41,7 @@ export const getPosts = (): Post[] => {
     Object.values(slugBasedObj)
       // We return everything on stage.
       // We only return published on production.
-      .filter(post => process.env.NODE_ENV === 'development' || post.meta.published)
+      .filter(post => (process.env.NODE_ENV as string) === 'development' || post.meta.published)
       .sort((a, b) => b.meta.date.getTime() - a.meta.date.getTime())
       .map(({ content, meta }) => {
         let series: PreprocessedSeries | undefined = undefined;
