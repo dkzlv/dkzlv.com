@@ -2,10 +2,7 @@
   import { goto } from '@sapper/app';
   import { locales } from 'svelte-i18n';
 
-  if (typeof window !== 'undefined') {
-    const rawLang = navigator.language.slice(0, 2);
-    goto('./' + rawLang);
-  }
+  if (process.env.BROWSER) goto('./' + navigator.language.slice(0, 2));
 </script>
 
 <div style="display: none">
