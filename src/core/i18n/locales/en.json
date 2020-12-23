@@ -10,7 +10,7 @@
     "author": "Dan Kozlov"
   },
   "email": {
-    "placeholder": "Drop your burner-email",
+    "placeholder": "Your real email",
     "subscribe": "Subscribe",
     "error100": "STOP HACKING ME",
     "error101": "Smth went wrong. Maybe I'll someday fix. Probably not",
@@ -78,6 +78,11 @@
         ]
       },
       "promoHeader": "Pr0n + fingerprinting"
+    },
+    "appDb": {
+      "title": "Apps that respect your data",
+      "inProgress": "In progress",
+      "main": "Main idea is to create a list of apps that, to my opinion, respect users' data. The requirements are listed {tagO}in this post{tagC}. I'm in the middle of the process right now. While you wait please subscribe for my newsletter, then you'll get the content even faster."
     },
     "header": "Timeless demos"
   },
