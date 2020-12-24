@@ -82,10 +82,6 @@
       margin-right: 3px;
     }
   }
-
-  .tooltip-wrapper {
-    align-self: center;
-  }
 </style>
 
 <div class="group">
@@ -104,13 +100,11 @@
       {$_('email.subscribe')}
     </button>
   </form>
-  <div class="tooltip-wrapper">
-    <Tooltip>
-      <p class="tooltip__header">{$_('email.tooltip.header')}</p>
-      <p class="tooltip__p">{$_('email.tooltip.noNudes')}</p>
-      <p class="tooltip__p">{$_('email.tooltip.articles')}</p>
-    </Tooltip>
-  </div>
+  <Tooltip>
+    <p class="tooltip__header">{$_('email.tooltip.header')}</p>
+    <p class="tooltip__p">{$_('email.tooltip.noNudes')}</p>
+    <p class="tooltip__p">{$_('email.tooltip.articles')}</p>
+  </Tooltip>
 </div>
 
 {#if errorCode}
