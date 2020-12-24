@@ -64,6 +64,7 @@ export default {
       watchPostsPlugin,
       replace({
         'process.browser': true,
+        'process.env.BROWSER': true,
         ...commonReplace,
       }),
       resolve({
