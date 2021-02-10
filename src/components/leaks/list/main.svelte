@@ -24,6 +24,25 @@
     (showOverlay = containerEl.scrollWidth - containerEl.scrollLeft > containerEl.clientWidth);
 </script>
 
+<div class="box">
+  <div class="main" bind:this={containerEl} on:scroll={scrollHandler}>
+    <div class="table" style={inlineStyle}>
+      <div class="row">
+        <Header {hideOrg} {hideLocation} />
+      </div>
+      {#each leaks as leak}
+        <div class="row">
+          <Item {leak} {hideOrg} {hideLocation} />
+        </div>
+      {/each}
+    </div>
+  </div>
+  <div class="overlay hiding-overlay" class:show={showOverlay} />
+  <div class="arrow hiding-overlay" class:show={showOverlay}>→</div>
+</div>
+
+<Feedback />
+
 <style lang="scss">
   @import 'src/styles/importable';
 
@@ -122,22 +141,3 @@
     }
   }
 </style>
-
-<div class="box">
-  <div class="main" bind:this={containerEl} on:scroll={scrollHandler}>
-    <div class="table" style={inlineStyle}>
-      <div class="row">
-        <Header {hideOrg} {hideLocation} />
-      </div>
-      {#each leaks as leak}
-        <div class="row">
-          <Item {leak} {hideOrg} {hideLocation} />
-        </div>
-      {/each}
-    </div>
-  </div>
-  <div class="overlay hiding-overlay" class:show={showOverlay} />
-  <div class="arrow hiding-overlay" class:show={showOverlay}>→</div>
-</div>
-
-<Feedback />

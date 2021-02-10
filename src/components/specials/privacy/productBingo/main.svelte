@@ -17,6 +17,10 @@
   });
 </script>
 
+<div class="wrapper">
+  {@html text}
+</div>
+
 <style lang="scss">
   @import 'src/styles/importable';
 
@@ -40,7 +44,3 @@
     }
   }
 </style>
-
-<div class="wrapper">
-  {@html text}
-</div>

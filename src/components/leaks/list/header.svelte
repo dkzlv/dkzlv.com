@@ -4,6 +4,18 @@
   export let hideOrg: boolean, hideLocation: boolean;
 </script>
 
+<div>{$_('leaks.table.title')}</div>
+{#if !hideOrg}
+  <div>{$_('leaks.table.org')}</div>
+{/if}
+{#if !hideLocation}
+  <div>{$_('leaks.table.spread')}</div>
+{/if}
+<div>{$_('leaks.table.tags')}</div>
+<div>{$_('leaks.table.victims')}</div>
+<div>{$_('leaks.table.start')}</div>
+<div>{$_('leaks.table.end')}</div>
+
 <style lang="scss">
   @import 'src/styles/importable';
 
@@ -32,15 +44,3 @@
     }
   }
 </style>
-
-<div>{$_('leaks.table.title')}</div>
-{#if !hideOrg}
-  <div>{$_('leaks.table.org')}</div>
-{/if}
-{#if !hideLocation}
-  <div>{$_('leaks.table.spread')}</div>
-{/if}
-<div>{$_('leaks.table.tags')}</div>
-<div>{$_('leaks.table.victims')}</div>
-<div>{$_('leaks.table.start')}</div>
-<div>{$_('leaks.table.end')}</div>

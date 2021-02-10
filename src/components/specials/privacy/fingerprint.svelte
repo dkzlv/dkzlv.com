@@ -47,6 +47,38 @@
   };
 </script>
 
+<div class="box" {id}>
+  <div class="nested">
+    <div class="container">
+      <p>{$_('specials.fingerprint.header')}</p>
+
+      <div class="interactive">
+        <label for="demoInput" class="hide">{$_('specials.fingerprint.form.label')}</label>
+        <input
+          class="input input--accent"
+          id="demoInput"
+          bind:value={message}
+          placeholder={$_('specials.fingerprint.form.placeholder')}
+        />
+        <button class="btn btn--accent {isLoading && 'btn--loading'}" on:click={onClick}>
+          {$_('specials.fingerprint.form.button')}
+        </button>
+      </div>
+      {#if justSent}
+        <p class="previous" in:slide>
+          {@html $_('specials.fingerprint.result.success', { values: { fingerprint, href } })}
+        </p>
+      {/if}
+
+      {#if prevMessage && !justSent}
+        <p class="previous" in:slide>
+          {@html $_('specials.fingerprint.result.guess', { values: { fingerprint, prevMessage } })}
+        </p>
+      {/if}
+    </div>
+  </div>
+</div>
+
 <style lang="scss">
   @import 'src/styles/importable.scss';
 
@@ -79,34 +111,3 @@
     margin-top: 10px;
   }
 </style>
-
-<div class="box" {id}>
-  <div class="nested">
-    <div class="container">
-      <p>{$_('specials.fingerprint.header')}</p>
-
-      <div class="interactive">
-        <label for="demoInput" class="hide">{$_('specials.fingerprint.form.label')}</label>
-        <input
-          class="input input--accent"
-          id="demoInput"
-          bind:value={message}
-          placeholder={$_('specials.fingerprint.form.placeholder')} />
-        <button class="btn btn--accent {isLoading && 'btn--loading'}" on:click={onClick}>
-          {$_('specials.fingerprint.form.button')}
-        </button>
-      </div>
-      {#if justSent}
-        <p class="previous" in:slide>
-          {@html $_('specials.fingerprint.result.success', { values: { fingerprint, href } })}
-        </p>
-      {/if}
-
-      {#if prevMessage && !justSent}
-        <p class="previous" in:slide>
-          {@html $_('specials.fingerprint.result.guess', { values: { fingerprint, prevMessage } })}
-        </p>
-      {/if}
-    </div>
-  </div>
-</div>

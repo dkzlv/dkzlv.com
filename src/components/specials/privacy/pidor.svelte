@@ -77,6 +77,15 @@
   };
 </script>
 
+<div class="button-wrapper">
+  <div bind:this={confessionEl} class="confession">
+    {#if confessionText}
+      <p in:fade>{confessionText}</p>
+    {/if}
+  </div>
+  <button class="btn btn--accent btn--fullwidth" on:click={listener}>Не ссы, не убьёт</button>
+</div>
+
 <style lang="scss">
   @import 'src/styles/_importable.scss';
 
@@ -100,12 +109,3 @@
     min-height: 45px;
   }
 </style>
-
-<div class="button-wrapper">
-  <div bind:this={confessionEl} class="confession">
-    {#if confessionText}
-      <p in:fade>{confessionText}</p>
-    {/if}
-  </div>
-  <button class="btn btn--accent btn--fullwidth" on:click={listener}>Не ссы, не убьёт</button>
-</div>

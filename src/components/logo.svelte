@@ -30,6 +30,15 @@
   onMount(setFixedInterval);
 </script>
 
+<div on:mouseover={() => setFixedInterval(250)} on:mouseout={() => setFixedInterval()}>
+  <img
+    src={`${rootStaticPath}/img/logo.jpg`}
+    class={`logo ${classes[currIndex]}`}
+    alt="logo"
+    height="80"
+  />
+</div>
+
 <style lang="scss">
   @import 'src/styles/importable';
 
@@ -74,11 +83,3 @@
     mask-image: url(/static/img/logomask/yggdrasil.svg);
   }
 </style>
-
-<div on:mouseover={() => setFixedInterval(250)} on:mouseout={() => setFixedInterval()}>
-  <img
-    src={`${rootStaticPath}/img/logo.jpg`}
-    class={`logo ${classes[currIndex]}`}
-    alt="logo"
-    height="80" />
-</div>

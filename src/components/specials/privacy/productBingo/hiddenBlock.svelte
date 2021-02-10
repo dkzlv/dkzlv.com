@@ -6,6 +6,16 @@
   let showOverlay = true;
 </script>
 
+<div class="wrapper">
+  {@html text}
+
+  {#if showOverlay}
+    <div class="overlay" transition:fade|local on:click={() => (showOverlay = false)} role="button">
+      Показать
+    </div>
+  {/if}
+</div>
+
 <style lang="scss">
   @import 'src/styles/importable';
 
@@ -29,13 +39,3 @@
     backdrop-filter: blur(5px);
   }
 </style>
-
-<div class="wrapper">
-  {@html text}
-
-  {#if showOverlay}
-    <div class="overlay" transition:fade|local on:click={() => (showOverlay = false)} role="button">
-      Показать
-    </div>
-  {/if}
-</div>

@@ -20,10 +20,6 @@
   onMount(() => warn($_('consoleWarning')));
 </script>
 
-<style global lang="scss">
-  @import 'src/styles/main.scss';
-</style>
-
 <ColorThemes />
 {#if $preloading}
   <PageLoading />
@@ -35,3 +31,7 @@
   </main>
   <Footer />
 </div>
+
+<style global lang="scss">
+  @import 'src/styles/main.scss';
+</style>

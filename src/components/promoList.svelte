@@ -4,6 +4,17 @@
   import { appRespectData, fingerprintPath, leaksPath } from 'core/paths.ts';
 </script>
 
+<div class="parent">
+  <a class="div1" href={$leaksPath}><p>{$_('posts.leaks.title')}</p></a>
+  <a class="div2" href={$appRespectData}
+    ><p>
+      {$_('specials.appDb.title')}
+      <span class="tag">{$_('specials.appDb.inProgress')}</span>
+    </p></a
+  >
+  <a class="div3" href={$fingerprintPath}><p>{$_('specials.fingerprint.promoHeader')}</p></a>
+</div>
+
 <style lang="scss">
   .parent {
     display: grid;
@@ -38,12 +49,3 @@
     grid-area: 2 / 2 / 3 / 3;
   }
 </style>
-
-<div class="parent">
-  <a class="div1" href={$leaksPath}><p>{$_('posts.leaks.title')}</p></a>
-  <a class="div2" href={$appRespectData}><p>
-      {$_('specials.appDb.title')}
-      <span class="tag">{$_('specials.appDb.inProgress')}</span>
-    </p></a>
-  <a class="div3" href={$fingerprintPath}><p>{$_('specials.fingerprint.promoHeader')}</p></a>
-</div>

@@ -8,6 +8,13 @@
   export let count: number = 0;
 </script>
 
+<div class="wrapper">
+  <Link href={$leaksPath}>
+    <h3><span>{$_('posts.leaks.title')}</span></h3>
+    <h4><span>{$_('posts.leaks.count', { values: { count } })}</span></h4>
+  </Link>
+</div>
+
 <style lang="scss">
   @import 'src/styles/importable';
 
@@ -57,10 +64,3 @@
     }
   }
 </style>
-
-<div class="wrapper">
-  <Link href={$leaksPath}>
-    <h3><span>{$_('posts.leaks.title')}</span></h3>
-    <h4><span>{$_('posts.leaks.count', { values: { count } })}</span></h4>
-  </Link>
-</div>

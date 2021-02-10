@@ -13,6 +13,85 @@
   export let leak: LeakClient;
 </script>
 
+<h1>
+  {@html leak.content.title}
+</h1>
+<p class="added">
+  {$_('leaks.table.added')}:
+  {$date(new Date(leak.meta.added), { format: 'medium' })}
+</p>
+<div class="box">
+  <div class="nested main">
+    <div class="row">
+      <div>{$_('leaks.table.org')}</div>
+      <Link href={$orgPath(leak.meta.organization.content.slug)}>
+        {leak.meta.organization.content.title}
+      </Link>
+    </div>
+
+    <div class="row">
+      <div>{$_('leaks.table.spread')}</div>
+      <div class="tags">
+        {#each leak.meta.locations as location}
+          <Link class="tag" href={$locationPath(location.content.slug)}>
+            <span class="no-underline">{location.emoji} </span>{location.content.title}
+          </Link>
+        {/each}
+      </div>
+    </div>
+    <div class="row">
+      <div>{$_('leaks.table.tags')}</div>
+      <div class="tags">
+        {#each leak.meta.tags as tag}
+          <Link class="tag" href={$tagPath(tag.content.slug)}>{tag.content.title}</Link>
+        {/each}
+      </div>
+    </div>
+    <div class="row">
+      <div>{$_('leaks.table.victims')}</div>
+      <div>{leak.meta.potentialVictims}</div>
+    </div>
+    <div class="row">
+      <div>{$_('leaks.table.when')}</div>
+      <div class="when">
+        <div class:smol={!leak.meta.start}>
+          {leak.meta.start
+            ? $date(leak.meta.start, {
+                format: 'medium',
+              })
+            : $_('leaks.table.unknown').toLowerCase()}
+        </div>
+        <div>→</div>
+        <div>{$date(leak.meta.end, { format: 'medium' })}</div>
+      </div>
+    </div>
+
+    <div class="source">
+      <Link class="tag" href={leak.meta.source}>{$_('leaks.table.source')}</Link>
+    </div>
+  </div>
+</div>
+
+<div class="post-content">
+  {#if leak.meta.isCorporationLeak}
+    <CompanyDisclosure />
+  {/if}
+
+  {@html leak.content.content}
+
+  <hr />
+
+  <Feedback {leak} />
+
+  <div class="box">
+    <div class="nested">
+      <h4>{$_('email.endPostEngagement.header')}</h4>
+      <p>{$_('leaks.emailText')}</p>
+      <EmailCollector />
+    </div>
+  </div>
+</div>
+
 <style lang="scss">
   @import 'src/styles/importable';
 
@@ -64,80 +143,3 @@
     }
   }
 </style>
-
-<h1>
-  {@html leak.content.title}
-</h1>
-<p class="added">
-  {$_('leaks.table.added')}:
-  {$date(new Date(leak.meta.added), { format: 'medium' })}
-</p>
-<div class="box">
-  <div class="nested main">
-    <div class="row">
-      <div>{$_('leaks.table.org')}</div>
-      <Link href={$orgPath(leak.meta.organization.content.slug)}>
-        {leak.meta.organization.content.title}
-      </Link>
-    </div>
-
-    <div class="row">
-      <div>{$_('leaks.table.spread')}</div>
-      <div class="tags">
-        {#each leak.meta.locations as location}
-          <Link class="tag" href={$locationPath(location.content.slug)}>
-            <span class="no-underline">{location.emoji} </span>{location.content.title}
-          </Link>
-        {/each}
-      </div>
-    </div>
-    <div class="row">
-      <div>{$_('leaks.table.tags')}</div>
-      <div class="tags">
-        {#each leak.meta.tags as tag}
-          <Link class="tag" href={$tagPath(tag.content.slug)}>{tag.content.title}</Link>
-        {/each}
-      </div>
-    </div>
-    <div class="row">
-      <div>{$_('leaks.table.victims')}</div>
-      <div>{leak.meta.potentialVictims}</div>
-    </div>
-    <div class="row">
-      <div>{$_('leaks.table.when')}</div>
-      <div class="when">
-        <div class:smol={!leak.meta.start}>
-          {leak.meta.start ? $date(leak.meta.start, {
-                format: 'medium',
-              }) : $_('leaks.table.unknown').toLowerCase()}
-        </div>
-        <div>→</div>
-        <div>{$date(leak.meta.end, { format: 'medium' })}</div>
-      </div>
-    </div>
-
-    <div class="source">
-      <Link class="tag" href={leak.meta.source}>{$_('leaks.table.source')}</Link>
-    </div>
-  </div>
-</div>
-
-<div class="post-content">
-  {#if leak.meta.isCorporationLeak}
-    <CompanyDisclosure />
-  {/if}
-
-  {@html leak.content.content}
-
-  <hr />
-
-  <Feedback {leak} />
-
-  <div class="box">
-    <div class="nested">
-      <h4>{$_('email.endPostEngagement.header')}</h4>
-      <p>{$_('leaks.emailText')}</p>
-      <EmailCollector />
-    </div>
-  </div>
-</div>

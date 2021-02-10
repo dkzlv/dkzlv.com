@@ -2,6 +2,12 @@
   export let text: string;
 </script>
 
+<div class="box">
+  <div class="nested enum">
+    {@html text}
+  </div>
+</div>
+
 <style lang="scss">
   @import 'src/styles/importable';
 
@@ -45,9 +51,3 @@
     }
   }
 </style>
-
-<div class="box">
-  <div class="nested enum">
-    {@html text}
-  </div>
-</div>

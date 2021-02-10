@@ -5,10 +5,6 @@
   const dev = process.env.NODE_ENV === 'development';
 </script>
 
-<style>
-
-</style>
-
 <svelte:head>
   <title>Oops: {status}</title>
 </svelte:head>

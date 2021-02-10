@@ -2,6 +2,13 @@
   export let triggerText = '?';
 </script>
 
+<div class="tooltip">
+  <div class="tooltip__trigger">{triggerText}</div>
+  <div class="tooltip__content">
+    <slot />
+  </div>
+</div>
+
 <style lang="scss">
   @import 'src/styles/importable';
 
@@ -62,10 +69,3 @@
     }
   }
 </style>
-
-<div class="tooltip">
-  <div class="tooltip__trigger">{triggerText}</div>
-  <div class="tooltip__content">
-    <slot />
-  </div>
-</div>

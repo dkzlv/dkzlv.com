@@ -2,6 +2,8 @@
   import { fade } from 'svelte/transition';
 </script>
 
+<div class="loading" in:fade={{ delay: 150 }} out:fade />
+
 <style lang="scss">
   @import 'src/styles/importable';
 
@@ -23,5 +25,3 @@
     background-color: $background-color;
   }
 </style>
-
-<div class="loading" in:fade={{ delay: 150 }} out:fade />
