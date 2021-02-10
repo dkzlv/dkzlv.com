@@ -1,16 +1,16 @@
-<script lang="ts" context="module">
+<script context="module">
   export const classname = 'fingerprint';
 </script>
 
-<script lang="ts">
+<script>
   import { _, json } from 'svelte-i18n';
   import { onMount } from 'svelte';
   import { slide } from 'svelte/transition';
 
-  import { sample } from 'utils/random.ts';
+  import { sample } from '@/utils/random';
 
-  import { request } from 'core/service.ts';
-  import { getFingerprintHash } from 'core/dataCollection/fingerprint.ts';
+  import { request } from '@/core/service';
+  import { getFingerprintHash } from '@/core/dataCollection/fingerprint';
 
   let isLoading = false,
     justSent = false,
@@ -58,8 +58,7 @@
           class="input input--accent"
           id="demoInput"
           bind:value={message}
-          placeholder={$_('specials.fingerprint.form.placeholder')}
-        />
+          placeholder={$_('specials.fingerprint.form.placeholder')} />
         <button class="btn btn--accent {isLoading && 'btn--loading'}" on:click={onClick}>
           {$_('specials.fingerprint.form.button')}
         </button>

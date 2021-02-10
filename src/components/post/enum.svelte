@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   export let text: string;
 </script>
 
@@ -9,8 +9,6 @@
 </div>
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   .enum {
     display: grid;
 

@@ -1,8 +1,8 @@
-<script lang="ts">
+<script>
   import EmailCollector from 'components/emailCollector.svelte';
 
   import { _ } from 'svelte-i18n';
-  import { postPath } from 'core/paths.ts';
+  import { postPath } from '@/core/paths';
 </script>
 
 <div class="post-content">

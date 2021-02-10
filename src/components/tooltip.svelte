@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   export let triggerText = '?';
 </script>
 
@@ -10,8 +10,6 @@
 </div>
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   .tooltip {
     position: relative;
 

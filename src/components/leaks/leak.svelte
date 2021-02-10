@@ -1,5 +1,5 @@
-<script lang="ts">
-  import type { LeakClient } from 'core/content/leak/types';
+<script>
+  import type { LeakClient } from '@/core/content/leak/types';
 
   import { date, _ } from 'svelte-i18n';
 
@@ -7,7 +7,7 @@
   import Feedback from './feedback.svelte';
   import EmailCollector from 'components/emailCollector.svelte';
 
-  import { orgPath, locationPath, tagPath } from 'core/paths.ts';
+  import { orgPath, locationPath, tagPath } from '@/core/paths';
   import CompanyDisclosure from './companyDisclosure.svelte';
 
   export let leak: LeakClient;
@@ -93,8 +93,6 @@
 </div>
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   .added {
     color: $text-color--dimmed;
 

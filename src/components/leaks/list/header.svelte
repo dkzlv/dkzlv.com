@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { _ } from 'svelte-i18n';
 
   export let hideOrg: boolean, hideLocation: boolean;

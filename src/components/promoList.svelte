@@ -1,7 +1,7 @@
-<script lang="ts">
+<script>
   import { _ } from 'svelte-i18n';
 
-  import { appRespectData, fingerprintPath, leaksPath } from 'core/paths.ts';
+  import { appRespectData, fingerprintPath, leaksPath } from '@/core/paths';
 </script>
 
 <div class="parent">
@@ -10,8 +10,7 @@
     ><p>
       {$_('specials.appDb.title')}
       <span class="tag">{$_('specials.appDb.inProgress')}</span>
-    </p></a
-  >
+    </p></a>
   <a class="div3" href={$fingerprintPath}><p>{$_('specials.fingerprint.promoHeader')}</p></a>
 </div>
 

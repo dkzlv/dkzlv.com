@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { onMount } from 'svelte';
   import Link from 'components/link.svelte';
 
@@ -82,8 +82,6 @@
 </div>
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   .wrapper {
     text-align: center;
 

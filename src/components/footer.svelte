@@ -1,8 +1,8 @@
-<script lang="ts">
+<script>
   import { locale } from 'svelte-i18n';
   import Link from './link.svelte';
 
-  import { rootStaticPath } from 'core/paths.ts';
+  import { rootStaticPath } from '@/core/paths';
 </script>
 
 <footer>
@@ -24,8 +24,6 @@
 </footer>
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   footer {
     display: flex;
     justify-content: space-between;

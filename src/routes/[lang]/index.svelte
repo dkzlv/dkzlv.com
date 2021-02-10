@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script context="module">
   export function preload({ params }: { params: { lang: string } }) {
     return this.fetch(`${params.lang}/all.json`)
       .then((r: any) => r.json())
@@ -6,8 +6,8 @@
   }
 </script>
 
-<script lang="ts">
-  import type { Post } from 'core/content/post/types';
+<script>
+  import type { Post } from '@/core/content/post/types';
 
   import { locale, date, _ } from 'svelte-i18n';
 
@@ -45,8 +45,6 @@
 {/each}
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   div {
     margin-bottom: 37px;
   }

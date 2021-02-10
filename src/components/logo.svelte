@@ -1,7 +1,7 @@
-<script lang="ts">
+<script>
   import { onMount } from 'svelte';
 
-  import { rootStaticPath } from 'core/paths.ts';
+  import { rootStaticPath } from '@/core/paths';
 
   const classes = [
     '',
@@ -35,13 +35,10 @@
     src={`${rootStaticPath}/img/logo.jpg`}
     class={`logo ${classes[currIndex]}`}
     alt="logo"
-    height="80"
-  />
+    height="80" />
 </div>
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   .logo {
     width: 80px;
     max-width: unset;

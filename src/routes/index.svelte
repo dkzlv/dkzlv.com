@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { goto } from '@sapper/app';
   import { locales } from 'svelte-i18n';
 

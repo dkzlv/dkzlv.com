@@ -1,10 +1,10 @@
-<script lang="ts">
+<script>
   import { slide } from 'svelte/transition';
   import { _, locale } from 'svelte-i18n';
 
-  import { request } from 'core/service.ts';
-  import { isEmail } from 'utils/validations/email.ts';
-  import { delay } from 'utils/delay.ts';
+  import { request } from '@/core/service';
+  import { isEmail } from '@/utils/validations/email';
+  import { delay } from '@/utils/delay';
 
   import Tooltip from './tooltip.svelte';
 
@@ -55,13 +55,11 @@
       type="email"
       class="input input--accent email-input"
       bind:value={email}
-      placeholder={placeholderMessage}
-    />
+      placeholder={placeholderMessage} />
     <button
       class="btn btn--accent-outline subscribe-button"
       class:btn--loading={isLoading}
-      disabled={isLoading}
-    >
+      disabled={isLoading}>
       {$_('email.subscribe')}
     </button>
   </form>
@@ -79,8 +77,6 @@
 {/if}
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   .group {
     display: flex;
     align-items: stretch;

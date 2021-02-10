@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { fade } from 'svelte/transition';
 
   export let text: string;
@@ -17,8 +17,6 @@
 </div>
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   .wrapper {
     position: relative;
     padding: 0 0.5em;

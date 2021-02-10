@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import { _ } from 'svelte-i18n';
@@ -42,8 +42,6 @@
 {/if}
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   .wrapper {
     position: fixed;
     bottom: 30px;

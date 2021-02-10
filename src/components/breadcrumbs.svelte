@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import Link from './link.svelte';
 
   export let paths: { text: string; link?: string }[];
@@ -18,8 +18,6 @@
 {/if}
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   .crumbs {
     display: flex;
   }

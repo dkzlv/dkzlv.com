@@ -25,10 +25,10 @@ declare module '@sapper/app' {
 }
 
 declare module '@sapper/server' {
-  import { RequestHandler, Response, Request } from 'express';
+  import { RequestHandler } from 'express';
 
   interface MiddlewareOptions {
-    session?: (req: Request, res: Response) => unknown;
+    session?: (req: Express.Request, res: Express.Response) => unknown;
     ignore?: unknown;
   }
 

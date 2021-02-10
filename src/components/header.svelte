@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { _, locale } from 'svelte-i18n';
 
   import Logo from './logo.svelte';
@@ -33,8 +33,6 @@
 </header>
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   nav {
     display: flex;
     align-items: center;

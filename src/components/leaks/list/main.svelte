@@ -1,5 +1,5 @@
-<script lang="ts">
-  import type { LeakClient } from 'core/content/leak/types';
+<script>
+  import type { LeakClient } from '@/core/content/leak/types';
 
   import Header from './header.svelte';
   import Item from './item.svelte';
@@ -44,8 +44,6 @@
 <Feedback />
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   .main {
     position: relative;
     overflow: scroll;

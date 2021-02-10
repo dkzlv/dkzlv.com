@@ -1,11 +1,11 @@
-<script lang="ts">
-  import type { LeakClient } from 'core/content/leak/types';
+<script>
+  import type { LeakClient } from '@/core/content/leak/types';
 
   import { date, _ } from 'svelte-i18n';
 
   import Link from 'components/link.svelte';
 
-  import { leakPath, orgPath, locationPath, tagPath } from 'core/paths.ts';
+  import { leakPath, orgPath, locationPath, tagPath } from '@/core/paths';
 
   export let leak: LeakClient, hideOrg: boolean, hideLocation: boolean;
 </script>

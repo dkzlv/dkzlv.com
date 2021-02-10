@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { _ } from 'svelte-i18n';
 
   import Fingerprint from 'components/specials/privacy/fingerprint.svelte';

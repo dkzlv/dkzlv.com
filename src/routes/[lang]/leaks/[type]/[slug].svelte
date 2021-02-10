@@ -1,5 +1,5 @@
-<script lang="ts" context="module">
-  import { commonPreload } from 'core/content/post/preloadPost.ts';
+<script context="module">
+  import { commonPreload } from '@/core/content/post/preloadPost';
 
   export function preload({ params }: { params: { lang: string; type: string; slug: string } }) {
     return commonPreload(
@@ -11,8 +11,8 @@
   }
 </script>
 
-<script lang="ts">
-  import type { LeakClient } from 'core/content/leak/types';
+<script>
+  import type { LeakClient } from '@/core/content/leak/types';
 
   import { _ } from 'svelte-i18n';
   import { stores } from '@sapper/app';
@@ -21,7 +21,7 @@
   import Breadcrumbs from 'components/breadcrumbs.svelte';
   import Meta from 'components/meta.svelte';
 
-  import { leaksPath, mainPath } from 'core/paths.ts';
+  import { leaksPath, mainPath } from '@/core/paths';
 
   const { page } = stores();
 
@@ -50,7 +50,11 @@
 <Meta title={title + ' / ' + $_('nav.leaks')} />
 
 <Breadcrumbs
-  paths={[{ text: $_('nav.main'), link: $mainPath }, { text: $_('nav.leaks'), link: $leaksPath }, { text: $_('nav.meta.leaks.filterBreadcrumb') }]} />
+  paths={[
+    { text: $_('nav.main'), link: $mainPath },
+    { text: $_('nav.leaks'), link: $leaksPath },
+    { text: $_('nav.meta.leaks.filterBreadcrumb') },
+  ]} />
 
 <h1 class="no-gradient">{title}</h1>
 

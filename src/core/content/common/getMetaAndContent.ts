@@ -13,7 +13,7 @@ const metaSplitter = (rawFile: string): [string, string] => {
 
 export const getMetaAndContent = <T extends object>(rawFile: string) => {
   const [rawMeta, text] = metaSplitter(rawFile),
-    meta = yaml.safeLoad(rawMeta) as T;
+    meta = yaml.load(rawMeta) as T;
 
   return { meta, text };
 };

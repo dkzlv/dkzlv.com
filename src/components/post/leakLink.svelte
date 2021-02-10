@@ -1,7 +1,7 @@
-<script lang="ts">
+<script>
   import { _ } from 'svelte-i18n';
 
-  import { leaksPath } from 'core/paths.ts';
+  import { leaksPath } from '@/core/paths';
 
   import Link from 'components/link.svelte';
 
@@ -16,8 +16,6 @@
 </div>
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   .wrapper {
     @include mq($until: tablet-portrait) {
       width: 90%;

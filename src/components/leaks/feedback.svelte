@@ -1,5 +1,5 @@
-<script lang="ts">
-  import type { LeakClient } from 'core/content/leak/types';
+<script>
+  import type { LeakClient } from '@/core/content/leak/types';
 
   import { _ } from 'svelte-i18n';
 

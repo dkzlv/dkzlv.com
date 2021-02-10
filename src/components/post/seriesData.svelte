@@ -1,5 +1,5 @@
-<script lang="ts">
-  import type { Post } from 'core/content/post/types';
+<script>
+  import type { Post } from '@/core/content/post/types';
 
   import { _ } from 'svelte-i18n';
 
@@ -31,8 +31,7 @@
             <p>
               <span class="size-1 bold">
                 <a rel="prefetch" href={`${seriesPost.lang}/${seriesPost.slug}`}
-                  >{seriesPost.title}</a
-                >
+                  >{seriesPost.title}</a>
               </span>
               <br />
               <span class="post-content">
@@ -59,8 +58,6 @@
 </div>
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   .series-header {
     font-weight: bold;
     font-size: ms(3);
