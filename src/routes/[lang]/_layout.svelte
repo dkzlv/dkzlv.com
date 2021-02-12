@@ -7,6 +7,7 @@
   import Footer from 'components/footer.svelte';
   import ColorThemes from 'components/colorThemes.svelte';
   import PageLoading from 'components/pageLoading.svelte';
+  import ProductPromo from '@/components/productPromo';
 
   import { warn } from '@/core/consoleWarning';
 
@@ -29,9 +30,18 @@
   <main>
     <slot />
   </main>
+
+  <div class="promo">
+    <ProductPromo />
+  </div>
+
   <Footer />
 </div>
 
 <style global lang="scss">
   @import 'src/styles/main.scss';
+
+  .promo {
+    margin: 2em 0;
+  }
 </style>
