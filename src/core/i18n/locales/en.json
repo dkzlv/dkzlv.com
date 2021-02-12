@@ -129,6 +129,11 @@
         "locationTitle": "All data leaks that harmed people in this area",
         "filterBreadcrumb": "With filter"
       }
+    },
+    "productPromo": {
+      "title": "100% secure finance tracker",
+      "lead": "No 3rd party analytics, everything is encrypted in browser",
+      "features": "Track expenses, record assets, debts, credits and much more"
     }
   }
 }
