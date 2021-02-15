@@ -4,7 +4,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "open http://blog:3000/ & sapper dev",
-    "build": "NODE_ENV=production sapper build --legacy",
+    "export": "NODE_ENV=production sapper export --legacy --concurrent 1",
     "type": "tsc --noEmit && svelte-check --ignore \"src/node_modules\"",
     "content:post": "node scripts/content/post.js",
     "content:leak": "node scripts/content/leak.js",
