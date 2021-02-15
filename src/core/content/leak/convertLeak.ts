@@ -1,8 +1,8 @@
 import marked from 'marked';
 
 import { LeakMetaFromFile } from './types';
-import { HeaderRenderer, MarkedRenderer } from 'core/content/common/renderer';
-import { getMetaAndContent } from 'core/content/common/getMetaAndContent';
+import { HeaderRenderer, MarkedRenderer } from '@/core/content/common/renderer';
+import { getMetaAndContent } from '@/core/content/common/getMetaAndContent';
 
 export const convertLeak = (rawFile: string) => {
   const { meta, text } = getMetaAndContent<LeakMetaFromFile>(rawFile);

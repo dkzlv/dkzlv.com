@@ -1,41 +1,14 @@
-<script lang="ts">
-  import type { LeakClient } from 'core/content/leak/types';
+<script>
+  import type { LeakClient } from '@/core/content/leak/types';
 
   import { date, _ } from 'svelte-i18n';
 
   import Link from 'components/link.svelte';
 
-  import { leakPath, orgPath, locationPath, tagPath } from 'core/paths.ts';
+  import { leakPath, orgPath, locationPath, tagPath } from '@/core/paths';
 
   export let leak: LeakClient, hideOrg: boolean, hideLocation: boolean;
 </script>
-
-<style lang="scss">
-  @import 'src/styles/importable';
-
-  .cell {
-    padding: 1em 0.4em;
-
-    border-right: 1px dotted rgb(224, 224, 224);
-    &:last-child {
-      border-right: none;
-    }
-  }
-
-  .title {
-    position: relative;
-
-    overflow-x: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-
-  .unknown {
-    font-style: italic;
-    color: var(--text-color--dimmed);
-    font-size: 80%;
-  }
-</style>
 
 <div class="cell title" title={leak.content.title}>
   <Link href={$leakPath(leak.content.slug)}>
@@ -70,3 +43,28 @@
   {:else}<span class="unknown">{$_('leaks.table.unknown').toLowerCase()}</span>{/if}
 </div>
 <div class="cell">{$date(new Date(leak.meta.end), { format: 'medium' })}</div>
+
+<style lang="scss">
+  .cell {
+    padding: 1em 0.4em;
+
+    border-right: 1px dotted rgb(224, 224, 224);
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .title {
+    position: relative;
+
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .unknown {
+    font-style: italic;
+    color: var(--text-color--dimmed);
+    font-size: 80%;
+  }
+</style>

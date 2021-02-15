@@ -1,5 +1,5 @@
-<script lang="ts">
-  import type { Post } from 'core/content/post/types';
+<script>
+  import type { Post } from '@/core/content/post/types';
 
   import { _ } from 'svelte-i18n';
 
@@ -9,9 +9,55 @@
   $: hasAnnounced = series && series.some(meta => meta && meta.announced);
 </script>
 
-<style lang="scss">
-  @import 'src/styles/importable';
+<div class="box">
+  <div class="nested">
+    <p class="series-header">{$_('posts.series.header')}</p>
+    <ol>
+      {#each series as seriesPost}
+        <li>
+          {#if !seriesPost}
+            <span class="size-1 bold">{fallbackTitle}</span>
+            <span class="italic">{$_('posts.series.thisPost')}</span>
+          {:else if seriesPost.announced}
+            <p>
+              <span class="size-1 bold">{seriesPost.title}</span>
+              <span class="tag soon">{$_('posts.series.soon')}</span>
+              <br />
+              <span class="post-content">
+                {@html seriesPost.description}
+              </span>
+            </p>
+          {:else}
+            <p>
+              <span class="size-1 bold">
+                <a rel="prefetch" href={`${seriesPost.lang}/${seriesPost.slug}`}
+                  >{seriesPost.title}</a>
+              </span>
+              <br />
+              <span class="post-content">
+                {@html seriesPost.description}
+              </span>
+            </p>
+          {/if}
+        </li>
+      {/each}
+    </ol>
 
+    {#if hasAnnounced}
+      <hr class="short-hr" />
+
+      <p>
+        {$_('posts.series.notPublished.teaser')}
+        <br />
+        <span class="bold">{$_('posts.series.notPublished.subscribeAsap')}</span>
+        {$_('posts.series.notPublished.explain')}
+      </p>
+      <EmailCollector />
+    {/if}
+  </div>
+</div>
+
+<style lang="scss">
   .series-header {
     font-weight: bold;
     font-size: ms(3);
@@ -53,52 +99,3 @@
     border-style: dashed;
   }
 </style>
-
-<div class="box">
-  <div class="nested">
-    <p class="series-header">{$_('posts.series.header')}</p>
-    <ol>
-      {#each series as seriesPost}
-        <li>
-          {#if !seriesPost}
-            <span class="size-1 bold">{fallbackTitle}</span>
-            <span class="italic">{$_('posts.series.thisPost')}</span>
-          {:else if seriesPost.announced}
-            <p>
-              <span class="size-1 bold">{seriesPost.title}</span>
-              <span class="tag soon">{$_('posts.series.soon')}</span>
-              <br />
-              <span class="post-content">
-                {@html seriesPost.description}
-              </span>
-            </p>
-          {:else}
-            <p>
-              <span class="size-1 bold">
-                <a
-                  rel="prefetch"
-                  href={`${seriesPost.lang}/${seriesPost.slug}`}>{seriesPost.title}</a>
-              </span>
-              <br />
-              <span class="post-content">
-                {@html seriesPost.description}
-              </span>
-            </p>
-          {/if}
-        </li>
-      {/each}
-    </ol>
-
-    {#if hasAnnounced}
-      <hr class="short-hr" />
-
-      <p>
-        {$_('posts.series.notPublished.teaser')}
-        <br />
-        <span class="bold">{$_('posts.series.notPublished.subscribeAsap')}</span>
-        {$_('posts.series.notPublished.explain')}
-      </p>
-      <EmailCollector />
-    {/if}
-  </div>
-</div>

@@ -1,14 +1,23 @@
-<script lang="ts">
+<script>
   import { fade } from 'svelte/transition';
+  import { _ } from 'svelte-i18n';
 
   export let text: string;
 
   let showOverlay = true;
 </script>
 
-<style lang="scss">
-  @import 'src/styles/importable';
+<div class="wrapper">
+  {@html text}
 
+  {#if showOverlay}
+    <div class="overlay" transition:fade|local on:click={() => (showOverlay = false)} role="button">
+      {$_('specials.show')}
+    </div>
+  {/if}
+</div>
+
+<style lang="scss">
   .wrapper {
     position: relative;
     padding: 0 0.5em;
@@ -29,13 +38,3 @@
     backdrop-filter: blur(5px);
   }
 </style>
-
-<div class="wrapper">
-  {@html text}
-
-  {#if showOverlay}
-    <div class="overlay" transition:fade|local on:click={() => (showOverlay = false)} role="button">
-      Показать
-    </div>
-  {/if}
-</div>

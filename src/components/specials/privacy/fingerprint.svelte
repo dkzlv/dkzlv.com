@@ -1,16 +1,16 @@
-<script lang="ts" context="module">
+<script context="module">
   export const classname = 'fingerprint';
 </script>
 
-<script lang="ts">
+<script>
   import { _, json } from 'svelte-i18n';
   import { onMount } from 'svelte';
   import { slide } from 'svelte/transition';
 
-  import { sample } from 'utils/random.ts';
+  import { sample } from '@/utils/random';
 
-  import { request } from 'core/service.ts';
-  import { getFingerprintHash } from 'core/dataCollection/fingerprint.ts';
+  import { request } from '@/core/service';
+  import { getFingerprintHash } from '@/core/dataCollection/fingerprint';
 
   let isLoading = false,
     justSent = false,
@@ -47,40 +47,7 @@
   };
 </script>
 
-<style lang="scss">
-  @import 'src/styles/importable.scss';
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-  }
-
-  .interactive {
-    display: flex;
-
-    @include mq($until: mobile) {
-      flex-direction: column;
-    }
-
-    input {
-      @include mq($until: mobile) {
-        min-width: 120px;
-        flex: 1;
-        margin-bottom: 5px;
-        width: 100%;
-      }
-
-      margin-right: 5px;
-    }
-  }
-
-  .previous {
-    margin-top: 10px;
-  }
-</style>
-
-<div class="box" {id}>
+<div class="box">
   <div class="nested">
     <div class="container">
       <p>{$_('specials.fingerprint.header')}</p>
@@ -110,3 +77,34 @@
     </div>
   </div>
 </div>
+
+<style lang="scss">
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .interactive {
+    display: flex;
+
+    @include mq($until: mobile) {
+      flex-direction: column;
+    }
+
+    input {
+      @include mq($until: mobile) {
+        min-width: 120px;
+        flex: 1;
+        margin-bottom: 5px;
+        width: 100%;
+      }
+
+      margin-right: 5px;
+    }
+  }
+
+  .previous {
+    margin-top: 10px;
+  }
+</style>

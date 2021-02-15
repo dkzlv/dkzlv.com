@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   export let href: string,
     targetBlank = false as boolean,
     nofollow = false as boolean;

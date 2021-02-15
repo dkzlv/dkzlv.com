@@ -1,10 +1,14 @@
-<script lang="ts">
+<script>
   export let text: string;
 </script>
 
-<style lang="scss">
-  @import 'src/styles/importable';
+<div class="box">
+  <div class="nested enum">
+    {@html text}
+  </div>
+</div>
 
+<style lang="scss">
   .enum {
     display: grid;
 
@@ -45,9 +49,3 @@
     }
   }
 </style>
-
-<div class="box">
-  <div class="nested enum">
-    {@html text}
-  </div>
-</div>

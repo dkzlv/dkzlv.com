@@ -1,16 +1,42 @@
-<script lang="ts">
-  import { _ } from 'svelte-i18n';
+<script>
+  import Promo from './leaks/promo.svelte';
 
-  import { appRespectData, fingerprintPath, leaksPath } from 'core/paths.ts';
+  import { _ } from 'svelte-i18n';
+  import { fade } from 'svelte/transition';
+
+  import { fingerprintPath, leaksPath } from '@/core/paths';
+  let clientWidth: number,
+    clientHeight: number,
+    run = true;
+  if (process.env.BROWSER) setTimeout(() => (run = false), 3000);
 </script>
+
+<div class="parent">
+  <a
+    class="div1"
+    href={$leaksPath}
+    on:mouseover={() => (run = true)}
+    on:mouseleave={() => (run = false)}>
+    <div class="canvas" bind:clientWidth bind:clientHeight>
+      {#if clientHeight}
+        <div in:fade>
+          <Promo {run} width={clientWidth} height={clientHeight} />
+        </div>
+      {/if}
+    </div>
+    <p><span class="add-back">{$_('posts.leaks.title')}</span></p>
+  </a>
+  <a class="div2" href={$fingerprintPath}>
+    <p><span class="add-back">{$_('specials.fingerprint.promoHeader')}</span></p></a>
+</div>
 
 <style lang="scss">
   .parent {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 0.5em;
+    grid-row-gap: 0.5em;
   }
 
   a {
@@ -28,22 +54,39 @@
     }
   }
 
+  span.add-back {
+    background-color: white;
+    padding: 3px 5px;
+  }
+
   .div1 {
+    position: relative;
     grid-area: 1 / 1 / 3 / 2;
+    border-radius: 1em;
+    overflow: hidden;
+
+    .canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    p {
+      position: relative;
+      font-size: 1.6rem;
+    }
   }
+
   .div2 {
-    grid-area: 1 / 2 / 2 / 3;
-  }
-  .div3 {
-    grid-area: 2 / 2 / 3 / 3;
+    position: relative;
+    border-radius: 1em;
+    overflow: hidden;
+
+    grid-area: 1 / 2 / 3 / 3;
+
+    background: url('/static/img/posts/privacy1/fingerprint_text_pr0n.png');
+    height: 188px;
   }
 </style>
-
-<div class="parent">
-  <a class="div1" href={$leaksPath}><p>{$_('posts.leaks.title')}</p></a>
-  <a class="div2" href={$appRespectData}><p>
-      {$_('specials.appDb.title')}
-      <span class="tag">{$_('specials.appDb.inProgress')}</span>
-    </p></a>
-  <a class="div3" href={$fingerprintPath}><p>{$_('specials.fingerprint.promoHeader')}</p></a>
-</div>

@@ -1,7 +1,7 @@
-<script lang="ts">
+<script>
   import { onMount } from 'svelte';
 
-  import { rootStaticPath } from 'core/paths.ts';
+  import { rootStaticPath } from '@/core/paths';
 
   const classes = [
     '',
@@ -30,9 +30,15 @@
   onMount(setFixedInterval);
 </script>
 
-<style lang="scss">
-  @import 'src/styles/importable';
+<div on:mouseover={() => setFixedInterval(250)} on:mouseout={() => setFixedInterval()}>
+  <img
+    src={`${rootStaticPath}/img/logo.jpg`}
+    class={`logo ${classes[currIndex]}`}
+    alt="logo"
+    height="80" />
+</div>
 
+<style lang="scss">
   .logo {
     width: 80px;
     max-width: unset;
@@ -74,11 +80,3 @@
     mask-image: url(/static/img/logomask/yggdrasil.svg);
   }
 </style>
-
-<div on:mouseover={() => setFixedInterval(250)} on:mouseout={() => setFixedInterval()}>
-  <img
-    src={`${rootStaticPath}/img/logo.jpg`}
-    class={`logo ${classes[currIndex]}`}
-    alt="logo"
-    height="80" />
-</div>

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { _ } from 'svelte-i18n';
 
   import EmailCollector from 'components/emailCollector.svelte';

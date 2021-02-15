@@ -1,8 +1,8 @@
-<script lang="ts">
+<script>
   import { goto } from '@sapper/app';
   import { locales } from 'svelte-i18n';
 
-  if (process.env.BROWSER) goto('./' + navigator.language.slice(0, 2));
+  if (process.env.BROWSER) goto('./' + navigator.language.slice(0, 2), { replaceState: true });
 </script>
 
 <div style="display: none">

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import { _ } from 'svelte-i18n';
@@ -24,9 +24,24 @@
   $: showBeforeHiding = y <= 500;
 </script>
 
-<style lang="scss">
-  @import 'src/styles/importable';
+<svelte:window bind:scrollY={y} />
 
+{#if show && showBeforeHiding}
+  <div
+    class="wrapper"
+    in:fade={{ delay: 500, duration: 200 }}
+    out:fade={{ duration: 200 }}
+    on:click={onChange}
+  >
+    <label class="p label" for="switch">{$_('colorSwitcher')}</label>
+    <div class="switch">
+      <input id="switch" type="checkbox" bind:checked={checkboxValue} on:change={onChange} />
+      <span class="slider" />
+    </div>
+  </div>
+{/if}
+
+<style lang="scss">
   .wrapper {
     position: fixed;
     bottom: 30px;
@@ -103,19 +118,3 @@
     }
   }
 </style>
-
-<svelte:window bind:scrollY={y} />
-
-{#if show && showBeforeHiding}
-  <div
-    class="wrapper"
-    in:fade={{ delay: 500, duration: 200 }}
-    out:fade={{ duration: 200 }}
-    on:click={onChange}>
-    <label class="p label" for="switch">{$_('colorSwitcher')}</label>
-    <div class="switch">
-      <input id="switch" type="checkbox" bind:checked={checkboxValue} on:change={onChange} />
-      <span class="slider" />
-    </div>
-  </div>
-{/if}

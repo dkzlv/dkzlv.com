@@ -1,10 +1,15 @@
-<script lang="ts">
+<script>
   export let triggerText = '?';
 </script>
 
-<style lang="scss">
-  @import 'src/styles/importable';
+<div class="tooltip">
+  <div class="tooltip__trigger">{triggerText}</div>
+  <div class="tooltip__content">
+    <slot />
+  </div>
+</div>
 
+<style lang="scss">
   .tooltip {
     position: relative;
 
@@ -62,10 +67,3 @@
     }
   }
 </style>
-
-<div class="tooltip">
-  <div class="tooltip__trigger">{triggerText}</div>
-  <div class="tooltip__content">
-    <slot />
-  </div>
-</div>

@@ -6,14 +6,16 @@ import fs from 'fs';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
-import svelte from 'rollup-plugin-svelte';
-import babel from 'rollup-plugin-babel';
-import typescript from 'rollup-plugin-typescript2';
-import { terser } from 'rollup-plugin-terser';
 import json from '@rollup/plugin-json';
+import url from '@rollup/plugin-url';
+import alias from '@rollup/plugin-alias';
+import typescript from '@rollup/plugin-typescript';
+import svelte from 'rollup-plugin-svelte';
+import babel from '@rollup/plugin-babel';
+import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
-import autoPreprocess from 'svelte-preprocess';
+import sveltePreprocess from 'svelte-preprocess';
 
 const mode = process.env.NODE_ENV,
   dev = mode === 'development',
@@ -27,11 +29,15 @@ const onwarn = (warning, onwarn) =>
   (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
   onwarn(warning);
 
-const preprocess = autoPreprocess({
+const preprocess = sveltePreprocess({
+  sourceMap: true,
+  defaults: {
+    script: 'typescript',
+    style: 'scss',
+  },
   postcss: true,
-  scss: true,
-  typescript: {
-    transpileOnly: true,
+  scss: {
+    prependData: `@import 'src/styles/importable';`,
   },
 });
 
@@ -58,7 +64,7 @@ const watchPostsPlugin = {
 
 export default {
   client: {
-    input: config.client.input(),
+    input: config.client.input().replace(/\.js$/, '.ts'),
     output: config.client.output(),
     plugins: [
       watchPostsPlugin,
@@ -67,27 +73,33 @@ export default {
         'process.env.BROWSER': true,
         ...commonReplace,
       }),
+      url({
+        sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
+        publicPath: '/client/',
+      }),
+      alias({
+        entries: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
+      }),
       resolve({
         browser: true,
-        customResolveOptions: {
-          paths: [path.join(__dirname, 'src')],
-        },
         dedupe: ['svelte'],
-      }),
-      commonjs(),
-      typescript(),
-      svelte({
-        dev,
-        preprocess,
-        hydratable: true,
-        emitCss: false,
+        moduleDirectories: ['node_modules', path.join(__dirname, 'src')],
       }),
       json(),
+      commonjs(),
+      typescript({ sourceMap: true }),
+      svelte({
+        preprocess,
+        compilerOptions: {
+          dev,
+          hydratable: true,
+        },
+      }),
 
       legacy &&
         babel({
           extensions: ['.js', '.ts', '.mjs', '.html', '.svelte'],
-          runtimeHelpers: true,
+          babelHelpers: 'runtime',
           exclude: ['node_modules/@babel/**'],
           presets: ['@babel/preset-env'],
           plugins: [
@@ -112,7 +124,7 @@ export default {
   },
 
   server: {
-    input: config.server.input(),
+    input: { server: config.server.input().server.replace(/\.js$/, '.ts') },
     output: config.server.output(),
     plugins: [
       watchPostsPlugin,
@@ -121,19 +133,28 @@ export default {
         ...commonReplace,
       }),
       resolve({
-        customResolveOptions: {
-          paths: [path.join(__dirname, 'src')],
-        },
         dedupe: ['svelte'],
+        moduleDirectories: ['node_modules', path.join(__dirname, 'src')],
       }),
-      commonjs(),
-      typescript(),
-      svelte({
-        generate: 'ssr',
-        dev,
-        preprocess,
+      alias({
+        entries: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
+      }),
+      url({
+        sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
+        publicPath: '/client/',
+        emitFiles: false, // already emitted by client build
       }),
       json(),
+      commonjs(),
+      typescript({ sourceMap: true }),
+      svelte({
+        preprocess,
+        emitCss: false,
+        compilerOptions: {
+          generate: 'ssr',
+          dev,
+        },
+      }),
     ],
     external: Object.keys(pkg.dependencies).concat(
       require('module').builtinModules || Object.keys(process.binding('natives')),

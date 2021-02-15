@@ -1,8 +1,8 @@
 import marked from 'marked';
 
 import { PostMetaFromFile } from './types';
-import { MarkedRenderer } from 'core/content/common/renderer';
-import { getMetaAndContent } from 'core/content/common/getMetaAndContent';
+import { MarkedRenderer } from '@/core/content/common/renderer';
+import { getMetaAndContent } from '@/core/content/common/getMetaAndContent';
 
 export const convertPost = (
   rawFile: string,

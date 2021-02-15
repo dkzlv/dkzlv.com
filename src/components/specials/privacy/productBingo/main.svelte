@@ -1,11 +1,11 @@
-<script lang="ts" context="module">
+<script context="module">
   export const classname = 'product-bingo';
 </script>
 
-<script lang="ts">
+<script>
   import { onMount } from 'svelte';
 
-  import { mountComponentToClassSelector } from 'utils/mountComponentToSelector.ts';
+  import { mountComponentToClassSelector } from '@/utils/mountComponentToSelector';
 
   import HiddenBlock from './hiddenBlock.svelte';
 
@@ -17,9 +17,11 @@
   });
 </script>
 
-<style lang="scss">
-  @import 'src/styles/importable';
+<div class="wrapper">
+  {@html text}
+</div>
 
+<style lang="scss">
   .wrapper {
     display: grid;
     grid-template-columns: 2fr 3fr;
@@ -40,7 +42,3 @@
     }
   }
 </style>
-
-<div class="wrapper">
-  {@html text}
-</div>

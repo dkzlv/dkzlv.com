@@ -1,16 +1,21 @@
-<script lang="ts">
+<script>
   import { _ } from 'svelte-i18n';
 
-  import { leaksPath } from 'core/paths.ts';
+  import { leaksPath } from '@/core/paths';
 
   import Link from 'components/link.svelte';
 
   export let count: number = 0;
 </script>
 
-<style lang="scss">
-  @import 'src/styles/importable';
+<div class="wrapper">
+  <Link href={$leaksPath}>
+    <h3><span>{$_('posts.leaks.title')}</span></h3>
+    <h4><span>{$_('posts.leaks.count', { values: { count } })}</span></h4>
+  </Link>
+</div>
 
+<style lang="scss">
   .wrapper {
     @include mq($until: tablet-portrait) {
       width: 90%;
@@ -57,10 +62,3 @@
     }
   }
 </style>
-
-<div class="wrapper">
-  <Link href={$leaksPath}>
-    <h3><span>{$_('posts.leaks.title')}</span></h3>
-    <h4><span>{$_('posts.leaks.count', { values: { count } })}</span></h4>
-  </Link>
-</div>

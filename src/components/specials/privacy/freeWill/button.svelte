@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { createEventDispatcher } from 'svelte';
   import { slide } from 'svelte/transition';
 
@@ -20,9 +20,18 @@
     text = `Ндааа, дружище. Самостоятельность на высоте. Давайте вы не будете переводить ${commonCryptoText}? Прошу вас, не надо.`;
 </script>
 
-<style lang="scss">
-  @import 'src/styles/_importable.scss';
+<div class="button-wrapper">
+  <button class="btn btn--accent btn--fullwidth" on:click={click}>Нажми меня!</button>
+  <div class="confession">
+    {#if clicked}
+      <p in:slide>
+        {@html text}
+      </p>
+    {/if}
+  </div>
+</div>
 
+<style lang="scss">
   .button-wrapper {
     display: flex;
     flex-direction: column;
@@ -44,14 +53,3 @@
     text-align: center;
   }
 </style>
-
-<div class="button-wrapper">
-  <button class="btn btn--accent btn--fullwidth" on:click={click}>Нажми меня!</button>
-  <div class="confession">
-    {#if clicked}
-      <p in:slide>
-        {@html text}
-      </p>
-    {/if}
-  </div>
-</div>

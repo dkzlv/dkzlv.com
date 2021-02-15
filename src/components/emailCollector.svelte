@@ -1,10 +1,10 @@
-<script lang="ts">
+<script>
   import { slide } from 'svelte/transition';
   import { _, locale } from 'svelte-i18n';
 
-  import { request } from 'core/service.ts';
-  import { isEmail } from 'utils/validations/email.ts';
-  import { delay } from 'utils/delay.ts';
+  import { request } from '@/core/service';
+  import { isEmail } from '@/utils/validations/email';
+  import { delay } from '@/utils/delay';
 
   import Tooltip from './tooltip.svelte';
 
@@ -47,9 +47,36 @@
     };
 </script>
 
-<style lang="scss">
-  @import 'src/styles/importable';
+<div class="group">
+  <form novalidate on:submit|preventDefault={onSubmit}>
+    <label for={id} class="hide">{$_('email.placeholder')}</label>
+    <input
+      {id}
+      type="email"
+      class="input input--accent email-input"
+      bind:value={email}
+      placeholder={placeholderMessage} />
+    <button
+      class="btn btn--accent-outline subscribe-button"
+      class:btn--loading={isLoading}
+      disabled={isLoading}>
+      {$_('email.subscribe')}
+    </button>
+  </form>
+  <Tooltip>
+    <p class="tooltip__header">{$_('email.tooltip.header')}</p>
+    <p class="tooltip__p">{$_('email.tooltip.noNudes')}</p>
+    <p class="tooltip__p">{$_('email.tooltip.articles')}</p>
+  </Tooltip>
+</div>
 
+{#if errorCode}
+  <p class="text--error" transition:slide={{ duration: 200 }}>{errors[errorCode]}</p>
+{:else if success}
+  <p class="text--success" transition:slide={{ duration: 200 }}>{$_('email.success')}</p>
+{/if}
+
+<style lang="scss">
   .group {
     display: flex;
     align-items: stretch;
@@ -83,32 +110,3 @@
     }
   }
 </style>
-
-<div class="group">
-  <form novalidate on:submit|preventDefault={onSubmit}>
-    <label for={id} class="hide">{$_('email.placeholder')}</label>
-    <input
-      {id}
-      type="email"
-      class="input input--accent email-input"
-      bind:value={email}
-      placeholder={placeholderMessage} />
-    <button
-      class="btn btn--accent-outline subscribe-button"
-      class:btn--loading={isLoading}
-      disabled={isLoading}>
-      {$_('email.subscribe')}
-    </button>
-  </form>
-  <Tooltip>
-    <p class="tooltip__header">{$_('email.tooltip.header')}</p>
-    <p class="tooltip__p">{$_('email.tooltip.noNudes')}</p>
-    <p class="tooltip__p">{$_('email.tooltip.articles')}</p>
-  </Tooltip>
-</div>
-
-{#if errorCode}
-  <p class="text--error" transition:slide={{ duration: 200 }}>{errors[errorCode]}</p>
-{:else if success}
-  <p class="text--success" transition:slide={{ duration: 200 }}>{$_('email.success')}</p>
-{/if}

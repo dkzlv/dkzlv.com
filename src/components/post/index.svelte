@@ -1,11 +1,11 @@
-<script lang="ts">
-  import type { Post } from 'core/content/post/types';
+<script>
+  import type { Post } from '@/core/content/post/types';
 
   import { onMount } from 'svelte';
   import { locale } from 'svelte-i18n';
 
-  import { generateString } from 'utils/random.ts';
-  import { mountComponentToClassSelector } from 'utils/mountComponentToSelector.ts';
+  import { generateString } from '@/utils/random';
+  import { mountComponentToClassSelector } from '@/utils/mountComponentToSelector';
 
   import Meta from 'components/meta.svelte';
   import SeriesData from './seriesData.svelte';

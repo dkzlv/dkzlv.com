@@ -1,10 +1,10 @@
-<script lang="ts">
+<script>
   import { fade } from 'svelte/transition';
 </script>
 
-<style lang="scss">
-  @import 'src/styles/importable';
+<div class="loading" in:fade={{ delay: 150 }} out:fade />
 
+<style lang="scss">
   .loading {
     position: fixed;
     height: 2em;
@@ -23,5 +23,3 @@
     background-color: $background-color;
   }
 </style>
-
-<div class="loading" in:fade={{ delay: 150 }} out:fade />

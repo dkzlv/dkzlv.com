@@ -1,5 +1,5 @@
-<script lang="ts">
-  import type { LeakClient } from 'core/content/leak/types';
+<script>
+  import type { LeakClient } from '@/core/content/leak/types';
 
   import Header from './header.svelte';
   import Item from './item.svelte';
@@ -24,9 +24,26 @@
     (showOverlay = containerEl.scrollWidth - containerEl.scrollLeft > containerEl.clientWidth);
 </script>
 
-<style lang="scss">
-  @import 'src/styles/importable';
+<div class="box">
+  <div class="main" bind:this={containerEl} on:scroll={scrollHandler}>
+    <div class="table" style={inlineStyle}>
+      <div class="row">
+        <Header {hideOrg} {hideLocation} />
+      </div>
+      {#each leaks as leak}
+        <div class="row">
+          <Item {leak} {hideOrg} {hideLocation} />
+        </div>
+      {/each}
+    </div>
+  </div>
+  <div class="overlay hiding-overlay" class:show={showOverlay} />
+  <div class="arrow hiding-overlay" class:show={showOverlay}>→</div>
+</div>
 
+<Feedback />
+
+<style lang="scss">
   .main {
     position: relative;
     overflow: scroll;
@@ -122,22 +139,3 @@
     }
   }
 </style>
-
-<div class="box">
-  <div class="main" bind:this={containerEl} on:scroll={scrollHandler}>
-    <div class="table" style={inlineStyle}>
-      <div class="row">
-        <Header {hideOrg} {hideLocation} />
-      </div>
-      {#each leaks as leak}
-        <div class="row">
-          <Item {leak} {hideOrg} {hideLocation} />
-        </div>
-      {/each}
-    </div>
-  </div>
-  <div class="overlay hiding-overlay" class:show={showOverlay} />
-  <div class="arrow hiding-overlay" class:show={showOverlay}>→</div>
-</div>
-
-<Feedback />

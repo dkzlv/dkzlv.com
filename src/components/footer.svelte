@@ -1,29 +1,9 @@
-<script lang="ts">
+<script>
   import { locale } from 'svelte-i18n';
   import Link from './link.svelte';
 
-  import { rootStaticPath } from 'core/paths.ts';
+  import { rootStaticPath } from '@/core/paths';
 </script>
-
-<style lang="scss">
-  @import 'src/styles/importable';
-
-  footer {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
-
-    @include safeAreaPaddingMixin(bottom, 20px, 0);
-  }
-
-  .right {
-    display: flex;
-  }
-
-  footer :global(.rss) {
-    margin-left: 15px;
-  }
-</style>
 
 <footer>
   <p>
@@ -42,3 +22,21 @@
     </Link>
   </div>
 </footer>
+
+<style lang="scss">
+  footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+
+    @include safeAreaPaddingMixin(bottom, 20px, 0);
+  }
+
+  .right {
+    display: flex;
+  }
+
+  footer :global(.rss) {
+    margin-left: 15px;
+  }
+</style>

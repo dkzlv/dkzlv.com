@@ -1,25 +1,8 @@
-<script lang="ts">
+<script>
   import Link from './link.svelte';
 
   export let paths: { text: string; link?: string }[];
 </script>
-
-<style lang="scss">
-  @import 'src/styles/importable';
-
-  .crumbs {
-    display: flex;
-  }
-
-  .divider {
-    padding: 0 0.75em;
-
-    &::before {
-      content: '\0002f';
-      color: $text-color--dimmed;
-    }
-  }
-</style>
 
 {#if paths.length}
   <div class="crumbs">
@@ -33,3 +16,18 @@
     {/each}
   </div>
 {/if}
+
+<style lang="scss">
+  .crumbs {
+    display: flex;
+  }
+
+  .divider {
+    padding: 0 0.75em;
+
+    &::before {
+      content: '\0002f';
+      color: $text-color--dimmed;
+    }
+  }
+</style>

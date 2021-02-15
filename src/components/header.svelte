@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { _, locale } from 'svelte-i18n';
 
   import Logo from './logo.svelte';
@@ -7,9 +7,32 @@
   import Link from './link.svelte';
 </script>
 
-<style lang="scss">
-  @import 'src/styles/importable';
+<header>
+  <nav>
+    <div class="logo">
+      <a href={$locale}>
+        <Logo />
+      </a>
+    </div>
+    <div class="newsletter-text">
+      <p>
+        {$_('header.onboard')}
+        <Link nofollow class="twitter-link" href="https://twitter.com/d_kzlv/">
+          <span class="twitterIcon">
+            <TwitterIcon />
+          </span>
+          {$_('header.twitter')}
+        </Link>
+        {$_('header.sameContent')}
+        <br />
+        {$_('header.join')}
+      </p>
+      <EmailCollector />
+    </div>
+  </nav>
+</header>
 
+<style lang="scss">
   nav {
     display: flex;
     align-items: center;
@@ -57,28 +80,3 @@
     margin-left: 0.35em;
   }
 </style>
-
-<header>
-  <nav>
-    <div class="logo">
-      <a href={$locale}>
-        <Logo />
-      </a>
-    </div>
-    <div class="newsletter-text">
-      <p>
-        {$_('header.onboard')}
-        <Link nofollow class="twitter-link" href="https://twitter.com/d_kzlv/">
-          <span class="twitterIcon">
-            <TwitterIcon />
-          </span>
-          {$_('header.twitter')}
-        </Link>
-        {$_('header.sameContent')}
-        <br />
-        {$_('header.join')}
-      </p>
-      <EmailCollector />
-    </div>
-  </nav>
-</header>

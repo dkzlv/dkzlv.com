@@ -1,6 +1,6 @@
-import { LeakBackend } from 'core/content/leak/types';
+import { LeakBackend } from '@/core/content/leak/types';
 
-import { commonGetLeakFactory } from 'core/content/leak/commonGet';
+import { commonGetLeakFactory } from '@/core/content/leak/commonGet';
 
 export const get = commonGetLeakFactory<{ type: 'org' | 'location' | 'tag'; slug: string }>(
   (leaks, { type, slug, lang }) => {

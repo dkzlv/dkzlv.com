@@ -1,8 +1,8 @@
-<script lang="ts">
+<script>
   import { onMount } from 'svelte';
 
-  import FreeWillButton from 'components/specials/privacy/freeWill/button.svelte';
-  import FreeWillFollowup from 'components/specials/privacy/freeWill/followUp.svelte';
+  import FreeWillButton from './freeWill/button.svelte';
+  import FreeWillFollowup from './freeWill/followUp.svelte';
 
   onMount(() => {
     const button = new FreeWillButton({
