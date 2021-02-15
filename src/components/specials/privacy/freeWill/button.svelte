@@ -32,8 +32,6 @@
 </div>
 
 <style lang="scss">
-  @import 'src/styles/_importable.scss';
-
   .button-wrapper {
     display: flex;
     flex-direction: column;

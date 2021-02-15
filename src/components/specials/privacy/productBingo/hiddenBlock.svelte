@@ -1,5 +1,6 @@
 <script>
   import { fade } from 'svelte/transition';
+  import { _ } from 'svelte-i18n';
 
   export let text: string;
 
@@ -11,7 +12,7 @@
 
   {#if showOverlay}
     <div class="overlay" transition:fade|local on:click={() => (showOverlay = false)} role="button">
-      Показать
+      {$_('specials.show')}
     </div>
   {/if}
 </div>

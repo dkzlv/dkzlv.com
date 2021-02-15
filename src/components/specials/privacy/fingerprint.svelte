@@ -47,7 +47,7 @@
   };
 </script>
 
-<div class="box" {id}>
+<div class="box">
   <div class="nested">
     <div class="container">
       <p>{$_('specials.fingerprint.header')}</p>
@@ -79,8 +79,6 @@
 </div>
 
 <style lang="scss">
-  @import 'src/styles/importable.scss';
-
   .container {
     display: flex;
     flex-direction: column;

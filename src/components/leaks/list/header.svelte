@@ -17,8 +17,6 @@
 <div>{$_('leaks.table.end')}</div>
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   $border-style: 1px dotted rgb(184, 184, 184);
 
   div {

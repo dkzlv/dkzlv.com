@@ -5,6 +5,7 @@
 <script>
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
+  import { _, json } from 'svelte-i18n';
 
   let pentagons: any, redSquares: any, confessionEl: HTMLDivElement;
 
@@ -48,24 +49,27 @@
   });
 
   let counter = 0,
-    confessionText = '';
-  $: {
-    if (counter === 1) confessionText = 'ты пидор';
-    if (counter === 2) confessionText = 'всё еще пидор';
-    else if (counter === 3) confessionText = 'хорош уже';
-    else if (counter === 5) confessionText = ':(';
-    else if (counter === 10) confessionText = 'ПАСХАЛКА';
-    else if (counter === 28) confessionText = 'ПАСХАЛКА №2';
-    else if (counter === 50) confessionText = 'А ты упорный, молодец';
-  }
+    optsIndex = -1,
+    confessionTexts: string[] = $json('specials.pidor.opts');
+  $: if (
+    counter === 1 ||
+    counter === 2 ||
+    counter === 3 ||
+    counter === 5 ||
+    counter === 10 ||
+    counter === 28 ||
+    counter === 50
+  )
+    optsIndex++;
 
   const listener = () => {
-    const app = document.getElementById('app')!;
-    const rawCoor = confessionEl.getBoundingClientRect();
-    const coor = {
-      x: rawCoor.x + rawCoor.width / 2,
-      y: confessionEl.offsetTop + rawCoor.height / 2,
-    };
+    const app = document.getElementById('app')!,
+      rawCoor = confessionEl.getBoundingClientRect(),
+      coor = {
+        x: rawCoor.x + rawCoor.width / 2,
+        y: confessionEl.offsetTop + rawCoor.height / 2,
+      };
+
     app.classList.add('acid-background');
     setTimeout(() => {
       app.classList.remove('acid-background');
@@ -79,16 +83,15 @@
 
 <div class="button-wrapper">
   <div bind:this={confessionEl} class="confession">
-    {#if confessionText}
-      <p in:fade>{confessionText}</p>
+    {#if optsIndex >= 0}
+      <p in:fade>{confessionTexts[optsIndex]}</p>
     {/if}
   </div>
-  <button class="btn btn--accent btn--fullwidth" on:click={listener}>Не ссы, не убьёт</button>
+  <button class="btn btn--accent btn--fullwidth" on:click={listener}
+    >{$_('specials.pidor.button')}</button>
 </div>
 
 <style lang="scss">
-  @import 'src/styles/_importable.scss';
-
   .button-wrapper {
     display: flex;
     flex-direction: column;

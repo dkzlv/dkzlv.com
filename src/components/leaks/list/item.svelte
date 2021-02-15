@@ -45,8 +45,6 @@
 <div class="cell">{$date(new Date(leak.meta.end), { format: 'medium' })}</div>
 
 <style lang="scss">
-  @import 'src/styles/importable';
-
   .cell {
     padding: 1em 0.4em;
 

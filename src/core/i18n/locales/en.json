@@ -84,7 +84,20 @@
       "inProgress": "In progress",
       "main": "Main idea is to create a list of apps that, to my opinion, respect users' data. The requirements are listed {tagO}in this post{tagC}. I'm in the middle of the process right now. While you wait please subscribe for my newsletter, then you'll get the content even faster."
     },
-    "header": "Timeless demos"
+    "header": "Timeless demos",
+    "pidor": {
+      "button": "Won't kill you, don't be afraid",
+      "opts": [
+        "you're a piece of shit",
+        "still a piece of shit",
+        "hey, stop it",
+        ":(",
+        "EASTER EGG",
+        "EASTER EGG #2",
+        "You're stubborn, good for you"
+      ]
+    },
+    "show": "Show"
   },
   "colorSwitcher": "Change colors",
   "consoleWarning": "Hi there, anonymous hacker! We hire THE BEST janitors our there, and you seem to fit our team! Drop a few lines to trash@bin.com",
