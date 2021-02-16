@@ -52,6 +52,10 @@
 
     transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
+    // Odd Safari bug: if you remove this line, canvas will not have its corners cut according
+    // to border-radius rule.
+    transform: scale(1);
+
     &:hover {
       transform: scale(1.05);
       box-shadow: 0 0.5em 2em -0.25em rgba($black, 0.1), 0 0px 1em 4px rgba($black, 0.02);
