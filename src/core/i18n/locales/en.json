@@ -72,10 +72,16 @@
       },
       "standalone": {
         "header": "Fingerprinting in Web",
-        "description": [
-          "This is a part of my post about how corporations gather data about us even if we don't know nothing about it. It's a very small and simple demo. The idea is that you visit a porn-site as a thing you're most ashamed of with inkognito mode on. You're a bit of a hacker yourself, aren't you?",
-          "This demo will show you how silly of you it is to think that rich powerful and smart corporations cannot deduce your ID if you use inkognito more. Go ahead!"
-        ]
+        "description": {
+          "withLink": "This is {linkO}a part of my post{linkC} about how corporations gather data about us even if we don't know nothing about it. It's a very small and simple demo. The idea is that you visit a porn-site as a thing you're most ashamed of with incognito mode on. You're a bit of a hacker yourself, aren't you?",
+          "knowsId": "This demo will show you how silly of you it is to think that rich powerful and smart corporations cannot deduce your ID if you use inkognito more. Go ahead!",
+          "additional": [
+            "Additional data:",
+            "I've added 10k unique fingerprints as extras with different answers;",
+            "I wipe all the data every day at 00:00 GMT+0;",
+            "data will never leave my servers. What happens in Las Vegas only goes in bad comedies."
+          ]
+        }
       },
       "promoHeader": "Pr0n + fingerprinting"
     },

@@ -3,10 +3,10 @@
   import { onMount } from 'svelte';
   import { locale, locales, _ } from 'svelte-i18n';
 
-  import Header from 'components/header.svelte';
-  import Footer from 'components/footer.svelte';
-  import ColorThemes from 'components/colorThemes.svelte';
-  import PageLoading from 'components/pageLoading.svelte';
+  import Header from '@/components/header.svelte';
+  import Footer from '@/components/footer.svelte';
+  import ColorThemes from '@/components/colorThemes.svelte';
+  import PageLoading from '@/components/pageLoading.svelte';
   import ProductPromo from '@/components/productPromo';
 
   import { warn } from '@/core/consoleWarning';
@@ -31,17 +31,9 @@
     <slot />
   </main>
 
-  <div class="promo">
-    <ProductPromo />
-  </div>
-
   <Footer />
 </div>
 
 <style global lang="scss">
   @import 'src/styles/main.scss';
-
-  .promo {
-    margin: 2em 0 3em;
-  }
 </style>
