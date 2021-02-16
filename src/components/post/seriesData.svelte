@@ -64,6 +64,7 @@
   }
 
   .soon {
+    display: inline-block;
     margin-left: 5px;
   }
 
