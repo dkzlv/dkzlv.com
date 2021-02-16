@@ -17,11 +17,16 @@
     )}&body=${encodeURIComponent(body)}`;
   }
 
+  $: linkTags = {
+    linkO: `<a href="${link}" rel="noreferrer noopener" target="_blank">`,
+    linkC: '</a>',
+  };
+
   $: paragraph = leak
     ? $_('leaks.feedback.pOld', {
-        values: { link: link },
+        values: linkTags,
       })
-    : $_('leaks.feedback.pNew', { values: { link: link } });
+    : $_('leaks.feedback.pNew', { values: linkTags });
 </script>
 
 <h4>{leak ? $_('leaks.feedback.headerOld') : $_('leaks.feedback.headerNew')}</h4>

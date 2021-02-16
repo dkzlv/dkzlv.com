@@ -9,10 +9,11 @@
 <script>
   import type { Post } from '@/core/content/post/types';
 
-  import { locale, date, _ } from 'svelte-i18n';
-
   import Meta from 'components/meta.svelte';
   import PromoList from 'components/promoList.svelte';
+  import ProductPromo from '@/components/productPromo/productPromo.svelte';
+
+  import { locale, date, _ } from 'svelte-i18n';
 
   export let postsMeta: Post['meta'][];
 </script>
@@ -44,6 +45,10 @@
   </div>
 {/each}
 
+<div class="promo">
+  <ProductPromo />
+</div>
+
 <style lang="scss">
   div {
     margin-bottom: 37px;
@@ -62,5 +67,9 @@
     margin-bottom: 12px;
 
     color: $text-color--dimmed;
+  }
+
+  .promo {
+    margin: 2em 0 3em;
   }
 </style>

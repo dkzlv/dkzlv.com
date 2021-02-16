@@ -1,5 +1,7 @@
 <script context="module">
   export const classname = 'fingerprint';
+
+  const codeTags = { codeO: '<code>', codeC: '</code>' };
 </script>
 
 <script>
@@ -65,13 +67,17 @@
       </div>
       {#if justSent}
         <p class="previous" in:slide>
-          {@html $_('specials.fingerprint.result.success', { values: { fingerprint, href } })}
+          {@html $_('specials.fingerprint.result.success', {
+            values: { ...codeTags, linkO: `<a href="${href}">`, linkC: '</a>', fingerprint },
+          })}
         </p>
       {/if}
 
       {#if prevMessage && !justSent}
         <p class="previous" in:slide>
-          {@html $_('specials.fingerprint.result.guess', { values: { fingerprint, prevMessage } })}
+          {@html $_('specials.fingerprint.result.guess', {
+            values: { ...codeTags, fingerprint, prevMessage },
+          })}
         </p>
       {/if}
     </div>
