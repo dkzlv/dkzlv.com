@@ -7,16 +7,20 @@
   import { fingerprintPath, leaksPath } from '@/core/paths';
   let clientWidth: number,
     clientHeight: number,
-    run = true;
-  if (process.env.BROWSER) setTimeout(() => (run = false), 3000);
+    initialRun = true,
+    hovered = false;
+
+  $: run = initialRun || hovered;
+
+  if (process.env.BROWSER) setTimeout(() => (initialRun = false), 3000);
 </script>
 
 <div class="parent">
   <a
     class="div1"
     href={$leaksPath}
-    on:mouseover={() => (run = true)}
-    on:mouseleave={() => (run = false)}>
+    on:mouseover={() => (hovered = true)}
+    on:mouseleave={() => (hovered = false)}>
     <div class="canvas" bind:clientWidth bind:clientHeight>
       {#if clientHeight}
         <div in:fade>
@@ -47,6 +51,10 @@
     text-decoration: none;
 
     transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    // Odd Safari bug: if you remove this line, canvas will not have its corners cut according
+    // to border-radius rule.
+    transform: scale(1);
 
     &:hover {
       transform: scale(1.05);
