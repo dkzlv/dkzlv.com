@@ -8,7 +8,7 @@
 </script>
 
 <div class="wrapper">
-  {@html text}
+  <p>{@html text}</p>
 
   {#if showOverlay}
     <div class="overlay" transition:fade|local on:click={() => (showOverlay = false)} role="button">
