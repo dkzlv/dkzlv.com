@@ -165,6 +165,23 @@
           "slug": "beeline"
         }
       }
+    },
+    {
+      "id": "q1vG_U4FqOn6S86f8kOhQ",
+      "img": null,
+      "site": "http://whisper.sh/",
+      "content": {
+        "ru": {
+          "title": "Whisper",
+          "content": "",
+          "slug": "whisper"
+        },
+        "en": {
+          "title": "Whisper",
+          "content": "",
+          "slug": "whisper"
+        }
+      }
     }
   ],
   "locations": [
