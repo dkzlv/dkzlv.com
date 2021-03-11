@@ -1,7 +1,7 @@
 ---
 lang: en
 title: What they can do with data and what we shall do
-date: 24.02.2021
+date: 11.03.2021
 description: "<strong>TL;DR:</strong> everything is very bad. Prognosis is not comforting; if we do nothing all the distopias we read in fiction novels will look like a happy holiday at your granny's"
 slug: what-they-can-do-with-data-and-what-we-shall-do
 published: 1
@@ -124,7 +124,7 @@ There are two illusions, and there are two conclusions as well.
  
 If you’re a white male, 30 y.o. with two kids who buy two liters of cheap whiskey a week, there’s a high percent chance you go into the cohort of people who will be sentenced for domestic violence. Machine brain has all the input: it gets data about whiskey from a partnership from your favorite retail where you pass your discount card to cut 30 cents of a $100 purchase; they got your age from your social network account; they picked up your race from your blurry Instagram photos from your last vacation 8 years ago in a cheap motel 5km from your home; and kids — that's the easiest part, because of the purchase history (diapers), your social profiles (what sick mother wouldn't brag her child can now do some shit every living person on Earth can?!), you watching TikTok on how to raise a normal human being, and so on.
 
-![Диаграмма Эйлера-Венна](/img/posts/privacy2/euler_venn.png)
+![Euler-Venn diagram](/img/posts/en_privacy2/euler_venn.png)
 
 So even if you don't post a restricting order from your wife, some IT corporations know for sure that, when you suddenly change your place of stay, they need to offer you a divorce lawyer. It's that simple.
 
@@ -136,7 +136,7 @@ It's very important, that all these boundaries are very flexible and can be chan
 
 All of these boundaries are mostly formed by the incoming information. Your moral norms, knowledge base, the way you evolve as a personality — it all mostly happens due to the incoming information. And we let IT giants carefully pick the information we consume daily on a personal basis.
 
-![Буллшит от корпораций](/img/posts/privacy2/bullshit.png)
+![Corporation's bullshit](/img/posts/en_privacy2/bullshit.png)
 
 If we take a step back, all the social norms and legal rules are not made of thin air as well: they are written by politicians, who are populist in their very nature, they seek for a problem that has the highest citations, the nerve of the public. Who accepts these norms? The same politicians, whose main goal is to please the public. And the public somehow found out about these politicians… probably, from social media, some advertising campaign on the internet, or a fundraising event, which they knew about from an invite in some other social media. Yeah.
 
@@ -298,7 +298,7 @@ Good software that has MIT or GNU GPL license is a very rare and fantastic beast
 
 BUZZWORD BINGO. All the venture capitalists suddenly get Vietnam flashbacks of years 2017-2018, when crazy bums were walking down the streets with fairytales about blockchain and Dapps (decentralized app) saving us. Mad ideas raised huge money on ICOs trying to solve once and for all the problem of [personal data access](https://tykn.tech/), [messaging](https://www.usedust.com/), [storing files](https://storj.io/), [selling your stuff online](https://rarible.com/) and whatnot. 
 
-![Принцип работы децентрализованных приложений с блокчейном](/img/posts/privacy2/decenter.png)
+![Decentralization with blockchain](/img/posts/en_privacy2/decenter.png)
 
 The idea is that all the users should store the state of all the data of all the system, but should be encrypted. This way the community gets to control the service to some extent.
 
@@ -313,7 +313,7 @@ No, blockchain won't be a platform for big applications in its current form beca
 
 The idea seems the same, but not really. Let's allow anybody to run their own version of Facebook. One will run their own community with BLM and socialism, the other will have uneducated rednecks, appreciation of billionaires, and [an insulin dose with a market price of $98](https://www.rand.org/news/press/2020/10/06.html). They both will be kings and queens in their respective mini-Facebooks, and only they will have complete access to the data, and the user that wants to see both the communities will think it's a single service.
 
-![Принцип работы распределённых приложений](/img/posts/privacy2/distributed.png)
+![Distributed apps](/img/posts/en_privacy2/distributed.png)
 
 There's a few examples out there. [Mastodon](https://en.wikipedia.org/wiki/Mastodon_(software)) tries to replace Twitter, [Diaspora](https://en.wikipedia.org/wiki/Diaspora_(social_network)) is the "equivalent" of Facebook, [Peertube](https://en.wikipedia.org/wiki/PeerTube) — ... have a guess.
 
