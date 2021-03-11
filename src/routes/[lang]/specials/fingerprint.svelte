@@ -1,9 +1,10 @@
 <script>
-  import { rootSitePath } from '@/core/paths';
-
   import Fingerprint from 'components/specials/privacy/fingerprint.svelte';
 
   import { _, locale } from 'svelte-i18n';
+
+  import { rootSitePath } from '@/core/paths';
+  import { generateLinkTags } from '@/utils/accentTags';
 
   $: link =
     $locale == 'ru'
@@ -16,7 +17,7 @@
 
   <p>
     {@html $_('specials.fingerprint.standalone.description.withLink', {
-      values: { linkO: `<a href="${link}" target="_blank">`, linkC: '</a>' },
+      values: generateLinkTags(link),
     })}
   </p>
   <p>{$_('specials.fingerprint.standalone.description.knowsId')}</p>

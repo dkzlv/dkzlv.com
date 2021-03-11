@@ -1,7 +1,5 @@
 <script context="module">
   export const classname = 'fingerprint';
-
-  const codeTags = { codeO: '<code>', codeC: '</code>' };
 </script>
 
 <script>
@@ -10,6 +8,7 @@
   import { slide } from 'svelte/transition';
 
   import { sample } from '@/utils/random';
+  import { codeTags, generateLinkTags } from '@/utils/accentTags';
 
   import { request } from '@/core/service';
   import { getFingerprintHash } from '@/core/dataCollection/fingerprint';
@@ -68,7 +67,7 @@
       {#if justSent}
         <p class="previous" in:slide>
           {@html $_('specials.fingerprint.result.success', {
-            values: { ...codeTags, linkO: `<a href="${href}">`, linkC: '</a>', fingerprint },
+            values: { ...codeTags, ...generateLinkTags(href), fingerprint },
           })}
         </p>
       {/if}
