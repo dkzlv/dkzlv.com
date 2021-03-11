@@ -1,4 +1,5 @@
 <script>
+  import { _ } from 'svelte-i18n';
   import { createEventDispatcher } from 'svelte';
   import { slide } from 'svelte/transition';
 
@@ -24,9 +25,7 @@
   {#if shouldFire && show}
     <blockquote transition:slide|local>
       <p>
-        К слову, о какой свободе воли и непредсказуемости идёт речь, если с вами как с малыми детьми
-        работает реверсивная психология? Сказал жать кнопку, а вы прямо специально, аж назло не
-        нажали.
+        {$_('specials.freeWill.reverse')}
       </p>
     </blockquote>
   {/if}

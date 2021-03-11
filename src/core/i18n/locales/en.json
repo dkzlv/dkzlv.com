@@ -67,8 +67,8 @@
         ]
       },
       "result": {
-        "success": "Noted! Your ID: {codeO}{fingerprint}{codeC}. Now {linkO}go to the same page{linkC} from inkognito mode.",
-        "guess": "Well, I presume, your favorite pr0n is {codeO}{prevMessage}{codeC} (you filthy bastard), and your ID is {codeO}{fingerprint}{codeC}."
+        "success": "Noted! Your ID: {tagO}{fingerprint}{tagC}. Now {linkO}go to the same page{linkC} from inkognito mode.",
+        "guess": "Well, I presume, your favorite pr0n is {tagO}{prevMessage}{tagC} (you filthy bastard), and your ID is {tagO}{fingerprint}{tagC}."
       },
       "standalone": {
         "header": "Fingerprinting in Web",
@@ -85,11 +85,6 @@
       },
       "promoHeader": "Pr0n + fingerprinting"
     },
-    "appDb": {
-      "title": "Apps that respect your data",
-      "inProgress": "In progress",
-      "main": "Main idea is to create a list of apps that, to my opinion, respect users' data. The requirements are listed {tagO}in this post{tagC}. I'm in the middle of the process right now. While you wait please subscribe for my newsletter, then you'll get the content even faster."
-    },
     "header": "Timeless demos",
     "pidor": {
       "button": "Won't kill you, don't be afraid",
@@ -103,7 +98,13 @@
         "You're stubborn, good for you"
       ]
     },
-    "show": "Show"
+    "show": "Show",
+    "freeWill": {
+      "click": "Click me!",
+      "reverse": "By the way, what free will do we talk about? You're just like small kids, you respond well to reverse psychology.",
+      "reactDelayed": "Yeah, pal, self-sufficiency at its best. Please don't transfer all {linkEthO}your ETH here{linkEthC} and {linkBtcO}BTC here{linkBtcC}.",
+      "reactAtOnce": "What free will are we talking about? You follow orders from some random text on the internet. To proceed, please transfer all {linkEthO}your ETH here{linkEthC} and {linkBtcO}BTC here{linkBtcC}."
+    }
   },
   "colorSwitcher": "Change colors",
   "consoleWarning": "Hi there, anonymous hacker! We hire THE BEST janitors our there, and you seem to fit our team! Drop a few lines to trash@bin.com",

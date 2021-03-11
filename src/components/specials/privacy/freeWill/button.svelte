@@ -1,4 +1,22 @@
+<script context="module">
+  import { generateLinkTags } from '@/utils/accentTags';
+
+  const payload = {
+    values: {
+      ...generateLinkTags(
+        'https://etherscan.io/address/0x33dD3a9296319D7DFe1b0Cd22c4a7e8DC0111DBc',
+        'Eth',
+      ),
+      ...generateLinkTags(
+        'https://blockchair.com/bitcoin/address/12Q9AyNcHCXij33ciiKRKeUByTFExNMhxc?_type=address',
+        'Btc',
+      ),
+    },
+  };
+</script>
+
 <script>
+  import { _ } from 'svelte-i18n';
   import { createEventDispatcher } from 'svelte';
   import { slide } from 'svelte/transition';
 
@@ -7,21 +25,19 @@
   export let followUpWasScrolled = false;
 
   const click = () => {
-      clicked = true;
-      dispatch('clicked');
-    },
-    commonCryptoText =
-      'все свои <a href="https://etherscan.io/address/0x33dD3a9296319D7DFe1b0Cd22c4a7e8DC0111DBc" target="_blank" rel="noopener noreferrer nofollow">эфиры сюда</a>, а <a href="https://blockchair.com/bitcoin/address/12Q9AyNcHCXij33ciiKRKeUByTFExNMhxc?_type=address" target="_blank" rel="noopener noreferrer nofollow">битки — сюда</a>';
+    clicked = true;
+    dispatch('clicked');
+  };
 
   let clicked = false,
-    text = `Ну и о какой свободе воли идёт речь, если вы просто слушаетесь первого же приказа? Давайте тогда переводите ${commonCryptoText}.`;
+    text = $_('specials.freeWill.reactAtOnce', payload);
 
-  $: if (followUpWasScrolled && !clicked)
-    text = `Ндааа, дружище. Самостоятельность на высоте. Давайте вы не будете переводить ${commonCryptoText}? Прошу вас, не надо.`;
+  $: if (followUpWasScrolled && !clicked) text = $_('specials.freeWill.reactDelayed', payload);
 </script>
 
 <div class="button-wrapper">
-  <button class="btn btn--accent btn--fullwidth" on:click={click}>Нажми меня!</button>
+  <button class="btn btn--accent btn--fullwidth" on:click={click}
+    >{$_('specials.freeWill.click')}</button>
   <div class="confession">
     {#if clicked}
       <p in:slide>

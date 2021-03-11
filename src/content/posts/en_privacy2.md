@@ -83,15 +83,15 @@ But the post is not about that. I just wanted to seed some thoughts. You shouldn
  [Apple Watch can quite accurately predict your schedule](https://www.dailydot.com/irl/apple-watch-privacy-activity-sex/). Fitbit used to do that as well, and [even accidentally leaked exposed this data](https://www.forbes.com/sites/kashmirhill/2011/07/05/fitbit-moves-quickly-after-users-sex-stats-exposed/?sh=309c5f3e4327). Most fun part was when they required all the students of [an evangelical university to own a FitBit with reading access for their teachers](https://arstechnica.com/gadgets/2016/02/evangelical-university-requires-fitbit-ownership-data-syncing-for-freshmen). Pay attention, padawans, masturbation leads to Satan, hairy palms and blindness!
  
 </div>
- 
+
 Yeah, let me get this crystal clear.
 
 **Everything you do** is there on the servers: how often you visit the gym, what is your typical route to your workplace, what books you read, what people you meet, how you earn you money, what food allergies you have, and that things you like so much you can sell your soul for it.
- 
+
 There are not many companies that unified all this data into a single point, in one ecosystem, we’re able to count them on one hand. They connect a lot of very different sources: some from their own products, some — from commercial partners, some — from other sites, some were bought from offline retails.
- 
+
 The most interesting question is what can they do with it.
- 
+
 ## Wild world of statistics
  
 Hey, Dan, cmon, you’re full of shit. Yeah, I smoke weed from time to time, I steal toilet paper and staples from my employer, sometimes I give ma wife a good beat when she gets too bold, and like a normal guy, I like to have a little too much beer before I drive home from a bar. But nobody knows that! I’m not a retard to share it on my fucking MySpace.
@@ -99,29 +99,29 @@ Hey, Dan, cmon, you’re full of shit. Yeah, I smoke weed from time to time, I s
 You get it right, pal. There are a few nuances though.
 
 We have a few illusions about ourselves.
- 
+
 ### Illusion #0: we’re all are unique snowflakes ❄️
  
 We tend to think that the experience of an individual human being is unrepeatable and we are completely unique. Maybe it is true, there are no two exactly the same persons in the world, but [snowflakes can be categorized into 40 different types](https://en.wikipedia.org/wiki/Snowflake#Classification), inside which the difference is minimal, atomic even. People are mostly the same.
 
 You can have unique hobbies, unusual jobs, strange child traumas, or such stuff, but you’re not that hard to read if one gets enough information. Even we can finish sentences for close friends or predict their chain of thought, and we only have our incomplete protein-based brains!
- 
+
 Now imagine you have a machine-based brain made of millions of cores of high-performance CPUs, that have all the data about this exact person and 2 billion other people on its (virtual) table. You’re an open book for it, like a banal novelette, like a film in the Marvel universe, your actions are all but secondary and predictable to a very high chance.
- 
+
 ### Illusion #1: we have a completely free will
  
 We tend to think we have a complete and unconditional free will: I will push this shitty button if I want, or will not push it otherwise.
- 
+
 <div class='freewill'></div>
- 
+
 If we put aside the philosophical side of the question (I’m a compatibilist if you need to know), then I think from the practical point of view some kind of determinism *guides* our actions. We won’t call no all-knowing Laplace's demon, we’ll just say that on average a person who’s put into some circumstances does not have a completely free will, but limited by some boundaries: social (you’re in the army — you follow orders), moral (you have a knife in your hand — you don’t go dismembering people around you, you’re not a psycho from Saint Petersburg, Russia), personal (you don’t know how to drive — you don’t drive), informational (you know that amanitas are poisonous — think don’t eat) and others. But you have some room for improvisation inside these boundaries.
 
 There are two illusions, and there are two conclusions as well.
- 
+
 ### You’re not unique
  
 <div class='freewill-followup'></div>
- 
+
 If you’re a white male, 30 y.o. with two kids who buy two liters of cheap whiskey a week, there’s a high percent chance you go into the cohort of people who will be sentenced for domestic violence. Machine brain has all the input: it gets data about whiskey from a partnership from your favorite retail where you pass your discount card to cut 30 cents of a $100 purchase; they got your age from your social network account; they picked up your race from your blurry Instagram photos from your last vacation 8 years ago in a cheap motel 5km from your home; and kids — that's the easiest part, because of the purchase history (diapers), your social profiles (what sick mother wouldn't brag her child can now do some shit every living person on Earth can?!), you watching TikTok on how to raise a normal human being, and so on.
 
 ![Euler-Venn diagram](/img/posts/en_privacy2/euler_venn.png)
@@ -153,11 +153,11 @@ I think most of my horror stories are true — at least partially. The amount of
   **ad monetization**
 
   for now, corporations mostly earn money with ads, so most of their complex calculations and approximations of your behavior are targeted on increasing two metrics: retaining you on the platform (more sessions and making them longer) and increasing the probability of you clicking the ad. They do their job just fine.
-    
+
   **separation of concerns**
-  
+
   it's very simple to separate the concerns of different employees inside the company. There's this cool case of [Theranos](https://en.wikipedia.org/wiki/Theranos). They allegedly invented a way to run dozens of blood tests on a sample of a single drop. They raised $1.4B in total. Their founder walked in a black turtleneck, she was called "Steve Jobs in a skirt". Total success. But the invention was a huge lie, but only the most top of the top management knew it, it was literally 5 people — even though they peaked with 800 employees! They just organized the work so that you only worked on a small part of the device and never saw the big picture. It works just the same with code, but it's much simpler.
-  
+
   **GAFAM is invincible**
 
   [GAFAM](https://en.wikipedia.org/wiki/Big_Tech), most probably, won't go anywhere. Neither will the IT. There are no reasons to think we won't use Apple and Android devices in 5 or 10 years. The device may change (if AR-glasses will finally mature), but we've passed some inflection point when it is very difficult to have some meaningful innovations or major OS developed outside of a few companies. Apple has a $16B R&D budget, it's almost impossible to imagine there will be some other company that can overthrow. Nobody can catch up to them.
@@ -193,21 +193,21 @@ I love razors: Occam's, Hanlon's, Gilette's. I even derived a razor of my own in
   <div class="header">
 
   ❤️ Our appeal
-  
+
   </div>
 
   <div class="header">
-  
+
   💔 Our monetization
-  
+
   </div>
 
   Everyday auto-feeder for pets
 
   <div class="hide-behind-blur">
-  
+
   If the owners are on a long vacation, we add microtransactions, or the pet is dead
-  
+
   </div>
 
   Photo app with cutie masks
@@ -215,15 +215,15 @@ I love razors: Occam's, Hanlon's, Gilette's. I even derived a razor of my own in
   <div class="hide-behind-blur">
 
   Analyze faces, find all non-whites, sell their geolocation 300 items a package to neo-nazi
-  
+
   </div>
 
   Safe space for LGBT
 
   <div class="hide-behind-blur">
-  
+
   Try to sell out the company to a conservative Islamic organization
-  
+
   </div>
 
   Anonymous message board to whistleblow about corruption and abuse of power
@@ -231,11 +231,11 @@ I love razors: Occam's, Hanlon's, Gilette's. I even derived a razor of my own in
   <div class="hide-behind-blur">
 
   $0.99 a month — subscribe and get notifications when your name pops up in the message.
-  
+
   $2.99 — delete any message.
-  
+
   $5.99 — find out who ratted you.
-  
+
   </div>
 
 </div>
@@ -395,7 +395,7 @@ I'm quite sure all these criteria combined can minimize your risks. [Drop me a l
 
 But the most important thing is that for the majority of all the services in the world (messengers, social networks, search engines, note-taking apps, blogs, internet media, task managers, taxi services, online theaters, etc.) all these requirements **won't disrupt the user experience** in any way. It will also allow the company to earn the money — which ultimately means the company can last longer and innovate just as much. These are the two main reasons why there are at least some changes it will work for the users.
 
-![*Safe Money](/img/posts/privacy2/promo.png)
+![*Safe Money](/img/posts/en_privacy2/promo.png)
 
 Shameless plug.
 
@@ -433,7 +433,7 @@ Your actions are simple enough:
 
 <div class='share'>
 
-  Agitate! There's no hypocrisy in using social media *for the greater good*!
+  Spread the word! There's no hypocrisy in using social media *for the greater good*!
   
 </div>
 
