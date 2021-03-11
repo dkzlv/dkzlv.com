@@ -1,9 +1,9 @@
 ---
 lang: en
-title: What they can do with data and what we shall do
+title: What corporations do with data? Have we already lost?
 date: 11.03.2021
 description: "<strong>TL;DR:</strong> everything is very bad. Prognosis is not comforting; if we do nothing all the distopias we read in fiction novels will look like a happy holiday at your granny's"
-slug: what-they-can-do-with-data-and-what-we-shall-do
+slug: what-corporations-do-with-data-and-have-we-lost
 published: 1
 series: ["how-they-harvest-data", ""]
 registerExtraComponents: ["freeWill", "productBingo"]
