@@ -6,7 +6,7 @@ emailCollectorMessage: Yeah, I know, bad PR, but I have a confession to make. I 
 date: 15.02.2021
 published: 1
 slug: how-they-harvest-data
-series: ["", "what-they-can-do-with-data-and-what-we-shall-do"]
+series: ["", "what-corporations-do-with-data-and-have-we-lost"]
 registerExtraComponents: ["fingerprint", "pidor"]
 ---
 
