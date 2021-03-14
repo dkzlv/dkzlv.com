@@ -24,3 +24,6 @@ export const leaksPath = derived(locale, $locale => `/${$locale}/leaks`),
   orgPath = leakTypeFactory('org'),
   locationPath = leakTypeFactory('location'),
   tagPath = leakTypeFactory('tag');
+
+export const repoUrl = 'https://github.com/dkzlv/dkzlv.com',
+  getLicenseUrl = (filename: string) => `${repoUrl}/blob/master/${filename}`;

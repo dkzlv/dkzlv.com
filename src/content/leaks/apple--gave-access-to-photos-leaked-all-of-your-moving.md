@@ -39,14 +39,14 @@ added: 02.12.2020
 
   **Technically fixed in iOS 14**.
 
-  Actually if you're not specifically limiting app's access down to certain photos (which I think people rarely do, because it is very inconvenient) but just give access to the whole gallery, the situation remains the same for you.
+  In reality, if you're not specifically limiting the app's access down to certain photos (which I think people rarely do, because it is very inconvenient) but just give access to the whole gallery, the situation remains the same for you.
 
 </div>
 
 The idea is simple: if you gave access to your photos to any application on iOS, it… hmm… get access to the photos! But it is not that obvious, that the app can look, analyze and even send all these photos without your approval.
 
-For example, every photo has some metadata, [EXIF](https://en.wikipedia.org/wiki/Exif). Among other things it contains the precise time when the photo was shot, and very accurate geo information. The app gets access to this information as well! I specifically wrote "geo information" and not "geolocation", because it even contains the information on the speen and altitude when the photo was taken.
+For example, every photo has some metadata, EXIF. Among other things, it contains the precise time when the photo was shot and very accurate geoinformation. The app gets access to this information as well! I specifically wrote "geoinformation" and not "geolocation", because it even contains information on the speed and altitude when the photo was taken.
 
-From the time of the photo one can get an educated guess about your home and work address: home is the repeatable place where you take photos in mornings or evenings, work — daylight photos on business days. It's also simple enough to guess your previous vacation places, find out your favorite bar or events you attended to. Felix Krause managed to get 12k locations for 0.58s in his PoC-app — yeah, phones are that fast nowadays.
+From the time of the photo, one can get an educated guess about your home and work address: home is a repeatable place where you take photos in mornings or evenings, work — daylight photos on business days. It's also simple enough to guess your previous vacation places, find out your favorite bar or events you attended to. Felix Krause managed to get 12k locations for 0.58s in his PoC-app — yeah, phones are that fast nowadays.
 
-These's also this thing, that if an app has access to your photos it can analyze the contents of it. There's plenty of [free and public ML-models](https://github.com/notAI-tech/NudeNet) that detect NSFW images, it's a piece of cake to add them to an app. ~4ms for a photo (can be even faster, depends on the phone and the model itself), so it will take rougly 40s to detect all nudes in my photo library that contains 10k shots I've taken since 2012. The app can do every sort of thing with them — including sending to a server. All other object detection stuff works well too.
+There's also this thing, that if an app has access to your photos it can analyze the contents of it. There's plenty of free and public ML-models that detect NSFW images, it's a piece of cake to add them to an app. ~4ms for a photo (can be even faster, depends on the phone and the model itself), so it will take roughly 40s to detect all nudes in my photo library that contains 10k shots I've taken since 2012. The app can do every sort of thing with them — including sending to a server. All other object detection stuff works well too.

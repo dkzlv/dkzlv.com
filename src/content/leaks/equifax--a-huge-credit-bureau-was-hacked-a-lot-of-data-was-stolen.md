@@ -26,10 +26,10 @@ added: 30.11.2020
 
 # A huge credit bureau was hacked, a lot of data was stolen
 
-Shady story. Everyone casted stones in China every single day for introducing us to covid in February 2020, but later US government announced that this hack was performed, presumably, by China's People's Liberation Army. Chinese Communist Party denied these claims (why wouldn't they?).
+Shady story. Everyone cast stones in China every single day for introducing us to covid in February 2020, but later US government announced that this hack was performed, presumably, by China's People's Liberation Army. Chinese Communist Party denied these claims (why wouldn't they?).
 
-But how much data does Equifax have in their possetion? Shouldn't be *that much*. Well, it is, and even more.
+But how much data does Equifax have in their possession? Shouldn't be *that much*. Well, it is, and even more.
 
-The servers were exposed for 76 days. Hackers managed to steal Social security numbers, names, addresses, birth dates, driver's licences of 147M americans, 15M brittish and 22k canadians. They also stole about 200k credit card numbers and some personal documents of 182k people.
+The servers were exposed for 76 days. Hackers managed to steal Social security numbers, names, addresses, birth dates, driver's licenses of 147M Americans, 15M British, and 22k Canadians. They also stole about 200k credit card numbers and some personal documents of 182k people.
 
-Really, they are not guessing your credit score based on your social security number, are they? Equifax's CEO said the hackers also stole some trade secrets, but he did not clarify what those were.
+They are not guessing your credit score based on your social security number, are they? Equifax's CEO said the hackers also stole some trade secrets, but he did not clarify what those were.
