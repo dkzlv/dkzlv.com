@@ -29,8 +29,8 @@ added: 14.03.2021
 
 NOBODY'S SAFE, haha. Karma's a bitch, I guess.
 
-Most probably the hackers (those, that hacked) won't be able to get much out of it. They took emails, usernames, hashed passwords, but the hackers (the users) became hackers because they know how it all works. I highly doubt anyone would be able to get some cool info out of it.
+Most probably the hackers (those, that hacked) won't be able to get much out of it. They took emails, usernames, hashed passwords, but the hackers (those, who were hacked) became hackers (the profession) because they know how it all works. I highly doubt anyone would be able to get some cool info out of it.
 
-But what can better illustrate the point that there's no real security in modern applications, that this?
+But what can better illustrate the point that there's no real security in modern applications, than this?
 
 There were 4 forums hacked, by the way. One forum even lost access to its bitcoin wallet. There are rumors, that some spy agencies are involved in these hacks, but it sounds strange as they would keep the data to themselves and not put it out for sale.
