@@ -51,7 +51,7 @@ You got me. Sorry. I shouldn't have made up such stories. Let's use the real one
 
   ![*Bulgaria's, Israel, and Brazil flags](/img/posts/privacy2/flags.png)
 
-  Honestly, I'm laughing my ass out. Long story short: [hackers downloaded data about all the taxpayers in the whole of Bulgaria](/en/leaks/a-hacker-broke-into-bulgaria-and-39-s-tax-system); [Israel's government lost data about all the voters in the country](/en/leaks/personal-data-of-all-the-voters-in-the-country-leaked) (addresses, names, phones, IDs, etc.); [Brazil's Ministry of Health leaked crucial data on all of their citizens' health](https://www.zdnet.com/article/data-of-243-million-brazilians-exposed-online-via-website-source-code/), 243M people in total.
+  Honestly, I'm laughing my ass out. Long story short: [hackers downloaded data about all the taxpayers in the whole of Bulgaria](/en/leaks/a-18-y-o-broke-into-bulgaria-and-39-s-tax-system); [Israel's government lost data about all the voters in the country](/en/leaks/personal-data-of-all-the-voters-in-the-country-leaked) (addresses, names, phones, IDs, etc.); [Brazil's Ministry of Health leaked crucial data on all of their citizens' health](https://www.zdnet.com/article/data-of-243-million-brazilians-exposed-online-via-website-source-code/), 243M people in total.
 
 </div>
 

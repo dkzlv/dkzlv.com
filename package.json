@@ -1,6 +1,6 @@
 {
   "name": "dkzlv-com",
-  "version": "14.03.2021v2",
+  "version": "14.03.2021v3",
   "license": "UNLICENSED",
   "scripts": {
     "dev": "open http://blog:3000/ & sapper dev",
