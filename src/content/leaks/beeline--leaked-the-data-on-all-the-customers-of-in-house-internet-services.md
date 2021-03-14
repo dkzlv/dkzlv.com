@@ -21,8 +21,8 @@ added: 22.12.2020
 
 # Leaked the data on all the customers of in-house internet services
 
-Pasports, home and mobile phone numbers, names, addresses.
+Passports, home, and mobile phone numbers, names, addresses.
 
-The most fascinating part of these stories is that we read this article back in 2019, but the leak had happened in 2017! Should we tell the clients? Hell no, being transparent is for losers! We have a privacy policy that forbids our clients anything and allows us everything.
+The most fascinating part of these stories is that we read this article back in 2019, but the leak had happened in 2017! Should we tell the clients? Hell no, being transparent is for losers! We have a privacy policy that forbids our clients from anything and allows us everything.
 
-Make note to tell the PR people to say that all the people involved in this leak were punished and the whole problem is way exaggerated.
+Make a note to tell the PR people to say that all the people involved in this leak were punished and the whole problem is way exaggerated.
