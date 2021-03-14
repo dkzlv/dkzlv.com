@@ -44,6 +44,21 @@
           "slug": "b2b"
         }
       }
+    },
+    {
+      "id": "ojf0Nv-rZbC7AB_XVtgtL",
+      "content": {
+        "ru": {
+          "title": "странное",
+          "content": "То, что не вписывается в стандарты обычных сливов",
+          "slug": "strannoe"
+        },
+        "en": {
+          "title": "Odd",
+          "content": "Stuff that doesn't fit in usual leaks standards",
+          "slug": "odd"
+        }
+      }
     }
   ],
   "organizations": [
@@ -180,6 +195,23 @@
           "title": "Whisper",
           "content": "",
           "slug": "whisper"
+        }
+      }
+    },
+    {
+      "id": "ppOzwfei3Iwt1iR5ek8XF",
+      "img": null,
+      "site": null,
+      "content": {
+        "ru": {
+          "title": "Mazafaka",
+          "content": "Хакерский форум. Ссылку давать не будем, их деятельность слегка не в рамках закона.",
+          "slug": "mazafaka"
+        },
+        "en": {
+          "title": "Mazafaka",
+          "content": "Don't get mad. It's the name of a popular Russian forum for hackers. Won't give you a link, strictly speaking, they are outlaws.",
+          "slug": "mazafaka"
         }
       }
     }
