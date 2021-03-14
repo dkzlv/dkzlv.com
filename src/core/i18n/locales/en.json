@@ -154,6 +154,7 @@
       "title": "100% secure finance tracker",
       "lead": "No 3rd party analytics, everything is encrypted in browser",
       "features": "Track expenses, record assets, debts, credits and much more"
-    }
+    },
+    "license": "Content is licensed under {linkCcO}CC BY-NC-SA v4.0{linkCcC}, {linkCodeO}the code{linkCodeC} is licensed under {linkMitO}MIT{linkMitC}."
   }
 }
