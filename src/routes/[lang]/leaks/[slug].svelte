@@ -16,9 +16,9 @@
 
   import { _ } from 'svelte-i18n';
 
-  import Leak from 'components/leaks/leak.svelte';
-  import Breadcrumbs from 'components/breadcrumbs.svelte';
-  import Meta from 'components/meta.svelte';
+  import Leak from '@/components/leaks/leak.svelte';
+  import Breadcrumbs from '@/components/breadcrumbs.svelte';
+  import Meta from '@/components/meta.svelte';
 
   import { mainPath, leaksPath } from '@/core/paths';
 

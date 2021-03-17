@@ -3,12 +3,11 @@
 
   import { date, _ } from 'svelte-i18n';
 
-  import Link from 'components/link.svelte';
+  import Link from '@/components/link.svelte';
   import Feedback from './feedback.svelte';
-  import EmailCollector from 'components/emailCollector.svelte';
+  import CompanyDisclosure from './companyDisclosure.svelte';
 
   import { orgPath, locationPath, tagPath } from '@/core/paths';
-  import CompanyDisclosure from './companyDisclosure.svelte';
 
   export let leak: LeakClient;
 </script>
@@ -82,14 +81,6 @@
   <hr />
 
   <Feedback {leak} />
-
-  <div class="box">
-    <div class="nested">
-      <h4>{$_('email.endPostEngagement.header')}</h4>
-      <p>{$_('leaks.emailText')}</p>
-      <EmailCollector />
-    </div>
-  </div>
 </div>
 
 <style lang="scss">

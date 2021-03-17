@@ -3,7 +3,7 @@
 
   import { _ } from 'svelte-i18n';
 
-  import EmailCollector from 'components/emailCollector.svelte';
+  import EmailCollector from '@/components/emailCollector.svelte';
 
   export let series: Exclude<Post['meta']['series'], undefined>, fallbackTitle: string;
   $: hasAnnounced = series && series.some(meta => meta && meta.announced);

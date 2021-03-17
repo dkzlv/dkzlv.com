@@ -7,7 +7,7 @@
   import { generateString } from '@/utils/random';
   import { mountComponentToClassSelector } from '@/utils/mountComponentToSelector';
 
-  import Meta from 'components/meta.svelte';
+  import Meta from '@/components/meta.svelte';
   import SeriesData from './seriesData.svelte';
 
   import Subscription from './subscription.svelte';
@@ -29,13 +29,13 @@
         (post.meta.registerExtraComponents || []).map(file => {
           switch (file) {
             case 'fingerprint':
-              return import('components/specials/privacy/fingerprint.svelte');
+              return import('@/components/specials/privacy/fingerprint.svelte');
             case 'freeWill':
-              return import('components/specials/privacy/freeWill.svelte');
+              return import('@/components/specials/privacy/freeWill.svelte');
             case 'pidor':
-              return import('components/specials/privacy/pidor.svelte');
+              return import('@/components/specials/privacy/pidor.svelte');
             case 'productBingo':
-              return import('components/specials/privacy/productBingo/main.svelte');
+              return import('@/components/specials/privacy/productBingo/main.svelte');
           }
         }),
       )) as any;

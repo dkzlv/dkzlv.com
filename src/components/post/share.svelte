@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import Link from 'components/link.svelte';
+  import Link from '@/components/link.svelte';
 
   export let text: string | undefined;
 

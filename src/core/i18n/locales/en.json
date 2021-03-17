@@ -125,8 +125,9 @@
     "feedback": {
       "headerNew": "Do you know such stories?",
       "headerOld": "Is something incorrect?",
-      "pNew": "If we missed some really cool story on data leaks, please {linkO}write us an email{linkC}. Important: we're not publishing stories without valid sources.",
-      "pOld": "You can send any corrections and additions to this article {linkO}on my email{linkC}, I'll surely review them.",
+      "pNew": "If we missed some really cool story on data leaks, please {linkEmailO}write us an email{linkEmailC}, or {linkPRO}send a PR in GitHub{linkPRC}, if you know what it is.",
+      "pNewSources": "Important: we're not publishing stories without valid sources.",
+      "pOld": "You can send any corrections and additions to this article {linkEmailO}on my email{linkEmailC}, or {linkPRO}send a PR in GitHub{linkPRC}, if you know what it is.",
       "emailSubjectNew": "New story",
       "emailSubjectOld": "Updates to a story",
       "newStoryBody": "What is it about in two words: \n\nSource: "

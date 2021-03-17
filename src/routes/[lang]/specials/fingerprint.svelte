@@ -1,5 +1,5 @@
 <script>
-  import Fingerprint from 'components/specials/privacy/fingerprint.svelte';
+  import Fingerprint from '@/components/specials/privacy/fingerprint.svelte';
 
   import { _, locale } from 'svelte-i18n';
 

@@ -3,7 +3,7 @@
 
   import { date, _ } from 'svelte-i18n';
 
-  import Link from 'components/link.svelte';
+  import Link from '@/components/link.svelte';
 
   import { leakPath, orgPath, locationPath, tagPath } from '@/core/paths';
 
