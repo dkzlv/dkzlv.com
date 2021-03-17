@@ -16,9 +16,10 @@
 
   import { _ } from 'svelte-i18n';
 
-  import List from 'components/leaks/list/main.svelte';
-  import Breadcrumbs from 'components/breadcrumbs.svelte';
-  import Meta from 'components/meta.svelte';
+  import List from '@/components/leaks/list/main.svelte';
+  import Feedback from '@/components/leaks/feedback.svelte';
+  import Breadcrumbs from '@/components/breadcrumbs.svelte';
+  import Meta from '@/components/meta.svelte';
 
   import { mainPath } from '@/core/paths';
 
@@ -32,3 +33,5 @@
 <h1>{$_('nav.meta.leaks.description')}</h1>
 
 <List {leaks} />
+
+<Feedback />

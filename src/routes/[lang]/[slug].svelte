@@ -13,7 +13,7 @@
 
 <script>
   import type { Post as PostModel } from '@/core/content/post/types';
-  import Post from 'components/post/index.svelte';
+  import Post from '@/components/post/index.svelte';
 
   export let post: PostModel;
 </script>

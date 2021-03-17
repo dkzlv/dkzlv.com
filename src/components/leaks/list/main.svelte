@@ -3,7 +3,6 @@
 
   import Header from './header.svelte';
   import Item from './item.svelte';
-  import Feedback from '../feedback.svelte';
 
   export let leaks: LeakClient[];
 
@@ -40,8 +39,6 @@
   <div class="overlay hiding-overlay" class:show={showOverlay} />
   <div class="arrow hiding-overlay" class:show={showOverlay}>→</div>
 </div>
-
-<Feedback />
 
 <style lang="scss">
   .main {

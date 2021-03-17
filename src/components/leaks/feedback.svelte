@@ -1,6 +1,8 @@
 <script>
   import type { LeakClient } from '@/core/content/leak/types';
 
+  import EmailCollector from '@/components/emailCollector.svelte';
+
   import { _ } from 'svelte-i18n';
   import { generateLinkTags } from '@/utils/accentTags';
 
@@ -24,6 +26,14 @@
     };
   }
 </script>
+
+<div class="box">
+  <div class="nested">
+    <h4>{$_('email.endPostEngagement.header')}</h4>
+    <p>{$_('leaks.emailText')}</p>
+    <EmailCollector />
+  </div>
+</div>
 
 <h4>
   {leak ? $_('leaks.feedback.headerOld') : $_('leaks.feedback.headerNew')}

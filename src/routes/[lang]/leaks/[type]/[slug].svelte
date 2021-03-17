@@ -17,9 +17,10 @@
   import { _ } from 'svelte-i18n';
   import { stores } from '@sapper/app';
 
-  import List from 'components/leaks/list/main.svelte';
-  import Breadcrumbs from 'components/breadcrumbs.svelte';
-  import Meta from 'components/meta.svelte';
+  import List from '@/components/leaks/list/main.svelte';
+  import Breadcrumbs from '@/components/breadcrumbs.svelte';
+  import Meta from '@/components/meta.svelte';
+  import Feedback from '@/components/leaks/feedback.svelte';
 
   import { leaksPath, mainPath } from '@/core/paths';
 
@@ -59,3 +60,5 @@
 <h1 class="no-gradient">{title}</h1>
 
 <List {leaks} {hideLocation} {hideOrg} />
+
+<Feedback />

@@ -9,8 +9,8 @@
 <script>
   import type { Post } from '@/core/content/post/types';
 
-  import Meta from 'components/meta.svelte';
-  import PromoList from 'components/promoList.svelte';
+  import Meta from '@/components/meta.svelte';
+  import PromoList from '@/components/promoList.svelte';
   import ProductPromo from '@/components/productPromo/productPromo.svelte';
 
   import { locale, date, _ } from 'svelte-i18n';
