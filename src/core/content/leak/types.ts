@@ -6,7 +6,7 @@ export type LeakMetaFromFile = {
   organization: string;
   tags: string;
   locations: string;
-  potentialVictims?: string;
+  potentialVictims?: string | number;
   source: string;
   isCorporationLeak?: string;
 

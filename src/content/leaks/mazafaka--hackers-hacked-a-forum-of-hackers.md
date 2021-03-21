@@ -2,7 +2,7 @@
 organization: ppOzwfei3Iwt1iR5ek8XF
 locations: U0ZCCQguv_-5BFZNL2MbC
 tags: ojf0Nv-rZbC7AB_XVtgtL
-potentialVictims: "3000"
+potentialVictims: 3000
 source: https://krebsonsecurity.com/2021/03/three-top-russian-cybercrime-forums-hacked/
 start: 
 end: 04.03.2021

@@ -6,7 +6,7 @@ const rootContentPath = join(process.env.PWD as string, 'src', 'content');
 export const getFilesContent = (subpath: string) => {
   const rootPath = join(rootContentPath, subpath);
   return readdirSync(rootPath)
-    .filter(filename => filename.endsWith('.md'))
+    .filter(filename => filename.endsWith('.md') && !filename.startsWith('_'))
     .map(filename => {
       const filenameSlug = filename.split('.').slice(0, -1).join('.'),
         filePath = join(rootPath, filename);

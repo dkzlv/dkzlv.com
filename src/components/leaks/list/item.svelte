@@ -10,10 +10,25 @@
   export let leak: LeakClient, hideOrg: boolean, hideLocation: boolean;
 </script>
 
-<div class="cell title" title={leak.content.title}>
-  <Link href={$leakPath(leak.content.slug)}>
-    {@html leak.content.title}
-  </Link>
+<div class="cell" title={leak.content.title}>
+  {#if leak.content.content}
+    <Link href={$leakPath(leak.content.slug)}>
+      {@html leak.content.title}
+    </Link>
+  {:else}
+    <Link href={leak.meta.source}>
+      <span>{@html leak.content.title}</span>
+      <span class="icon">
+        <svg viewBox="0 0 51 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M43.8925 20.4574V47H2V6.84043H30.129M21.0968 29.6064L49 2M49 2V14.5426M49 2H37.0323"
+            stroke="currentcolor"
+            stroke-width="4"
+            stroke-linejoin="round" />
+        </svg>
+      </span>
+    </Link>
+  {/if}
 </div>
 {#if !hideOrg}
   <div class="cell">
@@ -54,12 +69,13 @@
     }
   }
 
-  .title {
-    position: relative;
-
-    overflow-x: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  .icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1rem;
+    width: 1rem;
+    margin-left: 0.3em;
   }
 
   .unknown {

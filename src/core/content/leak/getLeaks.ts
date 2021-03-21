@@ -12,20 +12,19 @@ const rootLeakSubpath = 'leaks',
   dateFormat = 'dd.MM.yyyy',
   refDate = new Date(0);
 
-const getPrintValueForVictims = (rawData?: string) => {
+const getPrintValueForVictims = (rawData?: string | number) => {
   if (!rawData) return {};
 
-  if (rawData.startsWith('>')) {
-    const number = parseInt(rawData.slice(1));
+  if (typeof rawData == 'string') {
+    const number = parseInt(rawData.slice(rawData.startsWith('>') ? 1 : 0));
     return {
-      potentialVictims: `${abbreviateNumber(number)}+`,
+      potentialVictims: `${abbreviateNumber(number)}`,
       potentialVictimsSort: number,
     };
   } else {
-    const number = parseInt(rawData);
     return {
-      potentialVictims: `${abbreviateNumber(number)}+`,
-      potentialVictimsSort: number,
+      potentialVictims: `${abbreviateNumber(rawData)}`,
+      potentialVictimsSort: rawData,
     };
   }
 };

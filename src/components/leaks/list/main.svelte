@@ -87,20 +87,17 @@
     transform: $base-translate-y;
 
     @keyframes arrowAnim {
-      0% {
-        transform: $base-translate-y translateX(0);
+      from {
+        transform: $base-translate-y;
       }
-      60% {
+      to {
         transform: $base-translate-y translateX(-5px);
-      }
-      100% {
-        transform: $base-translate-y translateX(0);
       }
     }
 
-    animation: arrowAnim ease-in 1s;
+    animation: arrowAnim ease-in alternate 0.5s;
     animation-delay: 1s;
-    animation-iteration-count: 3;
+    animation-iteration-count: 6;
 
     color: $text-color--dimmed;
   }
@@ -118,6 +115,7 @@
       );
 
     min-width: 600px;
+    line-height: 1.75;
   }
 
   .row {
