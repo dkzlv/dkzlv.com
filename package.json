@@ -51,7 +51,7 @@
     "lowdb": "^1.0.0",
     "modularscale-sass": "^3.0.8",
     "node-sass": "^5.0.0",
-    "postcss": "^8.2.5",
+    "postcss": "^8.2.10",
     "postcss-100vh-fix": "^1.0.2",
     "postcss-easing-gradients": "^3.0.1",
     "postcss-load-config": "^3.0.1",
