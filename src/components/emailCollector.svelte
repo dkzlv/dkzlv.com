@@ -2,9 +2,9 @@
   import { slide } from 'svelte/transition';
   import { _, locale } from 'svelte-i18n';
 
-  import { request } from '@/core/service';
-  import { isEmail } from '@/utils/validations/email';
-  import { delay } from '@/utils/delay';
+  import { request } from '$core/service';
+  import { isEmail } from '$utils/validations/email';
+  import { delay } from '$utils/delay';
 
   import Tooltip from './tooltip.svelte';
 

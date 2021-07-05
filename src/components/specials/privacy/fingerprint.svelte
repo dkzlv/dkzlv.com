@@ -7,11 +7,11 @@
   import { onMount } from 'svelte';
   import { slide } from 'svelte/transition';
 
-  import { sample } from '@/utils/random';
-  import { codeTags, generateLinkTags } from '@/utils/accentTags';
+  import { sample } from '$utils/random';
+  import { codeTags, generateLinkTags } from '$utils/accentTags';
 
-  import { request } from '@/core/service';
-  import { getFingerprintHash } from '@/core/dataCollection/fingerprint';
+  import { request } from '$core/service';
+  import { getFingerprintHash } from '$core/dataCollection/fingerprint';
 
   let isLoading = false,
     justSent = false,

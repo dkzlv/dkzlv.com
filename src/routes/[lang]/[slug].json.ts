@@ -1,8 +1,8 @@
 import type { Request, Response } from 'express';
 
-import { getPosts } from '@/core/content/post/getPosts';
-import { lateRenderLeakCount } from '@/core/content/common/renderer';
-import { getLeaks } from '@/core/content/leak/getLeaks';
+import { getPosts } from '$core/content/post/getPosts';
+import { lateRenderLeakCount } from '$core/content/common/renderer';
+import { getLeaks } from '$core/content/leak/getLeaks';
 
 const leaks = getLeaks(),
   posts = getPosts().map(post => {

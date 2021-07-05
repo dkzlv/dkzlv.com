@@ -1,7 +1,7 @@
 import type { Request, Response } from 'express';
 
-import { getLeaks } from '@/core/content/leak/getLeaks';
-import { LeakBackend, LeakClient } from '@/core/content/leak/types';
+import { getLeaks } from '$core/content/leak/getLeaks';
+import { LeakBackend, LeakClient } from '$core/content/leak/types';
 import { lateRenderLeakCount } from '../common/renderer';
 
 const leaks = getLeaks(),

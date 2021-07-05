@@ -1,5 +1,5 @@
 <script context="module">
-  import { commonPreload } from '@/core/content/post/preloadPost';
+  import { commonPreload } from '$core/content/post/preloadPost';
 
   export function preload({ params }: { params: { lang: string; type: string; slug: string } }) {
     return commonPreload(
@@ -12,19 +12,17 @@
 </script>
 
 <script>
-  import type { LeakClient } from '@/core/content/leak/types';
+  import type { LeakClient } from '$core/content/leak/types';
 
   import { _ } from 'svelte-i18n';
-  import { stores } from '@sapper/app';
+  import { page } from '$app/stores';
 
-  import List from '@/components/leaks/list/main.svelte';
-  import Breadcrumbs from '@/components/breadcrumbs.svelte';
-  import Meta from '@/components/meta.svelte';
-  import Feedback from '@/components/leaks/feedback.svelte';
+  import List from '$components/leaks/list/main.svelte';
+  import Breadcrumbs from '$components/breadcrumbs.svelte';
+  import Meta from '$components/meta.svelte';
+  import Feedback from '$components/leaks/feedback.svelte';
 
-  import { leaksPath, mainPath } from '@/core/paths';
-
-  const { page } = stores();
+  import { leaksPath, mainPath } from '$core/paths';
 
   export let leaks: LeakClient[];
 

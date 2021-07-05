@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
 
-  import { rootStaticPath } from '@/core/paths';
+  import { rootStaticPath } from '$core/paths';
 
   const classes = [
     '',

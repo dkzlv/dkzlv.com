@@ -1,13 +1,13 @@
 <script>
-  import type { LeakClient } from '@/core/content/leak/types';
+  import type { LeakClient } from '$core/content/leak/types';
 
   import { date, _ } from 'svelte-i18n';
 
-  import Link from '@/components/link.svelte';
+  import Link from '$components/link.svelte';
   import Feedback from './feedback.svelte';
   import CompanyDisclosure from './companyDisclosure.svelte';
 
-  import { orgPath, locationPath, tagPath } from '@/core/paths';
+  import { orgPath, locationPath, tagPath } from '$core/paths';
 
   export let leak: LeakClient;
 </script>

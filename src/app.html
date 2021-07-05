@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    %sapper.base%
     <link rel="icon" href="/favicon.ico" />
     <link rel="icon" href="/static/icons/512.png" type="image/png" />
     <link rel="apple-touch-icon" href="/static/icons/512.png" />
-    %sapper.styles% %sapper.head% %sapper.scripts%
+
+    %svelte.head%
   </head>
 
   <body data-night-theme="0">
@@ -17,7 +17,8 @@
         localStorage.getItem('data-night-theme') || '0',
       );
     </script>
-    <div id="app">%sapper.html%</div>
+
+    %svelte.body%
 
     <script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
     <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt="" /></noscript>

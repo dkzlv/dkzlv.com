@@ -3,7 +3,7 @@ import slugify from '@sindresorhus/slugify';
 
 import { abbreviateNumber } from '@/utils/abbreviateNumber';
 
-import { getFilesContent } from '@/core/content/common/getFilesContent';
+import { getFilesContent } from '$core/content/common/getFilesContent';
 import { convertLeak } from './convertLeak';
 import { LeakBackend } from './types';
 import { locationsDb, orgsDb, tagsDb } from './db';

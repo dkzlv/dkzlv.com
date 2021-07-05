@@ -1,5 +1,5 @@
 <script context="module">
-  import { commonPreload } from '@/core/content/post/preloadPost';
+  import { commonPreload } from '$core/content/post/preloadPost';
 
   export function preload({ params }: { params: { lang: string } }) {
     return commonPreload(
@@ -12,16 +12,16 @@
 </script>
 
 <script>
-  import type { LeakClient } from '@/core/content/leak/types';
+  import type { LeakClient } from '$core/content/leak/types';
 
   import { _ } from 'svelte-i18n';
 
-  import List from '@/components/leaks/list/main.svelte';
-  import Feedback from '@/components/leaks/feedback.svelte';
-  import Breadcrumbs from '@/components/breadcrumbs.svelte';
-  import Meta from '@/components/meta.svelte';
+  import List from '$components/leaks/list/main.svelte';
+  import Feedback from '$components/leaks/feedback.svelte';
+  import Breadcrumbs from '$components/breadcrumbs.svelte';
+  import Meta from '$components/meta.svelte';
 
-  import { mainPath } from '@/core/paths';
+  import { mainPath } from '$core/paths';
 
   export let leaks: LeakClient[];
 </script>

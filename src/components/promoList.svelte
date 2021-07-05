@@ -1,10 +1,11 @@
 <script>
   import Promo from './leaks/promo.svelte';
 
+  import { browser } from '$app/env';
   import { _ } from 'svelte-i18n';
   import { fade } from 'svelte/transition';
 
-  import { fingerprintPath, leaksPath } from '@/core/paths';
+  import { fingerprintPath, leaksPath } from '$core/paths';
   let clientWidth: number,
     clientHeight: number,
     initialRun = true,
@@ -12,7 +13,7 @@
 
   $: run = initialRun || hovered;
 
-  if (process.env.BROWSER) setTimeout(() => (initialRun = false), 3000);
+  if (browser) setTimeout(() => (initialRun = false), 3000);
 </script>
 
 <div class="parent">

@@ -1,13 +1,13 @@
 <script>
-  import type { Post } from '@/core/content/post/types';
+  import type { Post } from '$core/content/post/types';
 
   import { onMount } from 'svelte';
   import { locale } from 'svelte-i18n';
 
-  import { generateString } from '@/utils/random';
-  import { mountComponentToClassSelector } from '@/utils/mountComponentToSelector';
+  import { generateString } from '$utils/random';
+  import { mountComponentToClassSelector } from '$utils/mountComponentToSelector';
 
-  import Meta from '@/components/meta.svelte';
+  import Meta from '$components/meta.svelte';
   import SeriesData from './seriesData.svelte';
 
   import Subscription from './subscription.svelte';

@@ -4,8 +4,8 @@
   import { locale } from 'svelte-i18n';
   import { _ } from 'svelte-i18n';
 
-  import { generateLinkTags } from '@/utils/accentTags';
-  import { getLicenseUrl, repoUrl, rootStaticPath } from '@/core/paths';
+  import { generateLinkTags } from '$utils/accentTags';
+  import { getLicenseUrl, repoUrl, rootStaticPath } from '$core/paths';
 </script>
 
 <footer>

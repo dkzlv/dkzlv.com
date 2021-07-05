@@ -1,4 +1,4 @@
-import { getFeeds } from '@/core/content/post/feeds';
+import { getFeeds } from '$core/content/post/feeds';
 
 const feeds = getFeeds();
 

@@ -1,7 +1,7 @@
 <script>
   import { _ } from 'svelte-i18n';
 
-  import EmailCollector from '@/components/emailCollector.svelte';
+  import EmailCollector from '$components/emailCollector.svelte';
 
   export let text: string;
 </script>

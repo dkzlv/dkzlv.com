@@ -1,10 +1,10 @@
 <script>
-  import Fingerprint from '@/components/specials/privacy/fingerprint.svelte';
+  import Fingerprint from '$components/specials/privacy/fingerprint.svelte';
 
   import { _, locale } from 'svelte-i18n';
 
-  import { rootSitePath } from '@/core/paths';
-  import { generateLinkTags } from '@/utils/accentTags';
+  import { rootSitePath } from '$core/paths';
+  import { generateLinkTags } from '$utils/accentTags';
 
   $: link =
     $locale == 'ru'

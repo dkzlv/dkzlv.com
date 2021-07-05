@@ -1,5 +1,5 @@
 <script>
-  import type { LeakClient } from '@/core/content/leak/types';
+  import type { LeakClient } from '$core/content/leak/types';
 
   import Header from './header.svelte';
   import Item from './item.svelte';

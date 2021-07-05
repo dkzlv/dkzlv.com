@@ -1,4 +1,4 @@
-import { commonGetLeakFactory } from '@/core/content/leak/commonGet';
+import { commonGetLeakFactory } from '$core/content/leak/commonGet';
 
 export const get = commonGetLeakFactory<{ slug: 'all' | string }>((leaks, params) => {
   const { slug, lang } = params;

@@ -1,9 +1,9 @@
 <script>
   import { _ } from 'svelte-i18n';
 
-  import { leaksPath } from '@/core/paths';
+  import { leaksPath } from '$core/paths';
 
-  import Link from '@/components/link.svelte';
+  import Link from '$components/link.svelte';
 
   export let count: number = 0;
 </script>

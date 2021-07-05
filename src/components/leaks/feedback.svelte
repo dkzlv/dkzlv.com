@@ -1,10 +1,10 @@
 <script>
-  import type { LeakClient } from '@/core/content/leak/types';
+  import type { LeakClient } from '$core/content/leak/types';
 
-  import EmailCollector from '@/components/emailCollector.svelte';
+  import EmailCollector from '$components/emailCollector.svelte';
 
   import { _ } from 'svelte-i18n';
-  import { generateLinkTags } from '@/utils/accentTags';
+  import { generateLinkTags } from '$utils/accentTags';
 
   export let leak: LeakClient | undefined = undefined;
 

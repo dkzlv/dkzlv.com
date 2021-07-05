@@ -1,7 +1,7 @@
 <script>
-  export let status: number, error: Error;
+  import { dev } from '$app/env';
 
-  const dev = process.env.NODE_ENV === 'development';
+  export let status: number, error: Error;
 </script>
 
 <svelte:head>

@@ -3,7 +3,7 @@ import slugify from '@sindresorhus/slugify';
 import { Renderer } from 'marked';
 import sizeOf from 'image-size';
 
-import { rootStaticPath } from '@/core/paths';
+import { rootStaticPath } from '$core/paths';
 
 export const MarkedRenderer = new Renderer();
 // Anchor link

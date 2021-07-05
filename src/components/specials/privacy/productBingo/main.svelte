@@ -5,7 +5,7 @@
 <script>
   import { onMount } from 'svelte';
 
-  import { mountComponentToClassSelector } from '@/utils/mountComponentToSelector';
+  import { mountComponentToClassSelector } from '$utils/mountComponentToSelector';
 
   import HiddenBlock from './hiddenBlock.svelte';
 

@@ -6,7 +6,7 @@
 
 <script>
   import { onDestroy } from 'svelte';
-  import { range } from '@/utils/range';
+  import { range } from '$utils/range';
 
   export let height: number, width: number, run: boolean;
 

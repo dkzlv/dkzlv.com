@@ -3,7 +3,7 @@ import { parse } from 'date-fns';
 import { Post, PreprocessedSeries, UnfinishedPost } from './types';
 import { calcReadTime } from './calcReadTime';
 import { convertPost } from './convertPost';
-import { getFilesContent } from '@/core/content/common/getFilesContent';
+import { getFilesContent } from '$core/content/common/getFilesContent';
 
 const rootPostSubpath = 'posts';
 

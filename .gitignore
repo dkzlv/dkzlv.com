@@ -116,9 +116,15 @@ public/bundle.*
 /src/node_modules/@sapper/
 /cypress/screenshots/
 /__sapper__/
-
+.svelte/
+.svelte-kit/
+build/
 
 # dotenv environment variables file
-.env.*
+.env.development
+.env.stage
+
+# Ecosystem file
+ecosystem.config.yaml
 
 # .vscode/

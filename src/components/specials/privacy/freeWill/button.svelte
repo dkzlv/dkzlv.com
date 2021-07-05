@@ -1,5 +1,5 @@
 <script context="module">
-  import { generateLinkTags } from '@/utils/accentTags';
+  import { generateLinkTags } from '$utils/accentTags';
 
   const payload = {
     values: {
