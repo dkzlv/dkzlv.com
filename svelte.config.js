@@ -1,6 +1,6 @@
 import sveltePreprocess from 'svelte-preprocess';
 import path from 'path';
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-node';
 import { mdsvex } from 'mdsvex';
 
 const extensions = ['.svelte', '.svx'];
