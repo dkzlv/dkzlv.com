@@ -24,15 +24,15 @@ added: 30.11.2020
 
 Хакер имел доступ к нашей базе с 2 июня 2018 до 23 марта 2019 года, а поняли мы это только в апреле 2019 года. Что он с ней делал — непонятно, но как минимум доступ на чтение был полный.
 
-> The databases involved contained *#some of our users’ account information*, including name, Flipboard username, cryptographically protected password and email address.
+> The databases involved contained <mark>some of our users’ account information</mark>, including name, Flipboard username, cryptographically protected password and email address.
 
 Мы уверены, что, перечислив четыре самых незначительных пункта, у нас получится отвести ваш взгляд с того, что "*users’ account information*" — это всеобъемлющий термин, описывающий все пользовательские данные.
 
-> if users connected their Flipboard account to a third-party account, including social media accounts, then the databases *#may have contained* digital tokens used to connect their Flipboard account to that third-party account. We *#have not found any evidence* the unauthorized person accessed third-party account(s) connected to users’ Flipboard accounts.
+> if users connected their Flipboard account to a third-party account, including social media accounts, then the databases <mark>may have contained</mark> digital tokens used to connect their Flipboard account to that third-party account. We <mark>have not found any evidence</mark> the unauthorized person accessed third-party account(s) connected to users’ Flipboard accounts.
 
 Кроме редких случаев, если вы авторизовывались через соц.сети, то эти токены у нас тоже увели. Логов почти никакие из этих соц.сетей не предоставляют (ни Facebook, ни Twitter), поэтому мы можем только гадать, что с этими токенами делали. Нам никто из юзеров не пожаловался.
 
-> We’re still in the process of determining the total number [*#of involved accounts* — прим.ред.]. We do know that not all accounts were compromised.
+> We’re still in the process of determining the total number [<mark>of involved accounts</mark> — прим.ред.]. We do know that not all accounts were compromised.
 
 Так как мы сообщаем об этом в мае 2019 года, а дыру мы закрыли в апреле 2019 года, мы уверены, что во всяком случае не скомпрометированы те юзеры, что зарегистрировались после апреля. Остальное мы не знаем и, по-видимому, никогда не узнаем.
 
@@ -54,15 +54,15 @@ I turn to the source because it was written by ~liers~ lawyers — you can see i
 
 The hacker had access to our database from June 2, 2018 to March 23, 2019. We only understood this in April 2019. We have no idea what they did, but they had at least full read access to it.
 
-> The databases involved contained *#some of our users’ account information*, including name, Flipboard username, cryptographically protected password, and email address.
+> The databases involved contained <mark>some of our users’ account information</mark>, including name, Flipboard username, cryptographically protected password, and email address.
 
 We're certain that if we enumerate four of the least important data points we'll trick you, so you don't understand that "*users’ account information*" is an all-encompassing term, that includes all of the users' data.
 
-> if users connected their Flipboard account to a third-party account, including social media accounts, then the databases may have contained digital tokens used to connect their Flipboard account to that third-party account. We *#have not found any evidence* the unauthorized person accessed third-party account(s) connected to users’ Flipboard accounts.
+> if users connected their Flipboard account to a third-party account, including social media accounts, then the databases may have contained digital tokens used to connect their Flipboard account to that third-party account. We <mark>have not found any evidence</mark> the unauthorized person accessed third-party account(s) connected to users’ Flipboard accounts.
 
 If you signed in using social networks your tokens were stolen (apart from some **very rare cases**). These social networks do not offer any logging solutions (neither Facebook nor Twitter), so we can only guess what those hackers did with them. At least none of the users complained.
 
-> We’re still in the process of determining the total number [*#of involved accounts* — editor's note]. We do know that not all accounts were compromised.
+> We’re still in the process of determining the total number [<mark>of involved accounts</mark> — editor's note]. We do know that not all accounts were compromised.
 
 Since we're telling you about this in late May 2019 and we fixed the security hole in late April 2019 we're at least very sure that users who'd signed up in May 2019 are safe. We don't know about the rest of the users and, most probably, we'll never know.
 

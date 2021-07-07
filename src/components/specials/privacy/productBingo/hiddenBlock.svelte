@@ -2,13 +2,11 @@
   import { fade } from 'svelte/transition';
   import { _ } from 'svelte-i18n';
 
-  export let text: string;
-
   let showOverlay = true;
 </script>
 
 <div class="wrapper">
-  <p>{@html text}</p>
+  <p><slot /></p>
 
   {#if showOverlay}
     <div class="overlay" transition:fade|local on:click={() => (showOverlay = false)} role="button">

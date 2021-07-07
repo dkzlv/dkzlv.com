@@ -1,24 +1,9 @@
-<script context="module">
-  export const classname = 'product-bingo';
-</script>
-
 <script>
-  import { onMount } from 'svelte';
-
-  import { mountComponentToClassSelector } from '$utils/mountComponentToSelector';
-
-  import HiddenBlock from './hiddenBlock.svelte';
-
-  export let text: string;
-
-  onMount(() => {
-    const cmps = mountComponentToClassSelector('hide-behind-blur', HiddenBlock);
-    return () => cmps.forEach(cmp => cmp.$destroy());
-  });
+  export let header: boolean = false;
 </script>
 
-<div class="wrapper">
-  {@html text}
+<div class="wrapper" class:header>
+  <slot />
 </div>
 
 <style lang="scss">
@@ -31,14 +16,12 @@
 
     row-gap: 0.5em;
 
-    &:global {
-      .header {
-        border-bottom: 2px dotted $hr-color;
+    &.header :global(> *:nth-child(-n + 2)) {
+      border-bottom: 2px dotted $hr-color;
 
-        font-weight: bold;
-        font-size: 110%;
-        text-transform: uppercase;
-      }
+      font-weight: bold;
+      font-size: 110%;
+      text-transform: uppercase;
     }
   }
 </style>

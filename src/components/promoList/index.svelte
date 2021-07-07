@@ -1,5 +1,5 @@
 <script>
-  import Promo from './leaks/promo.svelte';
+  import Promo from '$components/leaks/promo.svelte';
 
   import { browser } from '$app/env';
   import { _ } from 'svelte-i18n';
@@ -95,7 +95,7 @@
 
     grid-area: 1 / 2 / 3 / 3;
 
-    background: url('/static/img/posts/privacy1/fingerprint_text_pr0n.png');
+    background: url('./fingerprint_text_pr0n.png');
     height: 188px;
   }
 </style>

@@ -5,7 +5,6 @@ export type PostMetaFromFile = {
   date: string;
   published: number;
 
-  imagePreview?: string;
   anounced?: boolean;
   slug?: string;
   emailCollectorMessage?: string;

@@ -1,13 +1,18 @@
 import sveltePreprocess from 'svelte-preprocess';
 import path from 'path';
-import adapter from '@sveltejs/adapter-node';
+import node from '@sveltejs/adapter-node';
 import { mdsvex } from 'mdsvex';
+import behead from 'remark-behead';
+import containers from 'remark-containers';
+import footnotes from 'remark-footnotes';
+import slug from 'remark-slug';
+import externalLinks from 'remark-external-links';
 
 const extensions = ['.svelte', '.svx'];
 
 export default {
   kit: {
-    adapter: adapter(),
+    adapter: node(),
     vite: () => ({
       define: {
         'process.env.ROOT_DOMAIN': JSON.stringify(process.env.ROOT_DOMAIN),
@@ -42,6 +47,16 @@ export default {
         prependData: `@import 'src/styles/importable';`,
       },
     }),
-    mdsvex({ extensions }),
+    mdsvex({
+      extensions,
+      remarkPlugins: [
+        // Turning h1 into h2, and so on
+        [behead, { depth: 1 }],
+        containers,
+        footnotes,
+        slug,
+        externalLinks,
+      ],
+    }),
   ],
 };

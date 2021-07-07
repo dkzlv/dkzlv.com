@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "svelte-kit dev",
     "type": "tsc --noEmit && svelte-check --compiler-warnings \"module-script-reactive-declaration:ignore\"",
-    "build:prod": "yarn build:common && svelte-kit export",
+    "build": "svelte-kit build",
     "content:post": "node scripts/content/post.js",
     "content:leak": "node scripts/content/leak.js",
     "db:tag": "node scripts/db/tag.js",
@@ -14,6 +14,7 @@
     "db:location": "node scripts/db/location.js"
   },
   "dependencies": {
+    "@fingerprintjs/fingerprintjs": "^3.2.0",
     "@mojs/core": "git+https://github.com/dkzlv/mojs.git",
     "@sindresorhus/slugify": "^2.1.0",
     "date-fns": "^2.17.0",
@@ -22,10 +23,15 @@
     "fingerprintjs2": "^2.1.2",
     "js-yaml": "^4.0.0",
     "nanoid": "^3.1.20",
+    "remark-behead": "^2.3.3",
+    "remark-containers": "^1.2.0",
+    "remark-external-links": "^8.0.0",
+    "remark-footnotes": "^2",
+    "remark-slug": "^6.0.0",
     "svelte-i18n": "^3.3.0"
   },
   "devDependencies": {
-    "@sveltejs/adapter-node": "^1.0.0-next.0",
+    "@sveltejs/adapter-node": "^1.0.0-next.30",
     "@sveltejs/kit": "^1.0.0-next.116",
     "@tsconfig/svelte": "^2.0.1",
     "@types/express": "^4.17.11",
@@ -34,7 +40,6 @@
     "cssnano": "^5.0.6",
     "dotenv-flow": "^3.2.0",
     "enquirer": "^2.3.6",
-    "image-size": "^1.0.0",
     "lowdb": "^2.1.0",
     "mdsvex": "^0.9.8",
     "modularscale-sass": "^3.0.8",

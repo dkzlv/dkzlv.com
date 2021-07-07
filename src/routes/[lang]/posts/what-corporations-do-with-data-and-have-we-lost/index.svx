@@ -3,7 +3,6 @@ lang: en
 title: What corporations do with data? Have we already lost?
 date: 11.03.2021
 description: "<strong>TL;DR:</strong> everything is very bad. Prognosis is not comforting; if we do nothing all the distopias we read in fiction novels will look like a happy holiday at your granny's"
-slug: what-corporations-do-with-data-and-have-we-lost
 published: 1
 series: ["how-they-harvest-data", ""]
 registerExtraComponents: ["freeWill", "productBingo"]
@@ -423,7 +422,7 @@ The results of your privacy ignorance are kind of different, *it's not physical 
 
 Your actions are simple enough:
 
-1. **limit your unconscious digital trail**. You can find [the tutorial in the previous chapter of this post](/en/how-they-harvest-data) (block trackers, use good DNS, etc.)
+1. **limit your unconscious digital trail**. You can find [the tutorial in the previous chapter of this post](/en/posts/how-they-harvest-data) (block trackers, use good DNS, etc.)
 2. **limit your conscious digital trail**
     - start paying attention to whether the app meets basic privacy requirements. Try to evolve your critical thinking. Don't install each app you find entertaining, it's a shitty attitude, really. Don't use free products. ~Floor~ Free is lava. There's nothing free in the world, let's just say that you don't pay with the money.
         ![*You don't pay with the money](/img/posts/privacy2/you_dont_pay_with_money.png)

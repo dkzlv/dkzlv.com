@@ -1,17 +1,13 @@
-<script context="module">
-  export const classname = 'fingerprint';
-</script>
-
 <script>
   import { _, json } from 'svelte-i18n';
   import { onMount } from 'svelte';
   import { slide } from 'svelte/transition';
+  import Fingerprint2 from '@fingerprintjs/fingerprintjs';
 
   import { sample } from '$utils/random';
   import { codeTags, generateLinkTags } from '$utils/accentTags';
 
   import { request } from '$core/service';
-  import { getFingerprintHash } from '$core/dataCollection/fingerprint';
 
   let isLoading = false,
     justSent = false,
@@ -22,8 +18,10 @@
   let href: string, fingerprint: string, prevMessage: string;
 
   onMount(async () => {
+    const fp = await Fingerprint2.load();
+
     href = location.href.replace(location.hash, '') + `#${id}`;
-    fingerprint = await getFingerprintHash();
+    fingerprint = (await fp.get()).visitorId;
     try {
       prevMessage = (
         await (

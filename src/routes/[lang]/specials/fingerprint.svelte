@@ -8,8 +8,8 @@
 
   $: link =
     $locale == 'ru'
-      ? `${rootSitePath}/ru/kak-sobirayut-dannye/`
-      : `${rootSitePath}/en/how-they-harvest-data/`;
+      ? `${rootSitePath}/ru/posts/kak-sobirayut-dannye/`
+      : `${rootSitePath}/en/posts/how-they-harvest-data/`;
 </script>
 
 <div class="post-content">

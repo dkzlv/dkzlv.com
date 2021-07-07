@@ -1,11 +1,11 @@
 <script>
-  import type { Post } from '$core/content/post/types';
+  import type { Post } from '$core/content/getPosts';
 
   import { _ } from 'svelte-i18n';
 
   import EmailCollector from '$components/emailCollector.svelte';
 
-  export let series: Exclude<Post['meta']['series'], undefined>, fallbackTitle: string;
+  export let series: BooleanCheck<Post['series']>, fallbackTitle: string;
   $: hasAnnounced = series && series.some(meta => meta && meta.announced);
 </script>
 
