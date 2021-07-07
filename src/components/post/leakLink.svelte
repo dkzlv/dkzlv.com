@@ -1,7 +1,7 @@
 <script>
   import { _ } from 'svelte-i18n';
 
-  import { leaksPath } from '$core/paths';
+  import { breachesPath } from '$core/paths';
 
   import Link from '$components/link.svelte';
 
@@ -9,7 +9,7 @@
 </script>
 
 <div class="wrapper">
-  <Link href={$leaksPath}>
+  <Link href={$breachesPath}>
     <h3><span>{$_('posts.leaks.title')}</span></h3>
     <h4><span>{$_('posts.leaks.count', { values: { count } })}</span></h4>
   </Link>

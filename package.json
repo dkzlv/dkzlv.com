@@ -16,7 +16,6 @@
   "dependencies": {
     "@fingerprintjs/fingerprintjs": "^3.2.0",
     "@mojs/core": "git+https://github.com/dkzlv/mojs.git",
-    "@sindresorhus/slugify": "^2.1.0",
     "date-fns": "^2.17.0",
     "express": "^4.17.1",
     "feed": "^4.2.2",
@@ -28,6 +27,7 @@
     "remark-external-links": "^8.0.0",
     "remark-footnotes": "^2",
     "remark-slug": "^6.0.0",
+    "slugify": "^1.5.3",
     "svelte-i18n": "^3.3.0"
   },
   "devDependencies": {

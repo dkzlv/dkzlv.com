@@ -1,0 +1,43 @@
+---
+lang: en
+organization: Flipboard
+locations: [worldwide]
+tags: [b2c]
+title: Left the servers open for intruders for 9 months
+potentialVictims: ">150000000"
+source: https://techcrunch.com/2019/05/28/flipboard-hacks-password-resets/
+isCorporationLeak: 1
+start: 02.07.2018
+end: 23.03.2019
+added: 30.11.2020
+---
+
+<script>
+  import phpError from './phpError.png';
+</script>
+
+Firstly, I'm fascinated by the fact that they wipe the information about the leak. Techcrunch references [in their article](https://techcrunch.com/2019/05/28/flipboard-hacks-password-resets/) a statement by Flipboard team that is [already unavailable](https://about.flipboard.com/support-information-incident-May-2019/) — a little more than a year from the event itself! Besides, they did such a great setup of their WordPress blog, that this page now shows a PHP error right there. Bravo.
+
+![PHP goes brrrr]({phpError})
+
+The statement cannot be found in the blog, I just managed to find it [in Russian](https://ru-ru.about.flipboard.com/support-information-incident-may-2019/). But it's okay, [Wayback Machine remembers everything](https://web.archive.org/web/20201107223738/https://about.flipboard.com/support-information-incident-May-2019/).
+
+I turn to the source because it was written by ~liers~ lawyers — you can see it. They learn how to write statements so that they never tell anything really important. So I'll quote the original and then translate it from their language to the human language.
+
+> […] from the investigation indicate an unauthorized person accessed and potentially obtained copies of certain databases containing Flipboard user information between June 2, 2018 and March 23, 2019 and April 21 – 22, 2019
+
+The hacker had access to our database from June 2, 2018 to March 23, 2019. We only understood this in April 2019. We have no idea what they did, but they had at least full read access to it.
+
+> The databases involved contained <mark>some of our users’ account information</mark>, including name, Flipboard username, cryptographically protected password, and email address.
+
+We're certain that if we enumerate four of the least important data points we'll trick you, so you don't understand that "*users’ account information*" is an all-encompassing term, that includes all of the users' data.
+
+> if users connected their Flipboard account to a third-party account, including social media accounts, then the databases may have contained digital tokens used to connect their Flipboard account to that third-party account. We <mark>have not found any evidence</mark> the unauthorized person accessed third-party account(s) connected to users’ Flipboard accounts.
+
+If you signed in using social networks your tokens were stolen (apart from some **very rare cases**). These social networks do not offer any logging solutions (neither Facebook nor Twitter), so we can only guess what those hackers did with them. At least none of the users complained.
+
+> We’re still in the process of determining the total number [<mark>of involved accounts</mark> — editor's note]. We do know that not all accounts were compromised.
+
+Since we're telling you about this in late May 2019 and we fixed the security hole in late April 2019 we're at least very sure that users who'd signed up in May 2019 are safe. We don't know about the rest of the users and, most probably, we'll never know.
+
+I think that's it. As usual, we all should remember that in reality Flipboard stores much more data than just usernames and hashed passwords. It also has your reading history, favorite bloggers, articles, social graph, and a buttload of data derived from all of this (political beliefs, sexual orientation, culinary preferences, favorite sports teams, things that make you angry or sad, etc.). I'll state the obvious that your home and work address can be derived from access logs.

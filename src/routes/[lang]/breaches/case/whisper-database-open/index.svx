@@ -1,0 +1,25 @@
+---
+lang: en
+organization: Whisper
+locations: [worldwide]
+tags: [b2c, dating]
+title: Secret-sharing app Whisper left the DB open to everyone for an unknown time
+potentialVictims: ">250000000"
+source: https://www.washingtonpost.com/technology/2020/03/10/secret-sharing-app-whisper-left-users-locations-fetishes-exposed-web/
+start: 
+end: 10.03.2020
+added: 20.02.2021
+---
+
+Marketing and reality are two different things, unfortunately.
+
+Whisper positions itself as a service for sharing secrets anonymously. Lol. I remember when they peaked in my place it was a shitshow of stories about employers who grab women in office, confessions in murders, and other nasty stuff like eating worms with soil when the author was bored during holidays.
+
+As usual, anonymity is just a fancy word for them. I personally can ignore the fact that [their privacy policy allows](https://en.wikipedia.org/wiki/Whisper_(app)#Privacy_policy) them to pass any data to governments, it's understandable. But it turned out they had their database open out in the wild — supposedly, for years. No password required.
+
+Researchers had access to every single thing. Tip for those who avoided this app: all the messages with its geolocation out in the open. Also, they got access to all users' profiles: age, gender, city, participation in groups, including quite *sensitive* ones.
+
+Let me paint you a picture: you're one of the 1.5M kids below 15 y.o. who signed up in this app; you believed the "anonymity" feature, so you decided to spit out your real issues and problems, seeking help; you might even decide to join a group related to your sexual orientation — you don't get much help from parents, teachers or peers. Then this huge exploit is found, but not by some researchers, but a prankster (you didn't need a lot of skills to connect to this DB, according to WP), who just pushes it all into the public. With names, ages, geolocation (like school's cantina or home addresses).
+
+Mmm, I feel this glorious and unforgettable taste of privacy on my lips.
+

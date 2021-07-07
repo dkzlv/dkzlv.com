@@ -1,11 +1,11 @@
 <script>
-  import Promo from '$components/leaks/promo.svelte';
+  import Promo from '$components/breaches/promo.svelte';
 
   import { browser } from '$app/env';
   import { _ } from 'svelte-i18n';
   import { fade } from 'svelte/transition';
 
-  import { fingerprintPath, leaksPath } from '$core/paths';
+  import { fingerprintPath, breachesPath } from '$core/paths';
   let clientWidth: number,
     clientHeight: number,
     initialRun = true,
@@ -19,7 +19,7 @@
 <div class="parent">
   <a
     class="div1"
-    href={$leaksPath}
+    href={$breachesPath}
     on:mouseover={() => (hovered = true)}
     on:mouseleave={() => (hovered = false)}>
     <div class="canvas" bind:clientWidth bind:clientHeight>

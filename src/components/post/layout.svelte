@@ -1,7 +1,7 @@
 <script>
   import type { Post } from '$core/content/getPosts';
 
-  import Meta from '$components/Meta.svelte';
+  import Meta from '$components/meta.svelte';
   import SeriesData from './seriesData.svelte';
   import Subscription from './subscription.svelte';
 

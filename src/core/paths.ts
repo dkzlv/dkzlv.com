@@ -18,9 +18,9 @@ const baseSpecialsPath = derived(mainPath, $base => `${$base}/specials`);
 export const fingerprintPath = derived(baseSpecialsPath, $base => `${$base}/fingerprint`);
 
 const leakTypeFactory = (type: string) =>
-  derived(leaksPath, $base => (org: string) => `${$base}/${type}/${org}`);
-export const leaksPath = derived(locale, $locale => `/${$locale}/leaks`),
-  leakPath = derived(leaksPath, $base => (slug: string) => `${$base}/${slug}`),
+  derived(breachesPath, $base => (org: string) => `${$base}/${type}/${org}`);
+export const breachesPath = derived(locale, $locale => `/${$locale}/breaches`),
+  leakPath = derived(breachesPath, $base => (slug: string) => `${$base}/case/${slug}`),
   orgPath = leakTypeFactory('org'),
   locationPath = leakTypeFactory('location'),
   tagPath = leakTypeFactory('tag');

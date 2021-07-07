@@ -1,0 +1,19 @@
+---
+lang: en
+organization: Bulgaria IRS
+locations: [🇧🇬 Bulgaria]
+tags: [government]
+title: An 18 y.o broke into Bulgaria's tax system
+potentialVictims: ">7000000"
+source: https://www.businessinsider.com/hacker-steals-personal-data-every-taxpayer-bulgaria-2019-7
+start: 
+end: 22.07.2019
+added: 30.11.2020
+---
+
+This story is golden. An 18-year old Bulgarian guy hacks the education ministry's website back in 2017, said he was "fulfilling my civic duty". Then in 2019 he hacked all the IT systems of the Bulgarian Revenue Office and steals a buttload of data. Officials say he stole at least a piece of information about opened bank accounts and the salary of all the citizens of the country.
+
+**My guess (can be completely wrong)**: NRAs typically know about your paid taxes, assets you hold (businesses, properties, cars, etc.), tax deductions, and the reasoning behind them (childbirth, charity donations, etc.); the should also know the same about all the businesses. I guess that this info leaked as well.
+
+This data is sold in the darknet freely. Officials wanted to send the guy to jail for 3 years — they'll do it, I guess. Their prime minister called the guy "a wizard" with a "unique brain".
+
