@@ -1,5 +1,5 @@
 ---
-lang: en
+lang: ru
 organization: Apple
 locations: [worldwide]
 tags: [b2c, b2b]

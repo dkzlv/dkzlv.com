@@ -10,6 +10,7 @@
   import { orgPath, locationPath, tagPath } from '$core/paths';
 
   export let breach: Breach;
+  console.log(breach);
 </script>
 
 <h1>

@@ -7,6 +7,5 @@ export const get: RequestHandler = async ({ params }) => {
     breach => breach.lang == params.lang && breach.slug == params.slug,
   );
 
-  console.log(getBreaches(), params.slug);
   return { body: { breach: breach! } };
 };

@@ -7,6 +7,7 @@
     "dev": "svelte-kit dev",
     "type": "tsc --noEmit && svelte-check --compiler-warnings \"module-script-reactive-declaration:ignore\"",
     "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
     "content:post": "node scripts/content/post.js",
     "content:leak": "node scripts/content/leak.js",
     "db:tag": "node scripts/db/tag.js",

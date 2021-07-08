@@ -23,15 +23,6 @@
   export let breaches: Breach[];
 </script>
 
-<!-- 
-  Немного изменятся пути в блоге:
-  - /leaks/[location/org/tag]/likud.svelte — модернизированная страница конкретной сущности. Там может быть любой диз.
-  - /leaks/[location/org/tag]/[slug].svelte — фоллбэк для конкретной сущности, без особых конкретик.
-
-  Контент в сливах (названия орг, теги, локации) будут писаться плейн-текстом, а не так, как сейчас.
-  Они будут "свои" для каждой локали.
- -->
-
 <Meta title={`${$_('nav.meta.leaks.description')} / ${$_('nav.leaks')}`} />
 
 <Breadcrumbs paths={[{ text: $_('nav.main'), link: $mainPath }, { text: $_('nav.leaks') }]} />

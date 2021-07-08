@@ -1,5 +1,5 @@
 ---
-lang: en
+lang: ru
 organization: Билайн
 locations: [Россия]
 tags: [b2c]
