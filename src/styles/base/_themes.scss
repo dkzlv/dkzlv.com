@@ -60,9 +60,9 @@
   #{cvts($tooltip-shadow-color)}: $_shadow;
 
   $grid-background: hsl(60, 25%, 97%);
-  #{cvts($leaks-grid-background)}: $grid-background;
-  #{cvts($leaks-grid-background-odd)}: hsl(60, 25%, 95%);
-  #{cvts($leaks-grid-overlay-transparent)}: change-color($grid-background, $alpha: 0.0001);
+  #{cvts($breaches-grid-background)}: $grid-background;
+  #{cvts($breaches-grid-background-odd)}: hsl(60, 25%, 95%);
+  #{cvts($breaches-grid-overlay-transparent)}: change-color($grid-background, $alpha: 0.0001);
 }
 
 :root,
@@ -129,7 +129,7 @@
   #{cvts($tooltip-shadow-color)}: $_shadow;
 
   $grid-background: $_box-background;
-  #{cvts($leaks-grid-background)}: $_box-background;
-  #{cvts($leaks-grid-background-odd)}: adjust-color($_box-background, $lightness: -5);
-  #{cvts($leaks-grid-overlay-transparent)}: change-color($grid-background, $alpha: 0.0001);
+  #{cvts($breaches-grid-background)}: $_box-background;
+  #{cvts($breaches-grid-background-odd)}: adjust-color($_box-background, $lightness: -5);
+  #{cvts($breaches-grid-overlay-transparent)}: change-color($grid-background, $alpha: 0.0001);
 }

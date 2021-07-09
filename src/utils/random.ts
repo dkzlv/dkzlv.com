@@ -7,4 +7,4 @@ export const generateString = (length: number) =>
       .join(''),
   randomBool = (chance = 50) => Math.random() < chance / 100,
   randInterval = (from: number, to: number) => Math.floor(Math.random() * to + from),
-  sample = <T>(data: T[]) => data[randInterval(0, data.length)];
+  sample = <T>(data: T[]) => data[randInterval(0, data.length)]!;

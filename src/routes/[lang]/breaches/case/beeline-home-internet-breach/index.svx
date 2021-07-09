@@ -1,0 +1,20 @@
+---
+lang: en
+organization: Beeline
+locations: [Russia]
+tags: [b2c]
+title: breached the data on all the customers of in-house internet services
+potentialVictims: ">8700000"
+source: https://www.kommersant.ru/doc/4117174
+isCorporationbreach: 1
+start: 
+end: 01.11.2017
+added: 22.12.2020
+---
+
+Passports, home, and mobile phone numbers, names, addresses.
+
+The most fascinating part of these stories is that we read this article back in 2019, but the breach had happened in 2017! Should we tell the clients? Hell no, being transparent is for losers! We have a privacy policy that forbids our clients from anything and allows us everything.
+
+Make a note to tell the PR people to say that all the people involved in this breach were punished and the whole problem is way exaggerated.
+

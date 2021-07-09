@@ -1,11 +1,12 @@
 <script>
-  import type { Post } from '@/core/content/post/types';
+  import type { Post } from '$core/content/getPosts';
 
   import { _ } from 'svelte-i18n';
 
-  import EmailCollector from '@/components/emailCollector.svelte';
+  import EmailCollector from '$components/emailCollector.svelte';
+  import { postPath } from '$core/paths';
 
-  export let series: Exclude<Post['meta']['series'], undefined>, fallbackTitle: string;
+  export let series: BooleanCheck<Post['series']>, currentSlug: string;
   $: hasAnnounced = series && series.some(meta => meta && meta.announced);
 </script>
 
@@ -15,8 +16,8 @@
     <ol>
       {#each series as seriesPost}
         <li>
-          {#if !seriesPost}
-            <span class="size-1 bold">{fallbackTitle}</span>
+          {#if currentSlug == seriesPost.slug}
+            <span class="size-1 bold">{seriesPost.title}</span>
             <span class="italic">{$_('posts.series.thisPost')}</span>
           {:else if seriesPost.announced}
             <p>
@@ -30,8 +31,7 @@
           {:else}
             <p>
               <span class="size-1 bold">
-                <a rel="prefetch" href={`${seriesPost.lang}/${seriesPost.slug}`}
-                  >{seriesPost.title}</a>
+                <a rel="prefetch" href={$postPath(seriesPost.slug)}>{seriesPost.title}</a>
               </span>
               <br />
               <span class="post-content">

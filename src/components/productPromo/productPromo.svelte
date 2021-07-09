@@ -27,7 +27,7 @@
 
     padding: 1em 0;
 
-    background: no-repeat center url('/static/img/footer/back.png');
+    background: no-repeat center url('./back.png');
     background-size: cover;
 
     border-radius: 2em;

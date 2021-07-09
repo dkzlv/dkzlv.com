@@ -1,0 +1,21 @@
+---
+lang: en
+organization: Equifax
+locations: [World, USA, Canada, UK]
+tags: [b2c, b2b]
+title: A huge credit bureau was hacked, a lot of data was stolen
+potentialVictims: 162000000
+source: https://en.wikipedia.org/wiki/2017_Equifax_data_breach
+isCorporationbreach: 1
+start: 01.05.2017
+end: 01.07.2017
+added: 30.11.2020
+---
+
+Shady story. Everyone cast stones in China every single day for introducing us to covid in February 2020, but later US government announced that this hack was performed, presumably, by China's People's Liberation Army. Chinese Communist Party denied these claims (why wouldn't they?).
+
+But how much data does Equifax have in their possession? Shouldn't be *that much*. Well, it is, and even more.
+
+The servers were exposed for 76 days. Hackers managed to steal Social security numbers, names, addresses, birth dates, driver's licenses of 147M Americans, 15M British, and 22k Canadians. They also stole about 200k credit card numbers and some personal documents of 182k people.
+
+They are not guessing your credit score based on your social security number, are they? Equifax's CEO said the hackers also stole some trade secrets, but he did not clarify what those were.

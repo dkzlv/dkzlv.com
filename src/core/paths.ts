@@ -11,19 +11,19 @@ export const staticPath = `/${process.env.ROOT_STATIC_PATH}`,
   rootStaticPath = `${rootSitePath}${staticPath}`;
 
 export const mainPath = derived(locale, $locale => `/${$locale}`),
-  postPath = derived(mainPath, $path => (slug: string) => `${$path}/${slug}`);
+  postPath = derived(mainPath, $path => (slug: string) => `${$path}/posts/${slug}`);
 
 const baseSpecialsPath = derived(mainPath, $base => `${$base}/specials`);
 
 export const fingerprintPath = derived(baseSpecialsPath, $base => `${$base}/fingerprint`);
 
-const leakTypeFactory = (type: string) =>
-  derived(leaksPath, $base => (org: string) => `${$base}/${type}/${org}`);
-export const leaksPath = derived(locale, $locale => `/${$locale}/leaks`),
-  leakPath = derived(leaksPath, $base => (slug: string) => `${$base}/${slug}`),
-  orgPath = leakTypeFactory('org'),
-  locationPath = leakTypeFactory('location'),
-  tagPath = leakTypeFactory('tag');
+const breachTypeFactory = (type: string) =>
+  derived(breachesPath, $base => (slug: string) => `${$base}?${type}=${slug}`);
+export const breachesPath = derived(locale, $locale => `/${$locale}/breaches`),
+  breachPath = derived(breachesPath, $base => (slug: string) => `${$base}/case/${slug}`),
+  orgPath = breachTypeFactory('org'),
+  locationPath = breachTypeFactory('location'),
+  tagPath = breachTypeFactory('tag');
 
 export const repoUrl = 'https://github.com/dkzlv/dkzlv.com',
   getLicenseUrl = (filename: string) => `${repoUrl}/blob/master/${filename}`;

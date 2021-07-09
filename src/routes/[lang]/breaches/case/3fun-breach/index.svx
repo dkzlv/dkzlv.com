@@ -1,0 +1,22 @@
+---
+lang: en
+organization: 3fun
+locations: [World]
+tags: [b2c, Dating]
+title: You could have got full user profile with real-time geolocation of all the users
+potentialVictims: ">1500000"
+source: https://techcrunch.com/2019/08/08/group-dating-app-3fun-security-flaws/
+isCorporationbreach: 1
+start: 
+end: 01.08.2019
+added: 22.12.2020
+---
+
+You run an app that covers such a sensitive topic like threesomes and other alternative sexual activities — by the way, no judgment, we all have some wild kinks, that's ok.
+
+So yeah, you run this app. Of course, you write some marketing bullshit on your site, like "safe space", "privacy", you also lecture users to never leave the app when you find a potential partner because it's scary outside, there are scammers and strangers out there.
+
+And then — bam! — people find out you have no protection against [spoofing](https://en.wikipedia.org/wiki/Spoofing_attack), and, researchers say, no real request throttling. What do the requests return? Full user profile: sexual orientation, name, photo, real-time geolocation (yeah, apps can upload it even if the app is closed), last login date, age — well, everything.
+
+You get your centuries-old bash and write a small script that requests the server's data about users being in different locations. Everywhere, without any limitations. In the White House. In the CIA office. Right in the middle of orthodox or Mormon village. You gather this data and sell it to somebody. We don't have any evidence it happened, but it would be a crime to think no one abused such a security hole.
+

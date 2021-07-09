@@ -1,0 +1,18 @@
+---
+organization: 
+locations: 
+tags: 
+potentialVictims: 33500000
+source: 
+start: 
+end: 01.01.2017
+added: 21.03.2021
+---
+
+# русский заголовок
+
+---
+
+# Dunn and Bradstreet
+
+ 	 	 	 	 	"NEW YORK -- Millions of records from a commercial corporate database have been leaked. 	 	 	 	 	The database, about 52 gigabytes in size, contains just under 33.7 million unique email addresses and other contact information from employees of thousands of companies, representing a large portion of the US corporate population. 	 	 	 	 	Dun & Bradstreet, a business services giant, confirmed that it owns the database, which it acquired as part  	of a 2015 deal to buy NetProspex for $125 million.The purchased database contains dozens of fields, some including personal information such as names, job titles and functions, work email addresses, and phone numbers. 	 	 	 	 	Other information includes more generic corporate and publicly sourced data, such as believed office location, the number of employees in the business unit, and other descriptions of the kind of industry the company falls into, such as advertising, legal,  media and broadcasting, and telecoms. 	 	 	 	 	This entire database is used for marketers who want to directly target their own email campaigns and through other communications methods for current and prospective customers. 	 	 	 	 	The data can be bought either in bulk, or by type of record by companies, but it's not known exactly how much the going rate is for a full data set of this size. We understand from  	a 2015 brochure that the cost of accessing a half-million records can cost some firms up to $200,000. 	 	 	 	 	Troy Hunt, who runs breach notification site  	Have I Been Pwned, obtained the database and analyzed the records. 	 	 	 	 	In  	a blog post Tuesday, Hunt said the breakdown was entirely US-focused, with California as the most represented demographic with over four million records, then New York with 2.7 million records and Texas with 2.6 million records. 	 	 	 	 	Hunt's analysis of the records showed that the leading organization by records is the Dept. of Defense, with 101,013 employee records, followed closely by the US Postal Service with 88,153 employee records. 	 	 	 	 	The US Army, Air Force, and Dept. of Veterans Affairs are all listed with a combined 76,379 records. 	 	 	 	 	AT&T, Boeing, Dell, FedEx, IBM, and Xerox were among the most named companies in the database, with tens of thousands of employee records each. 	 	 	 	 	"Whilst you could piece together parts of the data from information already in the public domain, having it aggregated and so easily searchable in this fashion is enormously valuable," said Hunt in an email on Tuesday. "It also serves as a reminder that we've lost control of our privacy; the vast majority of people in the data set would have no idea their information is being sold in this fashion and they certainly don't have any control over it." 	 	 	 	 	Hunt ran the exposed database through  	Have I Been Pwned's database of breached records, which showed 14 percent of email addresses already existed in his database. 	 	 	 	 	The data is now searchable in  	Have I Been Pwned. 	 	 	 	 	But it's not known exactly how the data was exposed, or who is to blame for the leak.  	 	 	 	 	A spokesperson for Dun & Bradshaw would not talk on the record beyond an emailed statement, sent prior to publication. 	 	 	 	 	"We've carefully evaluated the information that was shared with us and it is of a type and in a format that we deliver to customers every day. Based on our analysis, it was not accessed or exposed through a Dun & Bradstreet system," the statement read."More Information: http://www.zdnet.com/article/millions-of-records-leaked-from-huge-corpor...

@@ -1,21 +1,23 @@
 <script context="module">
-  export function preload({ params }: { params: { lang: string } }) {
-    return this.fetch(`${params.lang}/all.json`)
-      .then((r: any) => r.json())
-      .then((postsMeta: Post['meta'][]) => ({ postsMeta }));
-  }
+  import type { Load } from '@sveltejs/kit';
+
+  export const load: Load = async ({ fetch, page }) => {
+    const res = await fetch(`/${page.params.lang}/posts.json`),
+      posts = await res.json();
+    return { props: { posts } };
+  };
 </script>
 
 <script>
-  import type { Post } from '@/core/content/post/types';
+  import type { Post } from '$core/content/getPosts';
 
-  import Meta from '@/components/meta.svelte';
-  import PromoList from '@/components/promoList.svelte';
-  import ProductPromo from '@/components/productPromo/productPromo.svelte';
+  import Meta from '$components/meta.svelte';
+  import PromoList from '$components/promoList/index.svelte';
+  import ProductPromo from '$components/productPromo/productPromo.svelte';
 
   import { locale, date, _ } from 'svelte-i18n';
 
-  export let postsMeta: Post['meta'][];
+  export let posts: Post[];
 </script>
 
 <Meta title={$_('meta.title')} description={$_('meta.description')} contentType="website" />
@@ -27,15 +29,18 @@
   </div>
 </div>
 
-{#each postsMeta as post}
+{#each posts as post}
   <div>
-    <a rel="prefetch" href={`${$locale}/${post.slug}`}>
+    <a rel="prefetch" href={`${$locale}/posts/${post.slug}`}>
       <h2>{post.title}</h2>
     </a>
     <p class="meta">
       {$date(new Date(post.date), { format: 'long' })}
-      •
-      {$_('posts.readTime', { values: { time: post.readTime } })}
+      <!-- 
+        TODO: Couldn't come up with a simple way to calculate read time using mdsvex.
+        
+        •
+      {$_('posts.readTime', { values: { time: 5 } })} -->
     </p>
     <div class="post-content">
       <p>
