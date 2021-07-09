@@ -1,7 +1,7 @@
 ---
 lang: en
 organization: Apple
-locations: [worldwide]
+locations: [World]
 tags: [b2c, b2b]
 title: Gave access to photos — leaked all of your moving
 potentialVictims: ">700000000"

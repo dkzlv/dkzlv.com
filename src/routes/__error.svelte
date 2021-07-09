@@ -1,17 +1,5 @@
-<script>
-  import { dev } from '$app/env';
-
-  export let status: number, error: Error;
-</script>
-
 <svelte:head>
-  <title>Oops: {status}</title>
+  <title>Oops, error</title>
 </svelte:head>
 
-<h1>{status}</h1>
-
-<p>{error.message}</p>
-
-{#if dev && error.stack}
-  <pre>{error.stack}</pre>
-{/if}
+<h2>¯\_(ツ)_/¯</h2>

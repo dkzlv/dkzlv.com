@@ -5,6 +5,8 @@
   export const load: Load = async ({ fetch, page }) => {
     // Unfortunately, we get a real path here, but do not get a slug
     const slug = page.path.split('/posts/')[1];
+    if (!slug) return { redirect: `/${page.params.lang}`, status: 301 };
+
     const res = await fetch(`/${page.params.lang}/posts/${slug}.json`),
       post = await res.json();
     return { props: post };

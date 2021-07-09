@@ -107,7 +107,7 @@
     }
   },
   "colorSwitcher": "Change colors",
-  "consoleWarning": "Hi there, anonymous hacker! We hire THE BEST janitors our there, and you seem to fit our team! Drop a few lines to trash@bin.com",
+  "consoleWarning": "Hi there, hacker! Have a great day ❤️",
   "breaches": {
     "table": {
       "title": "Title",
@@ -144,9 +144,9 @@
     "breaches": "Breaches database",
     "meta": {
       "breaches": {
-        "description": "All significant data breaches and hacks in one place",
+        "description": "All significant data breaches and hacks",
         "orgTitle": "All data breaches by {tagO}{name}{tagC}",
-        "tagTitle": "All data breaches in {tagO}{name}{tagC} category",
+        "tagTitle": "All data breaches in {tagO}{name}{tagC}",
         "locationTitle": "All data breaches affecting people in {tagO}{name}{tagC}",
         "filterBreadcrumb": "With filter"
       }

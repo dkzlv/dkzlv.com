@@ -17,7 +17,7 @@
 <article>
   <h1>{post.title}</h1>
   {#if post.series}
-    <SeriesData series={post.series} fallbackTitle={post.title} />
+    <SeriesData series={post.series} currentSlug={post.slug} />
   {/if}
   <div class="post-content">
     <slot />
@@ -25,7 +25,7 @@
 </article>
 
 {#if post.series && hasAnnouncedInSeries}
-  <SeriesData series={post.series} fallbackTitle={post.title} />
+  <SeriesData series={post.series} currentSlug={post.slug} />
 {:else}
   <Subscription
     >{#if post.emailCollectorMessage}
