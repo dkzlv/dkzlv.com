@@ -7,20 +7,19 @@
   import { sample } from '$utils/random';
   import { codeTags, generateLinkTags } from '$utils/accentTags';
 
+  import { fingerprintPath } from '$core/paths';
   import { get, post, request } from '$core/service';
 
   let isLoading = false,
     justSent = false,
     message = '';
 
-  const id = 'fingerprint-demo';
-
   let href: string, fingerprint: string, prevMessage: string;
 
   onMount(async () => {
     const fp = await Fingerprint2.load();
 
-    href = location.href.replace(location.hash, '') + `#${id}`;
+    href = $fingerprintPath;
     fingerprint = (await fp.get()).visitorId;
     try {
       const res = await request<{ message: string }>({

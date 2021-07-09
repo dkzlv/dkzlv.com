@@ -23,14 +23,14 @@
     },
     "tooltip": {
       "header": "What you'll get?",
-      "noNudes": "No nudes or dickpicks, I promise 🤞",
+      "noNudes": "No nudes or dickpics, I promise 🤞",
       "articles": "I'll send you my articles and summaries of other's that I like"
     }
   },
   "header": {
     "onboard": "Hey! Get onboard",
     "twitter": "on Twitter",
-    "sameContent": "— same content, but faster.",
+    "sameContent": "— same content, but faster.",
     "join": "Or join the newsletter. One email a week if I'm not lazy."
   },
   "posts": {
@@ -67,14 +67,14 @@
         ]
       },
       "result": {
-        "success": "Noted! Your ID: {tagO}{fingerprint}{tagC}. Now {linkO}go to the same page{linkC} from inkognito mode.",
+        "success": "Noted! Your ID: {tagO}{fingerprint}{tagC}. Now {linkO}visit this page{linkC} using incognito mode.",
         "guess": "Well, I presume, your favorite pr0n is {tagO}{prevMessage}{tagC} (you filthy bastard), and your ID is {tagO}{fingerprint}{tagC}."
       },
       "standalone": {
         "header": "Fingerprinting in Web",
         "description": {
-          "withLink": "This is {linkO}a part of my post{linkC} about how corporations gather data about us even if we don't know nothing about it. It's a very small and simple demo. The idea is that you visit a porn-site as a thing you're most ashamed of with incognito mode on. You're a bit of a hacker yourself, aren't you?",
-          "knowsId": "This demo will show you how silly of you it is to think that rich powerful and smart corporations cannot deduce your ID if you use inkognito more. Go ahead!",
+          "withLink": "This is {linkO}a part of my post{linkC} about how corporations gather data about us even if we don't know anything about it. It's a very small and simple demo. The idea is that you visit a porn site as a thing you're most ashamed of with incognito mode on. You're a bit of a hacker yourself, aren't you?",
+          "knowsId": "This demo will show you how silly of you it is to think that rich powerful and smart corporations cannot deduce your ID if you use incognito mode. Go ahead!",
           "additional": [
             "Additional data:",
             "I've added 10k unique fingerprints as extras with different answers;",
@@ -135,7 +135,7 @@
     "disclosure": {
       "header": "This article is about a data breach",
       "personalP": "Typically corporations are not obligated to disclose information about all the data that breached, but only personal users' data.",
-      "tableP": "But we understand that company's valuable aggregated data is stored, most of the time, in the same database as users' data. If one was breached, we presume the other was as well."
+      "tableP": "But we understand that the company's valuable aggregated data is stored, most of the time, in the same database as users' data. If one was breached, we presume the other was as well."
     },
     "emailText": "Subscribe to get these stories in your inbox from time to time. Pinky swear: I won't sell you out."
   },

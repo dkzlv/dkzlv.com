@@ -8,32 +8,34 @@ export const getPosts = () => {
       import.meta.globEager('../../routes/[lang]/posts/**/index.svx'),
     ) as unknown as [string, { metadata: PostFromFile }][];
 
-    cachedPosts = allImported.map(([path, p]) => {
-      const meta = p.metadata,
-        slug = getSlugFromPath(path);
+    cachedPosts = allImported
+      .map(([path, p]) => {
+        const meta = p.metadata,
+          slug = getSlugFromPath(path);
 
-      return {
-        ...meta,
-        slug,
-        date: parse(meta.date, 'dd.MM.yyyy', new Date(0)).getTime(),
+        return {
+          ...meta,
+          slug,
+          date: parse(meta.date, 'dd.MM.yyyy', new Date(0)).getTime(),
 
-        series: meta.series
-          ? meta.series.map(seriesSlug => {
-              if (seriesSlug == '') return getSeriesData(slug, meta);
+          series: meta.series
+            ? meta.series.map(seriesSlug => {
+                if (seriesSlug == '') return getSeriesData(slug, meta);
 
-              const found = allImported.find(([path]) => {
-                const currentSlug = getSlugFromPath(path);
-                return currentSlug === seriesSlug;
-              });
-              if (!found) throw new Error(`Unknown refference ${seriesSlug} from post ${slug}`);
-              return getSeriesData(seriesSlug, found[1].metadata);
-            })
-          : undefined,
+                const found = allImported.find(([path]) => {
+                  const currentSlug = getSlugFromPath(path);
+                  return currentSlug === seriesSlug;
+                });
+                if (!found) throw new Error(`Unknown refference ${seriesSlug} from post ${slug}`);
+                return getSeriesData(seriesSlug, found[1].metadata);
+              })
+            : undefined,
 
-        description: changeSlashN(meta.description),
-        emailCollectorMessage: changeSlashN(meta.emailCollectorMessage || ''),
-      };
-    });
+          description: changeSlashN(meta.description),
+          emailCollectorMessage: changeSlashN(meta.emailCollectorMessage || ''),
+        };
+      })
+      .sort((p1, p2) => p2.date - p1.date);
   }
 
   return cachedPosts;

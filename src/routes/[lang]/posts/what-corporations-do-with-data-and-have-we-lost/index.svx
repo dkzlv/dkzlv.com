@@ -33,6 +33,8 @@ series: ["how-they-harvest-data", ""]
   import OSS from './OSS.png';
   import promo from './promo.png';
   import robinhood from './robinhood.png';
+
+  import { breachPath } from '$core/paths';
 </script>
 
 Hope you've read the first part. 
@@ -61,11 +63,11 @@ You got me. Sorry. I shouldn't have made up such stories. Let's use the real one
 
   ![*Flipboard logo]({flipboard})
 
-  Do you read the news on Flipboard? Congrats, you're one of their 150M monthly active users! By the way [they left their DB open for 9 months](/en/leaks/left-the-servers-open-for-intruders-for-9-months). Supposedly, hackers took away everything from there: reading history, subscriptions. likes, shares, and everything we don't know exist (partners' data, for example).
+  Do you read the news on Flipboard? Congrats, you're one of their 150M monthly active users! By the way [they left their DB open for 9 months]({$breachPath('flipboard-open-servers')}). Supposedly, hackers took away everything from there: reading history, subscriptions. likes, shares, and everything we don't know exist (partners' data, for example).
 
   ![*Equifax Logo]({equifax})
 
-  If you're an American and not a bum, you're most certainly use Equifax products. We in Russia have the same credit scoring, but it's mostly centralized and provided by the government. The USA has private companies doing this thing. What **do** they do? They collect as much data as it's possible about taxpayers from all the market players (banks, retails, healthcare companies, etc.) and they try to predict if you would pay out the credit you get based on this data. So, [they accidentally lost data on 147M americans](/en/leaks/a-huge-credit-bureau-was-hacked-a-lot-of-data-was-stolen) (and a few brits and Canadians along the way). They didn't really elaborate on what data was lost — it's not secure, they said. Lol.
+  If you're an American and not a bum, you're most certainly use Equifax products. We in Russia have the same credit scoring, but it's mostly centralized and provided by the government. The USA has private companies doing this thing. What **do** they do? They collect as much data as it's possible about taxpayers from all the market players (banks, retails, healthcare companies, etc.) and they try to predict if you would pay out the credit you get based on this data. So, [they accidentally lost data on 147M americans]({$breachPath('equifax-notorious-breach')}) (and a few brits and Canadians along the way). They didn't really elaborate on what data was lost — it's not secure, they said. Lol.
 
   ![*Robinhood Logo]({robinhood})
 
@@ -77,7 +79,7 @@ You got me. Sorry. I shouldn't have made up such stories. Let's use the real one
 
   ![*Bulgaria's, Israel, and Brazil flags]({flags})
 
-  Honestly, I'm laughing my ass out. Long story short: [hackers downloaded data about all the taxpayers in the whole of Bulgaria](/en/leaks/a-18-y-o-broke-into-bulgaria-and-39-s-tax-system); [Israel's government lost data about all the voters in the country](/en/leaks/personal-data-of-all-the-voters-in-the-country-leaked) (addresses, names, phones, IDs, etc.); [Brazil's Ministry of Health leaked crucial data on all of their citizens' health](https://www.zdnet.com/article/data-of-243-million-brazilians-exposed-online-via-website-source-code/), 243M people in total.
+  Honestly, I'm laughing my ass out. Long story short: [hackers downloaded data about all the taxpayers in the whole of Bulgaria]({$breachPath('bulgaria-irs-hack')}); [Israel's government lost data about all the voters in the country]({$breachPath('likud-voters-breach')}) (addresses, names, phones, IDs, etc.); [Brazil's Ministry of Health leaked crucial data on all of their citizens' health](https://www.zdnet.com/article/data-of-243-million-brazilians-exposed-online-via-website-source-code/), 243M people in total.
 
 </Enum>
 
@@ -274,7 +276,7 @@ The next would be a non-commercial product that would help communities find and 
 
 ---
 
-The biggest fail of the IT world: you never know if **this service will fuck up**. Say, you use this app called Whisper for sharing your secrets with people *anonymously*. Teens used it to talk about awkward stuff like sex. Then you find out these idiots never used encryption for messages, and then [they left the database open for the general public for god knows how long](/en/leaks/secret-sharing-app-left-the-db-open-to-everyone-for-an-unknown-time). So some people downloaded everything from there: messages, profiles with ages, geolocation, information on group participation. So if you spread rumors about your ex while sitting on crapper — will, karma's a bitch, get ready. They still have 30M monthly active users, btw.
+The biggest fail of the IT world: you never know if **this service will fuck up**. Say, you use this app called Whisper for sharing your secrets with people *anonymously*. Teens used it to talk about awkward stuff like sex. Then you find out these idiots never used encryption for messages, and then [they left the database open for the general public for god knows how long]({$breachPath('3fun-breach')}). So some people downloaded everything from there: messages, profiles with ages, geolocation, information on group participation. So if you spread rumors about your ex while sitting on crapper — will, karma's a bitch, get ready. They still have 30M monthly active users, btw.
 
 So you open a site. How can you know if it's gonna blow up in your face in 3 years? You can't for now. Let's see the options.
 
