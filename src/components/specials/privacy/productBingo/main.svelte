@@ -16,7 +16,7 @@
 
     row-gap: 0.5em;
 
-    &.header :global(> *:nth-child(-n + 2)) {
+    &.header > :global(*:nth-child(-n + 2)) {
       border-bottom: 2px dotted $hr-color;
 
       font-weight: bold;

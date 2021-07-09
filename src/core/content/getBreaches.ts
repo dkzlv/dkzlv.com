@@ -1,5 +1,6 @@
 import slugify from 'slugify';
 import { parse } from 'date-fns';
+import { abbreviateNumber } from '$utils/abbreviateNumber';
 
 let cachedBreaches: Breach[] | null = null;
 
@@ -10,8 +11,16 @@ export function getBreaches() {
     ) as unknown as [string, { metadata: BreachFromFile }][];
 
     cachedBreaches = allImported.map(([path, p]) => {
-      const { organization, tags, locations, ...meta } = p.metadata,
+      const { organization, tags, locations, potentialVictims: _victims, ...meta } = p.metadata,
         slug = getSlugFromPath(path);
+
+      let potentialVictims: string;
+      if (typeof _victims == 'number' || !_victims.startsWith('>'))
+        potentialVictims = abbreviateNumber(+_victims);
+      else {
+        const abbr = abbreviateNumber(+_victims.slice(1));
+        potentialVictims = `>${abbr}`;
+      }
 
       return {
         ...meta,
@@ -19,6 +28,7 @@ export function getBreaches() {
         organization: slugData(organization),
         locations: locations.map(slugData),
         tags: tags.map(slugData),
+        potentialVictims,
         start: meta.start ? parseDate(meta.start) : undefined,
         end: parseDate(meta.end),
         added: parseDate(meta.added),
@@ -37,7 +47,7 @@ function parseDate(dt: string) {
   return parse(dt, 'dd.MM.yyyy', new Date(0)).getTime();
 }
 function slugData(data: string): SluggedData {
-  return { slug: slugify(data), display: data };
+  return { slug: slugify(data, { lower: true }), display: data };
 }
 
 type BreachFromFile = CommonBreach & {
@@ -67,6 +77,6 @@ type CommonBreach = {
   title: string;
   potentialVictims: string | number;
   source: string;
-  isCorporationLeak: boolean;
+  isCorporationbreach: boolean;
   isEmpty: boolean;
 };

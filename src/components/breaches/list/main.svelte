@@ -6,13 +6,6 @@
 
   export let breaches: Breach[];
 
-  export let hideOrg = false,
-    hideLocation = false;
-
-  $: inlineStyle =
-    `--orgSize: ${hideOrg ? '' : 'minmax(150px, 250px)'};` +
-    `--spreadSize: ${hideLocation ? '' : 'min-content'}`;
-
   let showOverlay = true,
     containerEl: HTMLDivElement;
 
@@ -25,13 +18,13 @@
 
 <div class="box">
   <div class="main" bind:this={containerEl} on:scroll={scrollHandler}>
-    <div class="table" style={inlineStyle}>
+    <div class="table">
       <div class="row">
-        <Header {hideOrg} {hideLocation} />
+        <Header />
       </div>
       {#each breaches as breach}
         <div class="row">
-          <Item {breach} {hideOrg} {hideLocation} />
+          <Item {breach} />
         </div>
       {/each}
     </div>
@@ -70,8 +63,8 @@
     width: $overlay-width;
     background: linear-gradient(
       90deg,
-      $leaks-grid-overlay-transparent 0%,
-      $leaks-grid-background 60%
+      $breaches-grid-overlay-transparent 0%,
+      $breaches-grid-background 60%
     );
   }
 
@@ -103,13 +96,13 @@
   }
 
   .box {
-    background-color: $leaks-grid-background;
+    background-color: $breaches-grid-background;
   }
 
   .table {
     display: grid;
     place-items: stretch;
-    grid-template-columns: minmax(300px, max-content) var(--orgSize) var(--spreadSize) repeat(
+    grid-template-columns: minmax(300px, max-content) minmax(150px, 250px) min-content repeat(
         4,
         minmax(150px, 200px)
       );
@@ -126,7 +119,7 @@
     }
 
     &:nth-child(odd) > :global(div) {
-      background-color: $leaks-grid-background-odd;
+      background-color: $breaches-grid-background-odd;
     }
 
     &:nth-child(2) > :global(div) {

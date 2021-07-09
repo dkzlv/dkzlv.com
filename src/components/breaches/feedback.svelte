@@ -11,9 +11,9 @@
   let payload: { values: { [key: string]: string } };
   $: {
     const subject = breach
-        ? `[${breach.slug}] ${$_('leaks.feedback.emailSubjectOld')}`
-        : `[leaks] ${$_('leaks.feedback.emailSubjectNew')}: `,
-      body = breach ? '' : $_('leaks.feedback.newStoryBody'),
+        ? `[${breach.slug}] ${$_('breaches.feedback.emailSubjectOld')}`
+        : `[breaches] ${$_('breaches.feedback.emailSubjectNew')}: `,
+      body = breach ? '' : $_('breaches.feedback.newStoryBody'),
       link = `mailto:dkzlv@protonmail.com?subject=${encodeURIComponent(
         subject,
       )}&body=${encodeURIComponent(body)}`;
@@ -30,24 +30,24 @@
 <div class="box">
   <div class="nested">
     <h4>{$_('email.endPostEngagement.header')}</h4>
-    <p>{$_('leaks.emailText')}</p>
+    <p>{$_('breaches.emailText')}</p>
     <EmailCollector />
   </div>
 </div>
 
 <h4>
-  {breach ? $_('leaks.feedback.headerOld') : $_('leaks.feedback.headerNew')}
+  {breach ? $_('breaches.feedback.headerOld') : $_('breaches.feedback.headerNew')}
 </h4>
 
 {#if breach}
   <p class="last">
-    {@html $_('leaks.feedback.pOld', payload)}
+    {@html $_('breaches.feedback.pOld', payload)}
   </p>
 {:else}
   <p>
-    {@html $_('leaks.feedback.pNew', payload)}
+    {@html $_('breaches.feedback.pNew', payload)}
   </p>
-  <p class="last">{$_('leaks.feedback.pNewSources')}</p>
+  <p class="last">{$_('breaches.feedback.pNewSources')}</p>
 {/if}
 
 <style>

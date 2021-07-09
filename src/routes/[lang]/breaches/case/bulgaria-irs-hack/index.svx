@@ -1,8 +1,8 @@
 ---
 lang: en
 organization: Bulgaria IRS
-locations: [🇧🇬 Bulgaria]
-tags: [government]
+locations: [Bulgaria]
+tags: [Government]
 title: An 18 y.o broke into Bulgaria's tax system
 potentialVictims: ">7000000"
 source: https://www.businessinsider.com/hacker-steals-personal-data-every-taxpayer-bulgaria-2019-7

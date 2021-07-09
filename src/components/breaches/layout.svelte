@@ -10,27 +10,26 @@
   import { orgPath, locationPath, tagPath } from '$core/paths';
 
   export let breach: Breach;
-  console.log(breach);
 </script>
 
 <h1>
   {@html breach.title}
 </h1>
 <p class="added">
-  {$_('leaks.table.added')}:
+  {$_('breaches.table.added')}:
   {$date(new Date(breach.added), { format: 'medium' })}
 </p>
 <div class="box">
   <div class="nested main">
     <div class="row">
-      <div>{$_('leaks.table.org')}</div>
+      <div>{$_('breaches.table.org')}</div>
       <Link href={$orgPath(breach.organization.slug)}>
         {breach.organization.display}
       </Link>
     </div>
 
     <div class="row">
-      <div>{$_('leaks.table.spread')}</div>
+      <div>{$_('breaches.table.spread')}</div>
       <div class="tags">
         {#each breach.locations as location}
           <Link class="tag" href={$locationPath(location.slug)}>
@@ -40,7 +39,7 @@
       </div>
     </div>
     <div class="row">
-      <div>{$_('leaks.table.tags')}</div>
+      <div>{$_('breaches.table.tags')}</div>
       <div class="tags">
         {#each breach.tags as tag}
           <Link class="tag" href={$tagPath(tag.slug)}>{tag.display}</Link>
@@ -48,18 +47,18 @@
       </div>
     </div>
     <div class="row">
-      <div>{$_('leaks.table.victims')}</div>
+      <div>{$_('breaches.table.victims')}</div>
       <div>{breach.potentialVictims}</div>
     </div>
     <div class="row">
-      <div>{$_('leaks.table.when')}</div>
+      <div>{$_('breaches.table.when')}</div>
       <div class="when">
         <div class:smol={!breach.start}>
           {breach.start
             ? $date(breach.start, {
                 format: 'medium',
               })
-            : $_('leaks.table.unknown').toLowerCase()}
+            : $_('breaches.table.unknown').toLowerCase()}
         </div>
         <div>→</div>
         <div>{$date(breach.end, { format: 'medium' })}</div>
@@ -67,13 +66,13 @@
     </div>
 
     <div class="source">
-      <Link class="tag" href={breach.source}>{$_('leaks.table.source')}</Link>
+      <Link class="tag" href={breach.source}>{$_('breaches.table.source')}</Link>
     </div>
   </div>
 </div>
 
 <div class="post-content">
-  {#if breach.isCorporationLeak}
+  {#if breach.isCorporationbreach}
     <CompanyDisclosure />
   {/if}
 

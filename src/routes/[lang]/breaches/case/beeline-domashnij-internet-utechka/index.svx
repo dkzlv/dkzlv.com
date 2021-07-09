@@ -6,7 +6,7 @@ tags: [b2c]
 title: Утекли данные всех абонентов домашнего интернета
 potentialVictims: ">8700000"
 source: https://www.kommersant.ru/doc/4117174
-isCorporationLeak: 1
+isCorporationbreach: 1
 start: 
 end: 01.11.2017
 added: 22.12.2020

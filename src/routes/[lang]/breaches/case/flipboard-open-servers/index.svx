@@ -1,12 +1,12 @@
 ---
 lang: en
 organization: Flipboard
-locations: [worldwide]
+locations: [World]
 tags: [b2c]
 title: Left the servers open for intruders for 9 months
 potentialVictims: ">150000000"
 source: https://techcrunch.com/2019/05/28/flipboard-hacks-password-resets/
-isCorporationLeak: 1
+isCorporationbreach: 1
 start: 02.07.2018
 end: 23.03.2019
 added: 30.11.2020
@@ -16,7 +16,7 @@ added: 30.11.2020
   import phpError from './phpError.png';
 </script>
 
-Firstly, I'm fascinated by the fact that they wipe the information about the leak. Techcrunch references [in their article](https://techcrunch.com/2019/05/28/flipboard-hacks-password-resets/) a statement by Flipboard team that is [already unavailable](https://about.flipboard.com/support-information-incident-May-2019/) — a little more than a year from the event itself! Besides, they did such a great setup of their WordPress blog, that this page now shows a PHP error right there. Bravo.
+Firstly, I'm fascinated by the fact that they wipe the information about the breach. Techcrunch references [in their article](https://techcrunch.com/2019/05/28/flipboard-hacks-password-resets/) a statement by Flipboard team that is [already unavailable](https://about.flipboard.com/support-information-incident-May-2019/) — a little more than a year from the event itself! Besides, they did such a great setup of their WordPress blog, that this page now shows a PHP error right there. Bravo.
 
 ![PHP goes brrrr]({phpError})
 

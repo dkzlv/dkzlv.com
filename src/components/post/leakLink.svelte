@@ -10,8 +10,8 @@
 
 <div class="wrapper">
   <Link href={$breachesPath}>
-    <h3><span>{$_('posts.leaks.title')}</span></h3>
-    <h4><span>{$_('posts.leaks.count', { values: { count } })}</span></h4>
+    <h3><span>{$_('posts.breaches.title')}</span></h3>
+    <h4><span>{$_('posts.breaches.count', { values: { count } })}</span></h4>
   </Link>
 </div>
 

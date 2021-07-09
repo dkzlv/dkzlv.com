@@ -1,8 +1,8 @@
 ---
 lang: en
 organization: Whisper
-locations: [worldwide]
-tags: [b2c, dating]
+locations: [World]
+tags: [b2c, Dating]
 title: Secret-sharing app Whisper left the DB open to everyone for an unknown time
 potentialVictims: ">250000000"
 source: https://www.washingtonpost.com/technology/2020/03/10/secret-sharing-app-whisper-left-users-locations-fetishes-exposed-web/

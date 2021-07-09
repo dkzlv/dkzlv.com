@@ -26,7 +26,7 @@
 <Breadcrumbs
   paths={[
     { text: $_('nav.main'), link: $mainPath },
-    { text: $_('nav.leaks'), link: $breachesPath },
+    { text: $_('nav.breaches'), link: $breachesPath },
   ]} />
 <BreachLayout {breach}>
   <slot />

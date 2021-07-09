@@ -83,7 +83,7 @@ Machines identify each other using ip-addresses — those look like 4 numbers sp
 
 But the computers still work — all thanks to a thing called DNS (Domain Name Server, clear, isn't it?). Think of it as a huge table in Excel that translates a domain into an ip-address.
 
-DNS will be the first leak. The problem is that the founding fathers of the internet didn't foresee this informational revolution and they made the information exchange with the DNS completely unencrypted. Later we'll talk about transport layer security, but the idea is simple: your internet provider will always know what sites you visit. Sometimes it can even modify the answer from the original DNS if the site owner does not implement [DNSSEC](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions).
+DNS will be the first breach. The problem is that the founding fathers of the internet didn't foresee this informational revolution and they made the information exchange with the DNS completely unencrypted. Later we'll talk about transport layer security, but the idea is simple: your internet provider will always know what sites you visit. Sometimes it can even modify the answer from the original DNS if the site owner does not implement [DNSSEC](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions).
 
 Answering your question: yes, your provider knows you visit *the site*, which makes you sweat like a dog.
 

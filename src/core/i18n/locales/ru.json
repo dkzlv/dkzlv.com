@@ -35,7 +35,7 @@
   },
   "posts": {
     "readTime": "{time, plural, one {{time} минута} few {{time} минуты} other {{time} минут}}",
-    "leaks": {
+    "breaches": {
       "title": "База сливов",
       "count": "Всего добавлено {count, plural, one {{count} слив} few {{count} слива} other {{count} сливов}}"
     },
@@ -108,7 +108,7 @@
   },
   "colorSwitcher": "Сменить цвета",
   "consoleWarning": "Даров, хакир! Мы нанимаем лучших уборщиков, и ты — прекрасный кандидат! Пиши на trash@bin.com",
-  "leaks": {
+  "breaches": {
     "table": {
       "title": "Заголовок",
       "org": "Организация",
@@ -141,13 +141,13 @@
   },
   "nav": {
     "main": "Главная",
-    "leaks": "База сливов",
+    "breaches": "База сливов",
     "meta": {
-      "leaks": {
+      "breaches": {
         "description": "Все значимые сливы данных и хаки в одном месте",
-        "orgTitle": "Все утечки данных этой организации",
-        "locationTitle": "Все утечки данных, затронувшие людей из этого места",
-        "tagTitle": "Все утечки данных в этой категории",
+        "orgTitle": "{tagO}{name}{tagC}: все утечки данных этой организации",
+        "locationTitle": "{tagO}{name}{tagC}: все утечки данных отсюда",
+        "tagTitle": "{tagO}{name}{tagC}: все утечки данных в этой категории",
         "filterBreadcrumb": "С фильтром"
       }
     },

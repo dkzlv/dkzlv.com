@@ -1,12 +1,12 @@
 ---
 lang: en
 organization: Equifax
-locations: [worldwide, USA, Canada, UK]
+locations: [World, USA, Canada, UK]
 tags: [b2c, b2b]
 title: A huge credit bureau was hacked, a lot of data was stolen
 potentialVictims: 162000000
 source: https://en.wikipedia.org/wiki/2017_Equifax_data_breach
-isCorporationLeak: 1
+isCorporationbreach: 1
 start: 01.05.2017
 end: 01.07.2017
 added: 30.11.2020

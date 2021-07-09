@@ -4,7 +4,7 @@
 
 <div class="callout red">
   <p>❌</p>
-  <p><strong>{$_('leaks.disclosure.header')}</strong></p>
-  <p>{$_('leaks.disclosure.personalP')}</p>
-  <p>{$_('leaks.disclosure.tableP')}</p>
+  <p><strong>{$_('breaches.disclosure.header')}</strong></p>
+  <p>{$_('breaches.disclosure.personalP')}</p>
+  <p>{$_('breaches.disclosure.tableP')}</p>
 </div>

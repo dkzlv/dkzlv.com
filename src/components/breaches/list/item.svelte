@@ -5,15 +5,15 @@
 
   import Link from '$components/link.svelte';
 
-  import { leakPath, orgPath, locationPath, tagPath } from '$core/paths';
+  import { breachPath, orgPath, locationPath, tagPath } from '$core/paths';
 
-  export let breach: Breach, hideOrg: boolean, hideLocation: boolean;
+  export let breach: Breach;
 </script>
 
 <div class="cell" title={breach.title}>
   {#if breach.isEmpty}
     <Link href={breach.source}>
-      <span>{@html breach.title}</span>
+      <span>{breach.title}</span>
       <span class="icon">
         <svg viewBox="0 0 51 49" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -25,28 +25,24 @@
       </span>
     </Link>
   {:else}
-    <Link href={$leakPath(breach.slug)}>
-      {@html breach.title}
+    <Link href={$breachPath(breach.slug)}>
+      {breach.title}
     </Link>
   {/if}
 </div>
-{#if !hideOrg}
-  <div class="cell">
-    <Link href={$orgPath(breach.organization.slug)}>
-      {breach.organization.display}
-    </Link>
-  </div>
-{/if}
-{#if !hideLocation}
-  <div class="cell tags">
-    {#each breach.locations as location}
-      <Link class="tag" href={$locationPath(location.slug)}>
-        {location.display}
-      </Link>
-    {/each}
-  </div>
-{/if}
+<div class="cell">
+  <Link href={$orgPath(breach.organization.slug)}>
+    {breach.organization.display}
+  </Link>
+</div>
 <div class="cell tags">
+  {#each breach.locations as location}
+    <Link class="tag" href={$locationPath(location.slug)}>
+      {location.display}
+    </Link>
+  {/each}
+</div>
+<div class="cell tags to-lowercase">
   {#each breach.tags as tag}
     <Link class="tag" href={$tagPath(tag.slug)}>{tag.display}</Link>
   {/each}
@@ -55,7 +51,7 @@
 <div class="cell">
   {#if breach.start}
     {$date(new Date(breach.start), { format: 'medium' })}
-  {:else}<span class="unknown">{$_('leaks.table.unknown').toLowerCase()}</span>{/if}
+  {:else}<span class="unknown">{$_('breaches.table.unknown').toLowerCase()}</span>{/if}
 </div>
 <div class="cell">{$date(new Date(breach.end), { format: 'medium' })}</div>
 
@@ -64,6 +60,11 @@
     padding: 1em 0.4em;
 
     border-right: 1px dotted rgb(224, 224, 224);
+
+    &.to-lowercase {
+      text-transform: lowercase;
+    }
+
     &:last-child {
       border-right: none;
     }

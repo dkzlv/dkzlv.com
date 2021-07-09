@@ -1,9 +1,9 @@
 ---
 lang: ru
 organization: Apple
-locations: [worldwide]
+locations: [Весь мир]
 tags: [b2c, b2b]
-title: Gave access to photos — leaked all of your moving
+title: На iOS доступ к фотографиям сливает геолокацию и много чего еще
 potentialVictims: ">700000000"
 source: https://krausefx.com/blog/ios-privacy-detectlocation-an-easy-way-to-access-the-users-ios-location-data-without-actually-having-access
 start: 

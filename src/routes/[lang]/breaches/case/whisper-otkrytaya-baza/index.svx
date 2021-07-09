@@ -1,8 +1,8 @@
 ---
 lang: ru
 organization: Whisper
-locations: [весь мир]
-tags: [b2c, дейтинг]
+locations: [Весь мир]
+tags: [b2c, Дейтинг]
 title: Сервис анонимных сообщений Whisper неизвестное время держал открытой всю свою базу данных
 potentialVictims: ">250000000"
 source: https://www.washingtonpost.com/technology/2020/03/10/secret-sharing-app-whisper-left-users-locations-fetishes-exposed-web/

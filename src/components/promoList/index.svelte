@@ -29,7 +29,7 @@
         </div>
       {/if}
     </div>
-    <p><span class="add-back">{$_('posts.leaks.title')}</span></p>
+    <p><span class="add-back">{$_('posts.breaches.title')}</span></p>
   </a>
   <a class="div2" href={$fingerprintPath}>
     <p><span class="add-back">{$_('specials.fingerprint.promoHeader')}</span></p></a>

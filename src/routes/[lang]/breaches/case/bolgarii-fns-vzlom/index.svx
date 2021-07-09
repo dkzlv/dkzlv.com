@@ -1,8 +1,8 @@
 ---
 lang: ru
 organization: ФНС Болгарии
-locations: [🇧🇬 Болгария]
-tags: [государство]
+locations: [Болгария]
+tags: [Государство]
 title: У болгарского ФНС увели все данные о жителях страны
 potentialVictims: ">7000000"
 source: https://www.businessinsider.com/hacker-steals-personal-data-every-taxpayer-bulgaria-2019-7

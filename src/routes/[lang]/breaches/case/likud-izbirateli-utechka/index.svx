@@ -1,8 +1,8 @@
 ---
 lang: ru
 organization: Ликуд
-locations: [🇮🇱 Израиль]
-tags: [государство]
+locations: [Израиль]
+tags: [Государство]
 title: Персональные данные всех избирателей страны утекли
 potentialVictims: ">6500000"
 source: https://edition.cnn.com/2020/02/11/tech/israel-voters-data-exposed-intl/index.html

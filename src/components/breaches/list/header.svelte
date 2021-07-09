@@ -1,20 +1,14 @@
 <script>
   import { _ } from 'svelte-i18n';
-
-  export let hideOrg: boolean, hideLocation: boolean;
 </script>
 
-<div>{$_('leaks.table.title')}</div>
-{#if !hideOrg}
-  <div>{$_('leaks.table.org')}</div>
-{/if}
-{#if !hideLocation}
-  <div>{$_('leaks.table.spread')}</div>
-{/if}
-<div>{$_('leaks.table.tags')}</div>
-<div>{$_('leaks.table.victims')}</div>
-<div>{$_('leaks.table.start')}</div>
-<div>{$_('leaks.table.end')}</div>
+<div>{$_('breaches.table.title')}</div>
+<div>{$_('breaches.table.org')}</div>
+<div>{$_('breaches.table.spread')}</div>
+<div>{$_('breaches.table.tags')}</div>
+<div>{$_('breaches.table.victims')}</div>
+<div>{$_('breaches.table.start')}</div>
+<div>{$_('breaches.table.end')}</div>
 
 <style lang="scss">
   $border-style: 1px dotted rgb(184, 184, 184);

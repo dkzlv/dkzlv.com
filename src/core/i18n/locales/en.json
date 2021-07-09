@@ -35,9 +35,9 @@
   },
   "posts": {
     "readTime": "{time, plural, one {1 minute} other {{time} minutes}}",
-    "leaks": {
-      "title": "Leaks database",
-      "count": "Total of {count, plural, one {{count} leak} other {{count} leaks}} added"
+    "breaches": {
+      "title": "Breaches database",
+      "count": "Total of {count, plural, one {{count} breach} other {{count} breaches}} added"
     },
     "series": {
       "header": "Post series",
@@ -108,7 +108,7 @@
   },
   "colorSwitcher": "Change colors",
   "consoleWarning": "Hi there, anonymous hacker! We hire THE BEST janitors our there, and you seem to fit our team! Drop a few lines to trash@bin.com",
-  "leaks": {
+  "breaches": {
     "table": {
       "title": "Title",
       "org": "Organization",
@@ -125,7 +125,7 @@
     "feedback": {
       "headerNew": "Do you know such stories?",
       "headerOld": "Is something incorrect?",
-      "pNew": "If we missed some really cool story on data leaks, please {linkEmailO}write us an email{linkEmailC}, or {linkPRO}send a PR in GitHub{linkPRC}, if you know what it is.",
+      "pNew": "If we missed some really cool story on data breaches, please {linkEmailO}write us an email{linkEmailC}, or {linkPRO}send a PR in GitHub{linkPRC}, if you know what it is.",
       "pNewSources": "Important: we're not publishing stories without valid sources.",
       "pOld": "You can send any corrections and additions to this article {linkEmailO}on my email{linkEmailC}, or {linkPRO}send a PR in GitHub{linkPRC}, if you know what it is.",
       "emailSubjectNew": "New story",
@@ -133,21 +133,21 @@
       "newStoryBody": "What is it about in two words: \n\nSource: "
     },
     "disclosure": {
-      "header": "This article is about a data leak",
-      "personalP": "Typically corporations are not obligated to disclose information about all the data that leaked, but only personal users' data.",
-      "tableP": "But we understand that company's valuable aggregated data is stored, most of the time, in the same database as users' data. If one was leaked, we presume the other was as well."
+      "header": "This article is about a data breach",
+      "personalP": "Typically corporations are not obligated to disclose information about all the data that breached, but only personal users' data.",
+      "tableP": "But we understand that company's valuable aggregated data is stored, most of the time, in the same database as users' data. If one was breached, we presume the other was as well."
     },
     "emailText": "Subscribe to get these stories in your inbox from time to time. Pinky swear: I won't sell you out."
   },
   "nav": {
     "main": "Main",
-    "leaks": "Leaks database",
+    "breaches": "Breaches database",
     "meta": {
-      "leaks": {
-        "description": "All significant data leaks and hacks in one place",
-        "orgTitle": "All data leaks by this organization",
-        "tagTitle": "All data leaks for this category",
-        "locationTitle": "All data leaks that harmed people in this area",
+      "breaches": {
+        "description": "All significant data breaches and hacks in one place",
+        "orgTitle": "All data breaches by {tagO}{name}{tagC}",
+        "tagTitle": "All data breaches in {tagO}{name}{tagC} category",
+        "locationTitle": "All data breaches affecting people in {tagO}{name}{tagC}",
         "filterBreadcrumb": "With filter"
       }
     },

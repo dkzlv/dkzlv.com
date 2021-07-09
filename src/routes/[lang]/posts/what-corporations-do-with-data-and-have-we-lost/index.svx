@@ -45,7 +45,7 @@ You entered your email and password on a site where you can buy the best Bashkir
 2. those genius apiologists didn't have a clue about [salting and hashing passwords](https://en.wikipedia.org/wiki/Salt_(cryptography)), they stored it in plaintext;
 3. a highly dangerous group of Bashkirian hackers decided to hack all the stores in their region for the lulz. Our honey makers left the admin-password credentials, obviously.
 
-So, legally or illegally your data became transparent to everyone. And if you reuse the same password over and over again it only takes a single leak to allow anyone to read your emails, sit in your social networks and leave no trace.
+So, legally or illegally your data became transparent to everyone. And if you reuse the same password over and over again it only takes a single breach to allow anyone to read your emails, sit in your social networks and leave no trace.
 
 You can't hide your preference (Altai flower honey rules!).
 

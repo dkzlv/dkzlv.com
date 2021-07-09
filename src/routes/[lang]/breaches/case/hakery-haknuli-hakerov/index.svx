@@ -1,8 +1,8 @@
 ---
 lang: ru
 organization: Mazafaka
-locations: [весь мир]
-tags: [смешно]
+locations: [Весь мир]
+tags: [Смешно]
 title: Хакеры хакнули форумы хакеров
 potentialVictims: 3000
 source: https://krebsonsecurity.com/2021/03/three-top-russian-cybercrime-forums-hacked/
