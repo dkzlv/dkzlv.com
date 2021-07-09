@@ -7,21 +7,24 @@ import containers from 'remark-containers';
 import footnotes from 'remark-footnotes';
 import slug from 'remark-slug';
 import externalLinks from 'remark-external-links';
+import { config } from 'dotenv-flow';
 
-const extensions = ['.svelte', '.svx'];
+config();
+
+const extensions = ['.svelte', '.svx'],
+  envVars = ['SITE_SCHEME', 'SITE_HOST', 'SITE_PORT', 'MAILCHIMP_LIST_ID', 'MAILCHIMP_API_KEY'];
 
 export default {
   kit: {
     adapter: node(),
     vite: () => ({
-      define: {
-        'process.env.ROOT_DOMAIN': JSON.stringify(process.env.ROOT_DOMAIN),
-      },
+      define: Object.fromEntries(
+        envVars.map(key => [`process.env.${key}`, JSON.stringify(process.env[key])]),
+      ),
       resolve: {
         alias: {
           $components: path.resolve('src/components'),
           $core: path.resolve('src/core'),
-          $static: path.resolve('static/static'),
           $utils: path.resolve('src/utils'),
         },
         dedupe: ['svelte'],

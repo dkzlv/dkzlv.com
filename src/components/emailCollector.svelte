@@ -2,7 +2,7 @@
   import { slide } from 'svelte/transition';
   import { _, locale } from 'svelte-i18n';
 
-  import { request } from '$core/service';
+  import { post, request } from '$core/service';
   import { isEmail } from '$utils/validations/email';
   import { delay } from '$utils/delay';
 
@@ -31,18 +31,23 @@
       }
 
       isLoading = true;
-      const res = await request('POST', 'subscribe', {
-        email,
-        language: $locale,
-      });
-      isLoading = false;
-      if (res.ok) {
+      try {
+        await request({
+          method: post,
+          path: 'subscribe',
+          data: {
+            email,
+            language: $locale,
+          },
+        });
         email = '';
         success = true;
         await delay(5000);
         success = false;
-      } else {
-        errorCode = (await res.json()).code;
+      } catch (err) {
+        errorCode = 101;
+      } finally {
+        isLoading = false;
       }
     };
 </script>

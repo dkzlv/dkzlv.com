@@ -121,8 +121,10 @@ public/bundle.*
 build/
 
 # dotenv environment variables file
+.env.production
 .env.development
 .env.stage
+.env
 
 # Ecosystem file
 ecosystem.config.yaml
