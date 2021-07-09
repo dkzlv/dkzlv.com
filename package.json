@@ -8,11 +8,7 @@
     "type": "tsc --noEmit && svelte-check --compiler-warnings \"module-script-reactive-declaration:ignore\"",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
-    "content:post": "node scripts/content/post.js",
-    "content:leak": "node scripts/content/leak.js",
-    "db:tag": "node scripts/db/tag.js",
-    "db:org": "node scripts/db/org.js",
-    "db:location": "node scripts/db/location.js"
+    "content:post": "node scripts/content/post.js"
   },
   "dependencies": {
     "@fingerprintjs/fingerprintjs": "^3.2.0",

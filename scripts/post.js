@@ -1,5 +1,5 @@
 const slugify = require('@sindresorhus/slugify'),
-  input = require('../../src/utils/input'),
+  input = require('../src/utils/input'),
   join = require('path').join,
   fs = require('fs'),
   { format } = require('date-fns'),
