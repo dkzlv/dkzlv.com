@@ -1,31 +1,45 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
   "include": [
-    "src/**/*",
-    "src/node_modules/**/*"
+    "src/**/*.d.ts",
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.svelte"
   ],
   "exclude": [
     "node_modules/*",
-    "__sapper__/*",
     "static/*",
   ],
   "compilerOptions": {
     "lib": [
       "DOM",
-      "ES2020"
+      "ES2020",
     ],
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
+      "$app/*": [
+        ".svelte/dev/runtime/app/*",
+        ".svelte/build/runtime/app/*"
+      ],
+      "$components/*": [
+        "src/components/*"
+      ],
+      "$core/*": [
+        "src/core/*"
+      ],
+      "$utils/*": [
+        "src/utils/*"
+      ],
+      "$static/*": [
+        "src/static/static"
       ]
     },
-    // Overriding the Svelte config, because it is easier to migrate now
-    "importsNotUsedAsValues": "preserve",
-    "target": "ES2020",
+    "moduleResolution": "node",
+    "target": "es2018",
     "module": "esnext",
-    "noImplicitAny": true,
-    "strictNullChecks": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
     "resolveJsonModule": true,
-  }
+    "noEmit": true,
+  },
 }

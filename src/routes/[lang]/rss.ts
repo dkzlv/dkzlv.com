@@ -1,12 +1,16 @@
-import { getFeeds } from '@/core/content/post/feeds';
+import type { RequestHandler } from '@sveltejs/kit';
+
+import { getFeeds } from '$core/content/getFeed';
 
 const feeds = getFeeds();
 
-export const get = (req: any, res: any) => {
-  const { lang } = req.params;
+export const get: RequestHandler = ({ params }) => {
+  const { lang } = params;
 
-  res.writeHead(200, {
-    'Content-Type': 'application/rss+xml; charset=utf-8',
-  });
-  res.end(feeds[lang as 'en' | 'ru'].rss2());
+  return {
+    body: feeds[lang as 'en' | 'ru'].rss2(),
+    headers: {
+      'Content-Type': 'application/rss+xml; charset=utf-8',
+    },
+  };
 };

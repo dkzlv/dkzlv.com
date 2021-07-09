@@ -1,7 +1,3 @@
-<script context="module">
-  export const classname = 'pidor';
-</script>
-
 <script>
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
@@ -51,19 +47,11 @@
   let counter = 0,
     optsIndex = -1,
     confessionTexts: string[] = $json('specials.pidor.opts');
-  $: if (
-    counter === 1 ||
-    counter === 2 ||
-    counter === 3 ||
-    counter === 5 ||
-    counter === 10 ||
-    counter === 28 ||
-    counter === 50
-  )
-    optsIndex++;
+  const activeIndexes = [1, 2, 3, 5, 10, 28, 50];
+  $: if (activeIndexes.includes(counter)) optsIndex++;
 
   const listener = () => {
-    const app = document.getElementById('app')!,
+    const app = document.body,
       rawCoor = confessionEl.getBoundingClientRect(),
       coor = {
         x: rawCoor.x + rawCoor.width / 2,

@@ -1,10 +1,6 @@
-<script>
-  export let text: string;
-</script>
-
 <div class="box">
   <div class="nested enum">
-    {@html text}
+    <slot />
   </div>
 </div>
 

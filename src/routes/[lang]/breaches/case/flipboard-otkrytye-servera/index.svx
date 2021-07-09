@@ -1,0 +1,43 @@
+---
+lang: ru
+organization: Flipboard
+locations: [Весь мир]
+tags: [b2c]
+title: Оставили сервера открытыми на 9 месяцев
+potentialVictims: ">150000000"
+source: https://techcrunch.com/2019/05/28/flipboard-hacks-password-resets/
+isCorporationbreach: 1
+start: 02.07.2018
+end: 23.03.2019
+added: 30.11.2020
+---
+
+<script>
+  import phpError from './phpError.png';
+</script>
+
+Во-первых, стоит подметить спешность в удалении информации о взломе. Techcrunch [в своей статье](https://techcrunch.com/2019/05/28/flipboard-hacks-password-resets/) ссылается на страницу, которая на сайте блога Flipboard [уже недоступна](https://about.flipboard.com/support-information-incident-May-2019/) — немногим больше, чем через год после взлома! Кроме того, они настолько хорошо настроили свой блог на WordPress, что на странице правил вылезает ошибка PHP. Браво.
+
+![PHP goes brrrr]({phpError})
+
+Эту страницу и в блоге не найти, у меня получилось только [на русском её разыскать](https://ru-ru.about.flipboard.com/support-information-incident-may-2019/). Ну ничего, [Wayback Machine всё помнит](https://web.archive.org/web/20201107223738/https://about.flipboard.com/support-information-incident-May-2019/).
+
+Я обращаюсь к первоисточнику, потому что его точно писали какие-то скользкие юристы — это видно вдоль и поперёк. Их учат писать так, чтобы подкопаться было нельзя, но и чтобы ничего лишнего не рассказать. Поэтому я буду цитировать их текст и приводить перевод на человеческий язык
+
+> […] from the investigation indicate an unauthorized person accessed and potentially obtained copies of certain databases containing Flipboard user information between June 2, 2018 and March 23, 2019 and April 21 – 22, 2019
+
+Хакер имел доступ к нашей базе с 2 июня 2018 до 23 марта 2019 года, а поняли мы это только в апреле 2019 года. Что он с ней делал — непонятно, но как минимум доступ на чтение был полный.
+
+> The databases involved contained <mark>some of our users’ account information</mark>, including name, Flipboard username, cryptographically protected password and email address.
+
+Мы уверены, что, перечислив четыре самых незначительных пункта, у нас получится отвести ваш взгляд с того, что "*users’ account information*" — это всеобъемлющий термин, описывающий все пользовательские данные.
+
+> if users connected their Flipboard account to a third-party account, including social media accounts, then the databases <mark>may have contained</mark> digital tokens used to connect their Flipboard account to that third-party account. We <mark>have not found any evidence</mark> the unauthorized person accessed third-party account(s) connected to users’ Flipboard accounts.
+
+Кроме редких случаев, если вы авторизовывались через соц.сети, то эти токены у нас тоже увели. Логов почти никакие из этих соц.сетей не предоставляют (ни Facebook, ни Twitter), поэтому мы можем только гадать, что с этими токенами делали. Нам никто из юзеров не пожаловался.
+
+> We’re still in the process of determining the total number [<mark>of involved accounts</mark> — прим.ред.]. We do know that not all accounts were compromised.
+
+Так как мы сообщаем об этом в мае 2019 года, а дыру мы закрыли в апреле 2019 года, мы уверены, что во всяком случае не скомпрометированы те юзеры, что зарегистрировались после апреля. Остальное мы не знаем и, по-видимому, никогда не узнаем.
+
+Как-то так. Как обычно, надо помнить, что Flipboard в реальности хранит намного больше информации, чем просто юзернеймы и хешированные пароли — ваша история чтения, любимые блоггеры, избранные статьи, соц.граф и уйма выведенной из этого всего информации (политические убеждения, сексуальная ориентация, кулинарные предпочтения, любимые спортивные команды, что вызывает у вас гнев, а что — радость, и т.д.). Про домашний и рабочий адрес даже говорить стыдно — это и олуху будет понятно из логов посещения.

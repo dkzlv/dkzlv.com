@@ -1,47 +1,47 @@
-<script context="module">
-  export const classname = 'fingerprint';
-</script>
-
 <script>
   import { _, json } from 'svelte-i18n';
   import { onMount } from 'svelte';
   import { slide } from 'svelte/transition';
+  import Fingerprint2 from '@fingerprintjs/fingerprintjs';
 
-  import { sample } from '@/utils/random';
-  import { codeTags, generateLinkTags } from '@/utils/accentTags';
+  import { sample } from '$utils/random';
+  import { codeTags, generateLinkTags } from '$utils/accentTags';
 
-  import { request } from '@/core/service';
-  import { getFingerprintHash } from '@/core/dataCollection/fingerprint';
+  import { fingerprintPath } from '$core/paths';
+  import { get, post, request } from '$core/service';
 
   let isLoading = false,
     justSent = false,
     message = '';
 
-  const id = 'fingerprint-demo';
-
   let href: string, fingerprint: string, prevMessage: string;
 
   onMount(async () => {
-    href = location.href.replace(location.hash, '') + `#${id}`;
-    fingerprint = await getFingerprintHash();
+    const fp = await Fingerprint2.load();
+
+    href = $fingerprintPath;
+    fingerprint = (await fp.get()).visitorId;
     try {
-      prevMessage = (
-        await (
-          await request('POST', 'fingerprint/get', {
-            fingerprint,
-          })
-        ).json()
-      ).message;
-    } catch (err) {}
+      const res = await request<{ message: string }>({
+        method: get,
+        path: 'fingerprint',
+        queryParams: { fingerprint },
+      });
+      prevMessage = res.json.message;
+    } catch (error) {}
   });
 
   const onClick = async () => {
     if (!message) message = sample($json('specials.fingerprint.form.variants'));
 
     isLoading = true;
-    await request('POST', 'fingerprint/save', {
-      fingerprint,
-      message: message.slice(0, 200),
+    await request({
+      method: post,
+      path: 'fingerprint',
+      data: {
+        fingerprint,
+        message: message.slice(0, 200),
+      },
     });
     isLoading = false;
     justSent = true;

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/static/icons/512.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/static/icons/512.png" />
+
+    %svelte.head%
+  </head>
+
+  <body data-night-theme="0">
+    <script>
+      document.body.setAttribute(
+        'data-night-theme',
+        localStorage.getItem('data-night-theme') || '0',
+      );
+    </script>
+
+    %svelte.body%
+
+    <script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
+    <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt="" /></noscript>
+  </body>
+</html>
