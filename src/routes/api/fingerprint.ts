@@ -57,7 +57,7 @@ async function setFingerprint({
 
 function getIpFromHeaders(headers: Headers): string {
   // Using unique IP so it does not mangle with the results
-  return headers['X-Forwarded-For'] || nanoid();
+  return headers['x-forwarded-for'] || nanoid();
 }
 
 function flushFingerprints() {
