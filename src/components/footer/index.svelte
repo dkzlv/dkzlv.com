@@ -5,7 +5,7 @@
   import { _ } from 'svelte-i18n';
 
   import { generateLinkTags } from '$utils/accentTags';
-  import { getLicenseUrl, repoUrl } from '$core/paths';
+  import { getLicenseUrl, repoUrl, rssPath } from '$core/paths';
 </script>
 
 <footer>
@@ -19,8 +19,8 @@
       {:else if $locale == 'en'}
         <Link href="/ru">🇷🇺</Link>
       {/if}
-      <Link class="rss" href={$locale + '/rss'}>
-        <svg
+      <a class="rss" href={$rssPath} rel="external"
+        ><svg
           width="15"
           height="10"
           viewBox="0 0 18 18"
@@ -32,8 +32,7 @@
           <path
             d="M1.95257e-05 15.147C-0.0062585 13.8501 1.19131 12.3977 2.79954 12.3977C4.40778 12.3977 5.49724 13.6427 5.49724 15.147C5.49724 16.6513 4.51154 17.9875 2.79954 17.9938C1.08755 18 0.00629755 16.4438 1.95257e-05 15.147Z"
             fill="#E4B201" />
-        </svg>
-      </Link>
+        </svg></a>
     </div>
   </div>
   <p class="license">

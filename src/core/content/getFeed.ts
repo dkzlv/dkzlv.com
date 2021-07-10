@@ -2,7 +2,7 @@ import { Feed } from 'feed';
 import { _ } from 'svelte-i18n';
 import { get } from 'svelte/store';
 
-import { rootSitePath } from '$core/paths';
+import { postPath, rootSitePath } from '$core/paths';
 import { getPosts } from './getPosts';
 import { i18nInitialize } from '$core/i18n';
 
@@ -37,7 +37,7 @@ const t = (key: string) => get(_)(key) as string,
         feed.addItem({
           title: post.title,
           id: post.slug,
-          link: `${baseLocalizedPath}/${post.slug}`,
+          link: get(postPath)(post.slug),
           description: post.description,
           content: post.description,
           date: new Date(post.date),
