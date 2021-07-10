@@ -169,6 +169,10 @@ h6 {
     }
   }
 
+  .skip {
+    height: 3em;
+  }
+
   mark {
     color: $text-color;
     padding: 0 2px;
@@ -250,9 +254,8 @@ h6 {
   }
 
   .callout {
-    display: grid;
-    grid-template-columns: auto 5fr;
-    grid-template-rows: repeat(auto-fill, 1fr);
+    display: flex;
+    align-items: center;
 
     margin-bottom: 1em;
 
@@ -260,10 +263,6 @@ h6 {
 
     > * {
       &:first-child {
-        grid-column: 1 / span 1;
-        grid-row: 1 / last-line;
-        grid-row-start: span 9000;
-
         font-size: 150%;
         padding: $padding;
         line-height: 1;
@@ -272,6 +271,7 @@ h6 {
       }
 
       &:not(:first-child) {
+        flex: 1;
         margin: 0;
         padding-top: $padding;
         padding-right: $padding;
