@@ -32,7 +32,7 @@ const t = (key: string) => get(_)(key) as string,
     feed.addCategory(t('rss.category'));
 
     getPosts()
-      .filter(post => post.lang === lang)
+      .filter(post => post.lang === lang && !post.hidden)
       .forEach(post =>
         feed.addItem({
           title: post.title,
