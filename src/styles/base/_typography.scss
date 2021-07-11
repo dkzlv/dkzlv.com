@@ -254,31 +254,29 @@ h6 {
   }
 
   .callout {
-    display: flex;
-    align-items: center;
+    @include mq($from: mobile) {
+      display: flex;
+      align-items: center;
+    }
 
     margin-bottom: 1em;
-
-    $padding: 20px;
+    padding: 20px;
 
     > * {
       &:first-child {
+        @include mq($from: mobile) {
+          margin-right: 1em;
+        }
+
+        text-align: center;
         font-size: 150%;
-        padding: $padding;
-        line-height: 1;
 
         user-select: none;
       }
 
       &:not(:first-child) {
         flex: 1;
-        margin: 0;
-        padding-top: $padding;
-        padding-right: $padding;
-      }
-
-      &:last-child {
-        padding-bottom: $padding;
+        margin-bottom: 0;
       }
     }
 

@@ -2,6 +2,7 @@
 lang: en
 title: "You make a privacy-first service → You get banned on Google"
 description: Yet another sad story of how big companies kill small ones because of poor processes.
+emailCollectorMessage: It's an open-ending story. It's not yet clear what will happen next. If you're interested, then subscribe. It will make me a bit happier.
 date: 10.07.2021
 hidden: true
 ---
