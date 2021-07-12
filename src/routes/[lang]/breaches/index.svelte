@@ -14,7 +14,7 @@
   import List from '$components/breaches/list/main.svelte';
   import Feedback from '$components/breaches/feedback.svelte';
   import Breadcrumbs from '$components/breadcrumbs.svelte';
-  import Meta from '$components/meta.svelte';
+  import Meta from '$components/meta/index.svelte';
 
   import { _ } from 'svelte-i18n';
   import { page } from '$app/stores';

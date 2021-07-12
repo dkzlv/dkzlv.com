@@ -1,18 +1,25 @@
 <script>
   import type { Post } from '$core/content/getPosts';
 
-  import Meta from '$components/meta.svelte';
+  import Meta from '$components/meta/index.svelte';
   import SeriesData from './seriesData.svelte';
   import Subscription from './subscription.svelte';
 
   import { locale } from 'svelte-i18n';
+
+  import { postPath } from '$core/paths';
 
   export let post: Post;
 
   $: hasAnnouncedInSeries = post.series?.some(p => p.announced);
 </script>
 
-<Meta title={post.title} path={post.slug} description={post.description} locale={$locale} />
+<Meta
+  title={post.title}
+  path={$postPath(post.slug)}
+  description={post.description}
+  imagePreview={post.preview}
+  locale={$locale} />
 
 <article>
   <h1>{post.title}</h1>

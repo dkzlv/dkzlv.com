@@ -11,7 +11,7 @@
 <script>
   import type { Post } from '$core/content/getPosts';
 
-  import Meta from '$components/meta.svelte';
+  import Meta from '$components/meta/index.svelte';
   import PromoList from '$components/promoList/index.svelte';
   import ProductPromo from '$components/productPromo/productPromo.svelte';
 
