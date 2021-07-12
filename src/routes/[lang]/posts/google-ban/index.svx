@@ -3,8 +3,7 @@ lang: en
 title: "You make a privacy-first service → You get banned on Google"
 description: Yet another sad story of how big companies kill small ones because of poor processes.
 emailCollectorMessage: It's an open-ending story. It's not yet clear what will happen next. If you're interested, then subscribe. It will make me a bit happier.
-date: 10.07.2021
-hidden: true
+date: 11.07.2021
 ---
 
 <script>
@@ -37,7 +36,7 @@ This topic is unpleasant, so there won't be a lot of jokes. You need to have a l
 
 # Moderation that *kills* businesses
 
-People suddenly got brave enough of late and started telling their stories about App Store and Google Play moderation going *not so good* for them. Their apps [were banned](https://twitter.com/keleftheriou/status/1274356729224892416) or [not even put out on sale](https://twitter.com/jsngr/status/1387449932072853508) — all without any real reason. Months of work down the drain.
+Lately people suddenly got brave enough and started telling their stories about App Store and Google Play moderation going *not so good* for them. Their apps [were banned](https://twitter.com/keleftheriou/status/1274356729224892416) or [not even put out from sale](https://twitter.com/jsngr/status/1387449932072853508) — all without any real reason. Months of work down the drain.
 
 The rules are very generic, there's a lot of room for interpretation. Their application is highly selective. If you get banned, the provided reasons are super-common, and you'll never get any real details. You can pass the review multiple times with the same app, but [then suddenly get banned over nothing](https://www.reddit.com/r/apple/comments/manzmp/apple_surprised_by_developer_frustration_with_its/grtbjeg). They can [forbid you from using the promotion text](https://twitter.com/TechEmails/status/1408849715475664897) that Apple uses on their own payment pages! Hell, they can [ban the designs](https://twitter.com/phillipcaudell/status/1402908621546078212/photo/1) that are added to the documentation as a perfect example!
 
@@ -67,9 +66,9 @@ This is all just some stats until it happens with you.
 
 # My story
 
-I make [[safe] money](https://safeapps.io/). It helps to control the finances. It's mostly familiar: expenses, incomes, assets, balance, charts, and so on. Its key distinction is end-to-end encryption and open-sourced codebase. Yeah, much like in Signal, but it's about your money.
+I make [[safe] money](https://safeapps.io/). It helps to control the finances. You know, the usual stuff: expenses, incomes, assets, balance, charts, and so on. Its key distinction is end-to-end encryption and open-sourced codebase. Yeah, much like in Signal, but it's about your money.
 
-It's a sunny Saturday. I wanna get out of my clothes and go sunbathe on the beach. Instead, I sit at home all sweaty and write this stupid post about "big evil corporations" crushing my small business — or even killing it without a proper launch.
+It's a sunny Sunday. I wanna get out of my clothes and go sunbathe on the beach. Instead, I sit at home all sweaty and write this stupid post about "big evil corporations" crushing my small business — or even killing it without a proper launch.
 
 I make a <mark>privacy-first service</mark>. Google does not fit the description, and my customers don't use it. They use alternative search engines that do much less tracking and data aggregation, like DuckDuckGo or StartPage.com.
 
