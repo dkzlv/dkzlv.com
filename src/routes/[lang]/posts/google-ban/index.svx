@@ -1,0 +1,140 @@
+---
+lang: en
+title: "You make a privacy-first service → You get banned on Google"
+description: Yet another sad story of how big companies kill small ones because of poor processes.
+emailCollectorMessage: It's an open-ending story. It's not yet clear what will happen next. If you're interested, then subscribe. It will make me a bit happier.
+date: 11.07.2021
+---
+
+<script>
+  import Enum from '$components/post/enum.svelte';
+
+  import example from './example.png';
+</script>
+
+::: div callout green
+
+  **TL;DR:**
+
+  ::: div
+
+    Google and Microsoft have super opaque and unpredictable ad moderation.
+    
+    There are unofficial policies that indirectly ban the advertising of privacy-first services.
+    
+    [DuckDuckGo](https://duckduckgo.com/) and [StartPage.com](https://startpage.com/) use their platforms.
+    
+    If you're banned (like I am), unban is highly unlikely to happen, and the chances of your success are extremely low.
+
+  :::
+
+:::
+
+---
+
+This topic is unpleasant, so there won't be a lot of jokes. You need to have a lot of courage and composure to make jokes about your deadly wound when you're still severely bleeding.
+
+# Moderation that *kills* businesses
+
+Lately people suddenly got brave enough and started telling their stories about App Store and Google Play moderation going *not so good* for them. Their apps [were banned](https://twitter.com/keleftheriou/status/1274356729224892416) or [not even put out from sale](https://twitter.com/jsngr/status/1387449932072853508) — all without any real reason. Months of work down the drain.
+
+The rules are very generic, there's a lot of room for interpretation. Their application is highly selective. If you get banned, the provided reasons are super-common, and you'll never get any real details. You can pass the review multiple times with the same app, but [then suddenly get banned over nothing](https://www.reddit.com/r/apple/comments/manzmp/apple_surprised_by_developer_frustration_with_its/grtbjeg). They can [forbid you from using the promotion text](https://twitter.com/TechEmails/status/1408849715475664897) that Apple uses on their own payment pages! Hell, they can [ban the designs](https://twitter.com/phillipcaudell/status/1402908621546078212/photo/1) that are added to the documentation as a perfect example!
+
+I got a bit of a bitter experience and found out it's more or less the same in the ads.
+
+Google does a pretty good job moderating the ads. I cannot say I saw a lot of unacceptable content in the ads. Nonetheless, there are lots of such cases.
+
+<Enum>
+
+  **sex** 🔞
+
+  Youtube was [caught](https://www.vice.com/en/article/59jkda/youtube-porn-ads-pewdepie-dude-perfect) [many](https://www.reddit.com/r/assholedesign/comments/aua45p/nsfw_those_are_youtube_ads_with_porn_i_had_to/) [times](https://www.reddit.com/r/assholedesign/comments/au6cce/porn_ads_on_youtube/) advertising porn sites. It cannot be disabled by parental control. There are naked people in the videos, and it links to actual popular porn sites.
+
+  **drugs** 💉
+
+  [Darknet drugs marketplace](https://vc.ru/flood/25751-youtube-hydra) also starred on Youtube. The ad wasn't veiled in any way: the text says about relaxing and stuff, and it links to the sites selling meth and weed. The sites themselves are banned by the government.
+
+  ~~rock-n~~ **casino** 🤑
+
+  Google allows advertizing of some very questionable businesses, like [bets/casinos](https://support.google.com/adspolicy/answer/6018017?hl=en) and [forex/cfd-brokers](https://support.google.com/adspolicy/answer/7645254?hl=en).
+
+</Enum>
+
+On the other side of the spectrum, there are [lots](https://www.choiceofgames.com/2010/08/were-banned-from-google-adsense/) of stories about bans of advertising accounts and sometimes even removing the apps at all from the linked accounts. It is all about absolutely legal and fair businesses. These stories are about the destruction of people's lives, their hopes for better living, destroying the competition on whole markets. People forget these stores very quickly.
+
+This is all just some stats until it happens with you.
+
+# My story
+
+I make [[safe] money](https://safeapps.io/). It helps to control the finances. You know, the usual stuff: expenses, incomes, assets, balance, charts, and so on. Its key distinction is end-to-end encryption and open-sourced codebase. Yeah, much like in Signal, but it's about your money.
+
+It's a sunny Sunday. I wanna get out of my clothes and go sunbathe on the beach. Instead, I sit at home all sweaty and write this stupid post about "big evil corporations" crushing my small business — or even killing it without a proper launch.
+
+I make a <mark>privacy-first service</mark>. Google does not fit the description, and my customers don't use it. They use alternative search engines that do much less tracking and data aggregation, like DuckDuckGo or StartPage.com.
+
+It turned out they don't have their own advertising systems. DDG uses Microsoft's ad network and StartPage.com — Google's. If you want to create ads in privacy-first search engines go and sign up in Google — ironic, isn't it?
+
+We need ads. Otherwise, nobody will ever know anything about us. This is how the internet works: you either work for years to get a little organic traffic or you just pay to those giants so they share it with you. It's hard to imagine a modern business that does not buy any ads on search engines.
+
+# About the ban
+
+We're no shady guys.
+
+We have one domain. One project. We're incorporated transparently. [Our source code is open](https://github.com/safeapps-io) and available for reading. [User's data is encrypted in the browser and sent in unreadable form](https://safeapps.io/content/security).
+
+We're ready to pass any certifications, provide any documents, visit Google's or Microsoft's office in person.
+
+But they don't need this. We're nothing, a small invisible number in their balance sheets. That's why they can ban us without providing any sufficient reason or right for defense.
+
+::: div skip
+:::
+
+I signed up in Google Ads and created a single ad. Nothing is interesting there: we target a few of the popular OSS alternatives ([GnuCash](https://www.gnucash.org/), [KMyMoney](https://kmymoney.org/), etc.) with very simple and transparent messages.
+
+![Ad example]({example})
+
+It looked like this.
+
+It lead [to our site](https://safeapps.io/). The account got banned after 200 ad impressions. Reason — **"Unacceptable Business Practice"**. No further explanation. Of course, [nothing from the examples list fits our description](https://support.google.com/adspolicy/answer/6020955?hl=en#368): we do not impersonate other brands, we do not provide a fictitious business or provide services that can endanger a user’s health, life, or safety, we do not mimic any other app and we do not have any regulatory warnings, settlements, or rulings.
+
+*"It must be a mistake"* — I thought. Submitted an appeal, went to Microsoft Ads, and signed up there. They banned me <mark>when I tried to add a payment method</mark>. The same day. Without telling any reason at all. I chatted with their tech support — a polite guy named Rico told me we'll be done with this problem very soon, just submit the form that explains how you are related to the domain and if you have a company.
+
+Google rejects my appeal the same day. "We've confirmed that your account was and still is in violation of our Google Ads policies". They don't tell you any details. I submit another more elaborate appeal — rejected; I submit yet another appeal with even more details — they stopped answering me at all.
+
+Microsoft never answered at all. After two weeks of silence I reached out to them myself, and the agent tried to be nice, but the phrase *"I understand your feelings, but, I'm afraid <mark>you're banned for life and this cannot be changed</mark>"* just broke me.
+
+I have a couple of friends working in Microsoft and Google in ad departments. I asked their opinion and got a few recommendations:
+
+- **"remove any mentions about cryptocurrency"** — they all told me that. They said it's an <mark>unspoken company policy</mark> — everything loosely connected to cryptocurrencies cannot be advertised until it becomes big enough. *Quod licet Iovi, non licet bovi*.
+- **"remove any mentions about encryption"** — also a common recommendation. Nobody gave me any specifics on that, they just told the companies kind of <mark>afraid of advertising encryption services</mark> — there are some possible complying issues, certifications, and so on. It's easier to forbid it.
+- **do not use the "get out of debt" header**, because you look like a "get rich quick" scheme. It reminded me of the times when Apple nagged me about the translations in my app that was never supposed to target an english-speaking audience. If you use our platform do comply with our vision of your texts. Should also point out, that I took this header from a competitor of mine that runs ads in Google…
+- there were two fun recommendations: add some social proof from some **fictional customers** and add a cookie banner even if **you have none**.
+
+::: div callout yellow
+
+  😨
+
+  None of my friends could tell me the **specific reasons** why I was banned. It's mostly because they do not understand their own rules. They are not detailed or stable, and they work the way the moderator feels or the way an account manager can arrange.
+
+:::
+
+This created a lot of pain for many people. Most online ads are controlled by 4 players: Amazon, Facebook, Google, and Microsoft. Judging by the fact that Microsoft banned me even before I told them what site I plan to advertise, they actively exchange information about supposed fraudsters. If any of their systems falsely accused you of being a fraud, you can say *"goodbye!"* to your fantasies about a successful business. You won't have a chance to change this decision — at least this is what I got from Microsoft's support agent.
+
+# Conclusion?
+
+There's no bad intent here — nobody targets *me personally*, who even cares about me. It's a constant error in the processes that came, probably, from a good place — but it's no better for me. Nobody will fix this error.
+
+It's very upsetting that there are unofficial policies that target privacy-first services. Hard for me to understand how one can allow casino ads but selectively ban services that use encryption or allow payment in cryptocurrencies (selectively, because Tesla is allowed).
+
+It's even more depressing that the process itself is very obscure and unpredictable, and it somehow can make or break your business. It's not even about us — there's plenty of these stories. Either buy a new domain, use a VPN, and hope to all gods you won't be banned again, or just die. No other options.
+
+I will go to the beach now before the sun goes down. Tomorrow I'll think about what to do next.
+
+
+::: div callout green
+
+  😈
+
+  [Tell me your stories](mailto:dkzlv@pm.me) about unfair bans: whole apps, separate updates, ad accounts, or individual ads. You know, those cases when you just wanted it all to end. And if you do anything with encryption or cryptocurrencies — all the more so.
+
+:::

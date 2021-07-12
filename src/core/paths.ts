@@ -11,7 +11,8 @@ export const staticPath = `/${process.env.ROOT_STATIC_PATH}`,
   rootStaticPath = `${rootSitePath}${staticPath}`;
 
 export const mainPath = derived(locale, $locale => `/${$locale}`),
-  postPath = derived(mainPath, $path => (slug: string) => `${$path}/posts/${slug}`);
+  postPath = derived(mainPath, $path => (slug: string) => `${$path}/posts/${slug}`),
+  rssPath = derived(mainPath, $path => `${$path}/rss`);
 
 const baseSpecialsPath = derived(mainPath, $base => `${$base}/specials`);
 

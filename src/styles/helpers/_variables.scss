@@ -24,10 +24,6 @@ $code-gradient-2: var(--code-gradient-2);
 $image-filter: var(--image-filter);
 $hr-color: var(--hr-color);
 
-$callout-green: var(--callout-green);
-$callout-yellow: var(--callout-yellow);
-$callout-red: var(--callout-red);
-
 $btn-bg-color: var(--btn-bg-color);
 $btn-bg-outline-color: var(--btn-bg-outline-color);
 $btn-border-color: var(--btn-border-color);
@@ -42,6 +38,10 @@ $input-placeholder-color: var(--input-placeholder-color);
 $box-background: var(--box-background);
 $box-odd-background: var(--box-odd-background);
 $box-shadow-color: var(--box-shadow-color);
+
+$callout-green: $box-background;
+$callout-yellow: var(--callout-yellow);
+$callout-red: var(--callout-red);
 
 $tooltip-outline-color: var(--tooltip-outline-color);
 $tooltip-outline-color--hover: var(--tooltip-outline-color--hover);

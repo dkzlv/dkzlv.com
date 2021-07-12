@@ -12,7 +12,7 @@
 
   $: {
     locale.set($page.params.lang);
-    if (!$locales.includes($page.params.lang as string)) goto('/en');
+    if (!$locales.includes($page.params.lang as string)) goto('/en', { replaceState: true });
   }
 
   onMount(() => warn($_('consoleWarning')));

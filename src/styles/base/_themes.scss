@@ -35,7 +35,6 @@
   #{cvts($image-filter)}: none;
   #{cvts($hr-color)}: rgba(0, 0, 0, 0.15);
 
-  #{cvts($callout-green)}: hsl(144, 100%, 96%);
   #{cvts($callout-yellow)}: hsl(60, 100%, 96%);
   #{cvts($callout-red)}: hsl(0, 100%, 96%);
 
@@ -103,7 +102,6 @@
   #{cvts($image-filter)}: invert(1);
   #{cvts($hr-color)}: rgba(255, 255, 255, 0.15);
 
-  #{cvts($callout-green)}: hsl(144, 50%, 25%);
   #{cvts($callout-yellow)}: hsl(60, 50%, 25%);
   #{cvts($callout-red)}: hsl(0, 50%, 25%);
 

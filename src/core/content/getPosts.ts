@@ -91,6 +91,8 @@ type CommonPost = {
 
   // Means this post is non existant yet
   announced?: boolean;
+  // Hides the post from lists, but makes it available by direct link
+  hidden?: boolean;
 
   emailCollectorMessage?: string;
 };

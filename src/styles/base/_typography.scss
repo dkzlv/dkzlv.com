@@ -169,6 +169,10 @@ h6 {
     }
   }
 
+  .skip {
+    height: 3em;
+  }
+
   mark {
     color: $text-color;
     padding: 0 2px;
@@ -250,35 +254,29 @@ h6 {
   }
 
   .callout {
-    display: grid;
-    grid-template-columns: auto 5fr;
-    grid-template-rows: repeat(auto-fill, 1fr);
+    @include mq($from: mobile) {
+      display: flex;
+      align-items: center;
+    }
 
     margin-bottom: 1em;
-
-    $padding: 20px;
+    padding: 20px;
 
     > * {
       &:first-child {
-        grid-column: 1 / span 1;
-        grid-row: 1 / last-line;
-        grid-row-start: span 9000;
+        @include mq($from: mobile) {
+          margin-right: 1em;
+        }
 
+        text-align: center;
         font-size: 150%;
-        padding: $padding;
-        line-height: 1;
 
         user-select: none;
       }
 
       &:not(:first-child) {
-        margin: 0;
-        padding-top: $padding;
-        padding-right: $padding;
-      }
-
-      &:last-child {
-        padding-bottom: $padding;
+        flex: 1;
+        margin-bottom: 0;
       }
     }
 
