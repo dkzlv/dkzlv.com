@@ -1,19 +1,13 @@
 <script>
   import Promo from '$components/breaches/promo.svelte';
 
-  import { browser } from '$app/env';
   import { _ } from 'svelte-i18n';
   import { fade } from 'svelte/transition';
 
   import { fingerprintPath, breachesPath } from '$core/paths';
   let clientWidth: number,
     clientHeight: number,
-    initialRun = true,
     hovered = false;
-
-  $: run = initialRun || hovered;
-
-  if (browser) setTimeout(() => (initialRun = false), 3000);
 </script>
 
 <div class="parent">
@@ -25,7 +19,7 @@
     <div class="canvas" bind:clientWidth bind:clientHeight>
       {#if clientHeight}
         <div in:fade>
-          <Promo {run} width={clientWidth} height={clientHeight} />
+          <Promo width={clientWidth} height={clientHeight} />
         </div>
       {/if}
     </div>
