@@ -9,7 +9,7 @@
   import { onDestroy } from 'svelte';
   import { range } from '$utils/range';
 
-  export let height: number, width: number, run: boolean;
+  export let height: number, width: number;
 
   let canvas: HTMLCanvasElement;
 
@@ -47,13 +47,19 @@
     ctx.fillRect(0, 0, width, height);
   }
 
-  let interval = 0;
-  const destroy = () => clearInterval(interval);
-
-  $: if (ctx && run) interval = window.setInterval(() => draw(ctx!), 75);
-  else destroy();
-
+  let run = true;
+  const destroy = () => (run = false);
   onDestroy(destroy);
+
+  const fps = 15;
+  let lastTimestamp = 0;
+  function update(timestamp: number) {
+    if (run) requestAnimationFrame(update);
+    if (!fps || timestamp - lastTimestamp < 1000 / fps) return;
+    draw(ctx!);
+    lastTimestamp = timestamp;
+  }
+  update(lastTimestamp);
 </script>
 
 <canvas {height} {width} bind:this={canvas} />

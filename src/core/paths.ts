@@ -7,11 +7,9 @@ export const rootApiPath = `${process.env.API_SCHEME}://${process.env.API_HOST}$
 const sitePort = process.env.SITE_PORT ? `:${process.env.SITE_PORT}` : '';
 export const rootSitePath = `${process.env.SITE_SCHEME}://${process.env.SITE_HOST}${sitePort}`;
 
-export const staticPath = `/${process.env.ROOT_STATIC_PATH}`,
-  rootStaticPath = `${rootSitePath}${staticPath}`;
-
 export const mainPath = derived(locale, $locale => `/${$locale}`),
-  postPath = derived(mainPath, $path => (slug: string) => `${$path}/posts/${slug}`);
+  postPath = derived(mainPath, $path => (slug: string) => `${$path}/posts/${slug}`),
+  rssPath = derived(mainPath, $path => `${$path}/rss`);
 
 const baseSpecialsPath = derived(mainPath, $base => `${$base}/specials`);
 

@@ -1,13 +1,6 @@
 <script>
-  import { onMount } from 'svelte';
-
   import { i18nInitialize } from '$core/i18n';
-
-  let initialized = false;
-  onMount(() => {
-    i18nInitialize();
-    initialized = true;
-  });
+  i18nInitialize();
 </script>
 
-{#if initialized}<slot />{/if}
+<slot />

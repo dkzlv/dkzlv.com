@@ -5,8 +5,13 @@ let cachedPosts: Post[] | null = null;
 export const getPosts = () => {
   if (!cachedPosts) {
     const allImported = Object.entries(
-      import.meta.globEager('../../routes/[lang]/posts/**/index.svx'),
-    ) as unknown as [string, { metadata: PostFromFile }][];
+        import.meta.globEager('../../routes/[lang]/posts/**/index.svx'),
+      ) as unknown as [string, { metadata: PostFromFile }][],
+      allPreviews = Object.fromEntries(
+        Object.entries(import.meta.globEager('../../routes/[lang]/posts/**/preview.png')).map(
+          ([path, mod]) => [getSlugFromPath(path), mod.default],
+        ),
+      );
 
     cachedPosts = allImported
       .map(([path, p]) => {
@@ -17,6 +22,7 @@ export const getPosts = () => {
           ...meta,
           slug,
           date: parse(meta.date, 'dd.MM.yyyy', new Date(0)).getTime(),
+          preview: allPreviews[slug],
 
           series: meta.series
             ? meta.series.map(seriesSlug => {
@@ -71,6 +77,8 @@ export type Post = CommonPost & {
   date: number;
   slug: string;
 
+  preview?: string;
+
   // Array of slugs
   series?: {
     lang: string;
@@ -91,6 +99,8 @@ type CommonPost = {
 
   // Means this post is non existant yet
   announced?: boolean;
+  // Hides the post from lists, but makes it available by direct link
+  hidden?: boolean;
 
   emailCollectorMessage?: string;
 };
