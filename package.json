@@ -19,7 +19,7 @@
     "feed": "^4.2.2",
     "fingerprintjs2": "^2.1.2",
     "js-yaml": "^4.0.0",
-    "nanoid": "^3.1.20",
+    "nanoid": "^3.1.31",
     "redis": "^3.1.2",
     "remark-behead": "^2.3.3",
     "remark-containers": "^1.2.0",
